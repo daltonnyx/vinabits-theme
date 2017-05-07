@@ -31,20 +31,20 @@ get_header(); ?>
                     </div>
                 </div>
             </section>
-            <section class="section-3">
+            <!--<section class="section-3">
                 <div class="mui-container">
                     <div class="mui-row">
-                        <?php dynamic_sidebar('front-3'); ?>
+                        <?php// dynamic_sidebar('front-3'); ?>
                     </div>
                 </div>
             </section>
             <section class="section-4">
                 <div class="mui-container">
                     <div class="mui-row">
-                        <?php dynamic_sidebar('front-4'); ?>
+                        <?php// dynamic_sidebar('front-4'); ?>
                     </div>
                 </div>
-            </section>
+            </section>-->
 		</main>
 	</div>
 <?php get_footer(); ?>

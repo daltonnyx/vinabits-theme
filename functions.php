@@ -48,9 +48,10 @@ function vinabits_setup() {
 
 	add_image_size( 'post-carousel', 270, 218, array('center', 'center'));
 
-	add_image_size( 'post-banner', 278, 175, array('center', 'center'));
+    add_image_size( 'post-banner', 278, 175, array('center', 'center'));
 
-	add_image_size( 'testimonial-avatar', 100, 100, array('center', 'center'));
+    add_image_size('front-banner', 370, 245, array('center', 'center'));
+
 
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
@@ -61,8 +62,8 @@ function vinabits_setup() {
 	 * Add support for core custom logo.
 	 */
 	add_theme_support( 'custom-logo', array(
-		'height'      => 200,
-		'width'       => 200,
+		'height'      => 35,
+		'width'       => 274,
 		'flex-width'  => true,
 		'flex-height' => true,
 	) );
@@ -166,23 +167,24 @@ function vinabits_widgets_init() {
 		'after_widget'  => '</div>',
 		'before_title'  => '<h3 class="front-page-title">',
 		'after_title'   => '</h3>',
-	) );	register_sidebar( array(
-		'name'          => esc_html__( 'Front 3', 'vinabits' ),
-		'id'            => 'front-3',
-		'description'   => '',
-		'before_widget' => '<div id="%1$s" class="front-section %2$s">',
-		'after_widget'  => '</div>',
-		'before_title'  => '<h3 class="front-page-title">',
-		'after_title'   => '</h3>',
-	) );	register_sidebar( array(
-		'name'          => esc_html__( 'Front 4', 'vinabits' ),
-		'id'            => 'front-4',
-		'description'   => '',
-		'before_widget' => '<div id="%1$s" class="front-section %2$s">',
-		'after_widget'  => '</div>',
-		'before_title'  => '<h3 class="front-page-title">',
-		'after_title'   => '</h3>',
-	) );
+    ) );	
+    // register_sidebar( array(
+	//     'name'          => esc_html__( 'Front 3', 'vinabits' ),
+	//     'id'            => 'front-3',
+	//     'description'   => '',
+	//     'before_widget' => '<div id="%1$s" class="front-section %2$s">',
+	//     'after_widget'  => '</div>',
+	//     'before_title'  => '<h3 class="front-page-title">',
+	//     'after_title'   => '</h3>',
+	// ) );	register_sidebar( array(
+	//     'name'          => esc_html__( 'Front 4', 'vinabits' ),
+	//     'id'            => 'front-4',
+	//     'description'   => '',
+	//     'before_widget' => '<div id="%1$s" class="front-section %2$s">',
+	//     'after_widget'  => '</div>',
+	//     'before_title'  => '<h3 class="front-page-title">',
+	//     'after_title'   => '</h3>',
+	// ) );
 	register_sidebar( array(
 		'name'          => esc_html__( 'Footer', 'vinabits' ),
 		'id'            => 'footer',
@@ -200,7 +202,6 @@ add_action( 'widgets_init', 'vinabits_widgets_init' );
  */
 function vinabits_scripts() {
 
-	wp_enqueue_style('roboto-condensed-font','https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700&amp;subset=vietnamese');
 
 	wp_enqueue_style('font-awesome', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css');
 
@@ -249,6 +250,9 @@ require get_template_directory() . '/inc/customizer.php';
 require get_template_directory() . '/inc/jetpack.php';
 
 require get_template_directory(). '/inc/news-widget.php';
+
+require get_template_directory(). '/inc/custom-card-widget.php';
+
 
 
 //Custom Excerpt Length
@@ -367,20 +371,3 @@ add_filter( 'get_the_archive_title', function ($title) {
 
 } );
 
-
-add_filter( 'wp_nav_menu_items', 'language_menu_item', 10, 2 );
-function language_menu_item ( $items, $args ) {
-    if ($args->theme_location == 'menu-1') {
-				ob_start();
-				the_widget('qTranslateXWidget', array(
-					'hide-title' => true,
-					'type' => 'image',
-					'hide-title-colon' => true,
-				), array(
-					'before_widget' => '',
-					'after_widget' => ''
-				));
-        $items .= '<li class="language-chooser">'.ob_get_clean().'</li>';
-    }
-    return $items;
-}

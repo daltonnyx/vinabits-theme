@@ -11,7 +11,6 @@
 	display: block;
 	float: left;
 	width: 100%;
-	background: $color__main;
 	min-height: 34px;
 	label {
 		display: block;
@@ -90,31 +89,19 @@
 		text-align: center;
 		&:hover > a,
 		&.focus > a {
+            color: $color__text-main;
 		}
-		&.language-chooser {
-			flex-basis: 50px;
-			ul {
-				display: inline-block !important;
-				position: static !important;
-				li {
-					width: 50%;
-					text-align: center;
-				}
-				a {
-					width: auto;
-				}
-			}
-		}
+		
 	}
 
 	a {
 		display: block;
-		color: #ccc;
+		color: #191919;
 		text-decoration: none;
 		font-size: 16px;
 		text-transform: uppercase;
 		&:visited {
-			color: #ccc;
+			color: #191919;
 		}
 	}
 
@@ -122,6 +109,7 @@
 	.current-menu-item > a,
 	.current_page_ancestor > a,
 	.current-menu-ancestor > a {
+        color: $color__text-main;
 	}
 }
 
@@ -154,7 +142,6 @@
 
 @media screen and (min-width: #{$breakpoint_tablet}) {
 	.main-navigation {
-		margin-top: 33px;
 		position: relative;
 		z-index: 99;
 		#nav-bars {
@@ -172,10 +159,9 @@
 		background: transparent;
 		display: flex;
 		flex-flow: row nowrap;
-		justify-content: flex-end;
+		justify-content: space-between;
 		li {
 			width: auto;
-			flex-basis: 110px;
 			a {
 				font-size: 13px;
 				line-height: 38px;

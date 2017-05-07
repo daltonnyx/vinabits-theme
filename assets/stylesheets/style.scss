@@ -132,13 +132,22 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 --------------------------------------------------------------*/
 @import "shared/media";
 
+/*-------------------------------------------------------------
+# Vinabits
+-------------------------------------------------------------*/
 
+@import "vinabits/typography";
+
+@import "vinabits/header";
+@import "vinabits/slider";
+
+@import "vinabits/section-1";
 
 ///Custom Style down here
-
-@font-face {
-  src: url('./assets/fonts/UTM AvoBold.ttf');
-  font-family: AvoBold;
+.mui-container {
+    @media screen and (min-width: 1200px) {
+        max-width: 1200px;
+    }
 }
 
 .wonderpluginslider-container {
@@ -153,249 +162,6 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
     padding: 0px !important;
   }
 }
-
-.section-1 {
-  color: #333;
-  font-size: 0;
-  > div {
-    font-size: 14px;
-  }
-  .front-page-title {
-    font-family: 'Roboto Condensed';
-    font-size: 20px;
-    font-weight: bold;
-    color: $color__text-highlight;
-    text-transform: uppercase;
-  }
-  strong {
-    color: #3d013c;
-  }
-  .mui-btn {
-    height: auto;
-    padding: 0px;
-    border: 2px solid $color__main !important;
-    border-radius: 0px;
-    span {
-      line-height: 48px !important;
-      padding: 0px 10px !important;
-      i {
-        margin-right: 0px !important;
-      }
-    }
-  }
-}
-
-//section 2
-
-.section-2 {
-  background: url('./assets/images/sc1.png') repeat left top / auto transparent;
-  text-align: center;
-  padding: 11px 0px;
-  .front-page-title {
-    font-family: AvoBold;
-    text-transform: uppercase;
-    font-size: 25px;
-    color: $color__text-highlight;
-    position: relative;
-    margin-bottom: 1.5em;
-    margin-top: 10px;
-    &:after {
-      position: absolute;
-      content: " ";
-      width: 83px;
-      height: 4px;
-      left: 50%;
-      transform: translateX(-50%);
-      top: 130%;
-      background: #666;
-    }
-  }
-  .news-carousel {
-    .news-default-item {
-      display: inline-block;
-      position: relative;
-      font-size: 0px;
-      margin-bottom: 15px;
-      .news-container {
-        position: absolute;
-        top: 50%;
-        left: 0;
-        text-align: left;
-        h3 {
-          background: $color__main;
-          color: #fff;
-          font-family: AvoBold;
-          font-size: 15px;
-          text-transform: uppercase;
-          margin: 0px;
-          width: 191px;
-          padding: 8px 15px;
-        }
-        .mui-btn {
-          margin: 0px;
-          border-radius: 0px;
-          box-shadow: none;
-          background: #000;
-          color: #ccc;
-          padding: 0px 15px;
-          margin-top: 3px;
-          &:visited {
-            color: #ccc;
-          }
-        }
-      }
-    }
-  }
-}
-
-//section-3
-.section-3 {
-  text-align: center;
-  padding: 18px 0px;
-  .news-card {
-    .news-default-item {
-      display: inline-block;
-      position: relative;
-      font-size: 0px;
-      margin-bottom: 6px;
-      .news-container {
-        position: absolute;
-        top: 0;
-        left: 0;
-        text-align: left;
-        h3 {
-          background: $color__main;
-          color: #fff;
-          font-family: AvoBold;
-          font-size: 15px;
-          text-transform: uppercase;
-          margin: 0px;
-          padding: 8px 15px;
-        }
-      }
-    }
-  }
-  .service {
-    margin-top: 20px;
-    .text-header {
-      h3 {
-        color: #333;
-      }
-      h5 {
-        color: #3d013c;
-        strong {
-          color: #990099;
-        }
-      }
-    }
-    .mui-btn {
-      height: auto;
-      padding: 0px;
-      border: 2px solid $color__main !important;
-      border-radius: 0px;
-      span {
-        line-height: 48px !important;
-        padding: 0px 10px !important;
-        i {
-          margin-right: 0px !important;
-        }
-      }
-    }
-  }
-}
-
-.text-header {
-  font-family: 'Roboto Condensed';
-  margin-bottom: 15px;
-  position: relative;
-  &:after {
-    position: absolute;
-    content: " ";
-    width: 124px;
-    height: 4px;
-    left: 0;
-    top: 100%;
-    background: #666;
-  }
-  h3 {
-    font-size: 30px;
-    text-transform: uppercase;
-    margin: 0px;
-    line-height: 25px;
-    font-weight: bold;
-  }
-  h5 {
-    font-size: 22px;
-    text-transform: capitalize;
-    margin:0px;
-    line-height: 44px;
-    strong {
-      text-transform: uppercase;
-    }
-  }
-}
-
-//section-4
-.section-4 {
-  background: url('./assets/images/sc2.png') repeat left top $color__main;
-  padding: 25px 0px;
-  margin-bottom: 20px;
-  .text-header {
-    h3 {
-      color: #cc00cc;
-    }
-    h5 {
-      color: #fff;
-    }
-  }
-}
-.testimonials {
-
-  blockquote {
-    font-size: 15px;
-    color: #ccc;
-    position: relative;
-    margin: 0.5em 2em 0px;
-    &:before {
-      content: "";
-      position: absolute;
-      font-family: FontAwesome;
-      font-size: 25px;
-      left: -26px;
-      top: -10px;
-    }
-  }
-  .author {
-    display: flex;
-    margin-top: 20px;
-    .thumb {
-      flex-shrink: 0;
-      flex-grow: 0;
-      img {
-        border-radius: 50%;
-      }
-    }
-    .text {
-      flex-grow: 1;
-      padding-left: 15px;
-      align-self: center;
-      h5 {
-        color: $color__text-highlight;
-        font-weight: bold;
-        font-size: 18px;
-        line-height: 20px;
-      }
-      span {
-        font-style: italic;
-        font-size: 14px;
-        line-height: 20px;
-        color: #ccc;
-      }
-    }
-  }
-}
-
-
 
 //footer
 
@@ -644,14 +410,9 @@ body:not(.front-page) {
 }
 
 @media screen and (min-width: #{$breakpoint_tablet}) {
-  .wonderpluginslider-container {
-    margin-top: -72px !important;
-    [class*="amazingslider-title"] {
-      font-size: 38px;
-    }
-  }
+  
   .section-1 {
-    padding: 43px 0px;
+    padding: 40px 0px 0px;
     p {
       line-height: 2em;
     }

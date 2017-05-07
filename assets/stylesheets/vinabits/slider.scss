@@ -1,0 +1,22 @@
+[class*="wonderpluginslider-container"] {
+    overflow-x: hidden;
+}
+[class*="amazingslider-nav"] {
+    top: auto !important;
+    bottom: 30px;
+    margin-top: 0px;
+    [style*="left top"] {
+        background-image: none !important;
+        border-radius: 50%;
+        background-color: #f3f3f3 !important;
+    }
+    [style*="left bottom"] {
+        background-image: none !important;
+        border-radius: 50%;
+        background-color: #891307 !important;
+    }
+}
+
+[class*="amazingslider-text-wrapper"] {
+    right: calc(50% - 600px - 48px) !important;
+}
