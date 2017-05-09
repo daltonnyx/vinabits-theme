@@ -1,9 +1,9 @@
 #colophon {
+    margin-bottom: 72px;
     .footer-bar {
         background: $color__main;
         padding: 25px 15px; 
         color: #ccc;
-        font-weight: 300;
         p {
             margin-bottom: 0px;
             font-size: 13px;
@@ -19,7 +19,7 @@
             position: relative;
             margin-top: 1em;
             font-size: 15px;
-            margin-bottom: 3em;
+            margin-bottom: 3.9em;
             button {
                 position: absolute;
                 background: none !important;
@@ -89,7 +89,7 @@
       display: flex;
       flex-flow: row wrap;
       justify-content: space-between;
-      padding: 45px 0px 25px;
+      padding: 25px 15px;
       border-top: 1px solid #666;
       border-bottom: 1px solid #666;
       margin-bottom: 38px;
@@ -109,6 +109,9 @@
           color: #333;
           line-height: 30px;
           margin: 0px;
+      }
+      @media screen and (min-width: #{$breakpoint_tablet}) {
+        padding: 45px 0px 25px;
       }
   }
   ul {
@@ -137,8 +140,8 @@
   }
   .connect-us {
       text-align: right;
-      font-size: 13px;
-      margin-bottom: 40px;
+      font-size: 14px;
+      margin-bottom: 30px;
       ul {
           display: inline-block;
           li {

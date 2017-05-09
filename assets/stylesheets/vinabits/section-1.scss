@@ -1,10 +1,14 @@
+.section-1 {
+    padding: 0px 15px;
+}
 .section-1 > div > div {
     display: flex;
     flex-flow: row wrap;
     justify-content: space-between;
+    
     .card-layout {
         flex-basis: 100%;
-        margin-top: 25px;
+        margin-top: 20px;
         @media screen and (min-width: #{$breakpoint_tablet}) {
             flex-basis: 30.83%;
         }
@@ -24,6 +28,7 @@
         }
         h3.front-page-title {
             font-size: 20px;
+            font-weight: 300;
             color: #333;
             text-transform: uppercase;
             border-left: 4px solid $color__text-main;
@@ -60,4 +65,13 @@
     &:after, &:before {
         content: none;
     }
+}
+
+@media screen and (min-width: #{$breakpoint_tablet}) {
+    .section-1 {
+        padding: 45px 0px 0px;
+        p {
+          line-height: 2em;
+        }
+      }
 }

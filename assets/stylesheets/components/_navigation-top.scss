@@ -8,10 +8,13 @@
 
 .main-navigation {
 	clear: both;
+    position: fixed;
+    z-index: 999;
 	display: block;
 	float: left;
 	width: 100%;
 	min-height: 34px;
+    background-color: $color__main;
 	label {
 		display: block;
 	}
@@ -41,7 +44,7 @@
 		width: 100%;
 		height: 100%;
 		z-index: 999;
-		background: $color__main;
+		background: #fff;
 		padding-top: 40px;
 		ul {
 			box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
@@ -123,6 +126,9 @@
 	position: fixed;
 	z-index: 99999;
 	right: 0px;
+    .stripe {
+        background-color: $color__main;
+    }
 	.stripe:nth-child(1) {
 		transform: rotate(45deg);
 	}
@@ -143,7 +149,9 @@
 @media screen and (min-width: #{$breakpoint_tablet}) {
 	.main-navigation {
 		position: relative;
+        background: transparent;
 		z-index: 99;
+        padding-right: 40px;
 		#nav-bars {
 			display: none;
 		}
@@ -163,7 +171,8 @@
 		li {
 			width: auto;
 			a {
-				font-size: 13px;
+				font-size: 15px;
+                font-weight: 300;
 				line-height: 38px;
 			}
 		}

@@ -342,13 +342,6 @@ body:not(.front-page) {
 
 @media screen and (min-width: #{$breakpoint_tablet}) {
   
-  .section-1 {
-    padding: 40px 0px 0px;
-    p {
-      line-height: 2em;
-    }
-  }
-  
   .section-3 {
     padding: 40px 0px;
     .service {

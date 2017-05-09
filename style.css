@@ -506,10 +506,13 @@ table {
 
 .main-navigation {
   clear: both;
+  position: fixed;
+  z-index: 999;
   display: block;
   float: left;
   width: 100%;
-  min-height: 34px; }
+  min-height: 34px;
+  background-color: #990000; }
   .main-navigation label {
     display: block; }
   .main-navigation #nav-bars {
@@ -535,7 +538,7 @@ table {
     width: 100%;
     height: 100%;
     z-index: 999;
-    background: #990000;
+    background: #fff;
     padding-top: 40px; }
     .main-navigation ul ul {
       box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
@@ -584,6 +587,8 @@ table {
   position: fixed;
   z-index: 99999;
   right: 0px; }
+  #navi-anchor:checked ~ #nav-bars .stripe {
+    background-color: #990000; }
   #navi-anchor:checked ~ #nav-bars .stripe:nth-child(1) {
     transform: rotate(45deg); }
   #navi-anchor:checked ~ #nav-bars .stripe:nth-child(2) {
@@ -599,7 +604,9 @@ table {
 @media screen and (min-width: 37.5em) {
   .main-navigation {
     position: relative;
-    z-index: 99; }
+    background: transparent;
+    z-index: 99;
+    padding-right: 40px; }
     .main-navigation #nav-bars {
       display: none; }
 
@@ -618,7 +625,8 @@ table {
     .main-navigation ul li {
       width: auto; }
       .main-navigation ul li a {
-        font-size: 13px;
+        font-size: 15px;
+        font-weight: 300;
         line-height: 38px; } }
 .site-main .comment-navigation, .site-main
 .posts-navigation, .site-main
@@ -858,7 +866,14 @@ body, button, input, select, textarea {
 
 #masthead {
   background: #fff;
-  padding: 25px 0px; }
+  padding: 25px 0px 20px; }
+  @media screen and (max-width: 37.5em) {
+    #masthead {
+      padding-top: 0px; }
+      #masthead .logo-container {
+        margin-top: 44px; }
+        #masthead .logo-container .mui--text-right {
+          text-align: center !important; } }
 
 [class*="wonderpluginslider-container"] {
   overflow-x: hidden; }
@@ -879,13 +894,16 @@ body, button, input, select, textarea {
 [class*="amazingslider-text-wrapper"] {
   right: calc(50% - 600px - 48px) !important; }
 
+.section-1 {
+  padding: 0px 15px; }
+
 .section-1 > div > div {
   display: flex;
   flex-flow: row wrap;
   justify-content: space-between; }
   .section-1 > div > div .card-layout {
     flex-basis: 100%;
-    margin-top: 25px; }
+    margin-top: 20px; }
     @media screen and (min-width: 37.5em) {
       .section-1 > div > div .card-layout {
         flex-basis: 30.83%; } }
@@ -900,6 +918,7 @@ body, button, input, select, textarea {
         filter: grayscale(0%); }
     .section-1 > div > div .card-layout h3.front-page-title {
       font-size: 20px;
+      font-weight: 300;
       color: #333;
       text-transform: uppercase;
       border-left: 4px solid #cf0605;
@@ -931,173 +950,198 @@ body, button, input, select, textarea {
   .section-1 > div > div:after, .section-1 > div > div:before {
     content: none; }
 
+@media screen and (min-width: 37.5em) {
+  .section-1 {
+    padding: 45px 0px 0px; }
+    .section-1 p {
+      line-height: 2em; } }
 .section-2 .front-page-title {
   color: #666;
   font-size: 1.5rem; }
 
-@media screen and (min-width: 37.5em) {
-  .section-2 {
-    padding: 0px 0px 45px; }
-    .section-2 .front-title {
-      margin: 2.83em 0;
-      text-align: center;
-      width: 100%;
-      position: relative; }
-      .section-2 .front-title:before {
-        content: " ";
-        width: 100%;
-        position: absolute;
-        height: 1px;
-        top: calc(50% - 1px);
-        background: #000;
-        z-index: 0;
-        left: 0; }
-    .section-2 .front-page-title {
-      font-size: 28px;
-      z-index: 1;
-      position: relative;
-      margin-bottom: 0px;
-      margin-top: 0px;
-      background: #fff;
-      display: inline-block;
-      padding: 0px 1em;
-      text-transform: uppercase; }
-
-  .textwidget {
-    text-align: justify; }
-
-  .list-buttons {
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: space-between;
-    margin-top: 7rem; }
-    .list-buttons a.su-button {
-      flex-basis: 366px;
-      text-transform: uppercase;
-      text-align: left; }
-      .list-buttons a.su-button span {
-        font-size: 14px;
-        padding: 10px 15px !important; }
-        .list-buttons a.su-button span i {
-          margin-right: 0px !important; } }
-#colophon .footer-bar {
-  background: #990000;
-  padding: 25px 15px;
-  color: #ccc;
-  font-weight: 300; }
-  #colophon .footer-bar p {
-    margin-bottom: 0px;
-    font-size: 13px;
-    text-align: right; }
-    #colophon .footer-bar p a {
-      color: #ccc; }
-      #colophon .footer-bar p a:hover {
-        text-decoration: none; }
-  #colophon .footer-bar .search-form {
+.section-2 {
+  padding: 0px 15px 45px; }
+  .section-2 .front-title {
+    margin: 2em 0;
+    text-align: center;
+    width: 100%;
+    position: relative; }
+  .section-2 .introduce {
+    line-height: 2em; }
+  .section-2 .front-page-title {
+    font-size: 22px;
+    z-index: 1;
     position: relative;
-    margin-top: 1em;
-    font-size: 15px;
-    margin-bottom: 3em; }
-    #colophon .footer-bar .search-form button {
-      position: absolute;
-      background: none !important;
-      outline: none;
-      box-shadow: none;
-      border: none;
-      right: .7em;
-      top: .4em;
-      font-size: 18px;
-      text-shadow: none;
-      padding: 0;
-      color: #ccc; }
-    #colophon .footer-bar .search-form input {
-      width: 100%;
-      background: transparent;
-      box-shadow: none;
-      outline: none;
-      color: #ccc;
-      padding-left: 20px;
-      padding-right: 20px;
-      border-radius: 15px;
-      box-sizing: border-box !important; }
-      #colophon .footer-bar .search-form input:input-placeholder {
-        color: #ccc; }
-  #colophon .footer-bar .contact-list ul li {
-    font-size: 14px;
-    margin-bottom: .5em; }
-    #colophon .footer-bar .contact-list ul li:before {
-      width: 1.2em; }
-    #colophon .footer-bar .contact-list ul li.home {
-      text-transform: uppercase; }
-      #colophon .footer-bar .contact-list ul li.home:before {
-        content: ""; }
-    #colophon .footer-bar .contact-list ul li.address:before {
-      content: ""; }
-    #colophon .footer-bar .contact-list ul li.phone:before {
-      content: ""; }
-    #colophon .footer-bar .contact-list ul li.email:before {
-      content: ""; }
-#colophon .footer-widget-title {
-  font-size: 22px;
-  color: #fff;
-  text-transform: uppercase;
-  font-weight: 300;
-  margin-top: 0;
-  margin-bottom: 25px;
-  position: relative;
-  line-height: 30px; }
-#colophon .bottom-bar {
+    margin-bottom: 0px;
+    margin-top: 0px;
+    background: #fff;
+    display: inline-block;
+    padding: 0px 1em;
+    text-transform: uppercase; }
+
+.textwidget {
+  text-align: justify; }
+
+.list-buttons {
   display: flex;
   flex-flow: row wrap;
   justify-content: space-between;
-  padding: 45px 0px 25px;
-  border-top: 1px solid #666;
-  border-bottom: 1px solid #666;
-  margin-bottom: 38px; }
-  #colophon .bottom-bar .bottom-item {
-    flex-basis: 100%; }
-  @media screen and (min-width: 37.5em) {
-    #colophon .bottom-bar .bottom-item {
-      flex-basis: 366px; } }
-  #colophon .bottom-bar h4 {
-    font-size: 14px;
-    font-weight: 300;
+  margin-top: 2rem; }
+  .list-buttons a.su-button {
+    flex-basis: 366px;
     text-transform: uppercase;
-    color: #333;
-    line-height: 30px;
-    margin: 0px; }
-#colophon ul {
-  margin: 0px;
-  padding: 0px;
-  list-style: none; }
-  #colophon ul li {
-    margin-bottom: 10px; }
-    #colophon ul li:before {
-      content: "";
-      font-family: FontAwesome;
-      font-size: 17px;
-      display: inline-block;
-      margin-right: 10px;
-      text-align: center;
-      line-height: 30px; }
-    #colophon ul li a {
+    margin-bottom: 10px;
+    text-align: left; }
+    .list-buttons a.su-button span {
+      font-size: 14px !important;
+      font-weight: 300;
+      padding: 8px 5px !important;
+      color: #fff !important; }
+      .list-buttons a.su-button span i {
+        margin-right: 0px !important;
+        font-size: 24px !important; }
+
+@media screen and (min-width: 37.5em) {
+  .section-2 {
+    padding-left: 0px;
+    padding-right: 0px; }
+    .section-2 .front-title:before {
+      content: " ";
+      width: 100%;
+      position: absolute;
+      height: 1px;
+      top: calc(50% - 1px);
+      background: #000;
+      z-index: 0;
+      left: 0; }
+    .section-2 .front-page-title {
+      font-size: 28px; }
+    .section-2 .list-buttons {
+      margin-top: 7rem; }
+      .section-2 .list-buttons a.su-button {
+        margin-bottom: 0px; } }
+#colophon {
+  margin-bottom: 72px; }
+  #colophon .footer-bar {
+    background: #990000;
+    padding: 25px 15px;
+    color: #ccc; }
+    #colophon .footer-bar p {
+      margin-bottom: 0px;
+      font-size: 13px;
+      text-align: right; }
+      #colophon .footer-bar p a {
+        color: #ccc; }
+        #colophon .footer-bar p a:hover {
+          text-decoration: none; }
+    #colophon .footer-bar .search-form {
+      position: relative;
+      margin-top: 1em;
+      font-size: 15px;
+      margin-bottom: 3.9em; }
+      #colophon .footer-bar .search-form button {
+        position: absolute;
+        background: none !important;
+        outline: none;
+        box-shadow: none;
+        border: none;
+        right: .7em;
+        top: .4em;
+        font-size: 18px;
+        text-shadow: none;
+        padding: 0;
+        color: #ccc; }
+      #colophon .footer-bar .search-form input {
+        width: 100%;
+        background: transparent;
+        box-shadow: none;
+        outline: none;
+        color: #ccc;
+        padding-left: 20px;
+        padding-right: 20px;
+        border-radius: 15px;
+        box-sizing: border-box !important; }
+        #colophon .footer-bar .search-form input:input-placeholder {
+          color: #ccc; }
+    #colophon .footer-bar .contact-list ul li {
+      font-size: 14px;
+      margin-bottom: .5em; }
+      #colophon .footer-bar .contact-list ul li:before {
+        width: 1.2em; }
+      #colophon .footer-bar .contact-list ul li.home {
+        text-transform: uppercase; }
+        #colophon .footer-bar .contact-list ul li.home:before {
+          content: ""; }
+      #colophon .footer-bar .contact-list ul li.address:before {
+        content: ""; }
+      #colophon .footer-bar .contact-list ul li.phone:before {
+        content: ""; }
+      #colophon .footer-bar .contact-list ul li.email:before {
+        content: ""; }
+  #colophon .footer-widget-title {
+    font-size: 22px;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: 300;
+    margin-top: 0;
+    margin-bottom: 25px;
+    position: relative;
+    line-height: 30px; }
+  #colophon .bottom-bar {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    padding: 25px 15px;
+    border-top: 1px solid #666;
+    border-bottom: 1px solid #666;
+    margin-bottom: 38px; }
+    #colophon .bottom-bar .bottom-item {
+      flex-basis: 100%; }
+    @media screen and (min-width: 37.5em) {
+      #colophon .bottom-bar .bottom-item {
+        flex-basis: 366px; } }
+    #colophon .bottom-bar h4 {
       font-size: 14px;
       font-weight: 300;
+      text-transform: uppercase;
       color: #333;
-      text-transform: uppercase; }
-#colophon .connect-us {
-  text-align: right;
-  font-size: 13px;
-  margin-bottom: 40px; }
-  #colophon .connect-us ul {
-    display: inline-block; }
-    #colophon .connect-us ul li {
-      margin-left: 15px !important; }
-      #colophon .connect-us ul li a {
-        background-color: transparent !important;
-        padding: 0px !important;
-        width: auto !important;
-        height: auto !important; }
+      line-height: 30px;
+      margin: 0px; }
+    @media screen and (min-width: 37.5em) {
+      #colophon .bottom-bar {
+        padding: 45px 0px 25px; } }
+  #colophon ul {
+    margin: 0px;
+    padding: 0px;
+    list-style: none; }
+    #colophon ul li {
+      margin-bottom: 10px; }
+      #colophon ul li:before {
+        content: "";
+        font-family: FontAwesome;
+        font-size: 17px;
+        display: inline-block;
+        margin-right: 10px;
+        text-align: center;
+        line-height: 30px; }
+      #colophon ul li a {
+        font-size: 14px;
+        font-weight: 300;
+        color: #333;
+        text-transform: uppercase; }
+  #colophon .connect-us {
+    text-align: right;
+    font-size: 14px;
+    margin-bottom: 30px; }
+    #colophon .connect-us ul {
+      display: inline-block; }
+      #colophon .connect-us ul li {
+        margin-left: 15px !important; }
+        #colophon .connect-us ul li a {
+          background-color: transparent !important;
+          padding: 0px !important;
+          width: auto !important;
+          height: auto !important; }
 
 @media screen and (min-width: 1200px) {
   .mui-container {
@@ -1237,11 +1281,6 @@ body:not(.front-page) .title-bar {
     color: #fff; }
 
 @media screen and (min-width: 37.5em) {
-  .section-1 {
-    padding: 40px 0px 0px; }
-    .section-1 p {
-      line-height: 2em; }
-
   .section-3 {
     padding: 40px 0px; }
     .section-3 .service {
