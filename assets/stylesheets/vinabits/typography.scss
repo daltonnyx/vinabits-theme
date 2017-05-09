@@ -1,6 +1,43 @@
-/* @font-face {
- *   font-family: Helvetica Neue;
- * } */
+ @font-face {
+    src: url('./assets/fonts/HELVETICANEUE.TTF');
+    font-family: HelveticaNeue;
+    font-style: normal;
+    font-weight: normal;
+ } 
+ 
+ @font-face {
+    src: url('./assets/fonts/HELVETICANEUEBOLD.TTF');
+    font-family: HelveticaNeue;
+    font-weight: bold;
+    font-style: normal;
+ }
+ @font-face {
+    src: url('./assets/fonts/HELVETICANEUELIGHT.TTF');
+    font-family: HelveticaNeue;
+    font-weight: 300;
+    font-style: normal;
+ }
+ @font-face {
+    src: url('./assets/fonts/HELVETICANEUEITALIC.TTF');
+    font-family: HelveticaNeue;
+    font-weight: normal;
+    font-style: italic;
+ }
+ @font-face {
+    src: url('./assets/fonts/HELVETICANEUEBOLDITALIC.TTF');
+    font-family: HelveticaNeue;
+    font-style: italic;
+    font-weight: bold;
+ }
+ @font-face {
+    src: url('./assets/fonts/HELVETICANEUELIGHTITALIC.TTF');
+    font-family: HelveticaNeue;
+    font-style: italic;
+    font-weight: 300;
+ }
+$vnb__font_main: HelveticaNeue, Arial;
 
 
-$vnb__font_main: Helvetica Neue, Arial;
+body, button, input, select, textarea {
+    font-family: HelveticaNeue;
+}

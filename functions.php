@@ -165,8 +165,8 @@ function vinabits_widgets_init() {
 		'description'   => '',
 		'before_widget' => '<div id="%1$s" class="front-section %2$s">',
 		'after_widget'  => '</div>',
-		'before_title'  => '<h3 class="front-page-title">',
-		'after_title'   => '</h3>',
+		'before_title'  => '<div class="front-title"><h3 class="front-page-title">',
+		'after_title'   => '</h3></div>',
     ) );	
     // register_sidebar( array(
 	//     'name'          => esc_html__( 'Front 3', 'vinabits' ),
@@ -185,6 +185,15 @@ function vinabits_widgets_init() {
 	//     'before_title'  => '<h3 class="front-page-title">',
 	//     'after_title'   => '</h3>',
 	// ) );
+    register_sidebar( array(
+		'name'          => esc_html__( 'Bottom', 'vinabits' ),
+		'id'            => 'bottom',
+		'description'   => '',
+		'before_widget' => '<div id="%1$s" class="bottom-item">',
+		'after_widget'  => '</div>',
+		'before_title'  => '<h4 class="bottom-widget-title">',
+		'after_title'   => '</h4>',
+	) );
 	register_sidebar( array(
 		'name'          => esc_html__( 'Footer', 'vinabits' ),
 		'id'            => 'footer',
@@ -371,3 +380,21 @@ add_filter( 'get_the_archive_title', function ($title) {
 
 } );
 
+function searchform_shortcode($atts) {
+    ob_start();
+?>
+<form role="search" method="get" class="search-form" action="<?php echo home_url( '/' ); ?>">
+    <label>
+        <span class="screen-reader-text"><?php echo _x( 'Search for:', 'label' ) ?></span>
+        <input type="search" class="search-field"
+            placeholder="<?php echo esc_attr_x( 'Nhập từ khoá tìm kiếm', 'vinabits' ) ?>"
+            value="<?php echo get_search_query() ?>" name="s"
+            title="<?php echo esc_attr_x( 'Search for:', 'label' ) ?>" />
+    </label>
+    <button type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
+    </form>
+<?php
+    return ob_get_clean();
+}
+
+add_shortcode('vinabits_searchform','searchform_shortcode');

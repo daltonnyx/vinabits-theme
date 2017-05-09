@@ -1,0 +1,61 @@
+.section-2 {
+    .front-page-title {
+        color: #666;
+        font-size: 1.5rem;
+    }
+}
+@media screen and (min-width: #{$breakpoint_tablet}) {
+  .section-2 {
+    padding: 0px 0px 45px;
+    .front-title {
+        margin: 2.83em 0; 
+        text-align: center;
+        width: 100%;
+        position: relative;
+        &:before {
+            content: " ";
+            width: 100%;
+            position: absolute;
+            height: 1px;
+            top: calc(50% - 1px);
+            background: #000;
+            z-index: 0;
+            left: 0;
+
+        }
+    } 
+    .front-page-title {
+      font-size: 28px;
+      z-index: 1;
+      position: relative;
+      margin-bottom: 0px;
+      margin-top: 0px;
+      background: #fff;
+      display: inline-block;
+      padding: 0px 1em;
+      text-transform: uppercase;
+    }
+  }
+  .textwidget {
+      text-align: justify;
+  }
+  .list-buttons {
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: space-between;
+      margin-top: 7rem;
+      a.su-button {
+          flex-basis: 366px;
+          text-transform: uppercase;
+          text-align: left;
+          span {
+              font-size: 14px;
+              padding: 10px 15px !important;
+              i {
+                  margin-right: 0px !important;
+              }   
+          }
+
+      }
+  }
+}

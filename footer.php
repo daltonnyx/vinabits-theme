@@ -15,9 +15,6 @@
 	</div>
 	<footer id="colophon" class="site-footer" role="contentinfo">
 		<?php get_template_part( 'components/footer/site', 'info' ); ?>
-		<div id="copyright" class="site-info">
-			Copyright 2017 - Pergola Hotel <img alt="Websiteplaza" src="<?php echo get_template_directory_uri() .'/assets/images/plaza.png' ?>" />
-		</div><!-- .site-info -->
 	</footer>
 
 </div>

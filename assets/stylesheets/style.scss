@@ -137,11 +137,11 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 -------------------------------------------------------------*/
 
 @import "vinabits/typography";
-
 @import "vinabits/header";
 @import "vinabits/slider";
-
 @import "vinabits/section-1";
+@import "vinabits/section-2";
+@import "vinabits/footer";
 
 ///Custom Style down here
 .mui-container {
@@ -169,75 +169,6 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
   padding: 0px;
 }
 
-#colophon {
-  background: url('./assets/images/footer.png') no-repeat center top / cover transparent;
-  .contact {
-    padding: 0px 10px;
-    color: #fff7e2;
-    font-size: 13px;
-    .social-icon {
-      border-top: 1px solid #999;
-      text-align: center;
-      font-size: 15px;
-      padding-top: 17px;
-      margin-bottom: 20px;
-      ul {
-        margin-top: 17px;
-      }
-    }
-  }
-  .footer-widget-title {
-    font-family: 'Roboto Condensed';
-    font-size: 22px;
-    color: #cc00cc;
-    text-transform: uppercase;
-    font-weight: bold;
-    margin-top: 25px;
-    margin-bottom: 40px;
-    position: relative;
-    &:after {
-      position: absolute;
-      content: " ";
-      width: 235px;
-      height: 4px;
-      left: 0;
-      top: 125%;
-      background: #666;
-    }
-  }
-  ul {
-    margin: 0px;
-    padding: 0px;
-    list-style: none;
-    li {
-      margin-bottom: 20px;
-      &:before {
-        font-family: FontAwesome;
-        font-size: 17px;
-        width: 30px;
-        height: 30px;
-        display: inline-block;
-        border: 1px solid #fff;
-        text-align: center;
-        line-height: 30px;
-        margin-right: 10px;
-      }
-      &.address:before {
-        content: "";
-      }
-      &.phone:before {
-        content: "";
-      }
-      &.email:before {
-        content: "";
-      }
-      &.website:before {
-        content: "";
-      }
-
-    }
-  }
-}
 
 #copyright {
   background: #000;
@@ -417,25 +348,7 @@ body:not(.front-page) {
       line-height: 2em;
     }
   }
-  .section-2 {
-    padding: 20px 0px;
-    .news-carousel {
-      display: flex;
-      justify-content: space-between;
-      .news-default-item {
-        margin-bottom: 30px;
-      }
-    }
-    .front-page-title {
-      font-family: 'Roboto Condensed';
-      font-size: 30px;
-      font-weight: bold;
-      margin-bottom: 2em;
-      &:after {
-        width: 50px;
-      }
-    }
-  }
+  
   .section-3 {
     padding: 40px 0px;
     .service {
