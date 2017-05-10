@@ -40,4 +40,12 @@
 			</div>
 		</div>
 	</header>
-	<div id="content" class="site-content">
+    <div id="content" class="site-content">
+<div class="mui-container-fluid">
+			<div class="mui-row">
+
+					<?php echo do_shortcode('[wonderplugin_slider id="1"]'); ?>
+
+			</div>
+		</div>
+

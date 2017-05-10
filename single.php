@@ -11,22 +11,15 @@ get_header(); ?>
 
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
-			<div class="title-bar">
-				<div class="mui-container">
-					<div class="mui-row">
-						<div class="mui-col-md-12">
-							<h1><?php echo get_the_title(); ?></h1>
-						</div>
-						<div class="mui-col-md-12">
-							<?php the_breadcrumb(); ?>
-						</div>
-					</div>
-				</div>
-			</div>
 			<div class="mui-container">
 				<div class="mui-row">
 
-					<div class="mui-col-md-9 mui-xs-12 main-content">
+            <div class="mui-col-md-12 mui-xs-12 main-content">
+                <div class="mui-row">
+                <div class="title-bar">
+			        <h1><?php echo get_the_title(); ?></h1>
+			    </div>
+
 						<?php
 						while ( have_posts() ) : the_post();
 
@@ -37,8 +30,8 @@ get_header(); ?>
 						endwhile; // End of the loop.
 						?>
 					</div>
-					<?php	get_sidebar(); ?>
-				</div>
+                </div>
+              </div>
 			</div>
 		</main>
 	</div>

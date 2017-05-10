@@ -51,6 +51,7 @@ function vinabits_setup() {
     add_image_size( 'post-banner', 278, 175, array('center', 'center'));
 
     add_image_size('front-banner', 370, 245, array('center', 'center'));
+    add_image_size('card-thumb', 363, 248, array('center', 'center'));
 
 
 	// This theme uses wp_nav_menu() in one location.

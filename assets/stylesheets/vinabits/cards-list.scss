@@ -1,0 +1,73 @@
+.cards-list {
+  margin: 1.5em 0px;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  > article {
+      flex-basis: calc(100% / 3 - 20px);
+  }
+  a {
+      img {
+          transition: .3s ease-in-out all;
+          filter: grayscale(40%);
+      }
+      &:hover {
+          img {
+              
+              filter: grayscale(0%);
+            }
+      }
+      h3 {
+        font-size: 20px;
+        font-weight: 300;
+        color: #333;
+        text-transform: uppercase;
+        border-left: 4px solid #cf0605;
+        padding-left: 15px;
+        margin-top: 0px;
+        margin-bottom: 0px;
+     }   
+  }
+  a {
+    &:visited {
+      color: #fff;
+    }
+  }
+}
+
+.title-bar {
+    margin: 2em 0; 
+    text-align: center;
+    width: 100%;
+    position: relative;
+    @media screen and (min-width: #{$breakpoint_tablet}) {
+            &:before {
+                content: " ";
+                width: 100%;
+                position: absolute;
+                height: 1px;
+                top: calc(50% - 1px);
+                background: #000;
+                z-index: 0;
+                left: 0;
+
+            }
+        }
+    h1 {
+      color: #666;     
+      font-size: 22px;
+      @media screen and (min-width: #{$breakpoint_tablet}) {
+          font-size: 28px;
+      }
+      z-index: 1;
+      position: relative;
+      margin-bottom: 0px;
+      margin-top: 0px;
+      background: #fff;
+      display: inline-block;
+      padding: 0px 1em;
+      text-transform: uppercase;
+
+    }
+    
+}
