@@ -119,3 +119,54 @@ function vinabits_category_transient_flusher() {
 }
 add_action( 'edit_category', 'vinabits_category_transient_flusher' );
 add_action( 'save_post',     'vinabits_category_transient_flusher' );
+
+
+
+function get_hot_product() {
+	$wc_query = new WP_Query(array(
+		'posts_per_page' => 15,
+		'post_type' => 'product',
+		'meta_query' => array(
+			array(
+				'key' => '_sale_price',
+				'value' => '0',
+				'compare' => '>'
+			)
+		)
+	));
+	echo '<div class="owl-carousel hot-products">';
+	if ($wc_query->have_posts()) : while($wc_query->have_posts()) : $wc_query->the_post();
+		render_product();
+	endwhile; endif;
+	echo '</div>';
+}
+
+function render_product() {
+	?>
+	 <article class="product-section">
+	 	<a href="<?php echo get_permalink(); ?>" class="product-link">
+		 	<?php echo get_the_post_thumbnail(get_the_ID(),'product_thumbnail',array(
+		 		'class' => 'img-responsive product-thumbnail',
+		 		'alt' => get_the_title()
+		 	)); ?>
+	 	</a>
+	 	<a href="<?php echo get_permalink(); ?>" class="product-link"><h3 class="product-title"><?php echo get_the_title(); ?></h3></a>
+	 	<div class="price-meta">
+<?php 
+    global $product;
+    if( $sale_price = $product->get_price() ) :
+        $regular_price = $product->get_regular_price();
+?>
+        <?php if($sale_price != $regular_price) : ?> 
+                        <p class="regular-price"><?php echo wc_price($regular_price); ?></p>
+        <?php endif; ?>
+                        <p class="sale-price"><?php echo wc_price($sale_price); ?></p>
+        
+<?php endif; ?>
+		</div>
+		<div class="add-to-cart fluid-container">
+			<a href="<?php echo get_permalink(); ?>" class="mui-btn btn-add-to-cart"><?php echo __('Mua ngay','matthan'); ?></a>
+		</div>
+	 </article>
+	<?php
+}

@@ -563,20 +563,20 @@ table {
     width: 100%;
     text-align: center; }
     .main-navigation li:hover > a, .main-navigation li.focus > a {
-      color: #cf0605; }
+      color: #891307; }
   .main-navigation a {
     display: block;
-    color: #191919;
+    color: #666;
     text-decoration: none;
-    font-size: 16px;
-    text-transform: uppercase; }
+    font-size: 14px;
+    font-weight: bold; }
     .main-navigation a:visited {
       color: #191919; }
   .main-navigation .current_page_item > a,
   .main-navigation .current-menu-item > a,
   .main-navigation .current_page_ancestor > a,
   .main-navigation .current-menu-ancestor > a {
-    color: #cf0605; }
+    color: #891307; }
 
 /* Small menu. */
 #navi-anchor:checked ~ div > ul {
@@ -605,8 +605,7 @@ table {
   .main-navigation {
     position: relative;
     background: transparent;
-    z-index: 99;
-    padding-right: 40px; }
+    z-index: 99; }
     .main-navigation #nav-bars {
       display: none; }
 
@@ -621,12 +620,11 @@ table {
     background: transparent;
     display: flex;
     flex-flow: row nowrap;
-    justify-content: space-between; }
+    justify-content: flex-end; }
     .main-navigation ul li {
-      width: auto; }
+      width: auto;
+      margin-left: 40px; }
       .main-navigation ul li a {
-        font-size: 15px;
-        font-weight: 300;
         line-height: 38px; } }
 .site-main .comment-navigation, .site-main
 .posts-navigation, .site-main
@@ -673,7 +671,8 @@ html {
 
 body {
   background: #fff;
-  /* Fallback for when there is no custom background color defined. */ }
+  /* Fallback for when there is no custom background color defined. */
+  background: #f2f2f2; }
 
 .content-area {
   float: left;
@@ -831,42 +830,11 @@ object {
 /*-------------------------------------------------------------
 # Vinabits
 -------------------------------------------------------------*/
-@font-face {
-  src: url("./assets/fonts/HELVETICANEUE.TTF");
-  font-family: HelveticaNeue;
-  font-style: normal;
-  font-weight: normal; }
-@font-face {
-  src: url("./assets/fonts/HELVETICANEUEBOLD.TTF");
-  font-family: HelveticaNeue;
-  font-weight: bold;
-  font-style: normal; }
-@font-face {
-  src: url("./assets/fonts/HELVETICANEUELIGHT.TTF");
-  font-family: HelveticaNeue;
-  font-weight: 300;
-  font-style: normal; }
-@font-face {
-  src: url("./assets/fonts/HELVETICANEUEITALIC.TTF");
-  font-family: HelveticaNeue;
-  font-weight: normal;
-  font-style: italic; }
-@font-face {
-  src: url("./assets/fonts/HELVETICANEUEBOLDITALIC.TTF");
-  font-family: HelveticaNeue;
-  font-style: italic;
-  font-weight: bold; }
-@font-face {
-  src: url("./assets/fonts/HELVETICANEUELIGHTITALIC.TTF");
-  font-family: HelveticaNeue;
-  font-style: italic;
-  font-weight: 300; }
 body, button, input, select, textarea {
-  font-family: HelveticaNeue; }
+  font-family: Arial; }
 
 #masthead {
-  background: #fff;
-  padding: 25px 0px 20px; }
+  padding: 25px 0px 12px; }
   @media screen and (max-width: 37.5em) {
     #masthead {
       padding-top: 0px; }
@@ -874,6 +842,58 @@ body, button, input, select, textarea {
         margin-top: 44px; }
         #masthead .logo-container .mui--text-right {
           text-align: center !important; } }
+  @media screen and (min-width: 37.5em) {
+    #masthead .top-bar {
+      display: inline-block; }
+      #masthead .top-bar ul {
+        margin: 0;
+        padding: 0;
+        display: flex;
+        list-style: none; }
+        #masthead .top-bar ul .lang-item {
+          margin: 0px 5px; }
+          #masthead .top-bar ul .lang-item img {
+            height: 12px; }
+      #masthead .top-bar.hotline span {
+        font-size: 13px;
+        font-weight: bold;
+        color: #666; }
+        #masthead .top-bar.hotline span i {
+          color: #891307; }
+        #masthead .top-bar.hotline span + span:before {
+          content: "|";
+          padding-left: 5px;
+          padding-right: 5px; }
+      #masthead .top-bar.text-block {
+        display: block;
+        margin: 10px 0px; }
+        #masthead .top-bar.text-block > .textwidget {
+          text-align: right; }
+        #masthead .top-bar.text-block form {
+          position: relative;
+          display: inline-block; }
+          #masthead .top-bar.text-block form .search-field {
+            border-color: #959595;
+            width: 314px;
+            padding: 5px 10px; }
+          #masthead .top-bar.text-block form button {
+            background: transparent;
+            border: none;
+            box-shadow: none;
+            position: absolute;
+            top: 0em;
+            right: -5px;
+            font-size: 16px;
+            color: #891307; }
+        #masthead .top-bar.text-block .cart a {
+          font-size: 14px;
+          color: #666;
+          font-weight: bold; }
+          #masthead .top-bar.text-block .cart a .items {
+            font-size: 18px;
+            color: #891307; }
+          #masthead .top-bar.text-block .cart a i {
+            font-size: 19px; } }
 
 [class*="wonderpluginslider-container"] {
   overflow-x: hidden; }
@@ -906,32 +926,39 @@ body, button, input, select, textarea {
     margin-top: 20px; }
     @media screen and (min-width: 37.5em) {
       .section-1 > div > div .card-layout {
-        flex-basis: 30.83%; } }
+        flex-basis: 32.83%; } }
     .section-1 > div > div .card-layout a {
       text-decoration: none;
       color: #000;
-      font-size: 16px; }
-      .section-1 > div > div .card-layout a:hover p {
-        opacity: 1;
-        top: 0px; }
+      font-size: 16px;
+      position: relative;
+      display: inline-block;
+      width: 100%; }
       .section-1 > div > div .card-layout a:hover img {
         filter: grayscale(0%); }
+    .section-1 > div > div .card-layout .card-content {
+      position: absolute;
+      bottom: 0px;
+      padding-bottom: 7px;
+      width: 100%;
+      color: #fff;
+      background: linear-gradient(to top, rgba(0, 0, 0, 0.9), transparent); }
     .section-1 > div > div .card-layout h3.front-page-title {
-      font-size: 20px;
-      font-weight: 300;
-      color: #333;
+      font-size: 16px;
+      font-weight: bold;
+      color: #fff;
       text-transform: uppercase;
-      border-left: 4px solid #cf0605;
       padding-left: 15px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
       margin-top: 10px;
       margin-bottom: 0px; }
     .section-1 > div > div .card-layout p {
       margin-bottom: 0px;
-      opacity: 0;
-      position: relative;
-      top: -10px;
       padding-left: 19px;
-      transition: .2s ease-in-out all; }
+      font-size: 13px;
+      font-weight: bold; }
     .section-1 > div > div .card-layout .card-image {
       min-width: 100%;
       min-height: 245px;
@@ -944,30 +971,73 @@ body, button, input, select, textarea {
         position: absolute;
         top: 50%;
         left: 50%;
-        filter: grayscale(50%);
+        filter: grayscale(30%);
         transition: .2s linear all;
         transform: translate(-50%, -50%); }
   .section-1 > div > div:after, .section-1 > div > div:before {
     content: none; }
 
 @media screen and (min-width: 37.5em) {
-  .section-1 {
-    padding: 45px 0px 0px; }
-    .section-1 p {
-      line-height: 2em; } }
+  .section-1 p {
+    line-height: 2em; } }
 .section-2 .front-page-title {
   color: #666;
   font-size: 1.5rem; }
 
 .section-2 {
-  padding: 0px 15px 45px; }
-  .section-2 .front-title {
-    margin: 2em 0;
-    text-align: center;
-    width: 100%;
+  padding: 0px 15px 15px; }
+  .section-2 .hot-product header {
     position: relative; }
-  .section-2 .introduce {
-    line-height: 2em; }
+    .section-2 .hot-product header:before {
+      content: " ";
+      position: absolute;
+      width: 100%;
+      height: 2px;
+      background: #333;
+      top: calc(50% + 8px);
+      left: 0; }
+  .section-2 .hot-product h2 {
+    position: relative;
+    font-size: 25px;
+    font-weight: bold;
+    text-transform: capitalize;
+    color: #333;
+    margin-bottom: 25px;
+    margin-top: 35px;
+    display: inline-block;
+    padding-right: 20px;
+    background: #f2f2f2; }
+  .section-2 .hot-products .owl-item img {
+    width: auto !important; }
+  .section-2 .hot-products article {
+    text-align: center;
+    background: #fff;
+    border: 1px solid #acacac;
+    padding: 10px 0px; }
+    .section-2 .hot-products article a {
+      display: inline-block; }
+      .section-2 .hot-products article a h3 {
+        margin: 0px;
+        font-size: 15px;
+        font-weight: bold;
+        color: #333;
+        line-height: 1.5em; }
+    .section-2 .hot-products article p {
+      display: inline-block;
+      margin-bottom: 5px;
+      font-size: 14px;
+      color: #000; }
+      .section-2 .hot-products article p.regular-price {
+        text-decoration: line-through; }
+      .section-2 .hot-products article p.sale-price {
+        color: #f00; }
+    .section-2 .hot-products article .btn-add-to-cart {
+      background: #891307;
+      border-radius: 3px;
+      color: #fff;
+      font-size: 13px;
+      font-weight: bold;
+      padding: 0px 15px; }
   .section-2 .front-page-title {
     font-size: 22px;
     z-index: 1;
@@ -1020,12 +1090,71 @@ body, button, input, select, textarea {
       margin-top: 7rem; }
       .section-2 .list-buttons a.su-button {
         margin-bottom: 0px; } }
+.section-3 .widget-header {
+  position: relative; }
+  .section-3 .widget-header:before {
+    content: " ";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background: #333;
+    top: calc(50% + 8px);
+    left: 0; }
+.section-3 h3.front-page-title {
+  position: relative;
+  font-size: 25px;
+  font-weight: bold;
+  text-transform: capitalize;
+  color: #333;
+  margin-bottom: 25px;
+  margin-top: 35px;
+  display: inline-block;
+  padding-right: 20px;
+  background: #f2f2f2; }
+.section-3 .news-products {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start; }
+.section-3 article {
+  flex-basis: calc(20% - 6.4px);
+  margin-right: 8px;
+  margin-bottom: 8px;
+  text-align: center;
+  background: #fff;
+  border: 1px solid #acacac;
+  padding: 10px 0px; }
+  .section-3 article:nth-child(5n) {
+    margin-right: 0px; }
+  .section-3 article a {
+    display: inline-block; }
+    .section-3 article a h3 {
+      margin: 0px;
+      font-size: 15px;
+      font-weight: bold;
+      color: #333;
+      line-height: 1.5em; }
+  .section-3 article p {
+    display: inline-block;
+    margin-bottom: 5px;
+    font-size: 14px;
+    color: #000; }
+    .section-3 article p.regular-price {
+      text-decoration: line-through; }
+    .section-3 article p.sale-price {
+      color: #f00; }
+  .section-3 article .btn-add-to-cart {
+    background: #891307;
+    border-radius: 3px;
+    color: #fff;
+    font-size: 13px;
+    font-weight: bold;
+    padding: 0px 15px; }
+
 #colophon {
-  margin-bottom: 72px; }
+  background: url("./assets/images/footer.png") no-repeat left center/cover transparent; }
   #colophon .footer-bar {
-    background: #990000;
     padding: 25px 15px;
-    color: #ccc; }
+    color: #fff; }
     #colophon .footer-bar p {
       margin-bottom: 0px;
       font-size: 13px;
@@ -1034,40 +1163,14 @@ body, button, input, select, textarea {
         color: #ccc; }
         #colophon .footer-bar p a:hover {
           text-decoration: none; }
-    #colophon .footer-bar .search-form {
-      position: relative;
-      margin-top: 1em;
-      font-size: 15px;
-      margin-bottom: 3.9em; }
-      #colophon .footer-bar .search-form button {
-        position: absolute;
-        background: none !important;
-        outline: none;
-        box-shadow: none;
-        border: none;
-        right: .7em;
-        top: .4em;
-        font-size: 18px;
-        text-shadow: none;
-        padding: 0;
-        color: #ccc; }
-      #colophon .footer-bar .search-form input {
-        width: 100%;
-        background: transparent;
-        box-shadow: none;
-        outline: none;
-        color: #ccc;
-        padding-left: 20px;
-        padding-right: 20px;
-        border-radius: 15px;
-        box-sizing: border-box !important; }
-        #colophon .footer-bar .search-form input:input-placeholder {
-          color: #ccc; }
     #colophon .footer-bar .contact-list ul li {
       font-size: 14px;
       margin-bottom: .5em; }
       #colophon .footer-bar .contact-list ul li:before {
-        width: 1.2em; }
+        width: 1.2em;
+        color: #fff;
+        font-size: 17px;
+        position: static; }
       #colophon .footer-bar .contact-list ul li.home {
         text-transform: uppercase; }
         #colophon .footer-bar .contact-list ul li.home:before {
@@ -1078,38 +1181,17 @@ body, button, input, select, textarea {
         content: ""; }
       #colophon .footer-bar .contact-list ul li.email:before {
         content: ""; }
+      #colophon .footer-bar .contact-list ul li.website:before {
+        content: ""; }
   #colophon .footer-widget-title {
-    font-size: 22px;
+    font-size: 20px;
     color: #fff;
     text-transform: uppercase;
-    font-weight: 300;
+    font-weight: bold;
     margin-top: 0;
-    margin-bottom: 25px;
+    margin-bottom: 22px;
     position: relative;
     line-height: 30px; }
-  #colophon .bottom-bar {
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: space-between;
-    padding: 25px 15px;
-    border-top: 1px solid #666;
-    border-bottom: 1px solid #666;
-    margin-bottom: 38px; }
-    #colophon .bottom-bar .bottom-item {
-      flex-basis: 100%; }
-    @media screen and (min-width: 37.5em) {
-      #colophon .bottom-bar .bottom-item {
-        flex-basis: 366px; } }
-    #colophon .bottom-bar h4 {
-      font-size: 14px;
-      font-weight: 300;
-      text-transform: uppercase;
-      color: #333;
-      line-height: 30px;
-      margin: 0px; }
-    @media screen and (min-width: 37.5em) {
-      #colophon .bottom-bar {
-        padding: 45px 0px 25px; } }
   #colophon ul {
     margin: 0px;
     padding: 0px;
@@ -1117,9 +1199,12 @@ body, button, input, select, textarea {
     #colophon ul li {
       margin-bottom: 10px; }
       #colophon ul li:before {
-        content: "";
+        content: "\f111";
+        color: #990000;
         font-family: FontAwesome;
-        font-size: 17px;
+        font-size: 9px;
+        position: relative;
+        top: -3px;
         display: inline-block;
         margin-right: 10px;
         text-align: center;
@@ -1127,21 +1212,7 @@ body, button, input, select, textarea {
       #colophon ul li a {
         font-size: 14px;
         font-weight: 300;
-        color: #333;
-        text-transform: uppercase; }
-  #colophon .connect-us {
-    text-align: right;
-    font-size: 14px;
-    margin-bottom: 30px; }
-    #colophon .connect-us ul {
-      display: inline-block; }
-      #colophon .connect-us ul li {
-        margin-left: 15px !important; }
-        #colophon .connect-us ul li a {
-          background-color: transparent !important;
-          padding: 0px !important;
-          width: auto !important;
-          height: auto !important; }
+        color: #fff; }
 
 #secondary .widget-title {
   font-size: 14px;
@@ -1265,11 +1336,11 @@ body, button, input, select, textarea {
   padding: 0px; }
 
 #copyright {
-  background: #000;
+  background: #891307;
   text-align: center;
   font-size: 12px;
   font-weight: bold;
-  color: #fff7e2;
+  color: #ffffff;
   padding: 5px; }
   #copyright img {
     display: inline-block;
@@ -1298,19 +1369,6 @@ body:not(.front-page) .title-bar {
       font-weight: bold; }
 
 @media screen and (min-width: 37.5em) {
-  .section-3 {
-    padding: 40px 0px; }
-    .section-3 .service {
-      margin-top: 0px; }
-    .section-3 p {
-      line-height: 2; }
-    .section-3 .news-card {
-      display: flex;
-      flex-flow: row wrap;
-      justify-content: space-between; }
-      .section-3 .news-card > div {
-        flex-basis: calc(50% - 12px); }
-
   .testimonials .author .text h5 {
     color: #cc00cc; }
 
@@ -1318,10 +1376,11 @@ body:not(.front-page) .title-bar {
     margin-bottom: 48px; }
 
   #copyright {
-    background: rgba(0, 0, 0, 0.67); }
+    background: #891307; }
 
   #colophon {
-    position: relative; }
+    position: relative;
+    margin-top: 48px; }
     #colophon .contact {
       font-size: 14px;
       min-height: 300px; }

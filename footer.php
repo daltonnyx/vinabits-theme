@@ -16,7 +16,7 @@
 	<footer id="colophon" class="site-footer" role="contentinfo">
 		<?php get_template_part( 'components/footer/site', 'info' ); ?>
 	</footer>
-
+        <div id="copyright">Copyright 2017 -  Công ty TNHH DV & TM Vinadrink <img src="<?php echo get_template_directory_uri().'/assets/images/plaza.png'; ?>" /></div>
 </div>
 <?php wp_footer(); ?>
 

@@ -63,8 +63,8 @@ function vinabits_setup() {
 	 * Add support for core custom logo.
 	 */
 	add_theme_support( 'custom-logo', array(
-		'height'      => 35,
-		'width'       => 274,
+		'height'      => 115,
+		'width'       => 117,
 		'flex-width'  => true,
 		'flex-height' => true,
 	) );
@@ -169,15 +169,16 @@ function vinabits_widgets_init() {
 		'before_title'  => '<div class="front-title"><h3 class="front-page-title">',
 		'after_title'   => '</h3></div>',
     ) );	
-    // register_sidebar( array(
-	//     'name'          => esc_html__( 'Front 3', 'vinabits' ),
-	//     'id'            => 'front-3',
-	//     'description'   => '',
-	//     'before_widget' => '<div id="%1$s" class="front-section %2$s">',
-	//     'after_widget'  => '</div>',
-	//     'before_title'  => '<h3 class="front-page-title">',
-	//     'after_title'   => '</h3>',
-	// ) );	register_sidebar( array(
+    register_sidebar( array(
+        'name'          => esc_html__( 'Front 3', 'vinabits' ),
+        'id'            => 'front-3',
+        'description'   => '',
+        'before_widget' => '<div id="%1$s" class="front-section %2$s">',
+        'after_widget'  => '</div>',
+        'before_title'  => '<h3 class="front-page-title">',
+        'after_title'   => '</h3>',
+    ) );	
+    //register_sidebar( array(
 	//     'name'          => esc_html__( 'Front 4', 'vinabits' ),
 	//     'id'            => 'front-4',
 	//     'description'   => '',
@@ -239,6 +240,12 @@ function vinabits_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'vinabits_scripts' );
 
+function register_admin_script() {
+    wp_enqueue_script('load-mediaupload', get_template_directory_uri(). '/assets/js/admin/load_mediaupload.js', array('jquery'), '', true);
+}
+add_action('admin_enqueue_scripts','register_admin_script');
+
+
 /**
  * Custom template tags for this theme.
  */
@@ -263,7 +270,7 @@ require get_template_directory(). '/inc/news-widget.php';
 
 require get_template_directory(). '/inc/custom-card-widget.php';
 
-
+require get_template_directory(). '/inc/shortcodes.php';
 
 //Custom Excerpt Length
 
@@ -381,21 +388,3 @@ add_filter( 'get_the_archive_title', function ($title) {
 
 } );
 
-function searchform_shortcode($atts) {
-    ob_start();
-?>
-<form role="search" method="get" class="search-form" action="<?php echo home_url( '/' ); ?>">
-    <label>
-        <span class="screen-reader-text"><?php echo _x( 'Search for:', 'label' ) ?></span>
-        <input type="search" class="search-field"
-            placeholder="<?php echo esc_attr_x( 'Nhập từ khoá tìm kiếm', 'vinabits' ) ?>"
-            value="<?php echo get_search_query() ?>" name="s"
-            title="<?php echo esc_attr_x( 'Search for:', 'label' ) ?>" />
-    </label>
-    <button type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
-    </form>
-<?php
-    return ob_get_clean();
-}
-
-add_shortcode('vinabits_searchform','searchform_shortcode');
