@@ -170,3 +170,42 @@ function render_product() {
 	 </article>
 	<?php
 }
+
+function render_product_archive() {
+	?>
+     <article class="product-section">
+        <div class="product-image-container">
+	 	<a href="<?php echo get_permalink(); ?>" class="product-link">
+		 	<?php echo get_the_post_thumbnail(get_the_ID(),'product_thumbnail',array(
+		 		'class' => 'img-responsive product-thumbnail',
+		 		'alt' => get_the_title()
+		 	)); ?>
+        </a>
+        </div>
+        <div class="product-info-container">
+        <a href="<?php echo get_permalink(); ?>" class="product-link"><h3 class="product-title"><?php echo get_the_title(); ?></h3></a>
+        <div class="product-desc">  
+            <?php echo get_my_excerpt(50); ?>
+        </div>
+        </div>
+        <div class="product-price-container">
+	 	<div class="price-meta">
+<?php 
+    global $product;
+    if( $sale_price = $product->get_price() ) :
+        $regular_price = $product->get_regular_price();
+?>
+        <?php if($sale_price != $regular_price) : ?> 
+                        <p class="regular-price"><?php echo wc_price($regular_price); ?></p>
+        <?php endif; ?>
+                        <p class="sale-price"><?php echo wc_price($sale_price); ?></p>
+        
+<?php endif; ?>
+		</div>
+		<div class="add-to-cart fluid-container">
+			<a href="<?php echo get_permalink(); ?>" class="mui-btn btn-add-to-cart"><?php echo __('Mua ngay','matthan'); ?></a>
+        </div>
+        </div>
+	 </article>
+	<?php
+}
