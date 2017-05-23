@@ -44,7 +44,12 @@ class Custom_Card_Widget extends WP_Widget {
                     echo $args['before_title'] . apply_filters( 'widget_title', $title ) . $args['after_title'];
                 }
                 ?>
-                <p><?php echo $desc; ?></p>
+                <?php if(!empty($desc)) { ?>
+                    <p><?php echo $desc; ?></p>
+                <?php } ?>
+                <?php if(!empty($link_text)) {?>
+                    <p><?php echo $link_text; ?></p>
+                <?php } ?>
                 </div>
             </a>
         </div>
@@ -64,6 +69,7 @@ class Custom_Card_Widget extends WP_Widget {
         $image = ! empty( $instance['image'] ) ? $instance['image'] : '';
         $desc  = ! empty( $instance['desc'] )  ? $instance['desc']  : '';
         $link  = ! empty( $instance['link'] )  ? $instance['link']  : '';
+        $link_text  = ! empty( $instance['link_text'] )  ? $instance['link_text']  : '';
 		?>
 		<p>
 		<label for="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>"><?php esc_attr_e( 'Title:', 'vinabits' ); ?></label> 
@@ -82,44 +88,11 @@ class Custom_Card_Widget extends WP_Widget {
 		<p>
 		<label for="<?php echo esc_attr( $this->get_field_id( 'link' ) ); ?>"><?php esc_attr_e( 'Link:', 'vinabits' ); ?></label> 
 		<input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'link' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'link' ) ); ?>" type="text" value="<?php echo esc_attr( $link ); ?>">
-		</p>
-        <script type="text/javascript" defer>
-            jQuery(document).ready(function ($) {
-             
-               $(document).on("click", ".upload_image_button", function (e) {
-                  e.preventDefault();
-                  var $button = $(this);
-
-                  if(file_frame == undefined) { 
-             
-                  // Create the media frame.
-                  var file_frame = wp.media.frames.file_frame = wp.media({
-                     title: 'Select or upload image',
-                     library: { // remove these to show all
-                        type: 'image' // specific mime
-                     },
-                     button: {
-                        text: 'Select'
-                     },
-                     multiple: false  // Set to true to allow multiple files to be selected
-                  });
-             
-                  // When an image is selected, run a callback.
-                  file_frame.on('select', function () {
-                     // We set multiple to false so only get one image from the uploader
-             
-                     var attachment = file_frame.state().get('selection').first().toJSON();
-             
-                     $button.siblings('input').val(attachment.url);
-             
-                  }); 
-                }
-             
-                  // Finally, open the modal
-                  file_frame.open();
-               });
-            });
-        </script>
+        </p>
+        <p>
+        <label for="<?php echo esc_attr( $this->get_field_id( 'link_text'  )  ); ?>"><?php esc_attr_e( 'Link text:', 'vinabits'  ); ?></label> 
+        <input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'link_text'  )  ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'link_text'  )  ); ?>" type="text" value="<?php echo esc_attr( $link_text  ); ?>">
+        </p>
 		<?php 
 	}
 
@@ -139,6 +112,8 @@ class Custom_Card_Widget extends WP_Widget {
         $instance['image'] = ( ! empty( $new_instance['image'] ) ) ? $new_instance['image'] : '';
         $instance['desc'] = ( ! empty( $new_instance['desc'] ) ) ? strip_tags($new_instance['desc']) : '';
         $instance['link'] = ( ! empty( $new_instance['link'] ) ) ? strip_tags($new_instance['link']) : '';
+        $instance['link_text'] = ( ! empty( $new_instance['link_text'] ) ) ? $new_instance['link_text'] : '';
+
 
 		return $instance;
 	}

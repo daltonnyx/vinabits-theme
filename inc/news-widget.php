@@ -48,8 +48,17 @@ class News_Template_Widget extends WP_Widget {
       'posts_per_page' => $post_num,
       'post_type' => $post_type
     );
-    if($category != 'all') {
+    if($category != 'all' && $post_type == 'post') {
       $query_args['cat'] = $category;
+    }
+    else if($category != 'all') {
+        $query_args['tax_query'] = array(
+            array(
+                'taxonomy' => $taxonomy,
+                'field' => 'slug',
+                'terms' => $category
+            )
+        );
     }
     $news = new WP_Query($query_args);
     if(!empty($templ))
@@ -95,7 +104,8 @@ class News_Template_Widget extends WP_Widget {
     // $this->get_field_name('option_name') - the HTML name
     // $instance['option_name'] - the option value
     $title = $instance['title'];
-    $category = $instance['category'];
+    $category = $instance['category'] ? $instance['category'] : 'all';
+    $taxonomy = $instance['taxonomy'];
     $templ = $instance['templ'];
     $has_thumbnail = $instance['has_thumbnail'];
     $has_excerpt = $instance['has_excerpt'];
@@ -110,15 +120,15 @@ class News_Template_Widget extends WP_Widget {
 
     <p>
 		<label for="<?php echo esc_attr( $this->get_field_id( 'category' ) ); ?>"><?php esc_attr_e( 'Category:', 'text_domain' ); ?></label>
-		<select class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'category' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'category' ) ); ?>">
-       <option value="all">--All--</option>
-       <?php $categories = get_categories();
-       foreach($categories as $cat) :
-       ?>
-        <option <?php echo $category == $cat->term_id ? "selected" : ""; ?> value="<?php echo $cat->term_id; ?>"><?php echo $cat->name; ?></option>
-     <?php endforeach; ?>
-    </select>
+		<input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'category' ) ); ?>" type="text" name="<?php echo esc_attr( $this->get_field_name( 'category' ) ); ?>" value="<?php echo esc_attr( $category ); ?>"/>
+       
 		</p>
+    <p>
+		<label for="<?php echo esc_attr( $this->get_field_id( 'taxonomy' ) ); ?>"><?php esc_attr_e( 'Taxonomy:', 'text_domain' ); ?></label>
+		<input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'taxonomy' ) ); ?>" type="text" name="<?php echo esc_attr( $this->get_field_name( 'taxonomy' ) ); ?>" value="<?php echo esc_attr( $taxonomy ); ?>"/>
+       
+	</p>
+
 
     <p>
 		<label for="<?php echo esc_attr( $this->get_field_id( 'post_type' ) ); ?>"><?php esc_attr_e( 'Post Type:', 'text_domain' ); ?></label>
