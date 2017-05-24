@@ -12,9 +12,7 @@ get_header(); ?>
 		<main id="main" class="site-main" role="main">
             <section class="section-1">
                 <div class="mui-container">
-                    <div class="mui-row">
-                        <?php dynamic_sidebar('front-1'); ?>
-                    </div>
+                    <?php dynamic_sidebar('front-1'); ?>
                 </div>
             </section>
             <section class="section-2">

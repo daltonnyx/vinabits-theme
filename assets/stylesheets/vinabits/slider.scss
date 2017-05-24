@@ -18,5 +18,22 @@
 }
 
 [class*="amazingslider-text-wrapper"] {
-    right: calc(50% - 600px - 48px) !important;
+    left: calc(50% - 450px) !important;
+    bottom: auto!important;
+    top: 35%;
+    [class*="amazingslider-text"] {
+        > div {
+            text-align: center;
+            width: 100%;
+        }
+    }
+}
+
+.wonderpluginslider {
+    [class*="amazingslider-arrow-left"] {
+        left: calc(50% - 1170px / 2) !important;
+    }
+    [class*="amazingslider-arrow-right"] {
+        right: calc(50% - 1170px / 2) !important;
+    }
 }

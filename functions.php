@@ -63,8 +63,8 @@ function vinabits_setup() {
 	 * Add support for core custom logo.
 	 */
 	add_theme_support( 'custom-logo', array(
-		'height'      => 35,
-		'width'       => 274,
+		'height'      => 107,
+		'width'       => 202,
 		'flex-width'  => true,
 		'flex-height' => true,
 	) );
@@ -212,6 +212,7 @@ add_action( 'widgets_init', 'vinabits_widgets_init' );
  */
 function vinabits_scripts() {
 
+    wp_enqueue_style('RobotoCondensed', 'https://fonts.googleapis.com/css?family=Roboto+Condensed');
 
 	wp_enqueue_style('font-awesome', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css');
 
@@ -399,3 +400,9 @@ function searchform_shortcode($atts) {
 }
 
 add_shortcode('vinabits_searchform','searchform_shortcode');
+
+
+function register_admin_script() {
+    wp_enqueue_script('load-mediaupload', get_template_directory_uri(). '/assets/js/admin/load_mediaupload.js', array('jquery'), '', true);
+}
+add_action('admin_enqueue_scripts','register_admin_script');

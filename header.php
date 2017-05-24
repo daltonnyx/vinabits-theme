@@ -33,8 +33,8 @@
                     </div>
 				</div>
 
-                <div class="mui-col-xs-12 mui-col-md-6 nav-container">
-                    <div class="mui-row">
+                <div class="mui-col-xs-12 mui-col-md-9 nav-container">
+                    <div class="mui-row mui--text-right">
                     <?php get_template_part( 'components/navigation/navigation', 'top' ); ?>
                     </div>
                 </div>

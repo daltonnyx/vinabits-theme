@@ -1,7 +1,7 @@
 .section-1 {
     padding: 0px 15px;
 }
-.section-1 > div > div {
+.section-1 > div  {
     display: flex;
     flex-flow: row wrap;
     justify-content: space-between;
@@ -17,32 +17,33 @@
             color: #000;
             font-size: 16px;
             &:hover {
-                p {
-                    opacity: 1;
-                    top: 0px;
-                }
+                
                 img {
                     filter: grayscale(0%);
                 }
             }
         }
+        .card-content {
+            background: $color__text-main;
+        }
         h3.front-page-title {
-            font-size: 20px;
-            font-weight: 300;
-            color: #333;
+            font-size: 22px;
+            text-align: center;
+            font-weight: bold;
+            color: #fff;
             text-transform: uppercase;
-            border-left: 4px solid $color__text-main;
             padding-left: 15px;
             margin-top: 10px;
             margin-bottom: 0px;
         }
         p {
+            text-align: center;
             margin-bottom: 0px;
-            opacity: 0;
             position: relative;
-            top: -10px;
             padding-left: 19px;
             transition: .2s ease-in-out all;
+            font-size: 16px;
+            font-weight: 300;
         }
         .card-image {
             min-width: 100%;

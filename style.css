@@ -563,7 +563,7 @@ table {
     width: 100%;
     text-align: center; }
     .main-navigation li:hover > a, .main-navigation li.focus > a {
-      color: #cf0605; }
+      color: #3cb44a; }
   .main-navigation a {
     display: block;
     color: #191919;
@@ -576,7 +576,7 @@ table {
   .main-navigation .current-menu-item > a,
   .main-navigation .current_page_ancestor > a,
   .main-navigation .current-menu-ancestor > a {
-    color: #cf0605; }
+    color: #3cb44a; }
 
 /* Small menu. */
 #navi-anchor:checked ~ div > ul {
@@ -625,7 +625,6 @@ table {
     .main-navigation ul li {
       width: auto; }
       .main-navigation ul li a {
-        font-size: 15px;
         font-weight: 300;
         line-height: 38px; } }
 .site-main .comment-navigation, .site-main
@@ -831,42 +830,11 @@ object {
 /*-------------------------------------------------------------
 # Vinabits
 -------------------------------------------------------------*/
-@font-face {
-  src: url("./assets/fonts/HELVETICANEUE.TTF");
-  font-family: HelveticaNeue;
-  font-style: normal;
-  font-weight: normal; }
-@font-face {
-  src: url("./assets/fonts/HELVETICANEUEBOLD.TTF");
-  font-family: HelveticaNeue;
-  font-weight: bold;
-  font-style: normal; }
-@font-face {
-  src: url("./assets/fonts/HELVETICANEUELIGHT.TTF");
-  font-family: HelveticaNeue;
-  font-weight: 300;
-  font-style: normal; }
-@font-face {
-  src: url("./assets/fonts/HELVETICANEUEITALIC.TTF");
-  font-family: HelveticaNeue;
-  font-weight: normal;
-  font-style: italic; }
-@font-face {
-  src: url("./assets/fonts/HELVETICANEUEBOLDITALIC.TTF");
-  font-family: HelveticaNeue;
-  font-style: italic;
-  font-weight: bold; }
-@font-face {
-  src: url("./assets/fonts/HELVETICANEUELIGHTITALIC.TTF");
-  font-family: HelveticaNeue;
-  font-style: italic;
-  font-weight: 300; }
 body, button, input, select, textarea {
-  font-family: HelveticaNeue; }
+  font-family: 'Roboto Condensed'; }
 
 #masthead {
-  background: #fff;
-  padding: 25px 0px 20px; }
+  background: #fff; }
   @media screen and (max-width: 37.5em) {
     #masthead {
       padding-top: 0px; }
@@ -874,6 +842,9 @@ body, button, input, select, textarea {
         margin-top: 44px; }
         #masthead .logo-container .mui--text-right {
           text-align: center !important; } }
+  #masthead > .mui-container > .mui-row {
+    display: flex;
+    align-items: center; }
 
 [class*="wonderpluginslider-container"] {
   overflow-x: hidden; }
@@ -892,62 +863,72 @@ body, button, input, select, textarea {
     background-color: #891307 !important; }
 
 [class*="amazingslider-text-wrapper"] {
-  right: calc(50% - 600px - 48px) !important; }
+  left: calc(50% - 450px) !important;
+  bottom: auto !important;
+  top: 35%; }
+  [class*="amazingslider-text-wrapper"] [class*="amazingslider-text"] > div {
+    text-align: center;
+    width: 100%; }
+
+.wonderpluginslider [class*="amazingslider-arrow-left"] {
+  left: calc(50% - 1170px / 2) !important; }
+.wonderpluginslider [class*="amazingslider-arrow-right"] {
+  right: calc(50% - 1170px / 2) !important; }
 
 .section-1 {
   padding: 0px 15px; }
 
-.section-1 > div > div {
+.section-1 > div {
   display: flex;
   flex-flow: row wrap;
   justify-content: space-between; }
-  .section-1 > div > div .card-layout {
+  .section-1 > div .card-layout {
     flex-basis: 100%;
     margin-top: 20px; }
     @media screen and (min-width: 37.5em) {
-      .section-1 > div > div .card-layout {
+      .section-1 > div .card-layout {
         flex-basis: 30.83%; } }
-    .section-1 > div > div .card-layout a {
+    .section-1 > div .card-layout a {
       text-decoration: none;
       color: #000;
       font-size: 16px; }
-      .section-1 > div > div .card-layout a:hover p {
-        opacity: 1;
-        top: 0px; }
-      .section-1 > div > div .card-layout a:hover img {
+      .section-1 > div .card-layout a:hover img {
         filter: grayscale(0%); }
-    .section-1 > div > div .card-layout h3.front-page-title {
-      font-size: 20px;
-      font-weight: 300;
-      color: #333;
+    .section-1 > div .card-layout .card-content {
+      background: #3cb44a; }
+    .section-1 > div .card-layout h3.front-page-title {
+      font-size: 22px;
+      text-align: center;
+      font-weight: bold;
+      color: #fff;
       text-transform: uppercase;
-      border-left: 4px solid #cf0605;
       padding-left: 15px;
       margin-top: 10px;
       margin-bottom: 0px; }
-    .section-1 > div > div .card-layout p {
+    .section-1 > div .card-layout p {
+      text-align: center;
       margin-bottom: 0px;
-      opacity: 0;
       position: relative;
-      top: -10px;
       padding-left: 19px;
-      transition: .2s ease-in-out all; }
-    .section-1 > div > div .card-layout .card-image {
+      transition: .2s ease-in-out all;
+      font-size: 16px;
+      font-weight: 300; }
+    .section-1 > div .card-layout .card-image {
       min-width: 100%;
       min-height: 245px;
       overflow: hidden;
       position: relative; }
       @media screen and (min-width: 37.5em) {
-        .section-1 > div > div .card-layout .card-image {
+        .section-1 > div .card-layout .card-image {
           min-width: 370px; } }
-      .section-1 > div > div .card-layout .card-image img {
+      .section-1 > div .card-layout .card-image img {
         position: absolute;
         top: 50%;
         left: 50%;
         filter: grayscale(50%);
         transition: .2s linear all;
         transform: translate(-50%, -50%); }
-  .section-1 > div > div:after, .section-1 > div > div:before {
+  .section-1 > div:after, .section-1 > div:before {
     content: none; }
 
 @media screen and (min-width: 37.5em) {

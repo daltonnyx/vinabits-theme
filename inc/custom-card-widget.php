@@ -35,9 +35,6 @@ class Custom_Card_Widget extends WP_Widget {
         ?>
         <div class="card-layout">
             <a href="<?php echo $link; ?>" title="<?php echo $title; ?>">
-                <div class="card-image">
-                    <img src="<?php echo $image; ?>" class="img-responsive" alt="<?php echo $title; ?>" />
-                </div>
                 <div class="card-content">
                 <?php
                 if ( ! empty( $instance['title'] ) ) {
@@ -50,6 +47,9 @@ class Custom_Card_Widget extends WP_Widget {
                 <?php if(!empty($link_text)) {?>
                     <p><?php echo $link_text; ?></p>
                 <?php } ?>
+                </div>
+                <div class="card-image">
+                    <img src="<?php echo $image; ?>" class="img-responsive" alt="<?php echo $title; ?>" />
                 </div>
             </a>
         </div>
