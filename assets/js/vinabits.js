@@ -15,5 +15,13 @@ jQuery(document).ready(function($){
         autoplay: true,
       }
     }
-  })
+  });
+  $('.pro-cat-carousel').owlCarousel({
+        items: 4,
+        margin: 30,
+        loop: true,
+        nav: true,
+        dots: false,
+        navText: ['<span class="owl-arrow prev-button"></i>','<span class="owl-arrow next-button"></span>']
+    });
 });

@@ -46,7 +46,7 @@ function vinabits_setup() {
 
 	add_image_size( 'vinabits-thumbnail', 960, 9999 );
 
-	add_image_size( 'post-carousel', 270, 218, array('center', 'center'));
+	add_image_size( 'post-carousel', 277, 195, array('center', 'center'));
 
     add_image_size( 'post-banner', 278, 175, array('center', 'center'));
 
@@ -212,7 +212,7 @@ add_action( 'widgets_init', 'vinabits_widgets_init' );
  */
 function vinabits_scripts() {
 
-    wp_enqueue_style('RobotoCondensed', 'https://fonts.googleapis.com/css?family=Roboto+Condensed');
+    wp_enqueue_style('RobotoCondensed', 'https://fonts.googleapis.com/css?family=Roboto+Condensed:300,400,700');
 
 	wp_enqueue_style('font-awesome', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css');
 
@@ -264,7 +264,7 @@ require get_template_directory(). '/inc/news-widget.php';
 
 require get_template_directory(). '/inc/custom-card-widget.php';
 
-
+require get_template_directory(). '/inc/product-cat-widget.php';
 
 //Custom Excerpt Length
 

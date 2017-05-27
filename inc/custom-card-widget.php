@@ -36,11 +36,13 @@ class Custom_Card_Widget extends WP_Widget {
         <div class="card-layout">
             <a href="<?php echo $link; ?>" title="<?php echo $title; ?>">
                 <div class="card-content">
+                <header>
                 <?php
                 if ( ! empty( $instance['title'] ) ) {
                     echo $args['before_title'] . apply_filters( 'widget_title', $title ) . $args['after_title'];
                 }
                 ?>
+                </header>
                 <?php if(!empty($desc)) { ?>
                     <p><?php echo $desc; ?></p>
                 <?php } ?>
