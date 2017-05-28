@@ -1,10 +1,11 @@
-<ul class="news-aside-list">
-<?php if($news->have_posts()) : while($news->have_posts()) : $news->the_post(); ?>
-  <li class="news-aside-item">
+<div class="news-gallery">
+<?php $i = 0; ?>
+<?php if($news->have_posts()) : while($news->have_posts() && $i < 7) : $news->the_post();$i++; ?>
+    <div class="news-gallery-item item-<?php echo $i; ?>">
     <a href="<?php echo get_permalink(); ?>">
     <div class="thumb-container">
       <?php if($has_thumbnail) { ?>
-        <?php the_post_thumbnail('testimonial-avatar', array(
+        <?php the_post_thumbnail('full', array(
           'alt' => get_the_title(),
           'class' => 'img-responsive horizonal-thumb'
         )); ?>
@@ -12,11 +13,8 @@
     </div>
     <div class="news-container">
       <h3 class="news-title"><?php echo get_the_title(); ?></h3>
-      <?php if($has_excerpt) { ?>
-        <p><?php echo get_my_excerpt(30); ?></p>
-      <?php } ?>
     </div>
     </a>
-  </li>
+  </div>
 <?php endwhile;endif; ?>
-</ul>
+</div>

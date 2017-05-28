@@ -1,0 +1,101 @@
+.section-3 {
+  padding: 0px 0px;
+  background: linear-gradient(-45deg, #f2f2f2, #fafafa);
+  .front-page-title {
+      font-size: 30px;
+      font-weight: bold;
+      color: $color__text-main;
+      text-transform: uppercase;
+      text-align: center;
+      margin: 52px 0px;
+  }
+  .service {
+    margin-top: 0px;
+  }
+  p {
+    line-height: 2;
+  }
+  .news-card {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    > div {
+      flex-basis: calc(50% - 12px);
+    }
+  }
+  .news-gallery {
+      margin: 0px -2.5px;
+      display: flex;
+      flex-flow: column wrap;
+      @media screen and (min-width: #{$breakpoint_tablet}) {
+          height: 393px;
+      }
+      .news-gallery-item {
+          position: relative;
+          overflow: hidden;
+          flex-grow: 1;
+          .thumb-container {
+              height: inherit;
+              img {
+                  max-width: none;
+                  position: absolute;
+                  left: 50%;
+                  top: 50%;
+                  transform: translate(-50%,-50%);
+              }
+          }
+          a:hover {
+              .news-container {
+                  opacity: 1;
+              }
+          }
+          .news-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 99;
+            background: rgba(0,0,0,.35);
+            opacity: 0;
+            transition: 0.3s linear all;
+            padding: 20px 30px;
+            h3 {
+                margin: 0px;
+                font-size: 17px;
+                text-transform: uppercase;
+                color: #fff;
+                font-weight: bold;
+            }
+          }
+          @media screen and (min-width: #{$breakpoint_tablet}) {
+              &.item-1 {
+                  height: 152px;
+              }
+              &.item-2 {
+                  height: 230px;
+              }
+              &.item-3 {
+                  height: 388px;
+              }
+              &.item-4 {
+                  height: 190px;
+              }
+              &.item-5 {
+                  height: 190px;
+              }
+              &.item-6 {
+                  height: 235px;
+              }
+              &.item-7 {
+                  height: 147px;
+              }
+          }
+          @media screen and (min-width: #{$breakpoint_tablet}) {
+                width: calc(100% / 4 - 5px);
+                margin: 2.55px;
+          }
+          
+      }
+  }
+}

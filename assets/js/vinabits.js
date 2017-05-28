@@ -1,24 +1,24 @@
 jQuery(document).ready(function($){
-  $('.testimonials').owlCarousel({
-    loop: true,
-    responsiveClass: true,
-    dots: false,
-    responsive: {
-      0: {
-        items: 1,
-        center: true,
-        margin: 10,
-      },
-      768: {
-        items: 3,
-        margin: 30,
-        autoplay: true,
-      }
-    }
-  });
+  /* $('.testimonials').owlCarousel({
+   *   loop: true,
+   *   responsiveClass: true,
+   *   dots: false,
+   *   responsive: {
+   *     0: {
+   *       items: 1,
+   *       center: true,
+   *       margin: 10,
+   *     },
+   *     768: {
+   *       items: 3,
+   *       margin: 30,
+   *       autoplay: true,
+   *     }
+   *   }
+   * }); */
   $('.pro-cat-carousel').owlCarousel({
         items: 4,
-        margin: 30,
+        margin: 20,
         loop: true,
         nav: true,
         dots: false,

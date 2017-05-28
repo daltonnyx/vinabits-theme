@@ -141,6 +141,8 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 @import "vinabits/slider";
 @import "vinabits/section-1";
 @import "vinabits/section-2";
+@import "vinabits/section-3";
+@import "vinabits/section-4";
 @import "vinabits/footer";
 @import "vinabits/sidebar";
 //Layout for content
@@ -224,29 +226,11 @@ body:not(.front-page) {
 
 @media screen and (min-width: #{$breakpoint_tablet}) {
   
-  .section-3 {
-    padding: 40px 0px;
-    .service {
-      margin-top: 0px;
-    }
-    p {
-      line-height: 2;
-    }
-    .news-card {
-      display: flex;
-      flex-flow: row wrap;
-      justify-content: space-between;
-      > div {
-        flex-basis: calc(50% - 12px);
-      }
-    }
-  }
+  
   .testimonials .author .text h5 {
     color: #cc00cc;
   }
-  .section-4 {
-    margin-bottom: 48px;
-  }
+  
   #copyright {
     background: rgba(0,0,0,0.67);
   }

@@ -169,23 +169,24 @@ function vinabits_widgets_init() {
 		'before_title'  => '<div class="front-title"><h3 class="front-page-title">',
 		'after_title'   => '</h3></div>',
     ) );	
-    // register_sidebar( array(
-	//     'name'          => esc_html__( 'Front 3', 'vinabits' ),
-	//     'id'            => 'front-3',
-	//     'description'   => '',
-	//     'before_widget' => '<div id="%1$s" class="front-section %2$s">',
-	//     'after_widget'  => '</div>',
-	//     'before_title'  => '<h3 class="front-page-title">',
-	//     'after_title'   => '</h3>',
-	// ) );	register_sidebar( array(
-	//     'name'          => esc_html__( 'Front 4', 'vinabits' ),
-	//     'id'            => 'front-4',
-	//     'description'   => '',
-	//     'before_widget' => '<div id="%1$s" class="front-section %2$s">',
-	//     'after_widget'  => '</div>',
-	//     'before_title'  => '<h3 class="front-page-title">',
-	//     'after_title'   => '</h3>',
-	// ) );
+    register_sidebar( array(
+        'name'          => esc_html__( 'Front 3', 'vinabits' ),
+        'id'            => 'front-3',
+        'description'   => '',
+        'before_widget' => '<div id="%1$s" class="front-section %2$s">',
+        'after_widget'  => '</div>',
+        'before_title'  => '<h3 class="front-page-title">',
+        'after_title'   => '</h3>',
+    ) );	
+    register_sidebar( array(
+        'name'          => esc_html__( 'Front 4', 'vinabits' ),
+        'id'            => 'front-4',
+        'description'   => '',
+        'before_widget' => '<div id="%1$s" class="front-section %2$s">',
+        'after_widget'  => '</div>',
+        'before_title'  => '<h3 class="front-page-title">',
+        'after_title'   => '</h3>',
+    ) );
     register_sidebar( array(
 		'name'          => esc_html__( 'Bottom', 'vinabits' ),
 		'id'            => 'bottom',
@@ -224,7 +225,13 @@ function vinabits_scripts() {
 
 	wp_enqueue_style('owl-carousel-css','https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.1/assets/owl.carousel.min.css');
 
-	wp_enqueue_script('owl-carousel-js', 'https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.1/owl.carousel.min.js', array('jquery'), '2.2.1', true);
+    wp_enqueue_script('owl-carousel-js', 'https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.1/owl.carousel.min.js', array('jquery'), '2.2.1', true);
+
+    wp_enqueue_script('slick-js', 'https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.js', array('jquery'), '1.6.1', true);
+
+    wp_enqueue_style('slick-css', 'https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css');
+
+    wp_enqueue_style('slick-theme', 'https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css');
 
 	wp_enqueue_style( 'vinabits-style', get_stylesheet_uri() );
 

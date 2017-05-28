@@ -1,78 +1,98 @@
 .section-2 {
-    .front-page-title {
-        color: #666;
-        font-size: 1.5rem;
+    padding: 0px 15px 20px;
+    background: url('./assets/images/sec2-bg.png') repeat left top transparent;
+    .front-title {
+        margin: 2em 0; 
+        text-align: center;
+        width: 100%;
+        position: relative;
+        
+    } 
+    .introduce {
+        line-height: 2em;
     }
-}
-.section-2 {
-padding: 0px 15px 45px;
-.front-title {
-    margin: 2em 0; 
-    text-align: center;
-    width: 100%;
-    position: relative;
-    
-} 
-.introduce {
-    line-height: 2em;
-}
-.front-page-title {
-  font-size: 22px;
-  z-index: 1;
-  position: relative;
-  margin-bottom: 0px;
-  margin-top: 0px;
-  background: #fff;
-  display: inline-block;
-  padding: 0px 1em;
-  text-transform: uppercase;
-}
+    .front-page-title {
+      font-size: 20px;
+      font-weight: bold;
+      z-index: 1;
+      color: #333;
+      position: relative;
+      margin-bottom: 0px;
+      margin-top: 0px;
+      display: inline-block;
+      padding: 0px 1em;
+      text-transform: uppercase;
+    }
+    .product-tabs {
+        ul {
+            text-align: center;
+            margin: 0;
+            width: 100%;
+            li {
+                background: #999;
+                margin-left: 8px;
+                &.mui--is-active {
+                    border: none;
+                    background: $color__text-main;
+                } 
+                a {
+                    border: none !important;
+                    font-size: 18px;
+                    font-weight: bold;
+                    color: #fff;
+                    
+                }
+            }
+            margin-bottom: 30px;
+        }
+        div.mui-tabs__pane {
+            .item {
+                h5 {
+                    font-size: 15px;
+                    color: #333;
+                    text-transform: uppercase;
+                    text-align: center;
+                }
+            }
+        }
+
+    }
 }
 .textwidget {
   text-align: justify;
 }
-.list-buttons {
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: space-between;
-  margin-top: 2rem;
-  a.su-button {
-      flex-basis: 366px;
-      text-transform: uppercase;
-      margin-bottom: 10px;
-      text-align: left;
-      span {
-          font-size: 14px !important;
-          font-weight: 300;
-          padding: 8px 5px !important;
-          color: #fff !important;
-          i {
-              margin-right: 0px !important;
-              font-size: 24px !important;
-          }   
-      }
-
-  }
-}
+/* .list-buttons {
+ *   display: flex;
+ *   flex-flow: row wrap;
+ *   justify-content: space-between;
+ *   margin-top: 2rem;
+ *   a.su-button {
+ *       flex-basis: 366px;
+ *       text-transform: uppercase;
+ *       margin-bottom: 10px;
+ *       text-align: left;
+ *       span {
+ *           font-size: 14px !important;
+ *           font-weight: 300;
+ *           padding: 8px 5px !important;
+ *           color: #fff !important;
+ *           i {
+ *               margin-right: 0px !important;
+ *               font-size: 24px !important;
+ *           }
+ *       }
+ *
+ *   }
+ * } */
 @media screen and (min-width: #{$breakpoint_tablet}) {
     .section-2 {
         padding-left: 0px;
         padding-right: 0px;
         .front-title {
-            &:before {
-                content: " ";
-                width: 100%;
-                position: absolute;
-                height: 1px;
-                top: calc(50% - 1px);
-                background: #000;
-                z-index: 0;
-                left: 0;
-
-            }
+            
         }
         .front-page-title {
-            font-size: 28px;
+            font-size: 30px;
             
         }
         .list-buttons {
