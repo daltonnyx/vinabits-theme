@@ -1,4 +1,7 @@
 #masthead {
+    .logo-container {
+        font-size: 0px;
+    }
     background: #fff;
     @media screen and (max-width:#{$breakpoint_tablet}) {
         padding-top:0px;

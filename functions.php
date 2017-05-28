@@ -234,6 +234,8 @@ function vinabits_scripts() {
 
     wp_enqueue_style('slick-theme', 'https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css');
 
+    wp_enqueue_style('animate-css', 'https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css');
+
 	wp_enqueue_style( 'vinabits-style', get_stylesheet_uri() );
 
 	wp_enqueue_script( 'vinabits-navigation', get_template_directory_uri() . '/assets/js/navigation.js', array(), '20151215', true );

@@ -33,7 +33,7 @@ class Custom_Card_Widget extends WP_Widget {
         //echo $args['before_widget'];
         extract($instance);
         ?>
-        <div class="card-layout">
+        <div class="card-layout <?php echo $classes; ?>">
             <a href="<?php echo $link; ?>" title="<?php echo $title; ?>">
                 <div class="card-content">
                 <header>

@@ -1,7 +1,7 @@
 <div class="news-gallery">
 <?php $i = 0; ?>
 <?php if($news->have_posts()) : while($news->have_posts() && $i < 7) : $news->the_post();$i++; ?>
-    <div class="news-gallery-item item-<?php echo $i; ?>">
+    <div class="news-gallery-item item-<?php echo $i; ?> has-animation delay-<?php echo $i * 100; ?> bounceIn smooth">
     <a href="<?php echo get_permalink(); ?>">
     <div class="thumb-container">
       <?php if($has_thumbnail) { ?>

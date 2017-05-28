@@ -1,0 +1,14 @@
+$delay: 0;
+@while $delay <= 10000 {
+    .delay-#{$delay} {
+        animation-delay: #{$delay / 1000}s;
+    }
+    $delay: $delay + 100;
+}
+
+.has-animation {
+    opacity: 0;
+}
+.smooth {
+    transition: 1s linear all;
+}

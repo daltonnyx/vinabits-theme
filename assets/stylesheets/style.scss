@@ -137,6 +137,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 -------------------------------------------------------------*/
 
 @import "vinabits/typography";
+@import "vinabits/animation";
 @import "vinabits/header";
 @import "vinabits/slider";
 @import "vinabits/section-1";
@@ -172,10 +173,9 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 
 
 #copyright {
-  background: #000;
+  background: $color__text-main;
   text-align: center;
-  font-size: 12px;
-  font-weight: bold;
+  font-size: 15px;
   color: #fff7e2;
   padding: 5px;
   img {
@@ -232,7 +232,7 @@ body:not(.front-page) {
   }
   
   #copyright {
-    background: rgba(0,0,0,0.67);
+    background: rgba(4,103,52,.81);
   }
   #colophon {
     position: relative;

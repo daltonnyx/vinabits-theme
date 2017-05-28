@@ -2,13 +2,17 @@
     background: url('./assets/images/sec4-bg.png') center bottom transparent;
     @media screen and (min-width: #{$breakpoint_tablet}) {
         padding-top: 100px;
+        padding-bottom: 35px;
     }
     > div > div {
         display: flex;
-        justify-content: space-between;
+        justify-content: flex-start;
     }
     .front-section {
-        width: calc(50% - 20px);
+        width: calc(50% - 15px);
+        &:last-child {
+            margin-left: 30px;
+        }
     }
     .widget-header {
         position: relative;

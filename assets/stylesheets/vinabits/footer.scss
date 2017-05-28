@@ -1,8 +1,14 @@
 #colophon {
-    margin-bottom: 72px;
+    background: url('./assets/images/footer-bg.png') no-repeat left center / cover transparent;
     .footer-bar {
-        background: $color__main;
-        padding: 25px 15px; 
+        display: flex;
+        .footer-section {
+            width: 100%;
+            @media screen and (min-width: #{$breakpoint_tablet}) {
+                width: 50%;
+            }
+        }
+        padding: 30px 0px; 
         color: #ccc;
         p {
             margin-bottom: 0px;
@@ -51,8 +57,9 @@
         .contact-list {
             ul {
                 li {
-                    font-size: 14px;
+                    font-size: 15px;
                     margin-bottom: .5em;
+                    color: #fff7e2;
                     &:before {
                         width: 1.2em;
                     }
@@ -71,15 +78,17 @@
                     &.email:before {
                         content: "";
                     }
+                    &.website:before {
+                        content: "";
+                    }
                 }
             }
         }
     }  
   .footer-widget-title {
-    font-size: 22px;
-    color: #fff;
+    font-size: 30px;
+    color: #fff7e2;
     text-transform: uppercase;
-    font-weight: 300;
     margin-top: 0;
     margin-bottom: 25px;
     position: relative;
