@@ -189,8 +189,12 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 //content
 
 body:not(.front-page) {
+    #primary {
+        background: #f3f3f3;
+    }
   .title-bar {
     position: relative;
+    margin-top: 0px;
     z-index: 1;
     color: #fff;
     a {
@@ -215,9 +219,28 @@ body:not(.front-page) {
         font-weight: bold;
       }
     }
-    
-    
-  }
+    > div:before {
+      content: " ";
+      left: 0;
+      right: 0;
+      bottom: 0;
+      top: 0;
+      position: absolute;
+      display: block;
+      z-index: -1;
+      background: $color__text-main;
+    }
+    &:before {
+      content: " ";
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      top: 0;
+      z-index: -1;
+      background: url('./assets/images/header-line.png') no-repeat center center / cover transparent;
+    }
+}
 }
 
 
