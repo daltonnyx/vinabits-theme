@@ -7,6 +7,13 @@
 
 get_header(); ?>
 
+    <div class="mui-container-fluid">
+        <div class="mui-row">
+
+                <?php echo do_shortcode('[wonderplugin_slider id="1"]'); ?>
+
+        </div>
+    </div>
 
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
