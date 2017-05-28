@@ -1029,7 +1029,7 @@ body, button, input, select, textarea {
         margin-bottom: 0px; } }
 .section-3 {
   padding: 0px 0px;
-  background: linear-gradient(-45deg, #f2f2f2, #fafafa); }
+  background: linear-gradient(to left, #f5f5f5, #fcfcfc); }
   .section-3 .front-page-title {
     font-size: 30px;
     font-weight: bold;
@@ -1111,9 +1111,10 @@ body, button, input, select, textarea {
     .section-4 {
       padding-top: 100px; } }
   .section-4 > div > div {
-    display: flex; }
+    display: flex;
+    justify-content: space-between; }
   .section-4 .front-section {
-    width: 50%; }
+    width: calc(50% - 20px); }
   .section-4 .widget-header {
     position: relative; }
     .section-4 .widget-header:before {
@@ -1135,6 +1136,8 @@ body, button, input, select, textarea {
     margin: 0px;
     text-transform: uppercase;
     color: #333; }
+  .section-4 .testimonals .slick-list {
+    padding: 35px 0px 0px !important; }
   .section-4 .testimonals .testimonial-item {
     display: flex;
     flex-flow: row nowrap;
@@ -1156,6 +1159,7 @@ body, button, input, select, textarea {
           transform: translate(-50%, -50%); }
     .section-4 .testimonals .testimonial-item .author {
       flex-basis: 77%;
+      padding-right: 15px;
       position: relative; }
       .section-4 .testimonals .testimonial-item .author:before {
         content: " ";
@@ -1182,6 +1186,28 @@ body, button, input, select, textarea {
           font-size: 16px;
           font-style: italic;
           color: #666; }
+  .section-4 .news-featured-list {
+    padding-top: 35px; }
+    .section-4 .news-featured-list .news-featured-item {
+      margin-bottom: 20px; }
+      .section-4 .news-featured-list .news-featured-item a {
+        display: flex;
+        flex-flow: row nowrap;
+        text-decoration: none; }
+        .section-4 .news-featured-list .news-featured-item a .thumb-container {
+          flex-basis: 193px;
+          flex-shrink: 0; }
+        .section-4 .news-featured-list .news-featured-item a .news-container {
+          color: #333;
+          font-size: 15px; }
+          .section-4 .news-featured-list .news-featured-item a .news-container h3 {
+            color: #ff0000;
+            line-height: 2em;
+            font-size: 15px;
+            text-transform: uppercase;
+            margin: 0px; }
+          .section-4 .news-featured-list .news-featured-item a .news-container p {
+            margin-bottom: 0px; }
 
 #colophon {
   margin-bottom: 72px; }

@@ -52,7 +52,8 @@ function vinabits_setup() {
 
     add_image_size('front-banner', 370, 245, array('center', 'center'));
     add_image_size('card-thumb', 363, 248, array('center', 'center'));
-
+    
+    add_image_size('news-featured', 169, 117, array('center','center'));
 
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(

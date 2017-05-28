@@ -5,9 +5,10 @@
     }
     > div > div {
         display: flex;
+        justify-content: space-between;
     }
     .front-section {
-        width: 50%;
+        width: calc(50% - 20px);
     }
     .widget-header {
         position: relative;
@@ -35,6 +36,9 @@
 
     }
     .testimonals {
+        .slick-list {
+            padding: 35px 0px 0px !important;
+        }
         .testimonial-item {
             display: flex;
             flex-flow: row nowrap;
@@ -59,6 +63,7 @@
             }
             .author {
                 flex-basis: 77%;
+                padding-right: 15px;
                 position: relative;
                 &:before {
                     content: " ";
@@ -87,6 +92,35 @@
                         font-size: 16px;
                         font-style: italic;
                         color: #666;
+                    }
+                }
+            }
+        }
+    }
+    .news-featured-list {
+        padding-top: 35px;
+        .news-featured-item {
+            margin-bottom: 20px;
+            a {
+                display: flex;
+                flex-flow: row nowrap;
+                text-decoration: none;
+                .thumb-container {
+                    flex-basis: 193px;
+                    flex-shrink: 0;
+                }
+                .news-container {
+                    color: #333;
+                    font-size: 15px;
+                    h3 {
+                        color: #ff0000;
+                        line-height:2em;
+                        font-size: 15px;
+                        text-transform: uppercase;
+                        margin: 0px;
+                    }
+                    p {
+                        margin-bottom: 0px;
                     }
                 }
             }
