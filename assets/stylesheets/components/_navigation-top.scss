@@ -8,11 +8,13 @@
 
 .main-navigation {
 	clear: both;
+    position: fixed;
+    z-index: 999;
 	display: block;
 	float: left;
 	width: 100%;
-	background: $color__main;
 	min-height: 34px;
+    background-color: $color__main;
 	label {
 		display: block;
 	}
@@ -42,7 +44,7 @@
 		width: 100%;
 		height: 100%;
 		z-index: 999;
-		background: $color__main;
+		background: #fff;
 		padding-top: 40px;
 		ul {
 			box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
@@ -90,31 +92,19 @@
 		text-align: center;
 		&:hover > a,
 		&.focus > a {
+            color: $color__text-main;
 		}
-		&.language-chooser {
-			flex-basis: 50px;
-			ul {
-				display: inline-block !important;
-				position: static !important;
-				li {
-					width: 50%;
-					text-align: center;
-				}
-				a {
-					width: auto;
-				}
-			}
-		}
+		
 	}
 
 	a {
 		display: block;
-		color: #ccc;
+		color: #191919;
 		text-decoration: none;
 		font-size: 16px;
 		text-transform: uppercase;
 		&:visited {
-			color: #ccc;
+			color: #191919;
 		}
 	}
 
@@ -122,6 +112,7 @@
 	.current-menu-item > a,
 	.current_page_ancestor > a,
 	.current-menu-ancestor > a {
+        color: $color__text-main;
 	}
 }
 
@@ -135,6 +126,9 @@
 	position: fixed;
 	z-index: 99999;
 	right: 0px;
+    .stripe {
+        background-color: $color__main;
+    }
 	.stripe:nth-child(1) {
 		transform: rotate(45deg);
 	}
@@ -154,8 +148,8 @@
 
 @media screen and (min-width: #{$breakpoint_tablet}) {
 	.main-navigation {
-		margin-top: 33px;
 		position: relative;
+        background: transparent;
 		z-index: 99;
 		#nav-bars {
 			display: none;
@@ -172,12 +166,10 @@
 		background: transparent;
 		display: flex;
 		flex-flow: row nowrap;
-		justify-content: flex-end;
+		justify-content: space-between;
 		li {
 			width: auto;
-			flex-basis: 110px;
 			a {
-				font-size: 13px;
 				line-height: 38px;
 			}
 		}

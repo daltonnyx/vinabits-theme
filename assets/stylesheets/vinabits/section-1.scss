@@ -1,0 +1,93 @@
+.section-1 {
+    padding: 0px 15px;
+}
+.section-1 > div > div {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    
+    .card-layout {
+        flex-basis: 100%;
+        @media screen and (min-width: #{$breakpoint_tablet}) {
+            flex-basis: 30.83%;
+        }
+        a {
+            text-decoration: none;
+            color: #000;
+            font-size: 16px;
+            &:hover {
+                
+                img {
+                    filter: grayscale(0%);
+                }
+            }
+        }
+        .card-content {
+            background: $color__text-main;
+            height: 153px;
+            padding: 10px;
+        }
+        
+        header {
+            font-size: 22px;
+            min-height: 2.5em;
+            position: relative;
+            h3.front-page-title {
+                position: absolute;
+                left: 0;
+                right: 0;
+                top: 50%;
+                transform: translateY(-50%);
+                font-size: 22px;
+                text-align: center;
+                font-weight: bold;
+                color: #fff;
+                text-transform: uppercase;
+                margin-top: 0px;
+                margin-bottom: 0px;
+            }
+        }
+        p {
+            text-align: center;
+            margin-bottom: 0px;
+            position: relative;
+            transition: .2s ease-in-out all;
+            font-size: 16px;
+            line-height: 22px;
+            color: #fff;
+            font-weight: 300;
+        }
+        .card-image {
+            min-width: 100%;
+            min-height: 176px;
+            @media screen and(min-width: #{$breakpoint_tablet}) {
+                min-width: 370px;
+            }
+            overflow: hidden;
+            position: relative;
+            img {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                filter: grayscale(50%);
+                transition: .2s linear all;
+                transform: translate(-50%,-50%);
+            }
+        }
+    }
+    &:after, &:before {
+        content: none;
+    }
+}
+
+@media screen and (min-width: #{$breakpoint_tablet}) {
+    .section-1 {
+        padding: 0px;
+        margin-top: -153px;
+        margin-bottom: 40px;
+        position: relative;
+        p {
+          line-height: 22px;
+        }
+      }
+}

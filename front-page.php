@@ -7,16 +7,16 @@
 
 get_header(); ?>
 
+    <div class="mui-container-fluid">
+        <div class="mui-row">
+
+                <?php echo do_shortcode('[wonderplugin_slider id="1"]'); ?>
+
+        </div>
+    </div>
 
 	<div id="primary" class="content-area">
-		<div class="mui-container-fluid">
-			<div class="mui-row">
-
-					<?php echo do_shortcode('[wonderplugin_slider id="1"]'); ?>
-
-			</div>
-		</div>
-        <main id="main" class="site-main" role="main">
+		<main id="main" class="site-main" role="main">
             <section class="section-1">
                 <div class="mui-container">
                     <div class="mui-row">

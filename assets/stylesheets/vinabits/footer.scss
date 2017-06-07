@@ -1,0 +1,166 @@
+#colophon {
+    background: url('./assets/images/footer-bg.png') no-repeat left center / cover transparent;
+    .footer-bar {
+        display: flex;
+        .footer-section {
+            width: 100%;
+            @media screen and (min-width: #{$breakpoint_tablet}) {
+                width: 50%;
+            }
+        }
+        padding: 30px 0px; 
+        color: #ccc;
+        p {
+            margin-bottom: 0px;
+            font-size: 13px;
+            text-align: right;
+            a {
+                color :#ccc;
+                &:hover {
+                    text-decoration: none;
+                }
+            }
+        }
+        .search-form {
+            position: relative;
+            margin-top: 1em;
+            font-size: 15px;
+            margin-bottom: 3.9em;
+            button {
+                position: absolute;
+                background: none !important;
+                outline: none;
+                box-shadow: none;
+                border:none;
+                right: .7em;
+                top: .4em;
+                font-size: 18px;
+                text-shadow: none;
+                padding: 0;
+                color: #ccc;
+            }
+            input {
+                width: 100%;
+                background: transparent;
+                box-shadow: none;
+                outline: none;
+                color: #ccc;
+                padding-left: 20px;
+                padding-right: 20px;
+                border-radius: 15px;
+                box-sizing: border-box!important;
+                &:input-placeholder {
+                    color: #ccc;
+                }
+            }
+        }
+        .contact-list {
+            ul {
+                li {
+                    font-size: 15px;
+                    margin-bottom: .5em;
+                    color: #fff7e2;
+                    &:before {
+                        width: 1.2em;
+                    }
+                    &.home {
+                        text-transform: uppercase;
+                        &:before {
+                            content: "";
+                        }
+                    }
+                    &.address:before {
+                        content: "";
+                    }
+                    &.phone:before {
+                        content: "";
+                    }
+                    &.email:before {
+                        content: "";
+                    }
+                    &.website:before {
+                        content: "";
+                    }
+                }
+            }
+        }
+    }  
+  .footer-widget-title {
+    font-size: 30px;
+    color: #fff7e2;
+    text-transform: uppercase;
+    margin-top: 0;
+    margin-bottom: 25px;
+    position: relative;
+    line-height: 30px;
+  }
+  .bottom-bar {
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: space-between;
+      padding: 25px 15px;
+      margin-bottom: 38px;
+      .bottom-item {
+          flex-basis: 100%;
+          
+      }
+      @media screen  and (min-width: #{$breakpoint_tablet}) {
+          .bottom-item {
+              flex-basis: 366px;
+           }         
+      }
+      h4 {
+          font-size: 14px;
+          font-weight: 300;
+          text-transform: uppercase;
+          color: #333;
+          line-height: 30px;
+          margin: 0px;
+      }
+      @media screen and (min-width: #{$breakpoint_tablet}) {
+        padding: 45px 0px 25px;
+      }
+  }
+  ul {
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+    li {
+      margin-bottom: 10px;
+      &:before {
+        content: "";
+        font-family: FontAwesome;
+        font-size: 17px;
+        display: inline-block;
+        margin-right: 10px;
+        text-align: center;
+        line-height: 30px;
+      }
+      a {
+          font-size: 14px; 
+          font-weight: 300;
+          color: #333;
+          text-transform: uppercase;
+      }
+
+    }
+  }
+  .connect-us {
+      text-align: right;
+      font-size: 14px;
+      margin-bottom: 30px;
+      ul {
+          display: inline-block;
+          li {
+              margin-left: 15px!important;
+              a {
+                  background-color:transparent !important;
+                  padding: 0px !important;
+                  width: auto !important;
+                  height: auto !important;
+
+              }
+          }
+      }
+  }
+}
