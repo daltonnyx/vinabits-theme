@@ -1,7 +1,44 @@
  
-$vnb__font_main: Arial;
+ @font-face {
+    src: url('./assets/fonts/HELVETICANEUEBOLD.TTF');
+    font-family: HelveticaNeue;
+    font-weight: bold;
+    font-style: normal;
+ }
+ @font-face {
+    src: url('./assets/fonts/HELVETICANEUELIGHT.TTF');
+    font-family: HelveticaNeue;
+    font-weight: 300;
+    font-style: normal;
+ }
+ @font-face {
+    src: url('./assets/fonts/HELVETICANEUEITALIC.TTF');
+    font-family: HelveticaNeue;
+    font-weight: normal;
+    font-style: italic;
+ }
+ @font-face {
+    src: url('./assets/fonts/HELVETICANEUEBOLDITALIC.TTF');
+    font-family: HelveticaNeue;
+    font-style: italic;
+    font-weight: bold;
+ }
+ @font-face {
+    src: url('./assets/fonts/HELVETICANEUELIGHTITALIC.TTF');
+    font-family: HelveticaNeue;
+    font-style: italic;
+    font-weight: 300;
+ }
+$vnb__font_main: HelveticaNeue, Arial;
 
 
 body, button, input, select, textarea {
     font-family: $vnb__font_main;
+=======
+$vnb__font_main: 'Roboto Condensed', Arial;
+
+
+body, button, input, select, textarea {
+    font-family: 'Roboto Condensed';
+>>>>>>> master
 }

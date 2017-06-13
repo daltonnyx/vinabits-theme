@@ -7,6 +7,13 @@
 
 get_header(); ?>
 
+    <div class="mui-container-fluid">
+        <div class="mui-row">
+
+                <?php echo do_shortcode('[wonderplugin_slider id="1"]'); ?>
+
+        </div>
+    </div>
 
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
@@ -34,10 +41,10 @@ get_header(); ?>
             <!--<section class="section-4">
                 <div class="mui-container">
                     <div class="mui-row">
-                        <?php// dynamic_sidebar('front-4'); ?>
+                        <?php dynamic_sidebar('front-4'); ?>
                     </div>
                 </div>
-            </section>-->
+            </section>
 		</main>
 	</div>
 <?php get_footer(); ?>

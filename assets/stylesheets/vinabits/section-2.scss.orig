@@ -60,6 +60,92 @@
         }
 
     }
+<<<<<<< HEAD
+}
+.section-2 {
+    padding: 0px 15px 15px;
+    .hot-product {
+        header {
+            position: relative;
+            &:before {
+                content: " ";
+                position: absolute;
+                width: 100%;
+                height: 2px;
+                background: #333;
+                top: calc(50% + 8px);
+                left: 0;
+            }
+        }
+        h2 {
+            position: relative;
+            font-size: 25px;
+            font-weight: bold;
+            text-transform: capitalize;
+            color: #333;
+            margin-bottom: 25px;
+            margin-top: 35px;
+            display: inline-block;
+            padding-right: 20px;
+            background: #f2f2f2;
+        }
+    }
+    .hot-products {
+        .owl-item {
+            img {
+                width: auto !important;
+            }
+        }
+        article {
+            text-align: center;
+            background: #fff;
+            border: 1px solid #acacac;
+            padding: 10px 0px;
+            a {
+                display: inline-block;
+                h3 {
+                    margin: 0px;
+                    font-size: 15px;
+                    font-weight: bold;
+                    color: #333;
+                    line-height: 1.5em;
+                }
+            }
+            p {
+              display: inline-block; 
+              margin-bottom: 5px;
+              font-size: 14px;
+              color: #000;
+              &.regular-price {
+                  text-decoration: line-through;
+              }
+              &.sale-price {
+                  color: #f00;
+              }
+            }
+            .btn-add-to-cart {
+                background: $color__text-main;
+                border-radius: 3px;
+                color: #fff;
+                font-size: 13px;
+                font-weight: bold;
+                padding: 0px 15px;
+            }
+        }
+    }
+    .front-page-title {
+      font-size: 22px;
+      z-index: 1;
+      position: relative;
+      margin-bottom: 0px;
+      margin-top: 0px;
+      background: #fff;
+      display: inline-block;
+      padding: 0px 1em;
+      text-transform: uppercase;
+    }
+=======
+>>>>>>> master
 }
 .textwidget {
   text-align: justify;

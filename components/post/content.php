@@ -11,6 +11,14 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
+	<header class="entry-header">
+		<?php
+
+		if ( 'post' === get_post_type() ) : ?>
+		<?php get_template_part( 'components/post/content', 'meta' ); ?>
+		<?php
+		endif; ?>
+	</header>
 	<div class="entry-content">
 		<?php
 			the_content( sprintf(
@@ -25,4 +33,5 @@
 			) );
 		?>
 	</div>
+	<?php get_template_part( 'components/post/content', 'footer' ); ?>
 </article><!-- #post-## -->

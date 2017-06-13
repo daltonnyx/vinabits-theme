@@ -1,8 +1,22 @@
 #colophon {
+<<<<<<< HEAD
     background: url('./assets/images/footer.png') no-repeat left center / cover transparent;
     .footer-bar {
         padding: 25px 15px; 
         color: #fff;
+=======
+    background: url('./assets/images/footer-bg.png') no-repeat left center / cover transparent;
+    .footer-bar {
+        display: flex;
+        .footer-section {
+            width: 100%;
+            @media screen and (min-width: #{$breakpoint_tablet}) {
+                width: 50%;
+            }
+        }
+        padding: 30px 0px; 
+        color: #ccc;
+>>>>>>> master
         p {
             margin-bottom: 0px;
             font-size: 13px;
@@ -18,7 +32,7 @@
         .contact-list {
             ul {
                 li {
-                    font-size: 14px;
+                    font-size: 15px;
                     margin-bottom: .5em;
                     color: #fff7e2;
                     &:before {
@@ -50,6 +64,7 @@
         }
     }  
   .footer-widget-title {
+<<<<<<< HEAD
     font-size: 20px;
     color: #fff;
     text-transform: uppercase;
@@ -64,7 +79,37 @@
     position: relative;
     line-height: 30px;
   }
+<<<<<<< HEAD
   
+=======
+  .bottom-bar {
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: space-between;
+      padding: 25px 15px;
+      margin-bottom: 38px;
+      .bottom-item {
+          flex-basis: 100%;
+          
+      }
+      @media screen  and (min-width: #{$breakpoint_tablet}) {
+          .bottom-item {
+              flex-basis: 366px;
+           }         
+      }
+      h4 {
+          font-size: 14px;
+          font-weight: 300;
+          text-transform: uppercase;
+          color: #333;
+          line-height: 30px;
+          margin: 0px;
+      }
+      @media screen and (min-width: #{$breakpoint_tablet}) {
+        padding: 45px 0px 25px;
+      }
+  }
+>>>>>>> master
   ul {
     margin: 0px;
     padding: 0px;

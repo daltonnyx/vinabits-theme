@@ -14,7 +14,10 @@
 
 	</div>
 	<footer id="colophon" class="site-footer" role="contentinfo">
-		<?php get_template_part( 'components/footer/site', 'info' ); ?>
+        <?php get_template_part( 'components/footer/site', 'info' ); ?>
+        <div id="copyright" class="site-info">
+            Copyright <?php echo date('Y') ?> - CÔNG TY TNHH TƯ VẤN XÂY DỰNG VÀ THƯƠNG MẠI MINH HÂN THỊNH <img alt="Websiteplaza" src="<?php echo get_template_directory_uri(); ?>/assets/images/plaza.png">
+		</div>
 	</footer>
         <div id="copyright">Copyright 2017 -  Công ty TNHH DV & TM Vinadrink <img src="<?php echo get_template_directory_uri().'/assets/images/plaza.png'; ?>" /></div>
 </div>

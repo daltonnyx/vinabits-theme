@@ -143,8 +143,10 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 @import "vinabits/section-1";
 @import "vinabits/section-2";
 @import "vinabits/section-3";
+<<<<<<< HEAD
+=======
 @import "vinabits/section-4";
-@import "vinabits/footer";
+>>>>>>> master
 @import "vinabits/footer";
 @import "vinabits/sidebar";
 @import "vinabits/woocommerce";
@@ -175,15 +177,18 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 
 
 #copyright {
+<<<<<<< HEAD
+  background: #891307;
+  text-align: center;
+  font-size: 12px;
+  font-weight: bold;
+  color: #ffffff;
+=======
   background: $color__text-main;
   text-align: center;
   font-size: 15px;
   color: #fff7e2;
-  padding: 5px;
-  img {
-    display: inline-block;
-    vertical-align: middle;
-  }
+>>>>>>> master
   padding: 5px;
   img {
     display: inline-block;
@@ -226,9 +231,28 @@ body:not(.front-page) {
         font-weight: bold;
       }
     }
-    
-    
-  }
+    > div:before {
+      content: " ";
+      left: 0;
+      right: 0;
+      bottom: 0;
+      top: 0;
+      position: absolute;
+      display: block;
+      z-index: -1;
+      background: $color__text-main;
+    }
+    &:before {
+      content: " ";
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      top: 0;
+      z-index: -1;
+      background: url('./assets/images/header-line.png') no-repeat center center / cover transparent;
+    }
+}
 }
 
 
@@ -241,42 +265,13 @@ body:not(.front-page) {
   .testimonials .author .text h5 {
     color: #cc00cc;
   }
-  .section-4 {
-    margin-bottom: 48px;
-  }
-  #copyright {
-}
-
-
-
-
-
-@media screen and (min-width: #{$breakpoint_tablet}) {
   
-  
-  .testimonials .author .text h5 {
-    color: #cc00cc;
-  }
-  .section-4 {
-    margin-bottom: 48px;
-  }
   #copyright {
+<<<<<<< HEAD
     background: #891307;
-  }
-  #colophon {
-    position: relative;
-    margin-top: 48px;
-    .contact {
-      font-size: 14px;
-      min-height: 300px;
-  .testimonials .author .text h5 {
-    color: #cc00cc;
-  }
-  .section-4 {
-    margin-bottom: 48px;
-  }
-  #copyright {
-    background: #891307;
+=======
+    background: rgba(4,103,52,.81);
+>>>>>>> master
   }
   #colophon {
     position: relative;
