@@ -1,0 +1,126 @@
+.section-1 {
+    padding: 0px 15px;
+}
+.section-1 > div > div {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    
+    .card-layout {
+        flex-basis: 100%;
+        @media screen and (min-width: #{$breakpoint_tablet}) {
+            flex-basis: 32.83%;
+        }
+        a {
+            text-decoration: none;
+            color: #000;
+            font-size: 16px;
+            position: relative;
+            display: inline-block;
+            width: 100%;
+            &:hover {
+                
+                img {
+                    filter: grayscale(0%);
+                }
+            }
+        }
+        .card-content {
+<<<<<<< HEAD
+            position: absolute;
+            bottom: 0px;
+            padding-bottom: 7px;
+            width: 100%;
+            color: #fff;
+            background: linear-gradient(to top, rgba(0,0,0,.9), rgba(0,0,0,0));
+        }
+        h3.front-page-title {
+            font-size: 16px;
+            font-weight: bold;
+            color: #fff;
+            text-transform: uppercase;
+            padding-left: 15px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            margin-top: 10px;
+            margin-bottom: 0px;
+=======
+            background: $color__text-main;
+            height: 153px;
+            padding: 10px;
+        }
+        
+        header {
+            font-size: 22px;
+            min-height: 2.5em;
+            position: relative;
+            h3.front-page-title {
+                position: absolute;
+                left: 0;
+                right: 0;
+                top: 50%;
+                transform: translateY(-50%);
+                font-size: 22px;
+                text-align: center;
+                font-weight: bold;
+                color: #fff;
+                text-transform: uppercase;
+                margin-top: 0px;
+                margin-bottom: 0px;
+            }
+>>>>>>> master
+        }
+        p {
+            text-align: center;
+            margin-bottom: 0px;
+<<<<<<< HEAD
+            padding-left: 19px;
+            font-size:13px;
+            font-weight: bold;
+=======
+            position: relative;
+            transition: .2s ease-in-out all;
+            font-size: 16px;
+            line-height: 22px;
+            color: #fff;
+            font-weight: 300;
+>>>>>>> master
+        }
+        .card-image {
+            min-width: 100%;
+            min-height: 176px;
+            @media screen and(min-width: #{$breakpoint_tablet}) {
+                min-width: 370px;
+            }
+            overflow: hidden;
+            position: relative;
+            img {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                filter: grayscale(30%);
+                transition: .2s linear all;
+                transform: translate(-50%,-50%);
+            }
+        }
+    }
+    &:after, &:before {
+        content: none;
+    }
+}
+
+@media screen and (min-width: #{$breakpoint_tablet}) {
+    .section-1 {
+<<<<<<< HEAD
+=======
+        padding: 0px;
+        margin-top: -153px;
+        margin-bottom: 40px;
+        position: relative;
+>>>>>>> master
+        p {
+          line-height: 22px;
+        }
+      }
+}

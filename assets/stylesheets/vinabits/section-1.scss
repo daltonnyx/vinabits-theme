@@ -9,14 +9,20 @@
     .card-layout {
         flex-basis: 100%;
         @media screen and (min-width: #{$breakpoint_tablet}) {
-            flex-basis: 30.83%;
+            flex-basis: 32.83%;
         }
         a {
             text-decoration: none;
             color: #000;
             font-size: 16px;
+            position: relative;
+            display: inline-block;
+            width: 100%;
             &:hover {
-                
+                p {
+                    opacity: 1;
+                    top: 0px;
+                }
                 img {
                     filter: grayscale(0%);
                 }

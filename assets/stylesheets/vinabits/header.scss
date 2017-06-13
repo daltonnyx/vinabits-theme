@@ -1,8 +1,8 @@
 #masthead {
-    .logo-container {
-        font-size: 0px;
-    }
     background: #fff;
+    padding: 25px 0px 20px;
+    background: #fff;
+>>>>>>> master
     @media screen and (max-width:#{$breakpoint_tablet}) {
         padding-top:0px;
         .logo-container {
@@ -10,12 +10,6 @@
             .mui--text-right {
                 text-align: center !important;
             }
-        }
-    }
-    > .mui-container {
-        > .mui-row {
-            display: flex;
-            align-items: center;
         }
     }
 }

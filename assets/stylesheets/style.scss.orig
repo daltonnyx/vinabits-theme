@@ -1,0 +1,304 @@
+/*
+Theme Name: Vinabits
+Theme URI: http://components.underscores.me/
+Author: Dalton Nyx
+Author URI: http://stackoverflow.com/users/6862739/quy-truong
+Description: Description
+Version: 1.0.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: vinabits
+Tags:
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+
+Vinabits is created by the theme generator at http://components.underscores.me/, (C) 2015-2016 Automattic, Inc.
+Components is distributed under the terms of the GNU GPL v2 or later.
+
+Normalizing styles have been helped along thanks to the fine work of
+Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
+*/
+
+/*--------------------------------------------------------------
+>>> TABLE OF CONTENTS:
+----------------------------------------------------------------
+# Normalize
+# Accessibility
+# Alignments
+# Clearings
+# Typography
+# Forms
+# Buttons
+# Formatting
+# Lists
+# Tables
+# Navigation
+# Links
+# Layout
+	## Posts
+	## Pages
+# Comments
+# Widgets
+# Infinite scroll
+# Media
+	## Galleries
+--------------------------------------------------------------*/
+@import "variables/variables-base";
+@import "mixins/mixins-base";
+
+/*--------------------------------------------------------------
+# Normalize
+--------------------------------------------------------------*/
+@import "shared/normalize";
+
+/*--------------------------------------------------------------
+# Accessibility
+--------------------------------------------------------------*/
+@import "shared/accessibility";
+
+/*--------------------------------------------------------------
+# Alignments
+--------------------------------------------------------------*/
+@import "shared/alignments";
+
+/*--------------------------------------------------------------
+# Clearings
+--------------------------------------------------------------*/
+@import "shared/clearings";
+
+/*--------------------------------------------------------------
+# Typography
+--------------------------------------------------------------*/
+@import "shared/typography";
+
+/*--------------------------------------------------------------
+# Forms
+--------------------------------------------------------------*/
+@import "shared/forms";
+
+/*--------------------------------------------------------------
+# Buttons
+--------------------------------------------------------------*/
+@import "shared/buttons";
+
+/*--------------------------------------------------------------
+# Formattings
+--------------------------------------------------------------*/
+@import "shared/formatting";
+
+/*--------------------------------------------------------------
+# Lists
+--------------------------------------------------------------*/
+@import "shared/lists";
+
+/*--------------------------------------------------------------
+# Tables
+--------------------------------------------------------------*/
+@import "shared/tables";
+
+/*--------------------------------------------------------------
+# Navigation
+--------------------------------------------------------------*/
+@import "shared/navigation";
+
+/*--------------------------------------------------------------
+# Links
+--------------------------------------------------------------*/
+@import "shared/links";
+
+/*--------------------------------------------------------------
+# Layout
+--------------------------------------------------------------*/
+@import "layout/layout";
+
+/*--------------------------------------------------------------
+# Comments
+--------------------------------------------------------------*/
+@import "sections/comments";
+
+/*--------------------------------------------------------------
+# Widgets
+--------------------------------------------------------------*/
+@import "sections/widgets";
+
+/*--------------------------------------------------------------
+# Infinite scroll
+--------------------------------------------------------------*/
+@import "shared/infinitescroll";
+
+/*--------------------------------------------------------------
+# Media
+--------------------------------------------------------------*/
+@import "shared/media";
+
+/*-------------------------------------------------------------
+# Vinabits
+-------------------------------------------------------------*/
+
+@import "vinabits/typography";
+@import "vinabits/animation";
+@import "vinabits/header";
+@import "vinabits/slider";
+@import "vinabits/section-1";
+@import "vinabits/section-2";
+@import "vinabits/section-3";
+<<<<<<< HEAD
+=======
+@import "vinabits/section-4";
+>>>>>>> master
+@import "vinabits/footer";
+@import "vinabits/sidebar";
+@import "vinabits/woocommerce";
+//Layout for content
+@import "vinabits/cards-list";
+
+///Custom Style down here
+
+
+.wonderpluginslider-container {
+  [class*="amazingslider-title"] {
+    text-transform: uppercase;
+  }
+}
+
+//section-1
+@media screen and (max-width: #{$breakpoint_tablet}) {
+  .xs-zero-padding {
+    padding: 0px !important;
+  }
+}
+
+//footer
+
+.no-padding {
+  padding: 0px;
+}
+
+
+#copyright {
+<<<<<<< HEAD
+  background: #891307;
+  text-align: center;
+  font-size: 12px;
+  font-weight: bold;
+  color: #ffffff;
+=======
+  background: $color__text-main;
+  text-align: center;
+  font-size: 15px;
+  color: #fff7e2;
+>>>>>>> master
+  padding: 5px;
+  img {
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+}
+
+
+//content
+
+body:not(.front-page) {
+    #primary {
+        background: #f3f3f3;
+    }
+  .title-bar {
+    position: relative;
+    margin-top: 0px;
+    z-index: 1;
+    color: #fff;
+    a {
+      color: #fff;
+    }
+    h1 {
+      text-transform: uppercase;
+      margin-bottom: 0;
+    }
+    .breadcrumb {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      display: flex;
+      margin-bottom: 18px;
+      li + li:before {
+        content: "\f105";
+        padding: 0px 5px;
+        font-family: FontAwesome;
+      }
+      li:last-child {
+        font-weight: bold;
+      }
+    }
+    > div:before {
+      content: " ";
+      left: 0;
+      right: 0;
+      bottom: 0;
+      top: 0;
+      position: absolute;
+      display: block;
+      z-index: -1;
+      background: $color__text-main;
+    }
+    &:before {
+      content: " ";
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      top: 0;
+      z-index: -1;
+      background: url('./assets/images/header-line.png') no-repeat center center / cover transparent;
+    }
+}
+}
+
+
+
+
+
+@media screen and (min-width: #{$breakpoint_tablet}) {
+  
+  
+  .testimonials .author .text h5 {
+    color: #cc00cc;
+  }
+  
+  #copyright {
+<<<<<<< HEAD
+    background: #891307;
+=======
+    background: rgba(4,103,52,.81);
+>>>>>>> master
+  }
+  #colophon {
+    position: relative;
+    margin-top: 48px;
+    .contact {
+      font-size: 14px;
+      min-height: 300px;
+      ul {
+        li {
+          margin-bottom: 12px;
+        }
+      }
+      .social-icon {
+        text-align: left;
+        padding-top: 0px;
+        margin-bottom: 17px;
+      }
+      .social-easy {
+        display: inline-block;
+      }
+    }
+    .map {
+      position: absolute;
+      width: 50%;
+      top: 0;
+      font-size: 0;
+      right: 0;
+    }
+  }
+}

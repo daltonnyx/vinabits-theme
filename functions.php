@@ -46,14 +46,13 @@ function vinabits_setup() {
 
 	add_image_size( 'vinabits-thumbnail', 960, 9999 );
 
-	add_image_size( 'post-carousel', 277, 195, array('center', 'center'));
+	add_image_size( 'post-carousel', 270, 218, array('center', 'center'));
 
     add_image_size( 'post-banner', 278, 175, array('center', 'center'));
 
     add_image_size('front-banner', 370, 245, array('center', 'center'));
     add_image_size('card-thumb', 363, 248, array('center', 'center'));
-    
-    add_image_size('news-featured', 169, 117, array('center','center'));
+
 
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
@@ -64,8 +63,8 @@ function vinabits_setup() {
 	 * Add support for core custom logo.
 	 */
 	add_theme_support( 'custom-logo', array(
-		'height'      => 107,
-		'width'       => 202,
+		'height'      => 115,
+		'width'       => 117,
 		'flex-width'  => true,
 		'flex-height' => true,
 	) );
@@ -179,15 +178,15 @@ function vinabits_widgets_init() {
         'before_title'  => '<h3 class="front-page-title">',
         'after_title'   => '</h3>',
     ) );	
-    register_sidebar( array(
-        'name'          => esc_html__( 'Front 4', 'vinabits' ),
-        'id'            => 'front-4',
-        'description'   => '',
-        'before_widget' => '<div id="%1$s" class="front-section %2$s">',
-        'after_widget'  => '</div>',
-        'before_title'  => '<h3 class="front-page-title">',
-        'after_title'   => '</h3>',
-    ) );
+    //register_sidebar( array(
+	//     'name'          => esc_html__( 'Front 4', 'vinabits' ),
+	//     'id'            => 'front-4',
+	//     'description'   => '',
+	//     'before_widget' => '<div id="%1$s" class="front-section %2$s">',
+	//     'after_widget'  => '</div>',
+	//     'before_title'  => '<h3 class="front-page-title">',
+	//     'after_title'   => '</h3>',
+	// ) );
     register_sidebar( array(
 		'name'          => esc_html__( 'Bottom', 'vinabits' ),
 		'id'            => 'bottom',
@@ -214,7 +213,6 @@ add_action( 'widgets_init', 'vinabits_widgets_init' );
  */
 function vinabits_scripts() {
 
-    wp_enqueue_style('RobotoCondensed', 'https://fonts.googleapis.com/css?family=Roboto+Condensed:300,400,700');
 
 	wp_enqueue_style('font-awesome', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css');
 
@@ -226,15 +224,7 @@ function vinabits_scripts() {
 
 	wp_enqueue_style('owl-carousel-css','https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.1/assets/owl.carousel.min.css');
 
-    wp_enqueue_script('owl-carousel-js', 'https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.1/owl.carousel.min.js', array('jquery'), '2.2.1', true);
-
-    wp_enqueue_script('slick-js', 'https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.js', array('jquery'), '1.6.1', true);
-
-    wp_enqueue_style('slick-css', 'https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css');
-
-    wp_enqueue_style('slick-theme', 'https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css');
-
-    wp_enqueue_style('animate-css', 'https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css');
+	wp_enqueue_script('owl-carousel-js', 'https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.1/owl.carousel.min.js', array('jquery'), '2.2.1', true);
 
 	wp_enqueue_style( 'vinabits-style', get_stylesheet_uri() );
 
@@ -249,6 +239,12 @@ function vinabits_scripts() {
 	}
 }
 add_action( 'wp_enqueue_scripts', 'vinabits_scripts' );
+
+function register_admin_script() {
+    wp_enqueue_script('load-mediaupload', get_template_directory_uri(). '/assets/js/admin/load_mediaupload.js', array('jquery'), '', true);
+}
+add_action('admin_enqueue_scripts','register_admin_script');
+
 
 /**
  * Custom template tags for this theme.
@@ -274,7 +270,7 @@ require get_template_directory(). '/inc/news-widget.php';
 
 require get_template_directory(). '/inc/custom-card-widget.php';
 
-require get_template_directory(). '/inc/product-cat-widget.php';
+require get_template_directory(). '/inc/shortcodes.php';
 
 //Custom Excerpt Length
 
@@ -392,27 +388,3 @@ add_filter( 'get_the_archive_title', function ($title) {
 
 } );
 
-function searchform_shortcode($atts) {
-    ob_start();
-?>
-<form role="search" method="get" class="search-form" action="<?php echo home_url( '/' ); ?>">
-    <label>
-        <span class="screen-reader-text"><?php echo _x( 'Search for:', 'label' ) ?></span>
-        <input type="search" class="search-field"
-            placeholder="<?php echo esc_attr_x( 'Nhập từ khoá tìm kiếm', 'vinabits' ) ?>"
-            value="<?php echo get_search_query() ?>" name="s"
-            title="<?php echo esc_attr_x( 'Search for:', 'label' ) ?>" />
-    </label>
-    <button type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
-    </form>
-<?php
-    return ob_get_clean();
-}
-
-add_shortcode('vinabits_searchform','searchform_shortcode');
-
-
-function register_admin_script() {
-    wp_enqueue_script('load-mediaupload', get_template_directory_uri(). '/assets/js/admin/load_mediaupload.js', array('jquery'), '', true);
-}
-add_action('admin_enqueue_scripts','register_admin_script');
