@@ -27,8 +27,6 @@
 	<header id="masthead" class="site-header" role="banner">
 		<div class="mui-container">
             <div class="mui-row">
-<<<<<<< HEAD
-                
                 <div class="mui-col-xs-12  mui-col-md-2 logo-container">
                     <div class="mui-row">
                     <?php vinabits_the_custom_logo(); ?>
@@ -47,20 +45,7 @@
 					<?php echo do_shortcode('[wonderplugin_slider id="1"]'); ?>
 
 			</div>
-=======
-                <div class="mui-col-xs-12 mui-col-md-3 logo-container">
-                    <div class="mui-row">
-                    <?php vinabits_the_custom_logo(); ?>
-                    </div>
-				</div>
 
-                <div class="mui-col-xs-12 mui-col-md-9 nav-container">
-                    <div class="mui-row mui--text-right">
-                    <?php get_template_part( 'components/navigation/navigation', 'top' ); ?>
-                    </div>
-                </div>
-                			</div>
->>>>>>> master
 		</div>
 	</header>
     <div id="content" class="site-content">

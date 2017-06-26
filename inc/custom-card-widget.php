@@ -42,22 +42,17 @@ class Custom_Card_Widget extends WP_Widget {
                     echo $args['before_title'] . apply_filters( 'widget_title', $title ) . $args['after_title'];
                 }
                 ?>
-<<<<<<< HEAD
-=======
                 </header>
->>>>>>> master
                 <?php if(!empty($desc)) { ?>
                     <p><?php echo $desc; ?></p>
                 <?php } ?>
                 <?php if(!empty($link_text)) {?>
                     <p><?php echo $link_text; ?></p>
                 <?php } ?>
-<<<<<<< HEAD
-=======
+
                 </div>
                 <div class="card-image">
                     <img src="<?php echo $image; ?>" class="img-responsive" alt="<?php echo $title; ?>" />
->>>>>>> master
                 </div>
             </a>
         </div>
