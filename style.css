@@ -563,14 +563,11 @@ table {
     width: 100%;
     text-align: center; }
     .main-navigation li:hover > a, .main-navigation li.focus > a {
-<<<<<<< HEAD
-      color: #891307; }
-=======
-      color: #3cb44a; }
->>>>>>> master
+      color: #66cc00; }
   .main-navigation a {
     display: block;
-    color: #666;
+    text-transform: uppercase;
+    color: #333;
     text-decoration: none;
     font-size: 14px;
     font-weight: bold; }
@@ -580,11 +577,7 @@ table {
   .main-navigation .current-menu-item > a,
   .main-navigation .current_page_ancestor > a,
   .main-navigation .current-menu-ancestor > a {
-<<<<<<< HEAD
-    color: #891307; }
-=======
-    color: #3cb44a; }
->>>>>>> master
+    color: #66cc00; }
 
 /* Small menu. */
 #navi-anchor:checked ~ div > ul {
@@ -616,6 +609,20 @@ table {
     z-index: 99; }
     .main-navigation #nav-bars {
       display: none; }
+    .main-navigation a {
+      padding-bottom: 20px;
+      position: relative; }
+      .main-navigation a:after {
+        content: " ";
+        position: absolute;
+        width: 0px;
+        height: 5px;
+        bottom: 0;
+        left: 0;
+        background: #00baf2;
+        transition: .3s linear all; }
+      .main-navigation a:hover:after {
+        width: 100%; }
 
   .menu-toggle {
     display: none; }
@@ -633,7 +640,7 @@ table {
       width: auto;
       margin-left: 40px; }
       .main-navigation ul li a {
-        line-height: 38px; } }
+        line-height: 33px; } }
 .site-main .comment-navigation, .site-main
 .posts-navigation, .site-main
 .post-navigation {
@@ -680,7 +687,7 @@ html {
 body {
   background: #fff;
   /* Fallback for when there is no custom background color defined. */
-  background: #f2f2f2; }
+  background: #fff; }
 
 .content-area {
   float: left;
@@ -839,13 +846,7 @@ object {
 # Vinabits
 -------------------------------------------------------------*/
 body, button, input, select, textarea {
-<<<<<<< HEAD
-  font-family: Arial; }
-
-#masthead {
-  padding: 25px 0px 12px; }
-=======
-  font-family: 'Roboto Condensed'; }
+  font-family: "Open Sans", Arial; }
 
 .delay-0 {
   animation-delay: 0s; }
@@ -1158,9 +1159,12 @@ body, button, input, select, textarea {
 
 #masthead {
   background: #fff; }
-  #masthead .logo-container {
-    font-size: 0px; }
->>>>>>> master
+  #masthead .nav-container .top-bar p {
+    margin-bottom: 0px;
+    text-align: right; }
+    #masthead .nav-container .top-bar p i {
+      margin-left: 15px;
+      margin-right: 5px; }
   @media screen and (max-width: 37.5em) {
     #masthead {
       padding-top: 0px; }
@@ -1168,64 +1172,6 @@ body, button, input, select, textarea {
         margin-top: 44px; }
         #masthead .logo-container .mui--text-right {
           text-align: center !important; } }
-<<<<<<< HEAD
-  @media screen and (min-width: 37.5em) {
-    #masthead .top-bar {
-      display: inline-block; }
-      #masthead .top-bar ul {
-        margin: 0;
-        padding: 0;
-        display: flex;
-        list-style: none; }
-        #masthead .top-bar ul .lang-item {
-          margin: 0px 5px; }
-          #masthead .top-bar ul .lang-item img {
-            height: 12px; }
-      #masthead .top-bar.hotline span {
-        font-size: 13px;
-        font-weight: bold;
-        color: #666; }
-        #masthead .top-bar.hotline span i {
-          color: #891307; }
-        #masthead .top-bar.hotline span + span:before {
-          content: "|";
-          padding-left: 5px;
-          padding-right: 5px; }
-      #masthead .top-bar.text-block {
-        display: block;
-        margin: 10px 0px; }
-        #masthead .top-bar.text-block > .textwidget {
-          text-align: right; }
-        #masthead .top-bar.text-block form {
-          position: relative;
-          display: inline-block; }
-          #masthead .top-bar.text-block form .search-field {
-            border-color: #959595;
-            width: 314px;
-            padding: 5px 10px; }
-          #masthead .top-bar.text-block form button {
-            background: transparent;
-            border: none;
-            box-shadow: none;
-            position: absolute;
-            top: 0em;
-            right: -5px;
-            font-size: 16px;
-            color: #891307; }
-        #masthead .top-bar.text-block .cart a {
-          font-size: 14px;
-          color: #666;
-          font-weight: bold; }
-          #masthead .top-bar.text-block .cart a .items {
-            font-size: 18px;
-            color: #891307; }
-          #masthead .top-bar.text-block .cart a i {
-            font-size: 19px; } }
-=======
-  #masthead > .mui-container > .mui-row {
-    display: flex;
-    align-items: center; }
->>>>>>> master
 
 [class*="wonderpluginslider-container"] {
   overflow-x: hidden; }
@@ -1258,122 +1204,106 @@ body, button, input, select, textarea {
 
 .section-1 {
   padding: 0px 15px; }
-
-.section-1 > div > div {
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: space-between; }
-  .section-1 > div > div .card-layout {
-    flex-basis: 100%; }
-    @media screen and (min-width: 37.5em) {
-      .section-1 > div > div .card-layout {
-        flex-basis: 32.83%; } }
-    .section-1 > div > div .card-layout a {
-      text-decoration: none;
-      color: #000;
-<<<<<<< HEAD
-      font-size: 16px;
-      position: relative;
-      display: inline-block;
-      width: 100%; }
-      .section-1 > div > div .card-layout a:hover img {
-        filter: grayscale(0%); }
-    .section-1 > div > div .card-layout .card-content {
+  .section-1 > div > .mui-row {
+    margin-right: -30px;
+    margin-left: -30px; }
+  .section-1 .introduction {
+    position: relative;
+    padding-left: 20px; }
+    .section-1 .introduction:before {
+      content: " ";
       position: absolute;
-      bottom: 0px;
-      padding-bottom: 7px;
-      width: 100%;
-      color: #fff;
-      background: linear-gradient(to top, rgba(0, 0, 0, 0.9), transparent); }
-    .section-1 > div > div .card-layout h3.front-page-title {
-      font-size: 16px;
+      width: 6px;
+      height: 100%;
+      background: #00baf2;
+      left: 0px;
+      top: 0px; }
+    .section-1 .introduction h2 {
       font-weight: bold;
-      color: #fff;
+      font-size: 25px;
       text-transform: uppercase;
-      padding-left: 15px;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      margin-top: 10px;
-      margin-bottom: 0px; }
-=======
-      font-size: 16px; }
-      .section-1 > div > div .card-layout a:hover img {
-        filter: grayscale(0%); }
-    .section-1 > div > div .card-layout .card-content {
-      background: #3cb44a;
-      height: 153px;
-      padding: 10px; }
-    .section-1 > div > div .card-layout header {
-      font-size: 22px;
-      min-height: 2.5em;
-      position: relative; }
-      .section-1 > div > div .card-layout header h3.front-page-title {
-        position: absolute;
-        left: 0;
-        right: 0;
-        top: 50%;
-        transform: translateY(-50%);
-        font-size: 22px;
-        text-align: center;
+      margin-top: 0px;
+      color: #333; }
+    .section-1 .introduction p {
+      line-height: 1.5;
+      font-size: 14px;
+      margin-bottom: .7em; }
+    .section-1 .introduction .su-button {
+      margin-top: 5em;
+      margin-bottom: .5em; }
+      .section-1 .introduction .su-button span {
+        font-size: 14px;
         font-weight: bold;
-        color: #fff;
-        text-transform: uppercase;
-        margin-top: 0px;
-        margin-bottom: 0px; }
->>>>>>> master
-    .section-1 > div > div .card-layout p {
-      text-align: center;
-      margin-bottom: 0px;
-<<<<<<< HEAD
-      padding-left: 19px;
-      font-size: 13px;
-      font-weight: bold; }
-=======
-      position: relative;
-      transition: .2s ease-in-out all;
-      font-size: 16px;
-      line-height: 22px;
-      color: #fff;
-      font-weight: 300; }
->>>>>>> master
-    .section-1 > div > div .card-layout .card-image {
-      min-width: 100%;
-      min-height: 176px;
-      overflow: hidden;
-      position: relative; }
+        line-height: 1.7em;
+        padding: 5px 16px !important;
+        text-transform: uppercase; }
+        .section-1 .introduction .su-button span:after {
+          margin-left: 15px;
+          content: "\f101";
+          font-family: FontAwesome;
+          font-size: 16px; }
+  .section-1 h1 {
+    font-size: 37px;
+    margin-bottom: 30px;
+    margin-top: 30px;
+    text-transform: uppercase;
+    color: #666;
+    text-align: center; }
+    .section-1 h1 span {
+      color: #66cc00; }
+  .section-1 header.widget-header {
+    border-bottom: 2px solid #ccc;
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom: 43px; }
+  .section-1 h2.front-page-title {
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 25px;
+    color: #333;
+    display: inline-block;
+    border-bottom: 5px solid #00baf2;
+    position: relative;
+    margin: 0px;
+    padding-bottom: 5px;
+    bottom: -3px; }
+  .section-1 .news-cards {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between; }
+    .section-1 .news-cards .news-card {
+      width: 100%;
+      box-shadow: 0px 0px 4px 1px #d4d4d4;
+      background: #f3f3f3; }
       @media screen and (min-width: 37.5em) {
-        .section-1 > div > div .card-layout .card-image {
-          min-width: 370px; } }
-      .section-1 > div > div .card-layout .card-image img {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        filter: grayscale(30%);
-        transition: .2s linear all;
-        transform: translate(-50%, -50%); }
-  .section-1 > div > div:after, .section-1 > div > div:before {
-    content: none; }
+        .section-1 .news-cards .news-card {
+          width: calc(100% / 3 - 79px / 3); } }
+      .section-1 .news-cards .news-card .thumb-container {
+        font-size: 0px; }
+      .section-1 .news-cards .news-card h3.news-title {
+        font-size: 16px;
+        font-weight: bold;
+        color: #00baf2;
+        text-align: center;
+        text-transform: uppercase;
+        line-height: 2em;
+        margin-bottom: 16px;
+        margin-top: 20px; }
+      .section-1 .news-cards .news-card .news-container {
+        font-size: 14px;
+        color: #333;
+        line-height: 2em;
+        text-align: center;
+        padding: 0px 20px; }
+        .section-1 .news-cards .news-card .news-container a.link {
+          color: #66cc00;
+          font-size: 20px; }
 
 @media screen and (min-width: 37.5em) {
-<<<<<<< HEAD
-  .section-1 p {
-    line-height: 2em; } }
-.section-2 .front-page-title {
-  color: #666;
-  font-size: 1.5rem; }
-
-.section-2 {
-  padding: 0px 15px 15px; }
-  .section-2 .hot-product header {
-=======
   .section-1 {
     padding: 0px;
-    margin-top: -153px;
     margin-bottom: 40px;
-    position: relative; }
-    .section-1 p {
-      line-height: 22px; } }
+    position: relative; } }
 .section-2 {
   padding: 0px 15px 20px;
   background: url("./assets/images/sec2-bg.png") repeat left top transparent; }
@@ -1381,58 +1311,9 @@ body, button, input, select, textarea {
     margin: 2em 0;
     text-align: center;
     width: 100%;
->>>>>>> master
     position: relative; }
-    .section-2 .hot-product header:before {
-      content: " ";
-      position: absolute;
-      width: 100%;
-      height: 2px;
-      background: #333;
-      top: calc(50% + 8px);
-      left: 0; }
-  .section-2 .hot-product h2 {
-    position: relative;
-    font-size: 25px;
-    font-weight: bold;
-    text-transform: capitalize;
-    color: #333;
-    margin-bottom: 25px;
-    margin-top: 35px;
-    display: inline-block;
-    padding-right: 20px;
-    background: #f2f2f2; }
-  .section-2 .hot-products .owl-item img {
-    width: auto !important; }
-  .section-2 .hot-products article {
-    text-align: center;
-    background: #fff;
-    border: 1px solid #acacac;
-    padding: 10px 0px; }
-    .section-2 .hot-products article a {
-      display: inline-block; }
-      .section-2 .hot-products article a h3 {
-        margin: 0px;
-        font-size: 15px;
-        font-weight: bold;
-        color: #333;
-        line-height: 1.5em; }
-    .section-2 .hot-products article p {
-      display: inline-block;
-      margin-bottom: 5px;
-      font-size: 14px;
-      color: #000; }
-      .section-2 .hot-products article p.regular-price {
-        text-decoration: line-through; }
-      .section-2 .hot-products article p.sale-price {
-        color: #f00; }
-    .section-2 .hot-products article .btn-add-to-cart {
-      background: #891307;
-      border-radius: 3px;
-      color: #fff;
-      font-size: 13px;
-      font-weight: bold;
-      padding: 0px 15px; }
+  .section-2 .introduce {
+    line-height: 2em; }
   .section-2 .front-page-title {
     font-size: 20px;
     font-weight: bold;
@@ -1454,7 +1335,7 @@ body, button, input, select, textarea {
       margin-left: 8px; }
       .section-2 .product-tabs ul li.mui--is-active {
         border: none;
-        background: #3cb44a; }
+        background: #66cc00; }
       .section-2 .product-tabs ul li a {
         border: none !important;
         font-size: 18px;
@@ -1506,80 +1387,13 @@ body, button, input, select, textarea {
       margin-top: 7rem; }
       .section-2 .list-buttons a.su-button {
         margin-bottom: 0px; } }
-<<<<<<< HEAD
-.section-3 .widget-header {
-  position: relative; }
-  .section-3 .widget-header:before {
-    content: " ";
-    position: absolute;
-    width: 100%;
-    height: 2px;
-    background: #333;
-    top: calc(50% + 8px);
-    left: 0; }
-.section-3 h3.front-page-title {
-  position: relative;
-  font-size: 25px;
-  font-weight: bold;
-  text-transform: capitalize;
-  color: #333;
-  margin-bottom: 25px;
-  margin-top: 35px;
-  display: inline-block;
-  padding-right: 20px;
-  background: #f2f2f2; }
-.section-3 .news-products {
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: flex-start; }
-.section-3 article {
-  flex-basis: calc(20% - 6.4px);
-  margin-right: 8px;
-  margin-bottom: 8px;
-  text-align: center;
-  background: #fff;
-  border: 1px solid #acacac;
-  padding: 10px 0px; }
-  .section-3 article:nth-child(5n) {
-    margin-right: 0px; }
-  .section-3 article a {
-    display: inline-block; }
-    .section-3 article a h3 {
-      margin: 0px;
-      font-size: 15px;
-      font-weight: bold;
-      color: #333;
-      line-height: 1.5em; }
-  .section-3 article p {
-    display: inline-block;
-    margin-bottom: 5px;
-    font-size: 14px;
-    color: #000; }
-    .section-3 article p.regular-price {
-      text-decoration: line-through; }
-    .section-3 article p.sale-price {
-      color: #f00; }
-  .section-3 article .btn-add-to-cart {
-    background: #891307;
-    border-radius: 3px;
-    color: #fff;
-    font-size: 13px;
-    font-weight: bold;
-    padding: 0px 15px; }
-
-#colophon {
-  background: url("./assets/images/footer.png") no-repeat left center/cover transparent; }
-  #colophon .footer-bar {
-    padding: 25px 15px;
-    color: #fff; }
-=======
 .section-3 {
   padding: 0px 0px;
   background: linear-gradient(to left, #f5f5f5, #fcfcfc); }
   .section-3 .front-page-title {
     font-size: 30px;
     font-weight: bold;
-    color: #3cb44a;
+    color: #66cc00;
     text-transform: uppercase;
     text-align: center;
     margin: 52px 0px 40px; }
@@ -1673,7 +1487,7 @@ body, button, input, select, textarea {
       position: absolute;
       top: calc(50% - 2px);
       left: 0px;
-      background: #3cb44a; }
+      background: #66cc00; }
   .section-4 .front-page-title {
     background: #fafafa;
     padding-right: 15px;
@@ -1759,17 +1573,10 @@ body, button, input, select, textarea {
             margin-bottom: 0px; }
 
 #colophon {
-  background: url("./assets/images/footer-bg.png") no-repeat left center/cover transparent; }
+  background: url("./assets/images/footer.png") no-repeat left center/cover transparent; }
   #colophon .footer-bar {
-    display: flex;
-    padding: 30px 0px;
-    color: #ccc; }
-    #colophon .footer-bar .footer-section {
-      width: 100%; }
-      @media screen and (min-width: 37.5em) {
-        #colophon .footer-bar .footer-section {
-          width: 50%; } }
->>>>>>> master
+    padding: 25px 15px;
+    color: #fff; }
     #colophon .footer-bar p {
       margin-bottom: 0px;
       font-size: 13px;
@@ -1779,7 +1586,7 @@ body, button, input, select, textarea {
         #colophon .footer-bar p a:hover {
           text-decoration: none; }
     #colophon .footer-bar .contact-list ul li {
-      font-size: 15px;
+      font-size: 14px;
       margin-bottom: .5em;
       color: #fff7e2; }
       #colophon .footer-bar .contact-list ul li:before {
@@ -1800,44 +1607,79 @@ body, button, input, select, textarea {
       #colophon .footer-bar .contact-list ul li.website:before {
         content: ""; }
   #colophon .footer-widget-title {
-<<<<<<< HEAD
     font-size: 20px;
     color: #fff;
     text-transform: uppercase;
     font-weight: bold;
-=======
-    font-size: 30px;
-    color: #fff7e2;
-    text-transform: uppercase;
->>>>>>> master
     margin-top: 0;
     margin-bottom: 22px;
     position: relative;
     line-height: 30px; }
-<<<<<<< HEAD
-=======
-  #colophon .bottom-bar {
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: space-between;
+  #colophon ul {
+    margin: 0px;
+    padding: 0px;
+    list-style: none; }
+    #colophon ul li {
+      margin-bottom: 10px; }
+      #colophon ul li:before {
+        content: "\f111";
+        color: #990000;
+        font-family: FontAwesome;
+        font-size: 9px;
+        position: relative;
+        top: -3px;
+        display: inline-block;
+        margin-right: 10px;
+        text-align: center;
+        line-height: 30px; }
+      #colophon ul li a {
+        font-size: 14px;
+        font-weight: 300;
+        color: #fff; }
+
+#colophon {
+  background: url("./assets/images/footer.png") no-repeat left center/cover transparent; }
+  #colophon .footer-bar {
     padding: 25px 15px;
-    margin-bottom: 38px; }
-    #colophon .bottom-bar .bottom-item {
-      flex-basis: 100%; }
-    @media screen and (min-width: 37.5em) {
-      #colophon .bottom-bar .bottom-item {
-        flex-basis: 366px; } }
-    #colophon .bottom-bar h4 {
+    color: #fff; }
+    #colophon .footer-bar p {
+      margin-bottom: 0px;
+      font-size: 13px;
+      text-align: right; }
+      #colophon .footer-bar p a {
+        color: #ccc; }
+        #colophon .footer-bar p a:hover {
+          text-decoration: none; }
+    #colophon .footer-bar .contact-list ul li {
       font-size: 14px;
-      font-weight: 300;
-      text-transform: uppercase;
-      color: #333;
-      line-height: 30px;
-      margin: 0px; }
-    @media screen and (min-width: 37.5em) {
-      #colophon .bottom-bar {
-        padding: 45px 0px 25px; } }
->>>>>>> master
+      margin-bottom: .5em;
+      color: #fff7e2; }
+      #colophon .footer-bar .contact-list ul li:before {
+        width: 1.2em;
+        color: #fff;
+        font-size: 17px;
+        position: static; }
+      #colophon .footer-bar .contact-list ul li.home {
+        text-transform: uppercase; }
+        #colophon .footer-bar .contact-list ul li.home:before {
+          content: ""; }
+      #colophon .footer-bar .contact-list ul li.address:before {
+        content: ""; }
+      #colophon .footer-bar .contact-list ul li.phone:before {
+        content: ""; }
+      #colophon .footer-bar .contact-list ul li.email:before {
+        content: ""; }
+      #colophon .footer-bar .contact-list ul li.website:before {
+        content: ""; }
+  #colophon .footer-widget-title {
+    font-size: 20px;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin-top: 0;
+    margin-bottom: 22px;
+    position: relative;
+    line-height: 30px; }
   #colophon ul {
     margin: 0px;
     padding: 0px;
@@ -1914,7 +1756,6 @@ body, button, input, select, textarea {
         font-weight: bold;
         color: #333; }
 
-<<<<<<< HEAD
 body.woocommerce #content header {
   position: relative; }
   body.woocommerce #content header:before {
@@ -1968,7 +1809,7 @@ body.woocommerce #content .products {
         font-weight: bold;
         font-size: 18px; }
     body.woocommerce #content .products > article .btn-add-to-cart {
-      background: #891307;
+      background: #66cc00;
       border-radius: 3px;
       color: #fff;
       font-size: 13px;
@@ -1993,7 +1834,7 @@ body.woocommerce #content .products {
   width: 60% !important; }
 
 .woocommerce span.onsale {
-  background: #891307; }
+  background: #66cc00; }
 
 .woocommerce div.product p.price, .woocommerce div.product span.price {
   color: #333; }
@@ -2015,10 +1856,7 @@ body.woocommerce #content .products {
   padding-left: 20px;
   padding-right: 20px; }
 
-.cards-list {
-=======
 .news-list {
->>>>>>> master
   margin: 1.5em 0px;
   display: flex;
   flex-flow: row wrap;
@@ -2072,25 +1910,19 @@ body.woocommerce #content .products {
   padding: 0px; }
 
 #copyright {
-<<<<<<< HEAD
-  background: #891307;
-  text-align: center;
-  font-size: 12px;
-  font-weight: bold;
-  color: #ffffff;
-=======
-  background: #3cb44a;
+  background: #66cc00;
   text-align: center;
   font-size: 15px;
   color: #fff7e2;
->>>>>>> master
+  padding: 5px;
   padding: 5px; }
   #copyright img {
     display: inline-block;
     vertical-align: middle; }
+  #copyright img {
+    display: inline-block;
+    vertical-align: middle; }
 
-body:not(.front-page) #primary {
-  background: #f3f3f3; }
 body:not(.front-page) .title-bar {
   position: relative;
   margin-top: 0px;
@@ -2113,36 +1945,13 @@ body:not(.front-page) .title-bar {
       font-family: FontAwesome; }
     body:not(.front-page) .title-bar .breadcrumb li:last-child {
       font-weight: bold; }
-  body:not(.front-page) .title-bar > div:before {
-    content: " ";
-    left: 0;
-    right: 0;
-    bottom: 0;
-    top: 0;
-    position: absolute;
-    display: block;
-    z-index: -1;
-    background: #3cb44a; }
-  body:not(.front-page) .title-bar:before {
-    content: " ";
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    top: 0;
-    z-index: -1;
-    background: url("./assets/images/header-line.png") no-repeat center center/cover transparent; }
 
 @media screen and (min-width: 37.5em) {
-  .testimonials .author .text h5 {
-    color: #cc00cc; }
+  .section-4 {
+    margin-bottom: 48px; }
 
   #copyright {
-<<<<<<< HEAD
     background: #891307; }
-=======
-    background: rgba(4, 103, 52, 0.81); }
->>>>>>> master
 
   #colophon {
     position: relative;

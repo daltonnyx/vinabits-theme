@@ -1,99 +1,130 @@
 .section-1 {
-    padding: 0px 15px;
-}
-.section-1 > div > div {
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: space-between;
-    
-    .card-layout {
-        flex-basis: 100%;
-        @media screen and (min-width: #{$breakpoint_tablet}) {
-            flex-basis: 32.83%;
+    > div > .mui-row {
+        margin-right: -30px;
+        margin-left: -30px;
+    }
+
+    .introduction {
+        position: relative;
+        padding-left: 20px;
+        &:before {
+            content: " ";
+            position: absolute;
+            width: 6px;
+            height: 100%;
+            background: #00baf2;
+            left: 0px;;
+            top: 0px;
         }
-        a {
-            text-decoration: none;
-            color: #000;
-            font-size: 16px;
-            position: relative;
-            display: inline-block;
-            width: 100%;
-            &:hover {
-                p {
-                    opacity: 1;
-                    top: 0px;
-                }
-                img {
-                    filter: grayscale(0%);
-                }
-            }
-        }
-        .card-content {
-            background: $color__text-main;
-            height: 153px;
-            padding: 10px;
-        }
-        
-        header {
-            font-size: 22px;
-            min-height: 2.5em;
-            position: relative;
-            h3.front-page-title {
-                position: absolute;
-                left: 0;
-                right: 0;
-                top: 50%;
-                transform: translateY(-50%);
-                font-size: 22px;
-                text-align: center;
-                font-weight: bold;
-                color: #fff;
-                text-transform: uppercase;
-                margin-top: 0px;
-                margin-bottom: 0px;
-            }
+        h2 {
+            font-weight: bold;
+            font-size: 25px;
+            text-transform: uppercase;
+            margin-top: 0px;
+            color: #333;
         }
         p {
-            text-align: center;
-            margin-bottom: 0px;
-            position: relative;
-            transition: .2s ease-in-out all;
-            font-size: 16px;
-            line-height: 22px;
-            color: #fff;
-            font-weight: 300;
+            line-height: 1.5;
+            font-size: 14px;
+            margin-bottom: .7em;
         }
-        .card-image {
-            min-width: 100%;
-            min-height: 176px;
-            @media screen and(min-width: #{$breakpoint_tablet}) {
-                min-width: 370px;
+        .su-button {
+            margin-top: 5em;
+            margin-bottom: .5em;
+            span {
+                font-size: 14px;
+                font-weight: bold;
+                line-height: 1.7em;
+                padding: 5px 16px !important;
+                text-transform: uppercase;
+                &:after {
+                    margin-left: 15px;
+                    content: "\f101";
+                    font-family: FontAwesome;
+                    font-size: 16px;
+                }
             }
-            overflow: hidden;
-            position: relative;
-            img {
-                position: absolute;
-                top: 50%;
-                left: 50%;
-                filter: grayscale(50%);
-                transition: .2s linear all;
-                transform: translate(-50%,-50%);
-            }
+            
         }
     }
-    &:after, &:before {
-        content: none;
+    padding: 0px 15px;
+    h1 {
+        font-size: 37px;
+        margin-bottom: 30px;
+        margin-top: 30px;
+        text-transform: uppercase;
+        color: #666;
+        text-align: center;
+        span {
+            color: $color__text-main;
+        }
     }
+    header.widget-header {
+        border-bottom: 2px solid #ccc;
+        text-align: center;
+        margin-top: 40px;
+        margin-bottom: 43px;
+    }
+    h2.front-page-title {
+        text-transform: uppercase;
+        font-weight: bold;
+        font-size: 25px;
+        color: #333;
+        display: inline-block;
+        border-bottom: 5px solid #00baf2;
+        position: relative;
+        margin: 0px;
+        padding-bottom:5px;
+        bottom: -3px;
+
+    }
+    .news-cards {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-between;
+        .news-card {
+            width: 100%;
+            box-shadow: 0px 0px 4px 1px #d4d4d4;
+            background: #f3f3f3;
+            @media screen and (min-width: #{$breakpoint_tablet}) {
+                width: calc(100% / 3 - 79px / 3);
+
+            }
+            .thumb-container {
+                font-size: 0px;
+            }
+            h3.news-title {
+                font-size: 16px;
+                font-weight: bold;
+                color: #00baf2;
+                text-align: center;
+                text-transform: uppercase;
+                line-height: 2em;
+                margin-bottom: 16px;
+                margin-top: 20px;
+            }
+            .news-container {
+                font-size: 14px;
+                color: #333;
+                line-height: 2em;
+                text-align: center;
+                padding: 0px 20px;
+                a.link {
+                    color: $color__text-main;
+                    font-size: 20px;
+                }
+            }
+
+        }
+    }
+    
 }
 
 @media screen and (min-width: #{$breakpoint_tablet}) {
     .section-1 {
         padding: 0px;
-        margin-top: -153px;
         margin-bottom: 40px;
         position: relative;
-        p {
-          line-height: 22px;
-        }
+        
       }
 }

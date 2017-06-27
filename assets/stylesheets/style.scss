@@ -196,9 +196,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 //content
 
 body:not(.front-page) {
-    #primary {
-        background: #f3f3f3;
-    }
+    
   .title-bar {
     position: relative;
     margin-top: 0px;
@@ -233,45 +231,8 @@ body:not(.front-page) {
 
 
 
-
-
 @media screen and (min-width: #{$breakpoint_tablet}) {
-  
-  
-  .testimonials .author .text h5 {
-    color: #cc00cc;
-  }
-  .section-4 {
-    margin-bottom: 48px;
-  }
-  #copyright {
-}
 
-
-
-
-
-@media screen and (min-width: #{$breakpoint_tablet}) {
-  
-  
-  .testimonials .author .text h5 {
-    color: #cc00cc;
-  }
-  .section-4 {
-    margin-bottom: 48px;
-  }
-  #copyright {
-    background: #891307;
-  }
-  #colophon {
-    position: relative;
-    margin-top: 48px;
-    .contact {
-      font-size: 14px;
-      min-height: 300px;
-  .testimonials .author .text h5 {
-    color: #cc00cc;
-  }
   .section-4 {
     margin-bottom: 48px;
   }

@@ -51,8 +51,10 @@ function vinabits_setup() {
     add_image_size( 'post-banner', 278, 175, array('center', 'center'));
 
     add_image_size('front-banner', 370, 245, array('center', 'center'));
+    
     add_image_size('card-thumb', 363, 248, array('center', 'center'));
 
+    add_image_size('post-card', 366, 238, array('center', 'center'));
 
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
@@ -63,8 +65,8 @@ function vinabits_setup() {
 	 * Add support for core custom logo.
 	 */
 	add_theme_support( 'custom-logo', array(
-		'height'      => 115,
-		'width'       => 117,
+		'width'      => 292,
+		'height'       => 103,
 		'flex-width'  => true,
 		'flex-height' => true,
 	) );
@@ -157,8 +159,8 @@ function vinabits_widgets_init() {
 		'description'   => '',
 		'before_widget' => '<div id="%1$s" class="front-section %2$s">',
 		'after_widget'  => '</div>',
-		'before_title'  => '<h3 class="front-page-title">',
-		'after_title'   => '</h3>',
+		'before_title'  => '<h2 class="front-page-title">',
+		'after_title'   => '</h2>',
 	) );
 	register_sidebar( array(
 		'name'          => esc_html__( 'Front 2', 'vinabits' ),
@@ -212,7 +214,8 @@ add_action( 'widgets_init', 'vinabits_widgets_init' );
  * Enqueue scripts and styles.
  */
 function vinabits_scripts() {
-
+    
+    wp_enqueue_style('OpenSans-font', 'https://fonts.googleapis.com/css?family=Open+Sans:400,700');
 
 	wp_enqueue_style('font-awesome', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css');
 
