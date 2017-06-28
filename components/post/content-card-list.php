@@ -18,6 +18,13 @@ $delay = 'delay-'. $delay_count * 100;
         <header class="entry-header">
         <a href="<?php echo get_permalink(); ?>"><h3 class="entry-title"><?php echo get_the_title(); ?></h3></a>
         </header>
+        <div class="entry-meta">
+            <div class="hcard">
+                <span class="date"><i class="fa fa-calendar"></i> <?php echo get_the_date('d-m-Y') ?></span>
+                <span class="author"><i class="fa fa-pencil"></i> <?php the_author() ?></span>
+                <span class="category"><i class="fa fa-folder-open"></i> <?php the_category(',') ?></span>
+            </div>
+        </div>
         <div class="entry-desc">
             <?php echo get_my_excerpt(40); ?>
         </div>

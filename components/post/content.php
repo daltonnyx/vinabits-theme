@@ -33,5 +33,4 @@
 			) );
 		?>
 	</div>
-	<?php get_template_part( 'components/post/content', 'footer' ); ?>
 </article><!-- #post-## -->
