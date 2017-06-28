@@ -217,7 +217,9 @@ function vinabits_scripts() {
     
     wp_enqueue_style('OpenSans-font', 'https://fonts.googleapis.com/css?family=Open+Sans:400,700');
 
-	wp_enqueue_style('font-awesome', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css');
+    wp_enqueue_style('font-awesome', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css');
+
+    wp_enqueue_style( 'animate-css', 'https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css' );
 
 	wp_enqueue_style('mui-css', 'https://cdnjs.cloudflare.com/ajax/libs/muicss/0.9.14/css/mui.min.css');
 

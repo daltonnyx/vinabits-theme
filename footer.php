@@ -16,7 +16,7 @@
 	<footer id="colophon" class="site-footer" role="contentinfo">
         <?php get_template_part( 'components/footer/site', 'info' ); ?>
         <div id="copyright" class="site-info">
-            Copyright <?php echo date('Y') ?> - CÔNG TY TNHH TƯ VẤN XÂY DỰNG VÀ THƯƠNG MẠI MINH HÂN THỊNH <img alt="Websiteplaza" src="<?php echo get_template_directory_uri(); ?>/assets/images/plaza.png">
+            Copyright <?php echo date('Y') ?> - Công Ty Cổ Phần Ly Ngọc <img alt="Websiteplaza" src="<?php echo get_template_directory_uri(); ?>/assets/images/plaza.png">
 		</div>
 	</footer>
 </div>

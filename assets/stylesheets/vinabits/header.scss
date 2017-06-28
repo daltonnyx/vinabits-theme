@@ -1,6 +1,12 @@
 #masthead {
     background: #fff;
+    .logo-container {
+        font-size: 0px;
+    }
     .nav-container {
+        @media screen and (min-width: #{$breakpoint_tablet}) {
+            margin-top: 1.6em;
+        }
         .top-bar {
             p {
                 margin-bottom: 0px;
