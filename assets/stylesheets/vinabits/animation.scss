@@ -9,6 +9,101 @@ $delay: 0;
 .has-animation {
     opacity: 0;
 }
+
+.visible {
+    opacity: 1;
+}
+
 .smooth {
     transition: 1s linear all;
+}
+
+$btn-width: 250px !default;
+$btn-height: 80px !default;
+$btn-full: $btn-height+$btn-width !default;
+$btn-half: $btn-full/2 !default;
+$bg-color: #eeeeee !default;
+//Button Aniamtion
+//
+.collision {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  max-width: $btn-width;
+  margin: 1rem auto;
+  text-transform: uppercase;
+  border: 1px solid currentColor;
+}
+
+
+
+@keyframes criss-cross-left {
+  0% {
+    left: -20px;
+  }
+  50% {
+    left: 50%;
+    @include size(20px);
+  }
+  100% {
+    left: 50%;
+    @include size($btn-width*1.5);
+  }
+}
+
+@keyframes criss-cross-right {
+  0% {
+    right: -20px;
+  }
+  50% {
+    right: 50%;
+    @include size(20px);
+  }
+  100% {
+    right: 50%;
+    @include size($btn-width*1.5);
+  }
+}
+.collision {
+  position: relative;
+  
+  &:before,
+  &:after {
+    @include absolute(50%);
+    content: '';
+    @include size(20px);
+    background-color: #66cc00;
+    border-radius: 50%;
+  }
+  
+  &:before {
+    left: -20px;
+    transform: translate(-50%, -50%);
+    // animation: criss-cross-left 0.8s reverse;
+  }
+  
+  &:after {
+    right: -20px;
+    transform: translate(50%, -50%);
+    // animation: criss-cross-right 0.8s reverse;
+  }
+  
+  &:hover {
+    color: #fff;
+
+    &:before,
+    &:after {
+      // @include size($btn-width);
+    }
+    
+    &:before {
+      animation: criss-cross-left 0.8s both;
+      animation-direction: alternate;
+    }
+    
+    &:after {
+      animation: criss-cross-right 0.8s both;
+      animation-direction: alternate;
+    }
+  }
 }
