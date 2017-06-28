@@ -545,18 +545,24 @@ table {
       float: left;
       position: absolute;
       top: 1.5em;
-      left: -999em;
+      opacity: 0;
+      visibility: hidden;
+      left: auto;
+      transition: .3s ease-in-out all;
       z-index: 99999; }
       .main-navigation ul ul ul {
         left: -999em;
         top: 0; }
       .main-navigation ul ul li:hover > ul, .main-navigation ul ul li.focus > ul {
-        left: 100%; }
+        opacity: 1;
+        visibility: visible; }
       .main-navigation ul ul a {
         width: 200px; }
     .main-navigation ul li:hover > ul,
     .main-navigation ul li.focus > ul {
-      left: auto; }
+      opacity: 1;
+      visibility: visible;
+      top: 100%; }
   .main-navigation li {
     float: left;
     position: relative;
@@ -640,7 +646,14 @@ table {
       width: auto;
       margin-left: 40px; }
       .main-navigation ul li a {
-        line-height: 33px; } }
+        line-height: 33px; }
+    .main-navigation ul ul {
+      width: auto;
+      flex-flow: row wrap;
+      height: auto;
+      background-color: #fff; }
+      .main-navigation ul ul li {
+        margin-left: 0px; } }
 .site-main .comment-navigation, .site-main
 .posts-navigation, .site-main
 .post-navigation {
@@ -1542,6 +1555,7 @@ body, button, input, select, textarea {
     margin-left: -30px;
     margin-right: -30px;
     padding-top: 40px;
+    padding-bottom: 25px;
     color: #fff; }
     #colophon .footer-bar p {
       margin-bottom: 0px;
@@ -1646,6 +1660,7 @@ body, button, input, select, textarea {
     margin-left: -30px;
     margin-right: -30px;
     padding-top: 40px;
+    padding-bottom: 25px;
     color: #fff; }
     #colophon .footer-bar p {
       margin-bottom: 0px;
@@ -1902,11 +1917,13 @@ body.woocommerce #content .products {
   margin: 1.5em 0px;
   display: flex;
   flex-flow: row wrap;
-  justify-content: space-between; }
+  justify-content: flex-start; }
   .news-list > article {
     flex-basis: calc(100% / 3 - 12px);
     background: #fff;
-    box-shadow: 1px 1px 2px -1px #ccc;
+    margin-left: 6px;
+    margin-right: 6px;
+    box-shadow: 1px 1px 2px 1px #ddd;
     transition: .3s ease-in-out all;
     padding: 15px 0px; }
     .news-list > article a {
@@ -1917,11 +1934,12 @@ body.woocommerce #content .products {
       .news-list > article a:hover img {
         filter: grayscale(0%); }
       .news-list > article a h3 {
-        font-size: 20px;
-        color: #333;
+        font-size: 16px;
+        font-weight: bold;
+        color: #00baf2;
         text-transform: uppercase;
         margin-top: 0px;
-        margin-bottom: 0px; }
+        margin-bottom: 10px; }
     .news-list > article a:visited {
       color: #fff; }
     .news-list > article .thumb-container a {
@@ -1937,6 +1955,12 @@ body.woocommerce #content .products {
         min-width: 100%;
         max-width: none;
         transform: translate(-50%, -50%); }
+    .news-list > article .entry-meta {
+      font-size: 13px;
+      color: #999;
+      margin-bottom: 10px; }
+      .news-list > article .entry-meta a {
+        color: #999; }
     .news-list > article .thumb-container {
       transition: .3s ease-in-out all; }
     .news-list > article:hover .thumb-container {
@@ -1950,6 +1974,18 @@ body.woocommerce #content .products {
     padding: 0px !important; } }
 .no-padding {
   padding: 0px; }
+
+body.single .entry-meta {
+  padding: 5px 15px;
+  background: #f3f3f3;
+  border-radius: 5px;
+  font-size: 15px;
+  color: #666;
+  margin-top: 15px; }
+  body.single .entry-meta a {
+    color: #666; }
+  body.single .entry-meta i {
+    color: #00baf2; }
 
 body:not(.front-page) .title-bar {
   position: relative;
@@ -1973,5 +2009,24 @@ body:not(.front-page) .title-bar {
       font-family: FontAwesome; }
     body:not(.front-page) .title-bar .breadcrumb li:last-child {
       font-weight: bold; }
+  body:not(.front-page) .title-bar > div:before {
+    content: " ";
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    position: absolute;
+    display: block;
+    z-index: -1;
+    background: #00baf2; }
+  body:not(.front-page) .title-bar:before {
+    content: " ";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    z-index: -1;
+    background: url("./assets/images/header-line.png") no-repeat center center/cover transparent; }
 
 /*# sourceMappingURL=style.css.map */
