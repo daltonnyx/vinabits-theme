@@ -28,7 +28,6 @@ get_header(); ?>
 			<div class="mui-container">
 			<div class="mui-row">
 
-        <div class="mui-col-md-12 mui-xs-12">
 
 					<div class="news-list">
 
@@ -53,7 +52,6 @@ get_header(); ?>
 				</div>
 				<?php//	get_sidebar(); ?>
 			</div>
-		</div>
 		</div>
 			<?php
 

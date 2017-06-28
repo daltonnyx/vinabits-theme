@@ -51,7 +51,10 @@
 			float: left;
 			position: absolute;
 			top: 1.5em;
-			left: -999em;
+            opacity: 0;
+            visibility: hidden;
+			left: auto;
+            transition: .3s ease-in-out all;
 			z-index: 99999;
 
 			ul {
@@ -62,7 +65,8 @@
 			li {
 				&:hover > ul,
 				&.focus > ul {
-					left: 100%;
+					opacity: 1;
+                    visibility: visible;
 				}
 			}
 
@@ -81,7 +85,9 @@
 
 		li:hover > ul,
 		li.focus > ul {
-			left: auto;
+            opacity: 1;
+            visibility: visible;
+            top: 100%;
 		}
 	}
 
@@ -99,7 +105,8 @@
 
 	a {
 		display: block;
-		color: #666;
+        text-transform: uppercase;
+		color: #333;
 		text-decoration: none;
 		font-size: 14px;
         font-weight: bold;
@@ -154,6 +161,24 @@
 		#nav-bars {
 			display: none;
 		}
+        a {
+            padding-bottom: 20px;
+            position: relative;
+            &:after { 
+                content: " ";
+                position: absolute;
+                width: 0px;
+                height: 5px;
+                bottom: 0;
+                left:0;
+                background: #00baf2;
+                transition: .3s linear all;
+            }
+            &:hover:after {
+                width: 100%;
+
+            }
+        }
 	}
 	.menu-toggle {
 		display: none;
@@ -167,12 +192,22 @@
 		display: flex;
 		flex-flow: row nowrap;
 		justify-content: flex-end;
+        
 		li {
 			width: auto;
             margin-left: 40px;
 			a {
-				line-height: 38px;
+				line-height: 33px;
 			}
 		}
+        ul {
+            width: auto;
+            flex-flow: row wrap;
+            height: auto;
+            background-color: #fff;
+            li {
+                margin-left: 0px;
+            }
+        }
 	}
 }

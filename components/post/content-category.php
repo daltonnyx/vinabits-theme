@@ -17,6 +17,9 @@
         <header class="entry-header">
         <h2 class="entry-title"><?php echo get_the_title(); ?></h2>
         </header>
+        <div class="entry-meta">
+            <span class="hcard"> <span class="date"><i class="fa fa-calendar"></i> <?php the_date('d-M-Y') ?></span></span>
+        </div>
         <div class="entry-content">
             <?php echo get_my_excerpt(35); ?> 
         </div>

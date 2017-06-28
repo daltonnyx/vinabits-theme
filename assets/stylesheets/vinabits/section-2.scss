@@ -1,69 +1,29 @@
 .section-2 {
     padding: 0px 15px 20px;
-    background: url('./assets/images/sec2-bg.png') repeat left top transparent;
-    .front-title {
-        margin: 2em 0; 
+    background: linear-gradient(to top, rgba(0,0,0, .52), rgba(0,0,0, .52)) , url('./assets/images/subscribe.png') no-repeat center center / cover transparent;
+    h2 {
+        font-size: 30px;
+        font-weight: bold;
+        color: #fff;
         text-align: center;
-        width: 100%;
-        position: relative;
+        margin-top: 40px;
+        span.hightlight {
+            text-transform: uppercase;
+            color: $color__text-main;
+        }
         
-    } 
-    .introduce {
-        line-height: 2em;
     }
-    .front-page-title {
-      font-size: 20px;
-      font-weight: bold;
-      z-index: 1;
-      color: #333;
-      position: relative;
-      margin-bottom: 0px;
-      margin-top: 0px;
-      display: inline-block;
-      padding: 0px 1em;
-      text-transform: uppercase;
+    .su-button {
+        span {
+            font-size: 20px !important;
+            padding: 10px 18px !important;
+            font-weight: bold !important;
+            z-index: 99;
+            text-transform: uppercase !important;
+        }
     }
-    .product-tabs {
-        ul {
-            text-align: center;
-            margin: 0;
-            width: 100%;
-            li {
-                background: #999;
-                margin-left: 8px;
-                &.mui--is-active {
-                    border: none;
-                    background: $color__text-main;
-                } 
-                a {
-                    border: none !important;
-                    font-size: 18px;
-                    font-weight: bold;
-                    color: #fff;
-                    height: 38px;
-                    line-height: 38px;
-                    padding: 0;
-                    width: 200px;
-                }
-            }
-            margin-bottom: 30px;
-        }
-        div.mui-tabs__pane {
-            .item {
-                h5 {
-                    font-size: 15px;
-                    color: #333;
-                    text-transform: uppercase;
-                    text-align: center;
-                }
-            }
-        }
+}
 
-    }
-}
-.textwidget {
-  text-align: justify;
-}
 /* .list-buttons {
  *   display: flex;
  *   flex-flow: row wrap;

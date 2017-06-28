@@ -1,8 +1,23 @@
 #masthead {
     background: #fff;
-    padding: 25px 0px 20px;
-    background: #fff;
->>>>>>> master
+    .logo-container {
+        font-size: 0px;
+    }
+    .nav-container {
+        @media screen and (min-width: #{$breakpoint_tablet}) {
+            margin-top: 1.6em;
+        }
+        .top-bar {
+            p {
+                margin-bottom: 0px;
+                text-align: right;
+                i {
+                    margin-left: 15px;
+                    margin-right: 5px;
+                }
+            }
+        }
+    }
     @media screen and (max-width:#{$breakpoint_tablet}) {
         padding-top:0px;
         .logo-container {
@@ -11,6 +26,7 @@
                 text-align: center !important;
             }
         }
+        
     }
 }
 

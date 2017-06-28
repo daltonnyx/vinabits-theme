@@ -174,31 +174,26 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 }
 
 
-#copyright {
-  background: $color__text-main;
-  text-align: center;
-  font-size: 15px;
-  color: #fff7e2;
-  padding: 5px;
-  img {
-    display: inline-block;
-    vertical-align: middle;
-  }
-  padding: 5px;
-  img {
-    display: inline-block;
-    vertical-align: middle;
-  }
 
+body.single {
+    .entry-meta {
+          padding: 5px 15px;
+          background: #f3f3f3;
+          border-radius: 5px;
+          font-size: 15px;
+          color: #666;
+          margin-top: 15px;
+          a {
+              color: #666;
+          }
+          i {
+              color: #00baf2;
+          }
+      }
 }
 
-
-//content
-
 body:not(.front-page) {
-    #primary {
-        background: #f3f3f3;
-    }
+    
   .title-bar {
     position: relative;
     margin-top: 0px;
@@ -226,84 +221,27 @@ body:not(.front-page) {
         font-weight: bold;
       }
     }
-    
-    
-  }
-}
-
-
-
-
-
-@media screen and (min-width: #{$breakpoint_tablet}) {
-  
-  
-  .testimonials .author .text h5 {
-    color: #cc00cc;
-  }
-  .section-4 {
-    margin-bottom: 48px;
-  }
-  #copyright {
-}
-
-
-
-
-
-@media screen and (min-width: #{$breakpoint_tablet}) {
-  
-  
-  .testimonials .author .text h5 {
-    color: #cc00cc;
-  }
-  .section-4 {
-    margin-bottom: 48px;
-  }
-  #copyright {
-    background: #891307;
-  }
-  #colophon {
-    position: relative;
-    margin-top: 48px;
-    .contact {
-      font-size: 14px;
-      min-height: 300px;
-  .testimonials .author .text h5 {
-    color: #cc00cc;
-  }
-  .section-4 {
-    margin-bottom: 48px;
-  }
-  #copyright {
-    background: #891307;
-  }
-  #colophon {
-    position: relative;
-    margin-top: 48px;
-    .contact {
-      font-size: 14px;
-      min-height: 300px;
-      ul {
-        li {
-          margin-bottom: 12px;
-        }
-      }
-      .social-icon {
-        text-align: left;
-        padding-top: 0px;
-        margin-bottom: 17px;
-      }
-      .social-easy {
-        display: inline-block;
-      }
-    }
-    .map {
-      position: absolute;
-      width: 50%;
-      top: 0;
-      font-size: 0;
+    > div:before {
+      content: " ";
+      left: 0;
       right: 0;
+      bottom: 0;
+      top: 0;
+      position: absolute;
+      display: block;
+      z-index: -1;
+      background: #00baf2;
     }
-  }
+    &:before {
+      content: " ";
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      top: 0;
+      z-index: -1;
+      background: url('./assets/images/header-line.png') no-repeat center center / cover transparent;
+    }
 }
+}
+

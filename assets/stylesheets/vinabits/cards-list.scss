@@ -2,11 +2,13 @@
   margin: 1.5em 0px;
   display: flex;
   flex-flow: row wrap;
-  justify-content: space-between;
+  justify-content: flex-start;
   > article {
       flex-basis: calc(100% / 3 - 12px);
       background: #fff;
-      box-shadow: 1px 1px 2px -1px #ccc;
+      margin-left: 6px;
+      margin-right: 6px;
+      box-shadow: 1px 1px 2px 1px #ddd;
       transition: .3s ease-in-out all;
       padding: 15px 0px;
         a {
@@ -21,11 +23,12 @@
                 }
           }
           h3 {
-            font-size: 20px;
-            color: #333;
+            font-size: 16px;
+            font-weight: bold;
+            color: #00baf2;
             text-transform: uppercase;
             margin-top: 0px;
-            margin-bottom: 0px;
+            margin-bottom: 10px;
          }   
       }
       a {
@@ -46,6 +49,14 @@
               min-width: 100%;
               max-width: none;
               transform: translate(-50%, -50%);
+          }
+      }
+      .entry-meta {
+          font-size: 13px;
+          color: #999;
+          margin-bottom: 10px;
+          a {
+              color: #999;
           }
       }
       .thumb-container {

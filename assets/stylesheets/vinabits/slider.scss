@@ -18,13 +18,22 @@
 }
 
 [class*="amazingslider-text-wrapper"] {
-    left: calc(50% - 450px) !important;
+    right: calc(50% - 1170px / 2 - 50px) !important;
+    left: auto !important;
     bottom: auto!important;
     top: 35%;
+    @media screen and (min-width: #{$breakpoint_tablet}) {
+        width: 395px !important;
+        height: 112px;
+    };
     [class*="amazingslider-text"] {
+        [class*="amazingslider-title"] {
+            margin-top: -18px;
+        }
         > div {
             text-align: center;
             width: 100%;
+            
         }
     }
 }
