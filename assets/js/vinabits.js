@@ -1,29 +1,12 @@
 jQuery(document).ready(function($){
     setTimeout(runAnimation,0);
-  /* $('.testimonials').owlCarousel({
-   *   loop: true,
-   *   responsiveClass: true,
-   *   dots: false,
-   *   responsive: {
-   *     0: {
-   *       items: 1,
-   *       center: true,
-   *       margin: 10,
-   *     },
-   *     768: {
-   *       items: 3,
-   *       margin: 30,
-   *       autoplay: true,
-   *     }
-   *   }
-   * }); */
-  $('.pro-cat-carousel').owlCarousel({
+    $('.news-carousel').owlCarousel({
         items: 4,
-        margin: 20,
+        margin: 28,
         loop: true,
         nav: true,
         dots: false,
-        navText: ['<span class="owl-arrow prev-button"></i>','<span class="owl-arrow next-button"></span>']
+        navText: ['<i class="fa fa-angle-left" aria-hidden="true"></i>','<i class="fa fa-angle-right" aria-hidden="true"></i>']
     });
     $(window).scroll(runAnimation);
 

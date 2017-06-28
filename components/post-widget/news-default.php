@@ -4,7 +4,7 @@
     <a href="<?php echo get_permalink(); ?>">
     <div class="thumb-container">
       <?php if($has_thumbnail) { ?>
-        <?php the_post_thumbnail('vinafor-news-default', array(
+        <?php the_post_thumbnail('vinabits-news-default', array(
           'alt' => get_the_title(),
           'class' => 'img-responsive horizonal-thumb'
         )); ?>

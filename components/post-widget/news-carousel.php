@@ -1,4 +1,4 @@
-<div class="news-carousel">
+<div class="news-carousel owl-carousel">
 <?php if($news->have_posts()) : while($news->have_posts()) : $news->the_post(); ?>
   <div class="news-default-item">
 
@@ -12,11 +12,12 @@
     </div>
     <div class="news-container">
       <h3 class="news-title"><?php echo get_the_title(); ?></h3>
-      <a class="mui-btn" href="<?php echo get_permalink(); ?>">
-        <?php echo __('[:vi]Xem thêm[:en]Read more[:]'); ?> &gt;
+      <a class="vnb-btn" href="<?php echo get_permalink(); ?>">
+        Xem thêm <i class="fa fa-caret-right" aria-hidden="true"></i>
       </a>
     </div>
     
   </div>
 <?php endwhile;endif; ?>
 </div>
+

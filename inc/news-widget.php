@@ -49,7 +49,7 @@ class News_Template_Widget extends WP_Widget {
       'post_type' => $post_type
     );
     if($category != 'all' && $post_type == 'post') {
-      $query_args['cat'] = $category;
+      $query_args['category_name'] = $category;
     }
     else if($category != 'all') {
         $query_args['tax_query'] = array(
