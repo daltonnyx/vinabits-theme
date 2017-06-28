@@ -25,7 +25,7 @@ get_header(); ?>
 			</div>
 			<div class="mui-container">
 				<div class="mui-row">
-					<div class="mui-col-md-9 mui-xs-12 main-content">
+					<div class="mui-col-md-12 mui-xs-12 main-content">
 						<?php
 						while ( have_posts() ) : the_post();
 
@@ -34,7 +34,6 @@ get_header(); ?>
 						endwhile; // End of the loop.
 						?>
 					</div>
-					<?php	get_sidebar(); ?>
 				</div>
 			</div>
 		</main>
