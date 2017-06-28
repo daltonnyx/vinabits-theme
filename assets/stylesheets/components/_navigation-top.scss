@@ -51,7 +51,10 @@
 			float: left;
 			position: absolute;
 			top: 1.5em;
-			left: -999em;
+            opacity: 0;
+            visibility: hidden;
+			left: auto;
+            transition: .3s ease-in-out all;
 			z-index: 99999;
 
 			ul {
@@ -62,7 +65,8 @@
 			li {
 				&:hover > ul,
 				&.focus > ul {
-					left: 100%;
+					opacity: 1;
+                    visibility: visible;
 				}
 			}
 
@@ -81,7 +85,9 @@
 
 		li:hover > ul,
 		li.focus > ul {
-			left: auto;
+            opacity: 1;
+            visibility: visible;
+            top: 100%;
 		}
 	}
 
@@ -186,6 +192,7 @@
 		display: flex;
 		flex-flow: row nowrap;
 		justify-content: flex-end;
+        
 		li {
 			width: auto;
             margin-left: 40px;
@@ -193,5 +200,14 @@
 				line-height: 33px;
 			}
 		}
+        ul {
+            width: auto;
+            flex-flow: row wrap;
+            height: auto;
+            background-color: #fff;
+            li {
+                margin-left: 0px;
+            }
+        }
 	}
 }
