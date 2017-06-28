@@ -46,9 +46,9 @@ function vinabits_setup() {
 
 	add_image_size( 'vinabits-thumbnail', 960, 9999 );
 
-	add_image_size( 'post-carousel', 270, 218, array('center', 'center'));
+	add_image_size( 'post-carousel', 271, 268, array('center', 'center'));
 
-    add_image_size( 'post-banner', 278, 175, array('center', 'center'));
+    add_image_size( 'vinabits-news-default', 271, 151, array('center', 'center'));
 
     add_image_size('front-banner', 370, 245, array('center', 'center'));
     
@@ -180,15 +180,15 @@ function vinabits_widgets_init() {
         'before_title'  => '<h3 class="front-page-title">',
         'after_title'   => '</h3>',
     ) );	
-    //register_sidebar( array(
-	//     'name'          => esc_html__( 'Front 4', 'vinabits' ),
-	//     'id'            => 'front-4',
-	//     'description'   => '',
-	//     'before_widget' => '<div id="%1$s" class="front-section %2$s">',
-	//     'after_widget'  => '</div>',
-	//     'before_title'  => '<h3 class="front-page-title">',
-	//     'after_title'   => '</h3>',
-	// ) );
+    register_sidebar( array(
+        'name'          => esc_html__( 'Front 4', 'vinabits' ),
+        'id'            => 'front-4',
+        'description'   => '',
+        'before_widget' => '<div id="%1$s" class="front-section %2$s">',
+        'after_widget'  => '</div>',
+        'before_title'  => '<h3 class="front-page-title">',
+        'after_title'   => '</h3>',
+    ) );
     register_sidebar( array(
 		'name'          => esc_html__( 'Bottom', 'vinabits' ),
 		'id'            => 'bottom',

@@ -1,101 +1,76 @@
 .section-3 {
+  position: relative;
   padding: 0px 0px;
-  background: linear-gradient(to left, #f5f5f5, #fcfcfc);
-  .front-page-title {
-      font-size: 30px;
-      font-weight: bold;
-      color: $color__text-main;
-      text-transform: uppercase;
-      text-align: center;
-      margin: 52px 0px 40px;
+  @media screen and (min-width: #{$breakpoint_desktop}) {
+      padding: 0px 0px 80px;
   }
-  .service {
-    margin-top: 0px;
-  }
+  header.widget-header {
+        border-bottom: 2px solid #ccc;
+        margin-top: 40px;
+        margin-bottom: 28px;
+         .front-page-title {
+            text-transform: uppercase;
+            font-weight: bold;
+            font-size: 25px;
+            color: #333;
+            display: inline-block;
+            border-bottom: 5px solid #00baf2;
+            position: relative;
+            margin: 0px;
+            padding-bottom:5px;
+            bottom: -3px;
+
+        }
+    }
+    .news-carousel .owl-nav {
+        position: absolute;
+        top: -72px;
+        right: 0;
+        display: flex;
+        > div  {
+            margin-left: 3px;
+            i {
+                font-size: 24px;
+                color: #fff;
+                background: #00baf2;
+                padding: 0px 4px;
+            }
+        }
+    }
+    .news-default-item {
+        .news-container {
+            padding: 15px 25px 12px 40px;
+            background: #fff;
+            h3 {
+                margin-top: 0px;
+                margin-bottom: 0px;
+                font-size: 15px;
+                font-weight: bold;
+                text-transform: uppercase;
+                color: #333;
+
+            }
+            .vnb-btn {
+                color: #333;
+                font-size: 13px;
+                i {
+                    color: $color__text-main;
+                }
+            }
+        }
+    }  
+  
   p {
     line-height: 2;
   }
-  .news-card {
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: space-between;
-    > div {
-      flex-basis: calc(50% - 12px);
-    }
+  &:after {
+      content: " ";
+      position: absolute;
+      width: 100%;
+      height: 207px;
+      left: 0;
+      bottom: 0;
+      background: linear-gradient(to top, rgba(0,0,0,.52), rgba(0,0,0,.52)) , url('./assets/images/sec3-bg.png') no-repeat center center / cover transparent;
   }
-  .news-gallery {
-      margin: 0px -2.5px;
-      display: flex;
-      flex-flow: column wrap;
-      @media screen and (min-width: #{$breakpoint_tablet}) {
-          height: 393px;
-      }
-      .news-gallery-item {
-          position: relative;
-          overflow: hidden;
-          flex-grow: 1;
-          .thumb-container {
-              height: inherit;
-              img {
-                  max-width: none;
-                  position: absolute;
-                  left: 50%;
-                  top: 50%;
-                  transform: translate(-50%,-50%);
-              }
-          }
-          a:hover {
-              .news-container {
-                  opacity: 1;
-              }
-          }
-          .news-container {
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            z-index: 99;
-            background: rgba(0,0,0,.35);
-            opacity: 0;
-            transition: 0.3s linear all;
-            padding: 20px 30px;
-            h3 {
-                margin: 0px;
-                font-size: 17px;
-                text-transform: uppercase;
-                color: #fff;
-                font-weight: bold;
-            }
-          }
-          @media screen and (min-width: #{$breakpoint_tablet}) {
-              &.item-1 {
-                  height: 152px;
-              }
-              &.item-2 {
-                  height: 230px;
-              }
-              &.item-3 {
-                  height: 388px;
-              }
-              &.item-4 {
-                  height: 190px;
-              }
-              &.item-5 {
-                  height: 190px;
-              }
-              &.item-6 {
-                  height: 235px;
-              }
-              &.item-7 {
-                  height: 147px;
-              }
-          }
-          @media screen and (min-width: #{$breakpoint_tablet}) {
-                width: calc(100% / 4 - 5px);
-                margin: 2.55px;
-          }
-          
-      }
-  }
+  
 }
