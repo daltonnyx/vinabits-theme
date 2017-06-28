@@ -1,6 +1,7 @@
 <div class="news-carousel owl-carousel">
+<?php $i = 0; ?>
 <?php if($news->have_posts()) : while($news->have_posts()) : $news->the_post(); ?>
-  <div class="news-default-item">
+    <div class="news-default-item has-animation fadeInUp smooth delay-<?php echo $i; ?>">
 
     <div class="thumb-container">
       <?php if($has_thumbnail) { ?>
@@ -18,6 +19,7 @@
     </div>
     
   </div>
+<?php $i += 100; ?>
 <?php endwhile;endif; ?>
 </div>
 
