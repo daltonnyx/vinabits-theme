@@ -1,12 +1,30 @@
 jQuery(document).ready(function($){
     setTimeout(runAnimation,0);
     $('.news-carousel').owlCarousel({
-        items: 4,
-        margin: 28,
+
         loop: true,
         nav: true,
         dots: false,
-        navText: ['<i class="fa fa-angle-left" aria-hidden="true"></i>','<i class="fa fa-angle-right" aria-hidden="true"></i>']
+        navText: ['<i class="fa fa-angle-left" aria-hidden="true"></i>','<i class="fa fa-angle-right" aria-hidden="true"></i>'],
+        responsive: {
+            0: {
+                items: 1,
+                margin: 30
+            },
+            640: {
+                items: 2,
+                margin: 28,
+            },
+            768: {
+                items: 3,
+                margin: 28
+            },
+            1170: {
+                items: 4,
+                margin: 28
+            }
+
+        }
     });
     $(window).scroll(runAnimation);
 

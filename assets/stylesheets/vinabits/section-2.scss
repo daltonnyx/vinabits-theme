@@ -1,12 +1,13 @@
 .section-2 {
-    padding: 0px 15px 20px;
+    padding: 0px 15px 15px;
     background: linear-gradient(to top, rgba(0,0,0, .52), rgba(0,0,0, .52)) , url('./assets/images/subscribe.png') no-repeat center center / cover transparent;
     h2 {
         font-size: 30px;
         font-weight: bold;
         color: #fff;
         text-align: center;
-        margin-top: 40px;
+        margin-top: 45px;
+        margin-bottom: 20px;
         span.hightlight {
             text-transform: uppercase;
             color: $color__text-main;

@@ -5,12 +5,16 @@
     }
     .nav-container {
         @media screen and (min-width: #{$breakpoint_tablet}) {
-            margin-top: 1.6em;
+            margin-top: 1.2em;
         }
         .top-bar {
+            font-size: 14px;
+            margin-bottom: .7em;
             p {
                 margin-bottom: 0px;
-                text-align: right;
+                @media screen and (min-width #{$breakpoint_tablet}) {
+                    text-align: right;
+                }
                 i {
                     margin-left: 15px;
                     margin-right: 5px;
@@ -22,11 +26,12 @@
         padding-top:0px;
         .logo-container {
             margin-top: 44px;
-            .mui--text-right {
+            text-align: center;
+            
+        }
+        .mui--text-right {
                 text-align: center !important;
             }
-        }
-        
     }
 }
 

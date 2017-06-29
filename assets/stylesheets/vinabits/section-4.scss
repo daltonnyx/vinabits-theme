@@ -5,6 +5,10 @@
     > div > div {
         display: flex;
         justify-content: flex-start;
+        @media screen and (min-width: #{$breakpoint_desktop}) {
+            margin-left: -30px;
+            margin-right: -30px;
+        }
     }
     
     header.widget-header {
@@ -14,7 +18,7 @@
          .front-page-title {
             text-transform: uppercase;
             font-weight: bold;
-            font-size: 25px;
+            font-size: 22px;
             color: #333;
             display: inline-block;
             border-bottom: 5px solid #00baf2;
@@ -28,11 +32,14 @@
     
     .news-default-list {
         display: flex;
-        flex-flow: row nowrap;
+        flex-flow: row wrap;
         justify-content: space-between;
         .news-default-item {
             margin-bottom: 20px;
-            flex-basis: calc(100% / 4 - 84px / 4);
+            flex-basis: 100%;
+            @media screen and ( min-width: #{$breakpoint_desktop} ) {
+                flex-basis: calc(100% / 4 - 84px / 4);
+            }
             a {
                  text-decoration: none;
                 .thumb-container {
