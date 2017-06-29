@@ -32,7 +32,7 @@
                     <?php vinabits_the_custom_logo(); ?>
                     </div>
                 </div>
-                <div class="mui-col-xs-12 mui-col-md-offset-2 mui-col-md-7 nav-container">
+                <div class="mui-col-xs-12 mui-col-md-offset-1 mui-col-md-8 nav-container">
                     <div class="mui-row mui--text-right">
                     <?php dynamic_sidebar('top-1'); ?>
                     <?php get_template_part( 'components/navigation/navigation', 'top' ); ?>

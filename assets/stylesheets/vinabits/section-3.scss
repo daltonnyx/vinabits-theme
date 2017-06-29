@@ -1,17 +1,20 @@
 .section-3 {
   position: relative;
-  padding: 0px 0px;
+  padding: 0px 0px 80px;
   @media screen and (min-width: #{$breakpoint_desktop}) {
-      padding: 0px 0px 80px;
+      > div > .mui-row {
+          margin-left: -30px;
+          margin-right: -30px;
+      }
   }
   header.widget-header {
         border-bottom: 2px solid #ccc;
-        margin-top: 40px;
+        margin-top: 60px;
         margin-bottom: 28px;
          .front-page-title {
             text-transform: uppercase;
             font-weight: bold;
-            font-size: 25px;
+            font-size: 22px;
             color: #333;
             display: inline-block;
             border-bottom: 5px solid #00baf2;
@@ -28,9 +31,9 @@
         right: 0;
         display: flex;
         > div  {
-            margin-left: 3px;
+            margin-left: 6px;
             i {
-                font-size: 24px;
+                font-size: 26px;
                 color: #fff;
                 background: #00baf2;
                 padding: 0px 4px;

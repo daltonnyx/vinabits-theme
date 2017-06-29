@@ -12,9 +12,10 @@
     z-index: 999;
 	display: block;
 	float: left;
+    top: 0;
 	width: 100%;
 	min-height: 34px;
-    background-color: $color__main;
+    background-color: $color__text-main;
 	label {
 		display: block;
 	}
@@ -158,11 +159,12 @@
 		position: relative;
         background: transparent;
 		z-index: 99;
+        margin-top: 3px;
 		#nav-bars {
 			display: none;
 		}
         a {
-            padding-bottom: 20px;
+            padding-bottom: 17px;
             position: relative;
             &:after { 
                 content: " ";
@@ -195,7 +197,7 @@
         
 		li {
 			width: auto;
-            margin-left: 40px;
+            margin-left: 45px;
 			a {
 				line-height: 33px;
 			}

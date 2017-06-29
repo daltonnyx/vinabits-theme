@@ -1,7 +1,7 @@
 <div class="news-default-list">
 <?php $i = 100; ?>
 <?php if($news->have_posts()) : while($news->have_posts()) : $news->the_post(); ?>
-    <div class="news-default-item has-animation lightSpeedIn delay-<?php echo $i ?>">
+    <div class="news-default-item has-animation flipInY delay-<?php echo $i ?>">
     <a href="<?php echo get_permalink(); ?>">
     <div class="thumb-container">
       <?php if($has_thumbnail) { ?>
