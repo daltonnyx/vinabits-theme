@@ -154,11 +154,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 ///Custom Style down here
 
 
-.wonderpluginslider-container {
-  [class*="amazingslider-title"] {
-    text-transform: uppercase;
-  }
-}
+
 
 //section-1
 @media screen and (max-width: #{$breakpoint_tablet}) {

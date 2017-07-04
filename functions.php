@@ -65,8 +65,8 @@ function vinabits_setup() {
 	 * Add support for core custom logo.
 	 */
 	add_theme_support( 'custom-logo', array(
-		'width'      => 292,
-		'height'       => 103,
+		'width'      => 224,
+		'height'       => 87,
 		'flex-width'  => true,
 		'flex-height' => true,
 	) );
@@ -190,14 +190,14 @@ function vinabits_widgets_init() {
         'after_title'   => '</h3>',
     ) );
     register_sidebar( array(
-		'name'          => esc_html__( 'Bottom', 'vinabits' ),
-		'id'            => 'bottom',
-		'description'   => '',
-		'before_widget' => '<div id="%1$s" class="bottom-item">',
-		'after_widget'  => '</div>',
-		'before_title'  => '<h4 class="bottom-widget-title">',
-		'after_title'   => '</h4>',
-	) );
+        'name'          => esc_html__( 'Front 5', 'vinabits' ),
+        'id'            => 'front-5',
+        'description'   => '',
+        'before_widget' => '<div id="%1$s" class="front-section %2$s">',
+        'after_widget'  => '</div>',
+        'before_title'  => '<h3 class="front-page-title">',
+        'after_title'   => '</h3>',
+    ) );
 	register_sidebar( array(
 		'name'          => esc_html__( 'Footer', 'vinabits' ),
 		'id'            => 'footer',
@@ -233,7 +233,9 @@ function vinabits_scripts() {
 
 	wp_enqueue_style( 'vinabits-style', get_stylesheet_uri() );
 
-	wp_enqueue_script( 'vinabits-navigation', get_template_directory_uri() . '/assets/js/navigation.js', array(), '20151215', true );
+    wp_enqueue_script( 'vinabits-navigation', get_template_directory_uri() . '/assets/js/navigation.js', array(), '20151215', true );
+
+    wp_enqueue_script( 'vinabits-ballons', get_template_directory_uri() . '/assets/js/ballons.js', array('jquery'),'0,1', true );
 
 	wp_enqueue_script( 'vinabits', get_template_directory_uri() . '/assets/js/vinabits.js', array('jquery'), '20151215', true );
 
