@@ -1,66 +1,13 @@
 .section-1 {
+    background: url('./assets/images/section-1.png') no-repeat center center / 110% transparent;
     > div > .mui-row {
         margin-right: -30px;
         margin-left: -30px;
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: center;
     }
-
-    .introduction {
-        position: relative;
-        padding-left: 30px;
-        &:before {
-            content: " ";
-            position: absolute;
-            width: 6px;
-            height: 100%;
-            background: #00baf2;
-            left: 10px;
-            top: 0px;
-        }
-        h2 {
-            font-weight: bold;
-            font-size: 25px;
-            text-transform: uppercase;
-            margin-top: 0px;
-            margin-bottom: 30px;
-            color: #333;
-        }
-        p {
-            line-height: 2;
-            font-size: 14px;
-            color: #333;
-            margin-bottom: .5em;
-        }
-        .su-button {
-            margin-top: 1.5em;
-            margin-bottom: .5em;
-            span {
-                font-size: 14px;
-                font-weight: bold;
-                line-height: 1.7em;
-                padding: 5px 16px !important;
-                text-transform: uppercase;
-                &:after {
-                    margin-left: 15px;
-                    content: "\f101";
-                    font-family: FontAwesome;
-                    font-size: 16px;
-                }
-            }
-            
-        }
-    }
-    padding: 0px 15px;
-    h1 {
-        font-size: 37px;
-        margin-bottom: 35px;
-        margin-top: 55px;
-        text-transform: uppercase;
-        color: #666;
-        text-align: center;
-        span {
-            color: $color__text-main;
-        }
-    }
+    
     header.widget-header {
         border-bottom: 2px solid #ccc;
         text-align: center;
@@ -70,63 +17,62 @@
     h2.front-page-title {
         text-transform: uppercase;
         font-weight: bold;
-        font-size: 25px;
-        color: #333;
+        font-size: 16px;
+        color: #fff;
         display: inline-block;
-        border-bottom: 5px solid #00baf2;
         position: relative;
         margin: 0px;
+        margin-top: 15px;
+        padding-top: 13px;
+        width: 100%;
+        text-align: center;
         padding-bottom:5px;
-        bottom: -3px;
+        &:before {
+            content: " ";
+            position: absolute;
+            width: 34px;
+            height: 34px;
+            left: 30px;
+            top: 0px;
+            background: url('./assets/images/phone_03.png') no-repeat left top / cover transparent;
+            animation: vibrate 1.2s cubic-bezier(.36, .07, .19, .97) both infinite;
+        }
 
     }
-    .news-cards {
-        display: flex;
-        flex-flow: row wrap;
-        justify-content: space-between;
-        text-align: center;
-        .news-card {
-            width: 100%;
-            box-shadow: 0px 0px 4px 1px #d4d4d4;
-            margin-bottom: 20px;
-            padding-top: 15px;
-            @media screen and (min-width: #{$breakpoint_tablet}) {
-                margin-bottom: 0px;
-                padding-top: 0px;
-            }
-            background: #f3f3f3;
-            @media screen and (min-width: #{$breakpoint_tablet}) {
-                width: calc(100% / 3 - 79px / 3);
+    .front-section {
+        width: 100%;
+        @media screen and (min-width: #{$breakpoint_tablet}) {
+            width: calc(100% / 4); 
+        }
+        svg {
+            margin-top: -22px;
+            text {
+                font-family: Futura;
+                font-size: 30px;
+                fill: #fff;
 
             }
-            .thumb-container {
-                font-size: 0px;
-            }
-            h3.news-title {
-                font-size: 16px;
-                font-weight: bold;
-                color: #00baf2;
-                text-align: center;
-                text-transform: uppercase;
-                line-height: 2em;
-                margin-bottom: 16px;
-                margin-top: 20px;
-            }
-            .news-container {
-                font-size: 14px;
-                color: #333;
-                line-height: 2em;
-                text-align: center;
-                padding: 0px 20px;
-                a.link {
-                    color: $color__text-main;
-                    font-size: 20px;
-                }
-            }
-
         }
     }
     
+}
+
+@keyframes vibrate {
+  10%, 90% {
+    transform: rotate(1deg);
+  }
+  
+  20%, 80% {
+    transform: rotate(2deg);
+  }
+
+  30%, 50%, 70% {
+    transform: rotate(-4deg);
+  }
+
+  40%, 60% {
+    transform: rotate(4deg);
+  }
 }
 
 @media screen and (min-width: #{$breakpoint_tablet}) {
