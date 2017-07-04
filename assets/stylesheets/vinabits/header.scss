@@ -1,5 +1,8 @@
 #masthead {
-    background: #fff;
+    padding-top: 12px;
+    position: absolute;
+    z-index: 999;
+    min-width: 100%;
     .logo-container {
         font-size: 0px;
     }

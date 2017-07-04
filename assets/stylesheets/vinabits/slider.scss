@@ -1,5 +1,5 @@
 [class*="wonderpluginslider-container"] {
-    overflow-x: hidden;
+    overflow: hidden;
 }
 [class*="amazingslider-nav"] {
     top: auto !important;
@@ -18,10 +18,9 @@
 }
 
 [class*="amazingslider-text-wrapper"] {
-    right: calc(50% - 1170px / 2 - 50px) !important;
+    right: calc(50% - 1170px / 3 - 49px) !important;
     left: auto !important;
-    bottom: auto!important;
-    top: 35%;
+    bottom: -29px !important;
     @media screen and (min-width: #{$breakpoint_tablet}) {
         width: 395px !important;
         height: 112px;
@@ -29,6 +28,15 @@
     [class*="amazingslider-text"] {
         [class*="amazingslider-title"] {
             margin-top: -18px;
+            svg {
+                transform-origin: center;
+                transform: rotate(3deg);
+                text {
+                    font-family: Androgyne;
+                    font-size: 38px;
+                    @include stroke(3, rgb(255, 0, 153));
+                }
+            }
         }
         > div {
             text-align: center;
@@ -45,4 +53,72 @@
     [class*="amazingslider-arrow-right"] {
         right: calc(50% - 1170px / 2) !important;
     }
+}
+
+.slide-section {
+    position: relative;
+    [class^="ballon-"] {
+        position: absolute;
+        background-size: cover;
+        z-index: 999;
+        animation-name: hang-up;
+        animation-delay: 0s;
+        animation-direction: normal;
+        animation-fill-mode: forwards;
+        animation-duration: 3s;
+        animation-iteration-count: infinite;
+        animation-timing-function: ease-in-out;
+        &.flow-up {
+            animation-name: flow-up;
+            animation-delay: 0s;
+            animation-direction: normal;
+            animation-fill-mode: forwards;
+            animation-duration: 4s;
+            animation-iteration-count: 1;
+            animation-timing-function: ease-in-out;
+        }
+    }
+    .ballon-1 {
+        background-image: url('./assets/images/ballon-1.png');
+        width: 90px;
+        height: 156px;
+    }
+    .ballon-2 {
+        background-image: url('./assets/images/ballon-2.png');
+        width: 111px;
+        height: 205px;
+    }
+    .ballon-3 {
+        background-image: url('./assets/images/ballon-3.png');
+        width: 101px;
+        height: 195px;
+    }
+}
+
+@keyframes flow-up {
+    from {
+        transform: translateY(0px);
+    }
+    to {
+        transform: translateY(-1500px);
+    }
+}
+
+@keyframes hang-up {
+    0% {
+        transform: translateY(0px);
+    }
+
+    25% {
+        transform: translateY(-5px);
+    }
+
+    75% {
+        transform: translateY(5px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
+
 }
