@@ -279,6 +279,12 @@ require get_template_directory(). '/inc/custom-card-widget.php';
 
 require get_template_directory(). '/inc/shortcodes.php';
 
+require get_template_directory(). '/inc/vinabits-extra-type.php';
+
+require get_template_directory(). '/inc/vinabits-extra-tax.php';
+
+require get_template_directory(). '/inc/vinabits-extra-box.php';
+
 //Custom Excerpt Length
 
 function my_excerpt($excerpt_length = 55, $id = false, $echo = true) {
@@ -395,3 +401,7 @@ add_filter( 'get_the_archive_title', function ($title) {
 
 } );
 
+
+VinabitsExtraType::RegisterType('promo', 'Promotion', 'Promotions');
+VinabitsExtraTax::RegisterTaxonomy('promo_cat', 'promo', 'Category', 'Categories');
+VinabitsExtraBox::RegisterMetabox('qua_tang', 'Quà tặng', 'promo');
