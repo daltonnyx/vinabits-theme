@@ -24,7 +24,7 @@ jQuery(document).ready(function($){
             },
             1170: {
                 items: 4,
-                margin: 28
+                margin: 90
             }
 
         }
