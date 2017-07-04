@@ -168,8 +168,8 @@ function vinabits_widgets_init() {
 		'description'   => '',
 		'before_widget' => '<div id="%1$s" class="front-section %2$s">',
 		'after_widget'  => '</div>',
-		'before_title'  => '<div class="front-title"><h3 class="front-page-title">',
-		'after_title'   => '</h3></div>',
+		'before_title'  => '<div class="front-title"><h2 class="front-page-title">',
+		'after_title'   => '</h2></div>',
     ) );	
     register_sidebar( array(
         'name'          => esc_html__( 'Front 3', 'vinabits' ),
