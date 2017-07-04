@@ -1,6 +1,13 @@
- 
-$vnb__font_main: 'Open Sans', Arial;
-
+@font-face  {
+    src: url('./assets/fonts/UTM ANDROGYNE.TTF');
+    font-family: Androgyne;
+}
+@font-face  {
+    src: url('./assets/fonts/VNF-FUTURA REGULAR.TTF');
+    font-family: Futura;
+}
+$vnb__font_main: Arial;
+$vnb__font_special: Androgyne;
 
 body, button, input, select, textarea {
     font-family: $vnb__font_main;
