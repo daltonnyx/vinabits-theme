@@ -1,0 +1,162 @@
+body.mobile {
+#content {
+    transform: translateX(0%);
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    z-index: 999;
+    transition: .3s ease-in-out all;
+}
+
+
+    #nav-bars {
+        position: absolute;
+        right: 0;
+        z-index: 99999;
+    }
+    &.home {
+        #nav-bars {
+            display: none;
+        }
+    }
+
+#content.off {
+    transform: translateX(-80%);
+    #nav-bars {
+        .stripe {
+            background-color: #f00;
+        }
+        .stripe:nth-child(1) {
+            transform: rotate(45deg);
+        }
+        .stripe:nth-child(2) {
+            opacity: 0;
+        }
+        .stripe:nth-child(3) {
+            transform: rotate(-45deg);
+        }
+
+    }
+}
+
+&.admin-bar #content {
+    height: calc(100% - 46px);
+    @media screen and ( min-width: 782px ) {
+       height: calc( 100% - 32px );
+    }
+}
+
+&:not(.home) {
+    #content {
+        height: auto;
+        background: #fff;
+        min-height: 100%;
+    }
+}
+
+.mobile-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+.section-m {
+    position: fixed;
+    bottom: 0px;
+    z-index: 999;
+    background: #0033cc;
+    width: 100%;
+    left: 0;
+    ul {
+        display: flex;
+        flex-flow: row wrap;
+        list-style: none;
+        padding: 0px;
+        margin: 0px;
+        border-top: 1px solid #fff;
+        li {
+            flex-basis: 25%;
+            flex-shrink: 0;
+            flex-grow: 0;
+            text-align: center;
+            position: relative;
+            border-right: 2px solid #fff;
+            &:last-child {
+                border-right: none;
+            }
+            &:before {
+                content: " ";
+                position: absolute;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+            &.mobile-menu:before {
+                background: url('./assets/images/icon_12.png') no-repeat left top;
+                width: 25px;
+                height: 20px;
+                top: 14px;
+            }
+            &.dich-vu:before {
+                background: url('./assets/images/icon_03.png') no-repeat left top;
+                width: 35px;
+                height: 36px;
+                top: 6px;
+            }
+            &.khuyen-mai:before {
+                background: url('./assets/images/icon_06.png') no-repeat left top;
+                width: 28px;
+                height: 31px;
+                top: 8px;
+            }
+            &.chinh-sach:before {
+                background: url('./assets/images/icon_09.png') no-repeat left top;
+                width: 29px;
+                height: 29px;
+                top: 10px;
+            }
+            a {
+                color: #fff;
+                font-family: Arial;
+                font-style: italic;
+                font-size: 15px;
+                padding-top: 45px;
+                display: inline-block;
+                position: relative;
+                z-index: 5;
+            }
+        }
+    }
+}
+
+.off-canvas {
+    position: fixed;
+    right: 0;
+    width: 80%;
+    top: 0;
+    bottom: 0;
+    background: #242424;
+    .mobile-logo {
+        padding: 45px 25px 15px;
+    }
+    .menu {
+        list-style: none;
+        margin: 0px;
+        padding: 0px;
+        li {
+            background: #303030;
+            padding-left: 30px;
+            margin-bottom: 3px;
+            a {
+                line-height: 2em;
+                font-size: 18px;
+                font-family: Futura;
+                color: #fff;
+            }
+            ul {
+                padding-left: 15px;
+            }
+        }
+    }
+}
+}
