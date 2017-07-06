@@ -14,7 +14,7 @@
     <div class="news-container">
       <h3 class="news-title"><?php echo get_the_title(); ?></h3>
       <a class="vnb-btn" href="<?php echo get_permalink(); ?>">
-        Xem thêm <i class="fa fa-caret-right" aria-hidden="true"></i>
+        <i class="fa fa-angle-down" aria-hidden="true"></i>
       </a>
     </div>
     

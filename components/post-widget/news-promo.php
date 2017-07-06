@@ -1,11 +1,11 @@
-<div class="news-carousel owl-carousel">
+<div class="promo-carousel owl-carousel">
 <?php $i = 0; ?>
 <?php if($news->have_posts()) : while($news->have_posts()) : $news->the_post(); ?>
     <div class="news-default-item ">
     <h3 class="news-title"><?php echo get_the_title(); ?></h3>
     <div class="thumb-container">
       <?php if($has_thumbnail) { ?>
-        <?php the_post_thumbnail('post-carousel', array(
+        <?php the_post_thumbnail('full', array(
           'alt' => get_the_title(),
           'class' => 'img-responsive horizonal-thumb'
         )); ?>
