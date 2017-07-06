@@ -1,5 +1,5 @@
 .section-2 {
-    padding: 0px 15px 15px;
+    padding: 0px 15px 60px;
     h2 {
         font-size: 22px;
         font-family: Futura;
@@ -7,11 +7,20 @@
         color: #333;
         text-align: left;
         margin-top: 5px;
+        position: relative;
         margin-bottom: 20px;
         span {
             color: #0d4ba0;
         }
-        
+        &:before {
+            content: " ";
+            position: absolute;
+            bottom: -9px;
+            width: 60px;
+            left: 0px;
+            height: 5px;
+            background: #0d4ba0;
+        }        
         
     }
     .news-default-item {

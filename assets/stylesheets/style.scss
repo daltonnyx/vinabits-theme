@@ -144,17 +144,23 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 @import "vinabits/section-2";
 @import "vinabits/section-3";
 @import "vinabits/section-4";
+@import "vinabits/section-5";
 @import "vinabits/footer";
 @import "vinabits/footer";
 @import "vinabits/sidebar";
 @import "vinabits/woocommerce";
 //Layout for content
 @import "vinabits/cards-list";
+@import "vinabits/mobile";
 
 ///Custom Style down here
+html {
+    overflow-x: hidden;
+}
 
-
-
+[class^="section-"] {
+    overflow: hidden;
+}
 
 //section-1
 @media screen and (max-width: #{$breakpoint_tablet}) {
@@ -226,7 +232,7 @@ body:not(.front-page) {
       position: absolute;
       display: block;
       z-index: -1;
-      background: #00baf2;
+      background: #007ff0;
     }
     &:before {
       content: " ";

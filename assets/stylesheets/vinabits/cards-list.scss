@@ -4,7 +4,10 @@
   flex-flow: row wrap;
   justify-content: flex-start;
   > article {
-      flex-basis: calc(100% / 3 - 12px);
+      flex-basis: 100%;
+      @media screen and ( min-width: #{$breakpoint_tablet} ) {
+        flex-basis: calc(100% / 3 - 12px);
+      }
       background: #fff;
       margin-left: 6px;
       margin-right: 6px;

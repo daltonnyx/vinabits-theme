@@ -19,78 +19,87 @@
                 }
             }
         }
-        
-        .contact-list {
-            ul {
-                li {
-                    font-size: 14px;
-                    margin-bottom: .5em;
-                    color: #fff7e2;
-                    &:before {
-                        width: 1.2em;
-                        color: #fff;
-                        font-size: 17px;
-                        position: static;
-                    }
-                    &.home {
-                        text-transform: uppercase;
-                        &:before {
-                            content: "";
-                        }
-                    }
-                    &.address:before {
-                        content: "";
-                    }
-                    &.phone:before {
-                        content: "";
-                    }
-                    &.email:before {
-                        content: "";
-                    }
-                    &.website:before {
-                        content: "";
-                    }
-                }
-            }
-        }
-    }  
-  .footer-widget-title {
-    font-size: 25px;
-    color: #fff;
-    text-transform: uppercase;
-    font-weight: bold;
-    margin-top: 0;
-    margin-bottom: 22px;
-    position: relative;
-    line-height: 30px;
-  }
-  
   ul {
     margin: 0px;
     padding: 0px;
     list-style: none;
     li {
       margin-bottom: 10px;
+      width: 49%;
+      display: inline-block;
+      font-size: 0px;
       &:before {
-        content: "\f111";
-        color: #990000;
+        content: "\f196";
+        color: #0d4ba0;
         font-family: FontAwesome;
-        font-size: 9px;
+        font-size: 12px;
         position: relative;
-        top: -3px;
         display: inline-block;
-        margin-right: 2px;
+        margin-right: 10px;
         text-align: center;
         line-height: 30px;
       }
       a {
-          font-size: 14px; 
+          font-size: 13px; 
           font-weight: 300;
           color: #fff;
       }
 
     }
+  }  
+    .full-list {
+        ul {
+            li {
+                width: 100%;
+            }
+        }
+    }
+    .contact-list {
+        ul {
+            li {
+                font-size: 13px;
+                width: 100%;
+                margin-bottom: .5em;
+                color: #ccc;
+                &:before {
+                    width: 1.2em;
+                    color: #ccc;
+                    font-size: 17px;
+                    position: static;
+                }
+                &.home {
+                    text-transform: uppercase;
+                    &:before {
+                        content: "";
+                    }
+                }
+                &.address:before {
+                    content: "";
+                }
+                &.phone:before {
+                    content: "";
+                }
+                &.email:before {
+                    content: "";
+                }
+                &.website:before {
+                    content: "";
+                }
+            }
+        }
+    }
+    }  
+  .footer-widget-title {
+    font-size: 20px;
+    color: #fff;
+    text-transform: uppercase;
+    margin-top: 0;
+    margin-bottom: 22px;
+    position: relative;
+    line-height: 30px;
   }
+  
+  
   
 }
 #copyright {
@@ -111,16 +120,15 @@
 }
 @media screen and (min-width: #{$breakpoint_tablet}) {
   #copyright {
-    background: #00baf2;
+    background: #0d4ba0;
   }
   #colophon {
     position: relative;
-    margin-top: 40px;
     .contact {
-      font-size: 14px;
       min-height: 300px;
       ul {
         li {
+          font-size: 13px;
           margin-bottom: 12px;
         }
       }

@@ -1,8 +1,13 @@
-#masthead {
+
+body.home #masthead {
     padding-top: 12px;
     position: absolute;
-    z-index: 999;
+    z-index: 9999;
     min-width: 100%;
+}
+
+#masthead {
+    
     .logo-container {
         font-size: 0px;
     }
