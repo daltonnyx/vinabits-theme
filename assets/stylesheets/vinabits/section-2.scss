@@ -1,18 +1,75 @@
 .section-2 {
-    padding: 0px 15px 15px;
-    background: linear-gradient(to top, rgba(0,0,0, .52), rgba(0,0,0, .52)) , url('./assets/images/subscribe.png') no-repeat center center / cover transparent;
+    padding: 0px 15px 60px;
     h2 {
-        font-size: 30px;
-        font-weight: bold;
-        color: #fff;
-        text-align: center;
-        margin-top: 45px;
+        font-size: 22px;
+        font-family: Futura;
+        text-transform: uppercase;
+        color: #333;
+        text-align: left;
+        margin-top: 5px;
+        position: relative;
         margin-bottom: 20px;
-        span.hightlight {
-            text-transform: uppercase;
-            color: $color__text-main;
+        span {
+            color: #0d4ba0;
         }
+        &:before {
+            content: " ";
+            position: absolute;
+            bottom: -9px;
+            width: 60px;
+            left: 0px;
+            height: 5px;
+            background: #0d4ba0;
+        }        
         
+    }
+    .news-default-item {
+        position: relative;
+        text-align: center;
+        @media screen and (min-width: #{$breakpoint_desktop}) {
+            padding: 0px 30px;
+        }
+        h3 {
+            font-family: BayBuom;
+            font-size: 18px;
+            color: #333;
+        }
+        .thumb-container {
+            animation: beat 2.2s infinite linear;
+            .promo {
+                position: absolute;
+                font-family: BayBuom;
+                span {
+                    color: #fff;
+                    font-size: 18px;
+                    display: block;
+                    line-height: 1;
+                    &.value {
+                        color: #ff6600;
+                        font-size: 30px;
+                        @include stroke(2, #fff);
+                    }
+                }
+                width: auto;
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%,-50%);
+            }
+        }
+        .promo-category { 
+            margin-top: 5px;
+            a {
+                font-size: 18px;
+                font-family: BayBuom;
+                text-decoration: none;
+                color:#ff0000;
+            }
+            background: #ffccff;
+            padding: 4px 15px 6px;
+            margin-left: -15px;
+            margin-right: -15px;
+            border-radius: 50%;
+        }
     }
     .su-button {
         span {
@@ -24,30 +81,6 @@
         }
     }
 }
-
-/* .list-buttons {
- *   display: flex;
- *   flex-flow: row wrap;
- *   justify-content: space-between;
- *   margin-top: 2rem;
- *   a.su-button {
- *       flex-basis: 366px;
- *       text-transform: uppercase;
- *       margin-bottom: 10px;
- *       text-align: left;
- *       span {
- *           font-size: 14px !important;
- *           font-weight: 300;
- *           padding: 8px 5px !important;
- *           color: #fff !important;
- *           i {
- *               margin-right: 0px !important;
- *               font-size: 24px !important;
- *           }
- *       }
- *
- *   }
- * } */
 @media screen and (min-width: #{$breakpoint_tablet}) {
     .section-2 {
         padding-left: 0px;
@@ -56,7 +89,7 @@
             
         }
         .front-page-title {
-            font-size: 30px;
+            font-size: 28px;
             
         }
         .list-buttons {

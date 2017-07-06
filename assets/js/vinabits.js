@@ -3,8 +3,32 @@ jQuery(document).ready(function($){
 
     $(".slide-section").ballons();
 
-    $('.news-carousel').owlCarousel({
+    $('.promo-carousel').owlCarousel({
 
+        loop: true,
+        nav: false,
+        dots: false,
+        responsive: {
+            0: {
+                items: 1,
+                margin: 30
+            },
+            640: {
+                items: 2,
+                margin: 28,
+            },
+            768: {
+                items: 3,
+                margin: 28
+            },
+            1170: {
+                items: 4,
+                margin: 90
+            }
+
+        }
+    });
+    $('.news-carousel').owlCarousel({
         loop: true,
         nav: true,
         dots: false,
@@ -24,7 +48,7 @@ jQuery(document).ready(function($){
             },
             1170: {
                 items: 4,
-                margin: 28
+                margin: 20
             }
 
         }
@@ -50,13 +74,25 @@ jQuery(document).ready(function($){
     }
 
 
-    var $section1 = document.querySelector(".section-1");
-    var secLeft = $section1.offsetLeft;
-    var secTop = $section1.offsetTop;
+    $("body").on("click", "#content.off", function(e) {
+        $("#content").removeClass('off');
+    });
+
+    $("body").on("click", ".mobile-menu",function(e) {
+        $("#content").addClass('off');
+    });
+
+    
+
+
+    var $section1 = document.querySelector(".section-1"),
+        secLeft = $section1 ?  $section1.offsetLeft : 0,
+        secTop =  $section1 ?  $section1.offsetTop  : 0;
     if(window.innerWidth >=768) {
         document.onmousemove = function(event) {
             event = event || window.event;
-            mouseParallax($section1, secLeft, secTop, event.clientX, event.clientY, 0.02);
+            if($section1 != null)
+                mouseParallax($section1, secLeft, secTop, event.clientX, event.clientY, 0.02);
         }
     }
 
@@ -75,6 +111,7 @@ jQuery(document).ready(function($){
         $('div[class*="amazingslider-title"]').html(textPath);
     });
     var slideTextBox = document.querySelector( 'div[class*="amazingslider-text-box"]' );
-    mutationObserver.observe(slideTextBox, { childList: true, attributes: false });
+    if(slideTextBox != null)
+        mutationObserver.observe(slideTextBox, { childList: true, attributes: false });
     
 });

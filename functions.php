@@ -46,7 +46,9 @@ function vinabits_setup() {
 
 	add_image_size( 'vinabits-thumbnail', 960, 9999 );
 
-	add_image_size( 'post-carousel', 271, 268, array('center', 'center'));
+    add_image_size( 'post-carousel', 276, 170, array('center', 'center'));
+
+    add_image_size( 'post-video', 570, 338, array('center','center') );
 
     add_image_size( 'vinabits-news-default', 271, 151, array('center', 'center'));
 
@@ -55,6 +57,8 @@ function vinabits_setup() {
     add_image_size('card-thumb', 363, 248, array('center', 'center'));
 
     add_image_size('post-card', 366, 238, array('center', 'center'));
+
+    add_image_size('testimonial-avatar', 96, 96, array('center', 'center'));
 
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
@@ -104,30 +108,7 @@ function vinabits_setup() {
 endif;
 add_action( 'after_setup_theme', 'vinabits_setup' );
 
-/**
- * Set the content width in pixels, based on the theme's design and stylesheet.
- *
- * Priority 0 to make it available to lower priority callbacks.
- *
- * @global int $content_width
- */
-function vinabits_content_width() {
-	$GLOBALS['content_width'] = apply_filters( 'vinabits_content_width', 640 );
-}
-add_action( 'after_setup_theme', 'vinabits_content_width', 0 );
 
-/**
- * Return early if Custom Logos are not available.
- *
- * @todo Remove after WP 4.7
- */
-function vinabits_the_custom_logo() {
-	if ( ! function_exists( 'the_custom_logo' ) ) {
-		return;
-	} else {
-		the_custom_logo();
-	}
-}
 
 /**
  * Register widget area.
@@ -168,8 +149,8 @@ function vinabits_widgets_init() {
 		'description'   => '',
 		'before_widget' => '<div id="%1$s" class="front-section %2$s">',
 		'after_widget'  => '</div>',
-		'before_title'  => '<div class="front-title"><h3 class="front-page-title">',
-		'after_title'   => '</h3></div>',
+		'before_title'  => '<div class="front-title"><h2 class="front-page-title">',
+		'after_title'   => '</h2></div>',
     ) );	
     register_sidebar( array(
         'name'          => esc_html__( 'Front 3', 'vinabits' ),
@@ -177,8 +158,8 @@ function vinabits_widgets_init() {
         'description'   => '',
         'before_widget' => '<div id="%1$s" class="front-section %2$s">',
         'after_widget'  => '</div>',
-        'before_title'  => '<h3 class="front-page-title">',
-        'after_title'   => '</h3>',
+        'before_title'  => '<h2 class="front-page-title">',
+        'after_title'   => '</h2>',
     ) );	
     register_sidebar( array(
         'name'          => esc_html__( 'Front 4', 'vinabits' ),
@@ -186,8 +167,8 @@ function vinabits_widgets_init() {
         'description'   => '',
         'before_widget' => '<div id="%1$s" class="front-section %2$s">',
         'after_widget'  => '</div>',
-        'before_title'  => '<h3 class="front-page-title">',
-        'after_title'   => '</h3>',
+        'before_title'  => '<h2 class="front-page-title">',
+        'after_title'   => '</h2>',
     ) );
     register_sidebar( array(
         'name'          => esc_html__( 'Front 5', 'vinabits' ),
@@ -206,6 +187,15 @@ function vinabits_widgets_init() {
 		'after_widget'  => '</div>',
 		'before_title'  => '<h4 class="footer-widget-title">',
 		'after_title'   => '</h4>',
+    ) );
+    register_sidebar( array(
+		'name'          => esc_html__( 'Mobile', 'vinabits' ),
+		'id'            => 'mobile',
+		'description'   => '',
+		'before_widget' => '<div id="%1$s" class="mobile-widget %2$s">',
+		'after_widget'  => '</div>',
+		'before_title'  => '<h2 class="footer-widget-title">',
+		'after_title'   => '</h2>',
 	) );
 }
 add_action( 'widgets_init', 'vinabits_widgets_init' );
@@ -215,8 +205,6 @@ add_action( 'widgets_init', 'vinabits_widgets_init' );
  */
 function vinabits_scripts() {
     
-    wp_enqueue_style('OpenSans-font', 'https://fonts.googleapis.com/css?family=Open+Sans:400,700');
-
     wp_enqueue_style('font-awesome', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css');
 
     wp_enqueue_style( 'animate-css', 'https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css' );
@@ -229,7 +217,13 @@ function vinabits_scripts() {
 
 	wp_enqueue_style('owl-carousel-css','https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.1/assets/owl.carousel.min.css');
 
-	wp_enqueue_script('owl-carousel-js', 'https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.1/owl.carousel.min.js', array('jquery'), '2.2.1', true);
+    wp_enqueue_script('owl-carousel-js', 'https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.1/owl.carousel.min.js', array('jquery'), '2.2.1', true);
+
+    wp_enqueue_script( 'slick-carousel', 'https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.js', array('jquery'), '1.6.0', true );
+
+    wp_enqueue_style( 'slick-carousel', 'https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css' );
+
+    wp_enqueue_style( 'slick-carousel-theme', 'https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css' );
 
 	wp_enqueue_style( 'vinabits-style', get_stylesheet_uri() );
 
@@ -253,154 +247,14 @@ function register_admin_script() {
 add_action('admin_enqueue_scripts','register_admin_script');
 
 
-/**
- * Custom template tags for this theme.
- */
-require get_template_directory() . '/inc/template-tags.php';
 
-/**
- * Custom functions that act independently of the theme templates.
- */
-require get_template_directory() . '/inc/extras.php';
+$inc_dir = opendir(get_template_directory() . '/inc/');
 
-/**
- * Customizer additions.
- */
-require get_template_directory() . '/inc/customizer.php';
-
-/**
- * Load Jetpack compatibility file.
- */
-require get_template_directory() . '/inc/jetpack.php';
-
-require get_template_directory(). '/inc/news-widget.php';
-
-require get_template_directory(). '/inc/custom-card-widget.php';
-
-require get_template_directory(). '/inc/shortcodes.php';
-
-require get_template_directory(). '/inc/vinabits-extra-type.php';
-
-require get_template_directory(). '/inc/vinabits-extra-tax.php';
-
-require get_template_directory(). '/inc/vinabits-extra-box.php';
-
-//Custom Excerpt Length
-
-function my_excerpt($excerpt_length = 55, $id = false, $echo = true) {
-
-	 $text = '';
-
-				 if($id) {
-							 $the_post = & get_post( $my_id = $id );
-							 $text = ($the_post->post_excerpt) ? $the_post->post_excerpt : $the_post->post_content;
-				 } else {
-							 global $post;
-							 $text = ($post->post_excerpt) ? $post->post_excerpt : get_the_content('');
-	 }
-
-							 $text = strip_shortcodes( $text );
-							 $text = apply_filters('the_content', $text);
-							 $text = str_replace(']]>', ']]>', $text);
-				 $text = strip_tags($text);
-
-							 $excerpt_more = ' ' . '...';
-							 $words = preg_split("/[\n\r\t ]+/", $text, $excerpt_length + 1, PREG_SPLIT_NO_EMPTY);
-							 if ( count($words) > $excerpt_length ) {
-											 array_pop($words);
-											 $text = implode(' ', $words);
-											 $text = $text . $excerpt_more;
-							 } else {
-											 $text = implode(' ', $words);
-							 }
-			 if($echo)
- echo apply_filters('the_content', $text);
-			 else
-			 return $text;
+while( ( $file = readdir( $inc_dir ) ) !== false ) {
+    $ext = end( explode( ".", $file  ) );
+    if($ext == "php")
+        require_once get_template_directory() . '/inc/' . $file;
 }
-
-function get_my_excerpt($excerpt_length = 55, $id = false, $echo = false) {
-return my_excerpt($excerpt_length, $id, $echo);
-}
-
-//Add Breadcrumb
-
-function the_breadcrumb() {
-		echo '<ul id="breadcrumb" class="breadcrumb">';
-	if (!is_home()) {
-		echo '<li><a href="';
-		echo get_option('home');
-		echo '">';
-		echo 'Home';
-        echo "</a></li>";
-        $link = array();
-        if(is_category()) {
-            $cat = get_term(get_query_var('cat'),'category');
-            while($cat->parent != 0) {
-                $cat = get_term($cat->parent, 'category');
-                ob_start();
-                echo '<li>';
-                echo '<a href="'.get_category_link($cat->term_id).'">';
-                echo $cat->name;
-                echo '</a>';
-                echo '</li>';
-                array_unshift($link,ob_get_clean());
-            }
-            foreach($link as $li) {
-                echo $li;
-            }
-            echo '<li>';
-            echo get_cat_name(get_query_var('cat'));
-            echo '</li>';
-        }
-		elseif (is_single()) {
-			echo '<li>';
-			the_category(' </li><li> ');
-			if (is_single()) {
-				echo "</li><li>";
-				the_title();
-				echo '</li>';
-			}
-		} elseif (is_page()) {
-			echo '<li>';
-			echo the_title();
-			echo '</li>';
-		}
-	}
-	elseif (is_tag()) {single_tag_title();}
-	elseif (is_day()) {echo"<li>Archive for "; the_time('F jS, Y'); echo'</li>';}
-	elseif (is_month()) {echo"<li>Archive for "; the_time('F, Y'); echo'</li>';}
-	elseif (is_year()) {echo"<li>Archive for "; the_time('Y'); echo'</li>';}
-	elseif (is_author()) {echo"<li>Author Archive"; echo'</li>';}
-	elseif (isset($_GET['paged']) && !empty($_GET['paged'])) {echo "<li>Blog Archives"; echo'</li>';}
-	elseif (is_search()) {echo"<li>Search Results"; echo'</li>';}
-	echo '</ul>';
-}
-
-add_filter( 'get_the_archive_title', function ($title) {
-
-    if ( is_category()  ) {
-
-                    $title = single_cat_title( '', false  );
-
-
-    } elseif ( is_tag()  ) {
-
-                    $title = single_tag_title( '', false  );
-
-
-    } elseif ( is_author()  ) {
-
-                    $title = '<span class="vcard">' . get_the_author() . '</span>' ;
-
-
-    }
-
-        return $title;
-
-
-} );
-
 
 VinabitsExtraType::RegisterType('promo', 'Promotion', 'Promotions');
 VinabitsExtraTax::RegisterTaxonomy('promo_cat', 'promo', 'Category', 'Categories');

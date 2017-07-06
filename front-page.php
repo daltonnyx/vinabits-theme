@@ -4,9 +4,20 @@
  *
  * @package vinabits
  */
+$detect = new Mobile_Detect;
 
-get_header(); ?>
+$detect->isMobile() ? get_header("mobile")  :  get_header(); ?>
 
+<?php if( $detect->isMobile() ) : ?>
+    <div class="mui-container-fluid">
+        <div class="mobile-slide">
+            <?php echo do_shortcode('[wonderplugin_slider id="2"]'); ?>
+        </div>
+        <div class="section-m">
+            <?php dynamic_sidebar('mobile') ?>
+        </div>
+    </div>
+<?php else : ?>
     <div class="mui-container-fluid">
         <div class="mui-row slide-section">
 
@@ -59,5 +70,6 @@ get_header(); ?>
                 </div>
             </section>
 		</main>
-	</div>
-<?php get_footer(); ?>
+    </div>
+<?php endif; ?>
+<?php  $detect->isMobile() ? get_footer('mobile') : get_footer(); ?>

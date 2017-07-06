@@ -1,63 +1,79 @@
 .section-3 {
   position: relative;
-  padding: 0px 0px 80px;
-  @media screen and (min-width: #{$breakpoint_desktop}) {
-      > div > .mui-row {
-          margin-left: -30px;
-          margin-right: -30px;
-      }
-  }
-  header.widget-header {
-        border-bottom: 2px solid #ccc;
-        margin-top: 60px;
-        margin-bottom: 28px;
-         .front-page-title {
-            text-transform: uppercase;
-            font-weight: bold;
-            font-size: 22px;
-            color: #333;
-            display: inline-block;
-            border-bottom: 5px solid #00baf2;
-            position: relative;
-            margin: 0px;
-            padding-bottom:5px;
-            bottom: -3px;
-
+  padding: 0px 0px 60px;
+  background: #f3f3f3; 
+  h2 {
+        font-size: 22px;
+        @media screen {
+           font-size: 28px;
         }
+        text-align: center;
+        font-family: Futura;
+        text-transform: uppercase;
+        color: #333;
+        margin-top: 35px;
+        position: relative;
+        margin-bottom: 50px;
+        span {
+            color: #0d4ba0;
+        }
+        &:before {
+            content: " ";
+            position: absolute;
+            bottom: -9px;
+            width: 60px;
+            left: calc(50% - 30px);
+            height: 5px;
+            background: #0d4ba0;
+        }        
+        
     }
     .news-carousel .owl-nav {
-        position: absolute;
-        top: -60px;
-        right: 0;
-        display: flex;
+       display: block;
         > div  {
-            margin-left: 6px;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            &.owl-prev {
+                left: 0;
+            }
+            &.owl-next {
+                right: 0;
+            }
             i {
-                font-size: 26px;
-                color: #fff;
-                background: #00baf2;
+                font-size: 48px;
+                color: #333;
                 padding: 0px 4px;
             }
         }
     }
     .news-default-item {
+        position: relative;
         .news-container {
-            padding: 15px 25px 12px 40px;
-            background: #fff;
+            padding: 60px 0px 40px;
             h3 {
                 margin-top: 0px;
                 margin-bottom: 0px;
-                font-size: 15px;
-                font-weight: bold;
+                font-size: 22px;
+                text-align: center;
+                line-height: 1em;
+                font-family: Futura;
                 text-transform: uppercase;
-                color: #333;
+                color: #fff;
 
             }
             .vnb-btn {
-                color: #333;
-                font-size: 13px;
+                background: rgba(13,75,160, .91);
+                font-size: 32px;
+                position: absolute;
+                left: 50%;
+                width: 1.5em;
+                text-align: center;
+                border-radius: 50%;
+                transform: translateX(-50%);
+                top: 152px;
                 i {
-                    color: $color__text-main;
+                    color: #fff;
                 }
             }
         }
@@ -66,6 +82,26 @@
   p {
     line-height: 2;
   }
-  
-  
+  .owl-item {
+    &:nth-child(4n + 1) {
+        .news-container {
+            background: #ff0099;
+        }
+    }
+    &:nth-child(4n + 2) {
+        .news-container {
+            background: #66cc00;
+        }
+    }
+    &:nth-child(4n + 3) {
+        .news-container {
+            background: #ffcc00;
+        }
+    }
+    &:nth-child(4n + 4) {
+        .news-container {
+            background: #0066cc;
+        }
+    }
+  } 
 }

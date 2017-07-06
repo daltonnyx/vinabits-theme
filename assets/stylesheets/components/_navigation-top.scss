@@ -4,7 +4,19 @@
 	height: 0;
 }
 
-
+#nav-bars {
+    display: inline-block;
+    float: right;
+    margin: 8px 15px 8px 0px;
+    .stripe {
+        width: 18px;
+        height: 3px;
+        background: #fff;
+        margin-bottom: 3px;
+        transform-origin: left;
+        transition: .3s linear all;
+    }
+}
 
 .main-navigation {
 	clear: both;
@@ -19,20 +31,7 @@
 	label {
 		display: block;
 	}
-	#nav-bars {
-		display: inline-block;
-		float: right;
-		margin: 8px 15px 8px 0px;
-		.stripe {
-			width: 18px;
-			height: 3px;
-			background: #fff;
-			margin-bottom: 3px;
-			transform-origin: left;
-			transition: .3s linear all;
-		}
-	}
-
+	
 	ul {
 		display: block;
 		opacity: 0;
@@ -111,7 +110,7 @@
 		font-size: 16px;
         font-weight: normal;
 		&:visited {
-			color: #191919;
+			color: #fff;
 		}
 	}
 
@@ -125,26 +124,26 @@
 
 /* Small menu. */
 #navi-anchor:checked ~ div > ul {
-	opacity: 1;
-	visibility: visible;
+    opacity: 1;
+    visibility: visible;
 }
 
 #navi-anchor:checked ~ #nav-bars {
-	position: fixed;
-	z-index: 99999;
-	right: 0px;
+    position: fixed;
+    z-index: 99999;
+    right: 0px;
     .stripe {
         background-color: $color__main;
     }
-	.stripe:nth-child(1) {
-		transform: rotate(45deg);
-	}
-	.stripe:nth-child(2) {
-		opacity: 0;
-	}
-	.stripe:nth-child(3) {
-		transform: rotate(-45deg);
-	}
+    .stripe:nth-child(1) {
+        transform: rotate(45deg);
+    }
+    .stripe:nth-child(2) {
+        opacity: 0;
+    }
+    .stripe:nth-child(3) {
+        transform: rotate(-45deg);
+    }
 }
 
 .menu-toggle:before {

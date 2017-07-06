@@ -11,8 +11,7 @@
         </div>
         <div class="author">
           <div class="text">
-            <h5><span class="job-title"><?php echo get_post_meta(get_the_ID(), 'testimonials-widget-title', true); ?>:</span><?php echo get_the_title(); ?></h5>
-            <span class="company">Đại diện: <?php echo get_post_meta(get_the_ID(), 'testimonials-widget-company', true); ?></span>
+            <h5><?php echo get_the_title(); ?><span class="job-title"> (<?php echo get_post_meta(get_the_ID(), 'testimonials-widget-title', true); ?>)</span></h5>
             <blockquote>
               <?php echo get_the_excerpt(); ?>
             </blockquote>
@@ -31,7 +30,6 @@
             arrows: false,
             slidesToShow: 3,
             slidesToScroll: 1,
-            centerMode: true,
             vertical: true,
             infinite: true
         });
