@@ -32,3 +32,52 @@ function vinabits_body_classes( $classes ) {
 	return $classes;
 }
 add_filter( 'body_class', 'vinabits_body_classes' );
+
+/**
+ * Set the content width in pixels, based on the theme's design and stylesheet.
+ *
+ * Priority 0 to make it available to lower priority callbacks.
+ *
+ * @global int $content_width
+ */
+function vinabits_content_width() {
+	$GLOBALS['content_width'] = apply_filters( 'vinabits_content_width', 640 );
+}
+add_action( 'after_setup_theme', 'vinabits_content_width', 0 );
+
+/**
+ * Return early if Custom Logos are not available.
+ *
+ * @todo Remove after WP 4.7
+ */
+function vinabits_the_custom_logo() {
+	if ( ! function_exists( 'the_custom_logo' ) ) {
+		return;
+	} else {
+		the_custom_logo();
+	}
+}
+
+add_filter( 'get_the_archive_title', function ($title) {
+
+    if ( is_category()  ) {
+
+                    $title = single_cat_title( '', false  );
+
+
+    } elseif ( is_tag()  ) {
+
+                    $title = single_tag_title( '', false  );
+
+
+    } elseif ( is_author()  ) {
+
+                    $title = '<span class="vcard">' . get_the_author() . '</span>' ;
+
+
+    }
+
+        return $title;
+
+
+} );

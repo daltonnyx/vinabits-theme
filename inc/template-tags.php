@@ -209,3 +209,94 @@ function render_product_archive() {
 	 </article>
 	<?php
 }
+//Custom Excerpt Length
+
+function my_excerpt($excerpt_length = 55, $id = false, $echo = true) {
+
+	 $text = '';
+
+				 if($id) {
+							 $the_post = & get_post( $my_id = $id );
+							 $text = ($the_post->post_excerpt) ? $the_post->post_excerpt : $the_post->post_content;
+				 } else {
+							 global $post;
+							 $text = ($post->post_excerpt) ? $post->post_excerpt : get_the_content('');
+	 }
+
+							 $text = strip_shortcodes( $text );
+							 $text = apply_filters('the_content', $text);
+							 $text = str_replace(']]>', ']]>', $text);
+				 $text = strip_tags($text);
+
+							 $excerpt_more = ' ' . '...';
+							 $words = preg_split("/[\n\r\t ]+/", $text, $excerpt_length + 1, PREG_SPLIT_NO_EMPTY);
+							 if ( count($words) > $excerpt_length ) {
+											 array_pop($words);
+											 $text = implode(' ', $words);
+											 $text = $text . $excerpt_more;
+							 } else {
+											 $text = implode(' ', $words);
+							 }
+			 if($echo)
+ echo apply_filters('the_content', $text);
+			 else
+			 return $text;
+}
+
+function get_my_excerpt($excerpt_length = 55, $id = false, $echo = false) {
+return my_excerpt($excerpt_length, $id, $echo);
+}
+
+//Add Breadcrumb
+
+function the_breadcrumb() {
+		echo '<ul id="breadcrumb" class="breadcrumb">';
+	if (!is_home()) {
+		echo '<li><a href="';
+		echo get_option('home');
+		echo '">';
+		echo 'Home';
+        echo "</a></li>";
+        $link = array();
+        if(is_category()) {
+            $cat = get_term(get_query_var('cat'),'category');
+            while($cat->parent != 0) {
+                $cat = get_term($cat->parent, 'category');
+                ob_start();
+                echo '<li>';
+                echo '<a href="'.get_category_link($cat->term_id).'">';
+                echo $cat->name;
+                echo '</a>';
+                echo '</li>';
+                array_unshift($link,ob_get_clean());
+            }
+            foreach($link as $li) {
+                echo $li;
+            }
+            echo '<li>';
+            echo get_cat_name(get_query_var('cat'));
+            echo '</li>';
+        }
+		elseif (is_single()) {
+			echo '<li>';
+			the_category(' </li><li> ');
+			if (is_single()) {
+				echo "</li><li>";
+				the_title();
+				echo '</li>';
+			}
+		} elseif (is_page()) {
+			echo '<li>';
+			echo the_title();
+			echo '</li>';
+		}
+	}
+	elseif (is_tag()) {single_tag_title();}
+	elseif (is_day()) {echo"<li>Archive for "; the_time('F jS, Y'); echo'</li>';}
+	elseif (is_month()) {echo"<li>Archive for "; the_time('F, Y'); echo'</li>';}
+	elseif (is_year()) {echo"<li>Archive for "; the_time('Y'); echo'</li>';}
+	elseif (is_author()) {echo"<li>Author Archive"; echo'</li>';}
+	elseif (isset($_GET['paged']) && !empty($_GET['paged'])) {echo "<li>Blog Archives"; echo'</li>';}
+	elseif (is_search()) {echo"<li>Search Results"; echo'</li>';}
+	echo '</ul>';
+}
