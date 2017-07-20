@@ -44,10 +44,10 @@ class VinabitsExtraBox
         }
     }
 
-    function load_script() {
+    function load_media_script() {
         wp_enqueue_media();
         wp_enqueue_script('media-upload');
-        wp_enqueue_script( 'vinabitsBox-media-js', get_template_directory_uri() . '/js/admin/media.js' );
+        wp_enqueue_script( 'vinabitsBox-media-js', get_template_directory_uri() . '/assets/js/admin/media.js' );
     }
 
     static function RegisterMetabox($name, $caption, $post_type = 'post', $type = 'text') {
@@ -61,7 +61,7 @@ class VinabitsExtraBox
         add_action( 'add_meta_boxes', array($vnb_box,'vinabits_register_metabox') );
         add_action('save_post', array($vnb_box, 'save'));
         if( $type == "images" ) {
-            add_action( 'admin_enqueue_scripts', array($vnb_box, 'load_script') );
+            add_action( 'admin_enqueue_scripts', array($vnb_box, 'load_media_script') );
         }
     }
 }
