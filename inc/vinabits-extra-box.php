@@ -33,16 +33,7 @@ class VinabitsExtraBox
 
     function render_box( $post ) {
         wp_nonce_field( $this->name, $this->name .  '_nonce' );
-        if($this->type == 'text') {
-?>
-        <p>
-          <label for="<?php echo $this->name ?>"><?php echo $this->caption; ?></label>
-          <br />
-          <input class="widefat" type="text" name="<?php echo $this->name ?>" id="<?php echo $this->name ?>" 
-                 value="<?php echo get_post_meta( $post->ID, '_vnb_' . $this->name, true ); ?>" size="30" />
-        </p>
-<?php
-        }
+        require get_template_directory() . '/inc/metaboxes/'.$this->type.'-box.php';
     }
 
     function save($post_id) {
@@ -51,6 +42,12 @@ class VinabitsExtraBox
         if ( isset( $_POST[$this->name] ) ) {
             update_post_meta( $post_id,  '_vnb_'. $this->name , sanitize_text_field( $_POST[$this->name] ) ) ;
         }
+    }
+
+    function load_script() {
+        wp_enqueue_media();
+        wp_enqueue_script('media-upload');
+        wp_enqueue_script( 'vinabitsBox-media-js', get_template_directory_uri() . '/js/admin/media.js' );
     }
 
     static function RegisterMetabox($name, $caption, $post_type = 'post', $type = 'text') {
@@ -63,5 +60,8 @@ class VinabitsExtraBox
 
         add_action( 'add_meta_boxes', array($vnb_box,'vinabits_register_metabox') );
         add_action('save_post', array($vnb_box, 'save'));
+        if( $type == "images" ) {
+            add_action( 'admin_enqueue_scripts', array($vnb_box, 'load_script') );
+        }
     }
 }
