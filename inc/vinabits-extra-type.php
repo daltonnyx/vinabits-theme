@@ -20,18 +20,18 @@ class VinabitsExtraType
     const DEFAULT_TYPE_ARGS =  [
         'labels'             =>  [],
         'description'        => 'Description.',
-		'public'             => true,
-		'publicly_queryable' => true,
-		'show_ui'            => true,
-		'show_in_menu'       => true,
-		'query_var'          => true,
-		'rewrite'            => array( 'slug' => 'promo' ),
-		'capability_type'    => 'post',
-		'has_archive'        => true,
+	'public'             => true,
+	'publicly_queryable' => true,
+	'show_ui'            => true,
+	'show_in_menu'       => true,
+	'query_var'          => true,
+	'rewrite'            => array( 'slug' => 'promo' ),
+	'capability_type'    => 'post',
+	'has_archive'        => true,
         'hierarchical'       => false,
         'taxonomies'         => [],
-		'menu_position'      => null,
-		'supports'           => array(  )
+	'menu_position'      => null,
+	'supports'           => array(  )
     ];
 
     static function RegisterType($name, $singular , $label, $options = [], $supports = ['title', 'editor', 'thumbnail' ], $has_archive = true) {
@@ -55,6 +55,7 @@ class VinabitsExtraType
         $vinaExtra->type_name = $name;
         $options['labels'] = $labels;
         $options['supports'] = $supports;
+	$options['rewrite'] = array( 'slug' => $name );
         $options['has_archive'] = $has_archive;
         $options = array_merge(VinabitsExtraType::DEFAULT_TYPE_ARGS, $options);
         $vinaExtra->type_args = $options;
