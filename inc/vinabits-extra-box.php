@@ -12,6 +12,7 @@ class VinabitsExtraBox
     private $post_type;
     private $caption;
     private $type;
+    private $description;
 
     function __construct($params) {
         extract($params);
@@ -19,6 +20,7 @@ class VinabitsExtraBox
         $this->post_type = $post_type;
         $this->caption = $caption;
         $this->type = $type;
+        $this->description = $description;
     }
 
     function vinabits_register_metabox() {
@@ -39,7 +41,10 @@ class VinabitsExtraBox
     function save($post_id) {
         $post_type = get_post_type($post_id);
         if($post_type != $this->post_type) return;
-        if ( isset( $_POST[$this->name] ) ) {
+        if( isset( $_POST[$this->name] ) && is_array($_POST[$this->name]) ) {
+            update_post_meta( $post_id,  '_vnb_'. $this->name, $_POST[$this->name] );
+        }
+        else if ( isset( $_POST[$this->name] ) ) {
             update_post_meta( $post_id,  '_vnb_'. $this->name , sanitize_text_field( $_POST[$this->name] ) ) ;
         }
     }
@@ -50,18 +55,22 @@ class VinabitsExtraBox
         wp_enqueue_script( 'vinabitsBox-media-js', get_template_directory_uri() . '/assets/js/admin/media.js' );
     }
 
-    static function RegisterMetabox($name, $caption, $post_type = 'post', $type = 'text') {
+    static function RegisterMetabox($name, $caption, $post_type = 'post', $type = 'text', $description = '', callable $script_cb = null) {
         $vnb_box = new VinabitsExtraBox([
             'name' => $name,
             'post_type' => $post_type,
             'caption' => $caption,
-            'type' => $type
+            'type' => $type,
+            'description' => $description
         ]);
 
         add_action( 'add_meta_boxes', array($vnb_box,'vinabits_register_metabox') );
         add_action('save_post', array($vnb_box, 'save'));
-        if( $type == "images" ) {
+        if( $type == "images" && $script_cb == null ) {
             add_action( 'admin_enqueue_scripts', array($vnb_box, 'load_media_script') );
+        }
+        if($script_cb != null) {
+             add_action( 'admin_enqueue_scripts', $script_cb );
         }
     }
 }
