@@ -11,7 +11,7 @@
         p {
             margin-bottom: 0px;
             font-size: 13px;
-            text-align: right;
+            line-height: 2em;
             a {
                 color :#ccc;
                 &:hover {
@@ -40,13 +40,13 @@
         line-height: 30px;
       }
       a {
-          font-size: 13px; 
+          font-size: 13px;
           font-weight: 300;
           color: #fff;
       }
 
     }
-  }  
+  }
     .full-list {
         ul {
             li {
@@ -61,10 +61,21 @@
                 width: 100%;
                 margin-bottom: .5em;
                 color: #ccc;
+                position: relative;
+                padding-left: 43px;
+                b {
+                  text-transform: uppercase;
+                }
                 &:before {
-                    width: 1.2em;
-                    color: #ccc;
-                    font-size: 17px;
+                    top: calc(50% - 13px);
+                    position: absolute !important;
+                    width: 26px;
+                    line-height: 26px;
+                    border-radius: 50%;
+                    background: #acacac;
+                    color: #fff;
+                    left: 0;
+                    font-size: 16px;
                     position: static;
                 }
                 &.home {
@@ -88,9 +99,10 @@
             }
         }
     }
-    }  
+    }
   .footer-widget-title {
-    font-size: 20px;
+    font-size: 18px;
+    font-weight: bold;
     color: #fff;
     text-transform: uppercase;
     margin-top: 0;
@@ -98,9 +110,18 @@
     position: relative;
     line-height: 30px;
   }
-  
-  
-  
+
+  .ngg-gallery-thumbnail {
+    background: none;
+    border: none;
+    margin: 0px;
+    a {
+      margin: 0px;
+      @media screen and (min-width: #{$breakpoint_desktop}) {
+        margin: 4px;
+      }
+    }
+  }
 }
 #copyright {
   text-align: center;

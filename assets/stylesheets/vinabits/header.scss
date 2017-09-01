@@ -1,20 +1,31 @@
+#top-bar {
+    background: $color__main;
+    .textwidget {
+        line-height: 35px;
+        color: #fff;
+        p {
+            margin-bottom: 0px;
+        }
+    }
+}
 
-body.home #masthead {
-    padding-top: 12px;
-    position: absolute;
-    z-index: 9999;
+body #masthead {
+    padding-top: 5px;
+    padding-bottom: 9px;
     min-width: 100%;
 }
 
 #masthead {
-    
+    @media screen and (min-width: 1170px) {
+      > .mui-container > .mui-row {
+          display: flex;
+          align-items: center;
+      }
+    }
     .logo-container {
         font-size: 0px;
     }
     .nav-container {
-        @media screen and (min-width: #{$breakpoint_tablet}) {
-            margin-top: 1.2em;
-        }
         .top-bar {
             font-size: 14px;
             margin-bottom: .7em;
@@ -33,14 +44,12 @@ body.home #masthead {
     @media screen and (max-width:#{$breakpoint_tablet}) {
         padding-top:0px;
         .logo-container {
-            margin-top: 44px;
+
             text-align: center;
-            
+
         }
         .mui--text-right {
                 text-align: center !important;
             }
     }
 }
-
-

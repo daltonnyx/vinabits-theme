@@ -23,7 +23,13 @@
 
 <body <?php body_class(); ?>>
 <div id="page" class="site">
-
+    <section id="top-bar" class="top-bar">
+        <div class="mui-container">
+            <div class="mui-row">
+                <?php dynamic_sidebar('top-1'); ?>
+            </div>
+        </div>
+    </section>
 	<header id="masthead" class="site-header" role="banner">
 		<div class="mui-container">
             <div class="mui-row">
@@ -32,9 +38,9 @@
                     <?php vinabits_the_custom_logo(); ?>
                     </div>
                 </div>
-                <div class="mui-col-xs-12 mui-col-md-offset-1 mui-col-md-8 nav-container">
+                <div class="mui-col-xs-12 mui-col-md-offset-3 mui-col-md-6 nav-container">
                     <div class="mui-row mui--text-right">
-                    <?php dynamic_sidebar('top-1'); ?>
+                    
                     <?php get_template_part( 'components/navigation/navigation', 'top' ); ?>
                     </div>
                 </div>

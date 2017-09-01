@@ -11,9 +11,7 @@
         )); ?>
       <?php } ?>
     </div>
-    <div class="news-container">
-      <h3 class="news-title"><?php echo get_the_title(); ?></h3>
-    </div>
+    
     </a>
   </div>
 <?php endwhile;endif; ?>
