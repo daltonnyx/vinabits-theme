@@ -144,105 +144,11 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 @import "vinabits/section-2";
 @import "vinabits/section-3";
 @import "vinabits/section-4";
-@import "vinabits/section-5";
+//@import "vinabits/section-5";
 @import "vinabits/footer";
 @import "vinabits/footer";
 @import "vinabits/sidebar";
-@import "vinabits/woocommerce";
 //Layout for content
 @import "vinabits/cards-list";
 @import "vinabits/mobile";
 
-///Custom Style down here
-html {
-    overflow-x: hidden;
-}
-
-[class^="section-"] {
-    overflow: hidden;
-}
-
-//section-1
-@media screen and (max-width: #{$breakpoint_tablet}) {
-  .xs-zero-padding {
-    padding: 0px !important;
-  }
-}
-
-//footer
-
-.no-padding {
-  padding: 0px;
-}
-
-
-
-body.single {
-    .entry-meta {
-          padding: 5px 15px;
-          background: #f3f3f3;
-          border-radius: 5px;
-          font-size: 15px;
-          color: #666;
-          margin-top: 15px;
-          a {
-              color: #666;
-          }
-          i {
-              color: #00baf2;
-          }
-      }
-}
-
-body:not(.front-page) {
-
-  .title-bar {
-    position: relative;
-    margin-top: 0px;
-    z-index: 1;
-    color: #fff;
-    a {
-      color: #fff;
-    }
-    h1 {
-      text-transform: uppercase;
-      margin-bottom: 0;
-    }
-    .breadcrumb {
-      margin: 0;
-      padding: 0;
-      list-style: none;
-      display: flex;
-      margin-bottom: 18px;
-      li + li:before {
-        content: "\f105";
-        padding: 0px 5px;
-        font-family: FontAwesome;
-      }
-      li:last-child {
-        font-weight: bold;
-      }
-    }
-    > div:before {
-      content: " ";
-      left: 0;
-      right: 0;
-      bottom: 0;
-      top: 0;
-      position: absolute;
-      display: block;
-      z-index: -1;
-      background: #c33;
-    }
-    &:before {
-      content: " ";
-      position: absolute;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      top: 0;
-      z-index: -1;
-      background: url('./assets/images/header-line.png') no-repeat center center / cover transparent;
-    }
-}
-}
