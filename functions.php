@@ -44,21 +44,11 @@ function vinabits_setup() {
 
 	add_image_size( 'vinabits-featured-image', 640, 9999 );
 
-	add_image_size( 'vinabits-thumbnail', 960, 9999 );
+    add_image_size( 'vinabits-thumbnail', 960, 9999 );
 
-    add_image_size( 'post-carousel', 276, 170, array('center', 'center'));
+    add_image_size( 'vinabits-medium', 253, 174, array('center', 'center') );
 
-    add_image_size( 'post-video', 570, 338, array('center','center') );
-
-    add_image_size( 'vinabits-news-default', 271, 151, array('center', 'center'));
-
-    add_image_size('front-banner', 370, 245, array('center', 'center'));
-    
-    add_image_size('card-thumb', 363, 248, array('center', 'center'));
-
-    add_image_size('post-card', 366, 238, array('center', 'center'));
-
-    add_image_size('testimonial-avatar', 96, 96, array('center', 'center'));
+    add_image_size( "vinabits-small", 150, 96, array('center','center') );
 
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
@@ -69,8 +59,8 @@ function vinabits_setup() {
 	 * Add support for core custom logo.
 	 */
 	add_theme_support( 'custom-logo', array(
-		'width'      => 224,
-		'height'       => 87,
+		'width'      => 201,
+		'height'       => 81,
 		'flex-width'  => true,
 		'flex-height' => true,
 	) );
@@ -151,7 +141,7 @@ function vinabits_widgets_init() {
 		'after_widget'  => '</div>',
 		'before_title'  => '<div class="front-title"><h2 class="front-page-title">',
 		'after_title'   => '</h2></div>',
-    ) );	
+    ) );
     register_sidebar( array(
         'name'          => esc_html__( 'Front 3', 'vinabits' ),
         'id'            => 'front-3',
@@ -160,19 +150,10 @@ function vinabits_widgets_init() {
         'after_widget'  => '</div>',
         'before_title'  => '<h2 class="front-page-title">',
         'after_title'   => '</h2>',
-    ) );	
+    ) );
     register_sidebar( array(
         'name'          => esc_html__( 'Front 4', 'vinabits' ),
         'id'            => 'front-4',
-        'description'   => '',
-        'before_widget' => '<div id="%1$s" class="front-section %2$s">',
-        'after_widget'  => '</div>',
-        'before_title'  => '<h2 class="front-page-title">',
-        'after_title'   => '</h2>',
-    ) );
-    register_sidebar( array(
-        'name'          => esc_html__( 'Front 5', 'vinabits' ),
-        'id'            => 'front-5',
         'description'   => '',
         'before_widget' => '<div id="%1$s" class="front-section %2$s">',
         'after_widget'  => '</div>',
@@ -204,7 +185,9 @@ add_action( 'widgets_init', 'vinabits_widgets_init' );
  * Enqueue scripts and styles.
  */
 function vinabits_scripts() {
-    
+
+    wp_enqueue_style('Open-sans', 'https://fonts.googleapis.com/css?family=Open+Sans&amp;subset=latin-ext,vietnamese');
+
     wp_enqueue_style('font-awesome', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css');
 
     wp_enqueue_style( 'animate-css', 'https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css' );
@@ -215,9 +198,9 @@ function vinabits_scripts() {
 
 	wp_enqueue_script('mui-js', 'https://cdnjs.cloudflare.com/ajax/libs/muicss/0.9.14/js/mui.min.js', array(), '0.9.14', true);
 
-	wp_enqueue_style('owl-carousel-css','https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.1/assets/owl.carousel.min.css');
+	//wp_enqueue_style('owl-carousel-css','https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.1/assets/owl.carousel.min.css');
 
-    wp_enqueue_script('owl-carousel-js', 'https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.1/owl.carousel.min.js', array('jquery'), '2.2.1', true);
+    //wp_enqueue_script('owl-carousel-js', 'https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.1/owl.carousel.min.js', array('jquery'), '2.2.1', true);
 
     wp_enqueue_script( 'slick-carousel', 'https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.js', array('jquery'), '1.6.0', true );
 
@@ -255,7 +238,3 @@ while( ( $file = readdir( $inc_dir ) ) !== false ) {
     if($ext == "php")
         require_once get_template_directory() . '/inc/' . $file;
 }
-
-VinabitsExtraType::RegisterType('promo', 'Promotion', 'Promotions');
-VinabitsExtraTax::RegisterTaxonomy('promo_cat', 'promo', 'Category', 'Categories');
-VinabitsExtraBox::RegisterMetabox('qua_tang', 'Quà tặng', 'promo');

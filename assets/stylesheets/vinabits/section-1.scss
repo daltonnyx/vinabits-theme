@@ -1,85 +1,102 @@
 .section-1 {
-    background: url('./assets/images/section-1.png') no-repeat center center / 110% transparent;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  @media screen and (min-width: #{$breakpoint_desktop}) {
     > div > .mui-row {
         margin-right: -30px;
         margin-left: -30px;
-        display: flex;
-        flex-flow: row wrap;
-        justify-content: center;
     }
-    
-    header.widget-header {
-        border-bottom: 2px solid #ccc;
-        text-align: center;
-        margin-top: 40px;
-        margin-bottom: 43px;
+  }
+
+  h1.home-title {
+      text-align: center;
+      width: 100%;
+      font-size: 30px;
+      color: #333;
+      text-transform: uppercase;
+      font-weight: bold;
+      position: relative;
+      margin: 0px;
+      margin-bottom: 45px;
+      &::before {
+        content: " ";
+        position: absolute;
+        width: 86px;
+        height: 4px;
+        background: #900;
+        bottom: -10px;
+        left: calc(50% - 43px);
+      }
+
+  }
+  h2.front-page-title {
+    font-size: 20px;
+    color: #333;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 25px;
+    margin-bottom: 20px;
+  }
+  .card-layout .card-container {
+    border: 1px solid #ccc;
+    padding: 7px;
+    padding-bottom: 0px;
+    .card-image {
+      text-align: center;
     }
-    h2.front-page-title {
-        text-transform: uppercase;
-        font-weight: bold;
-        font-size: 16px;
+    p {
+      font-size: 13px;
+      color: #333;
+      text-align: center;
+    }
+    a {
+      text-decoration: none;
+      p {
+        line-height: 38px;
         color: #fff;
-        display: inline-block;
-        position: relative;
-        margin: 0px;
-        margin-top: 15px;
-        padding-top: 13px;
-        width: 100%;
-        text-align: center;
-        padding-bottom:5px;
-        &:before {
-            content: " ";
-            position: absolute;
-            width: 34px;
-            height: 34px;
-            left: 30px;
-            top: 0px;
-            background: url('./assets/images/phone_03.png') no-repeat left top / cover transparent;
-            animation: vibrate 1.2s cubic-bezier(.36, .07, .19, .97) both infinite;
-        }
-
+        font-weight: bold;
+        font-size: 13px;
+        border-top: 1px solid #ccc;
+        margin-left: -7px;
+        margin-right: -7px;
+        margin-bottom: 0px;
+      }
     }
-    .front-section {
-        width: 100%;
-        @media screen and (min-width: #{$breakpoint_tablet}) {
-            width: calc(100% / 4); 
-        }
-        svg {
-            margin-top: -22px;
-            text {
-                font-family: Futura;
-                font-size: 30px;
-                fill: #fff;
-
-            }
-        }
+  }
+  .card-layout {
+    margin-top: 20px;
+    @media screen and (min-width: #{$breakpoint_desktop}) {
+      margin-top: 0px;
     }
-    
+    &.red a {
+      p {
+        background: #e82a2c;
+      }
+    }
+    &.blue a {
+      p {
+        background: #0066ff;
+      }
+    }
+    &.green a {
+      p {
+        background: #049808;
+      }
+    }
+    &.orange a {
+      p {
+        background: #e07808;
+      }
+    }
+  }
 }
 
-@keyframes vibrate {
-  10%, 90% {
-    transform: rotate(1deg);
-  }
-  
-  20%, 80% {
-    transform: rotate(2deg);
-  }
-
-  30%, 50%, 70% {
-    transform: rotate(-4deg);
-  }
-
-  40%, 60% {
-    transform: rotate(4deg);
-  }
-}
 
 @media screen and (min-width: #{$breakpoint_tablet}) {
     .section-1 {
-        padding: 0px;
+        padding-top: 40px;
         margin-bottom: 40px;
         position: relative;
-        
+
       }
 }

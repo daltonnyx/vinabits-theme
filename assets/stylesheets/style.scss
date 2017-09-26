@@ -195,7 +195,7 @@ body.single {
 }
 
 body:not(.front-page) {
-    
+
   .title-bar {
     position: relative;
     margin-top: 0px;
@@ -232,7 +232,7 @@ body:not(.front-page) {
       position: absolute;
       display: block;
       z-index: -1;
-      background: #007ff0;
+      background: #c33;
     }
     &:before {
       content: " ";
@@ -246,4 +246,3 @@ body:not(.front-page) {
     }
 }
 }
-

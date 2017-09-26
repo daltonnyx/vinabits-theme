@@ -1,133 +1,100 @@
+$bg: #f3f3f3;
 .section-4 {
+  background: $bg;
+  padding-top: 20px;
+  padding-bottom: 20px;
     @media screen and (min-width: #{$breakpoint_tablet}) {
         padding-top: 40px;
-        padding-bottom: 40px;
+        padding-bottom: 60px;
     }
-    
-    h2 {
-        font-size: 22px;
-        font-family: Futura;
-        text-transform: uppercase;
-        color: #333;
-        text-align: left;
-        margin-top: 5px;
+    h2.section-title {
+      text-align: center;
+      width: 100%;
+      font-size: 30px;
+      color: #333;
+      text-transform: uppercase;
+      font-weight: bold;
+      position: relative;
+      margin: 0px;
+      margin-bottom: 45px;
+      overflow: visible;
+      &:before {
+        content: " ";
+        position: absolute;
+        width: 86px;
+        height: 4px;
+        background: #900;
+        bottom: -10px;
+        left: calc(50% - 43px);
+      }
+    }
+    h3 {
         position: relative;
-        margin-bottom: 36px;
-        @media screen and (min-width: #{$breakpoint_tablet}) {
-            font-size: 28px;
-        }
-        span {
-            color: #0d4ba0;
-        }
+        font-size: 15px;
+        font-weight: bold;
+        color: #fff;
+        padding: 8px 22px;
+        margin: 0px;
+        text-transform: uppercase;
+        background: $color__main;
         &:before {
             content: " ";
             position: absolute;
-            bottom: -9px;
-            width: 60px;
-            left: 0px;
-            height: 5px;
-            background: #0d4ba0;
-        }        
-        
-    }   
-    
-    .news-default-list {
-        display: inline-block;
-        width: 100%;
-        .news-default-item {
-            &:before {
-                content: "\f04b";
-                position: absolute;
-                font-family: FontAwesome;
-                font-size: 35px;
-                z-index: 999;
-                top: 50%;
-                left: 50%;
-                transform: translate(-50%,-50%);
-
-            }
-            margin-bottom: 11px;
-            float: left;
-            font-size: 0px;
-            overflow: hidden;
-            vertical-align: top;
-            width: calc( 25% - 11px );
-            margin-left: 11px;
-            height: 163px;
-            .entry-meta {
-                display: none;
-            }
-            
-            a {
-                 text-decoration: none;
-                .thumb-container {
-                    img {
-                        position: absolute;
-                        max-width: none;
-                        width: initial;
-                        height: initial;
-                        top: 50%;
-                        left: 50%;
-                        transform: translate(-50%,-50%);
-                    } 
-                }
-                .news-container {
-                    position: absolute;
-                    bottom: 0;
-                    width: 100%;
-                    padding-left: 15px;
-                    background: rgba(0,0,0,.4);
-                    h3 {
-                        color: #fff;
-                        line-height:1.4em;
-                        font-size: 14px;
-                        margin: 10px 0px;
-                        font-weight: bold;
-                    }
-                    p {
-                        margin-bottom: 0px;
-                        font-size: 14px;
-                        color: #333;
-                        text-align: justify;
-                    }
-                }
-            }
-            &:first-child {
-                &:before {
-                    font-size: 60px;
-                }
-                height: 337px;
-                width: calc( 50% - 18px );
-                margin-left: 0;
-                margin-right: 18px;
-                .entry-meta {
-                    display: inline-block;
-                    font-size: 14px;
-                    color: #fff;
-                    font-style: italic;
-                }
-                a {
-                    .news-container {
-                        background: none;
-                        z-index: 9;
-                        padding-bottom: 15px;
-                        h3 {
-                            font-size: 20px;
-                            line-height: 2.1em;
-                            margin: 0px;
-                        }
-                    }
-                }
-                &:after {
-                    content: " ";
-                    position: absolute;
-                    top: 0;
-                    left: 0;
-                    right: 0;
-                    background: linear-gradient(to top, rgba(50,50,50,1), transparent 31%, transparent 82%, rgba(50,50,50,.8));
-                    bottom: 0;
-                }
-            }
+            top: 0px;
+            right: 0px;
+            border-right: 23px solid $bg;
+            border-bottom: 27px solid $color__main;
         }
+
+    }
+    .front-section {
+      margin-top: 20px;
+      @media screen and (min-width: #{$breakpoint_desktop}) {
+        margin-top: 0px;
+      }
+    }
+    .news-lead-list {
+      padding: 22px;
+      margin-top: 14px;
+      border: 1px solid #959595;
+      .news-lead-item {
+        float: left;
+        a {
+          text-decoration: none;
+        }
+        h4 {
+          margin-top: 0px;
+          font-size: 14px;
+          font-weight: bold;
+          color: #333;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+        }
+        img {
+          float: left;
+          margin-right: 8px;
+          margin-bottom: 1.5em;
+        }
+        p {
+          color: #333;
+          text-align: justify;
+        }
+      }
+      ul {
+        clear: both;
+        margin: 0;
+        padding-left: 15px;
+        color: #c00;
+        li {
+          a {
+            color: #333;
+            line-height: 2em;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+          }
+        }
+      }
     }
 }

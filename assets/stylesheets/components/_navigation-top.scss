@@ -11,27 +11,28 @@
     .stripe {
         width: 18px;
         height: 3px;
-        background: #fff;
+        background: #cc0000;
         margin-bottom: 3px;
         transform-origin: left;
         transition: .3s linear all;
     }
 }
-
+.nav-container {
+	position: relative;
+}
 .main-navigation {
 	clear: both;
-    position: fixed;
-    z-index: 999;
+	position: absolute;
+	z-index: 999;
 	display: block;
 	float: left;
-    top: 0;
+	top: -33px;
 	width: 100%;
 	min-height: 34px;
-    background-color: $color__text-main;
 	label {
 		display: block;
 	}
-	
+
 	ul {
 		display: block;
 		opacity: 0;
@@ -40,12 +41,12 @@
 		list-style: none;
 		margin: 0;
 		padding-left: 0;
-		position: fixed;
+		position: absolute;
 		width: 100%;
-		height: 100%;
+		height: auto;
 		z-index: 999;
 		background: #fff;
-		padding-top: 40px;
+		top: 100%;
 		ul {
 			box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
 			float: left;
@@ -87,7 +88,7 @@
 		li.focus > ul {
             opacity: 1;
             visibility: visible;
-            top: 100%;
+            top: calc(100% + 30px);
 		}
 	}
 
@@ -100,17 +101,18 @@
 		&.focus > a {
             color: $color__text-main;
 		}
-		
+
 	}
 
 	a {
 		display: block;
-		color: #fff;
+		color: #000;
 		text-decoration: none;
-		font-size: 16px;
-        font-weight: normal;
+		font-size: 15px;
+    font-weight: bold;
+		line-height: 2em;
 		&:visited {
-			color: #fff;
+			color: #000;
 		}
 	}
 
@@ -118,7 +120,7 @@
 	.current-menu-item > a,
 	.current_page_ancestor > a,
 	.current-menu-ancestor > a {
-        color: #fff;
+        color: $color__main;
 	}
 }
 
@@ -129,11 +131,11 @@
 }
 
 #navi-anchor:checked ~ #nav-bars {
-    position: fixed;
+    position: absolute;
     z-index: 99999;
     right: 0px;
     .stripe {
-        background-color: $color__main;
+        background-color: #cc0000;
     }
     .stripe:nth-child(1) {
         transform: rotate(45deg);
@@ -155,8 +157,6 @@
 @media screen and (min-width: #{$breakpoint_tablet}) {
 	.main-navigation {
 		position: relative;
-        background: linear-gradient(to top, #03c, #0097fc);
-        border-radius: 20px;
 		z-index: 99;
         margin-top: 3px;
 		#nav-bars {
@@ -165,7 +165,7 @@
         a {
             position: relative;
             transition: .3s linear all;
-            
+
         }
 	}
 	.menu-toggle {
@@ -180,9 +180,17 @@
 		display: flex;
 		flex-flow: row nowrap;
 		justify-content: space-around;
-        
+
 		li {
 			width: auto;
+			&:before {
+				content: " ";
+				height: 30px;
+				width: 100%;
+				position: absolute;
+				top: 100%;
+				left: 0;
+			}
 			a {
 				line-height: 36px;
 			}
@@ -192,6 +200,7 @@
             flex-flow: row wrap;
             height: auto;
             background-color: #fff;
+						padding: 0px 10px;
             li {
                 margin-left: 0px;
             }

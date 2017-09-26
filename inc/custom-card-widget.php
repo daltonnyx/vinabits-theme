@@ -1,4 +1,4 @@
-<?php 
+<?php
 /**
  * Adds Custom_Card_Widget widget.
  */
@@ -19,6 +19,8 @@ class Custom_Card_Widget extends WP_Widget {
     function load_script() {
         wp_enqueue_script('media-upload');
         wp_enqueue_media();
+        wp_enqueue_script('cc-js', get_template_directory_uri().'/assets/js/admin/load_mediaupload.js', array('jquery'), '', true);
+
     }
 
 	/**
@@ -34,7 +36,10 @@ class Custom_Card_Widget extends WP_Widget {
         extract($instance);
         ?>
         <div class="card-layout <?php echo $classes; ?>">
-            <a href="<?php echo $link; ?>" title="<?php echo $title; ?>">
+					<div class="card-container">
+                <div class="card-image">
+                    <img src="<?php echo $image; ?>" class="img-responsive" alt="<?php echo $title; ?>" />
+                </div>
                 <div class="card-content">
                 <header>
                 <?php
@@ -47,14 +52,10 @@ class Custom_Card_Widget extends WP_Widget {
                     <p><?php echo $desc; ?></p>
                 <?php } ?>
                 <?php if(!empty($link_text)) {?>
-                    <p><?php echo $link_text; ?></p>
+                    <a href="<?php echo $link; ?>" title="<?php echo $title; ?>"><p><?php echo $link_text; ?></p></a>
                 <?php } ?>
-
                 </div>
-                <div class="card-image">
-                    <img src="<?php echo $image; ?>" class="img-responsive" alt="<?php echo $title; ?>" />
-                </div>
-            </a>
+					</div>
         </div>
         <?php
 		//echo $args['after_widget'];
@@ -75,7 +76,7 @@ class Custom_Card_Widget extends WP_Widget {
         $link_text  = ! empty( $instance['link_text'] )  ? $instance['link_text']  : '';
 		?>
 		<p>
-		<label for="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>"><?php esc_attr_e( 'Title:', 'vinabits' ); ?></label> 
+		<label for="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>"><?php esc_attr_e( 'Title:', 'vinabits' ); ?></label>
 		<input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'title' ) ); ?>" type="text" value="<?php echo esc_attr( $title ); ?>">
 		</p>
         <p>
@@ -85,18 +86,18 @@ class Custom_Card_Widget extends WP_Widget {
        </p>
 
         <p>
-		<label for="<?php echo esc_attr( $this->get_field_id( 'desc' ) ); ?>"><?php esc_attr_e( 'Description:', 'vinabits' ); ?></label> 
+		<label for="<?php echo esc_attr( $this->get_field_id( 'desc' ) ); ?>"><?php esc_attr_e( 'Description:', 'vinabits' ); ?></label>
         <textarea class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'desc' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'desc' ) ); ?>"><?php echo esc_attr( $desc ); ?></textarea>
 		</p>
 		<p>
-		<label for="<?php echo esc_attr( $this->get_field_id( 'link' ) ); ?>"><?php esc_attr_e( 'Link:', 'vinabits' ); ?></label> 
+		<label for="<?php echo esc_attr( $this->get_field_id( 'link' ) ); ?>"><?php esc_attr_e( 'Link:', 'vinabits' ); ?></label>
 		<input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'link' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'link' ) ); ?>" type="text" value="<?php echo esc_attr( $link ); ?>">
         </p>
         <p>
-        <label for="<?php echo esc_attr( $this->get_field_id( 'link_text'  )  ); ?>"><?php esc_attr_e( 'Link text:', 'vinabits'  ); ?></label> 
+        <label for="<?php echo esc_attr( $this->get_field_id( 'link_text'  )  ); ?>"><?php esc_attr_e( 'Link text:', 'vinabits'  ); ?></label>
         <input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'link_text'  )  ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'link_text'  )  ); ?>" type="text" value="<?php echo esc_attr( $link_text  ); ?>">
         </p>
-		<?php 
+		<?php
 	}
 
 	/**
