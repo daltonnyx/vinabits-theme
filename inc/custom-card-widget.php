@@ -19,7 +19,7 @@ class Custom_Card_Widget extends WP_Widget {
     function load_script() {
         wp_enqueue_script('media-upload');
         wp_enqueue_media();
-        wp_enqueue_script('cc-js', get_template_directory_uri().'/assets/js/admin/load_mediaupload.js', array('jquery'), '', true);
+        wp_enqueue_script('cc-js', get_template_directory_uri().'/assets/js/admin/card-content.js', array('jquery'), '', true);
 
     }
 
@@ -44,7 +44,7 @@ class Custom_Card_Widget extends WP_Widget {
                 <header>
                 <?php
                 if ( ! empty( $instance['title'] ) ) {
-                    echo $args['before_title'] . apply_filters( 'widget_title', $title ) . $args['after_title'];
+                    echo '<h3 class="card-title">' . apply_filters( 'widget_title', $title ) . '</h3>';
                 }
                 ?>
                 </header>

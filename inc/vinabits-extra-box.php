@@ -30,7 +30,7 @@ class VinabitsExtraBox
             array($this, 'render_box'),
             $this->post_type
         );
-        
+
     }
 
     function render_box( $post ) {
@@ -40,16 +40,15 @@ class VinabitsExtraBox
 
     function save($post_id) {
         $post_type = get_post_type($post_id);
-        if($post_type != $this->post_type) return;
         if( isset( $_POST[$this->name] ) && is_array($_POST[$this->name]) ) {
             update_post_meta( $post_id,  '_vnb_'. $this->name, $_POST[$this->name] );
         }
         else if ( isset( $_POST[$this->name] ) ) {
-            update_post_meta( $post_id,  '_vnb_'. $this->name , sanitize_text_field( $_POST[$this->name] ) ) ;
+            update_post_meta( $post_id,  '_vnb_'. $this->name , esc_html( $_POST[$this->name] ) ) ;
         }
     }
 
-    function load_media_script() {
+    static function load_media_script() {
         wp_enqueue_media();
         wp_enqueue_script('media-upload');
         wp_enqueue_script( 'vinabitsBox-media-js', get_template_directory_uri() . '/assets/js/admin/media.js' );
@@ -67,9 +66,9 @@ class VinabitsExtraBox
         add_action( 'add_meta_boxes', array($vnb_box,'vinabits_register_metabox') );
         add_action('save_post', array($vnb_box, 'save'));
         if( $type == "images" && $script_cb == null ) {
-            add_action( 'admin_enqueue_scripts', array($vnb_box, 'load_media_script') );
+            add_action( 'admin_enqueue_scripts', array('VinabitsExtraBox', 'load_media_script') );
         }
-        if($script_cb != null) {
+        else if($script_cb != null) {
              add_action( 'admin_enqueue_scripts', $script_cb );
         }
     }

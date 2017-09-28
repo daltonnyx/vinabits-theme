@@ -17,11 +17,12 @@ get_header(); ?>
 				<div class="mui-container">
 					<div class="mui-row">
 						<div class="mui-col-md-12">
-							<?php the_archive_title( '<h1 class="page-title">', '</h1>' ); ?>
-						</div>
-						<div class="mui-col-md-12">
 							<?php the_breadcrumb(); ?>
 						</div>
+						<div class="mui-col-md-12">
+							<?php the_archive_title( '<h1 class="page-title">', '</h1>' ); ?>
+						</div>
+
 					</div>
 				</div>
 			</div>
@@ -59,12 +60,13 @@ get_header(); ?>
 			<div class="title-bar">
 				<div class="mui-container">
 					<div class="mui-row">
-						<div class="mui-col-md-12">
-							<?php the_archive_title( '<h1 class="page-title">', '</h1>' ); ?>
-						</div>
 						<div class="mui-col-md-12 mui--text-right">
 							<?php the_breadcrumb(); ?>
 						</div>
+						<div class="mui-col-md-12">
+							<?php the_archive_title( '<h1 class="page-title">', '</h1>' ); ?>
+						</div>
+
 					</div>
 				</div>
 			</div>

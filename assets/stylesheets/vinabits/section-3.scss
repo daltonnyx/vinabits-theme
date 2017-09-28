@@ -1,1 +1,16 @@
-
+.section-3 {
+  position: absolute;
+  top:300%;
+  height:100%;
+  width:100%;
+  @media screen and (max-height: 686px) {
+    min-height: 686px;
+    top:calc(686px * 3);
+  }
+  .intergeo_map_canvas {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: calc(100% - 166px) !important;
+  }
+}

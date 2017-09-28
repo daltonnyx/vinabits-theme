@@ -139,6 +139,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 @import "vinabits/typography";
 @import "vinabits/animation";
 @import "vinabits/header";
+@import "vinabits/top-bar";
 @import "vinabits/slider";
 @import "vinabits/section-1";
 @import "vinabits/section-2";
@@ -148,7 +149,9 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 @import "vinabits/footer";
 @import "vinabits/footer";
 @import "vinabits/sidebar";
+@import "vinabits/title-bar";
+@import "vinabits/page";
 //Layout for content
 @import "vinabits/cards-list";
-@import "vinabits/mobile";
-
+//@import "vinabits/mobile";
+@import "vinabits/pagenavi";

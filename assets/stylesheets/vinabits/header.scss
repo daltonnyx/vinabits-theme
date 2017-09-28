@@ -1,55 +1,30 @@
-#top-bar {
-    background: $color__main;
-    .textwidget {
-        line-height: 35px;
-        color: #fff;
-        p {
-            margin-bottom: 0px;
-        }
-    }
-}
-
-body #masthead {
-    padding-top: 5px;
-    padding-bottom: 9px;
-    min-width: 100%;
-}
 
 #masthead {
-    @media screen and (min-width: 1170px) {
-      > .mui-container > .mui-row {
-          display: flex;
-          align-items: center;
+  padding-top: 5px;
+  padding-bottom: 9px;
+  min-width: 100%;
+  position: relative;
+  z-index: 1;
+  background: rgba(255,255,255,.73);
+  border-bottom: 5px solid $color__main-1;
+  @media screen and (min-width: 1170px) {
+    > .mui-container > .mui-row {
+        display: flex;
+        align-items: center;
+    }
+  }
+  .logo-container {
+      font-size: 0px;
+  }
+  @media screen and (max-width:#{$breakpoint_tablet}) {
+      padding-top:0px;
+      .logo-container {
+
+          text-align: center;
+
       }
-    }
-    .logo-container {
-        font-size: 0px;
-    }
-    .nav-container {
-        .top-bar {
-            font-size: 14px;
-            margin-bottom: .7em;
-            p {
-                margin-bottom: 0px;
-                @media screen and (min-width #{$breakpoint_tablet}) {
-                    text-align: right;
-                }
-                i {
-                    margin-left: 15px;
-                    margin-right: 5px;
-                }
-            }
-        }
-    }
-    @media screen and (max-width:#{$breakpoint_tablet}) {
-        padding-top:0px;
-        .logo-container {
-
-            text-align: center;
-
-        }
-        .mui--text-right {
-                text-align: center !important;
-            }
-    }
+      .mui--text-right {
+              text-align: center !important;
+          }
+  }
 }

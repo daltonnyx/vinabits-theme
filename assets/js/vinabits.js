@@ -1,58 +1,11 @@
 jQuery(document).ready(function($){
     setTimeout(runAnimation,0);
 
-    //$(".slide-section").ballons();
-
-/*     $('.promo-carousel').owlCarousel({
- *
- *         loop: true,
- *         nav: false,
- *         dots: false,
- *         responsive: {
- *             0: {
- *                 items: 1,
- *                 margin: 30
- *             },
- *             640: {
- *                 items: 2,
- *                 margin: 28,
- *             },
- *             768: {
- *                 items: 3,
- *                 margin: 28
- *             },
- *             1170: {
- *                 items: 4,
- *                 margin: 90
- *             }
- *
- *         }
- *     });
- *     $('.news-carousel').owlCarousel({
- *         loop: true,
- *         nav: true,
- *         dots: false,
- *         navText: ['<i class="fa fa-angle-left" aria-hidden="true"></i>','<i class="fa fa-angle-right" aria-hidden="true"></i>'],
- *         responsive: {
- *             0: {
- *                 items: 1,
- *                 margin: 30
- *             },
- *             640: {
- *                 items: 2,
- *                 margin: 28,
- *             },
- *             768: {
- *                 items: 3,
- *                 margin: 28
- *             },
- *             1170: {
- *                 items: 4,
- *                 margin: 20
- *             }
- *
- *         }
- *     }); */
+    $('.news-big-show').owlCarousel({
+      items: 1,
+      loop: true,
+      center: true,
+    });
     $(window).scroll(runAnimation);
 
     function runAnimation(){

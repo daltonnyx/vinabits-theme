@@ -1,1 +1,89 @@
+.section-1 {
+  position: absolute;
+  top:100%;
+  height:100%;
+  width:100%;
+  background: url('./assets/images/sec-bg-1-1.png') no-repeat top right,
+              url('./assets/images/sec-bg-1-2.png') no-repeat bottom left ;
 
+  @media screen and (max-height: 686px) {
+    min-height: 686px;
+    top:686px;
+  }
+
+  > .mui-container {
+    width: 100%;
+    position: absolute;
+    left:50%;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%);
+  }
+  .intro {
+    color: $color__text-normal;
+    text-align: justify;
+    line-height: 2em;
+    a {
+      color: $color__text-normal;
+      float: right;
+    }
+  }
+  h2 {
+    margin-top: 0px;
+    font-size: 35px;
+    text-transform: uppercase;
+    color: $color__text_main;
+    position: relative;
+    margin-bottom: 40px;
+    &:after {
+      content: " ";
+      position: absolute;
+      width: 2.7em;
+      height: 6px;
+      background: $color__main-1;
+      bottom: -20px;
+      left: 0;
+    }
+  }
+  .card-layout {
+    position: relative;
+    max-width: 395px;
+    .card-image {
+      width: 365px;
+      max-width: 100%;
+      height: 200px;
+      position: relative;
+      overflow: hidden;
+      img {
+        position: absolute;
+        width: auto;
+        height: auto;
+        min-width: 100%;
+        min-height: 100%;
+        max-width: none;
+        left: 50%;
+        top: 50%;
+        -webkit-transform: translateX(-50%) translateY(-50%);
+        -ms-transform: translateX(-50%) translateY(-50%);
+        transform: translateX(-50%) translateY(-50%);
+      }
+    }
+    .card-content {
+      position: absolute;
+      bottom: 0px;
+      width: calc(100% - 30px);
+      background: rgba(0, 0, 0, .79);
+      h3 {
+        font-size: 20px;
+        color: #fff;
+        text-align: center;
+        text-transform: uppercase;
+        margin-top: 14px;
+        margin-bottom: 14px;
+      }
+    }
+  }
+  .video-main {
+    margin-top: 20px;
+    margin-bottom: 51px;
+  }
+}

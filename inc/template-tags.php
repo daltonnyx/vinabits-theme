@@ -198,6 +198,13 @@ function the_breadcrumb() {
 				echo '</li>';
 			}
 		} elseif (is_page()) {
+			if($parents = get_post_ancestors(get_the_ID())) {
+				foreach ($parents as $id) {
+					echo '<li>';
+					echo '<a href="'.get_permalink($id).'">'.get_the_title($id).'</a>';
+					echo '</li>';
+				}
+			}
 			echo '<li>';
 			echo the_title();
 			echo '</li>';
@@ -212,3 +219,52 @@ function the_breadcrumb() {
 	elseif (is_search()) {echo"<li>Search Results"; echo'</li>';}
 	echo '</ul>';
 }
+
+
+function team_shortcode($atts ) {
+	$members = new WP_Query( array(
+		'post_type' => 'team',
+		'posts_per_page' => -1
+	) );
+	ob_start();
+	echo '<div class="team-container">';
+	if( $members->have_posts() ) : while( $members->have_posts() ) : $members->the_post();
+	?>
+		<div class="mui-row">
+			<div class="mui-col-xs-12 mui-col-md-3">
+				<div class="portrait">
+					<?php the_post_thumbnail('team-portait', array('class' => 'img-responsive', 'alt' => get_the_title())); ?>
+				</div>
+				<div class="title">
+					<h4 class="member-name"><?php echo get_the_title(); ?></h4>
+					<p>
+						<?php echo get_post_meta(get_the_ID(), '_vnb_member_title', true); ?>
+					</p>
+				</div>
+			</div>
+			<div class="mui-col-xs-12 mui-col-md-9">
+				<div class="bio">
+					<?php the_content(); ?>
+				</div>
+				<div class="socials">
+					<?php
+						$facebook_link = get_post_meta(get_the_ID(), '_vnb_facebook_link', true);
+						$google_link = get_post_meta(get_the_ID(), '_vnb_google_link', true);
+						$skype = get_post_meta(get_the_ID(), '_vnb_skype_account', true);
+					?>
+					<ul>
+						<li class="social-item"><a target="_blank" href="<?php echo $facebook_link; ?>"><i class="fa fa-facebook"></i></a></li>
+						<li class="social-item"><a target="_blank" href="<?php echo $google_link; ?>"><i class="fa fa-google-plus"></i></a></li>
+						<li class="social-item"><a target="_blank" href="<?php echo $skype; ?>"><i class="fa fa-skype"></i></a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<hr/>
+	<?php
+  endwhile; endif;
+	echo 	'</div>';
+	return ob_get_clean();
+}
+
+add_shortcode('team_viewer', 'team_shortcode');

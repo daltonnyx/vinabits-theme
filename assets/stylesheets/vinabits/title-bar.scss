@@ -1,0 +1,52 @@
+body:not(.front-page) {
+
+  .title-bar {
+    position: relative;
+    margin-top: 0px;
+    color: #fff;
+    a {
+      color: #fff;
+    }
+    h1 {
+      text-transform: uppercase;
+      margin-top: 0;
+    }
+    .breadcrumb {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      display: flex;
+      margin-top: 25px;
+      margin-bottom: 10px;
+      li + li:before {
+        content: "\f105";
+        padding: 0px 5px;
+        font-family: FontAwesome;
+      }
+      li:last-child {
+        font-weight: bold;
+      }
+    }
+    > div:before {
+      content: " ";
+      left: 0;
+      right: 0;
+      bottom: 0;
+      top: 0;
+      position: absolute;
+      display: block;
+      z-index: -1;
+      background: rgba(0,0,0,.58);
+    }
+    &:before {
+      content: " ";
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      top: 0;
+      z-index: -1;
+      background: url('./assets/images/title-bar.png') no-repeat center center / cover transparent;
+    }
+  }
+}

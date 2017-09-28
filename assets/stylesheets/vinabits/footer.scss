@@ -1,173 +1,82 @@
+body.home #colophon {
+  position: absolute;
+  top: calc(300% - 166px);
+  @media screen and (max-height: 686px) {
+    top:calc(686px * 3 - 166px);
+  }
+}
+
 #colophon {
-    background: url('./assets/images/footer.png') repeat left top transparent;
-    .footer-bar {
-        @media screen and (min-width: #{$breakpoint_desktop}) {
-            margin-left: -30px;
-            margin-right: -30px;
-        }
-        padding-top: 40px;
-        padding-bottom: 25px;
-        color: #fff;
-        p {
-            margin-bottom: 0px;
-            font-size: 13px;
-            line-height: 2em;
-            a {
-                color :#ccc;
-                &:hover {
-                    text-decoration: none;
-                }
-            }
-        }
-  ul {
-    margin: 0px;
+  //height:100%;
+  padding: 25px 0px 44px;
+  width:100%;
+  color: #fff;
+  background: $color__main-1;
+  .textwidget {
+    font-size: 12px;
+  }
+  .menu {
     padding: 0px;
-    list-style: none;
+    margin: 0px;
     li {
-      margin-bottom: 10px;
-      width: 49%;
-      display: inline-block;
-      font-size: 0px;
+      list-style: none;
       &:before {
-        content: "\f196";
-        color: #0d4ba0;
+        content: "\f105";
         font-family: FontAwesome;
-        font-size: 12px;
-        position: relative;
-        display: inline-block;
-        margin-right: 10px;
-        text-align: center;
-        line-height: 30px;
+        display: inline;
+        margin-right: 0.5em;
       }
       a {
-          font-size: 13px;
-          font-weight: 300;
-          color: #fff;
-      }
-
-    }
-  }
-    .full-list {
-        ul {
-            li {
-                width: 100%;
-            }
-        }
-    }
-    .contact-list {
-        ul {
-            li {
-                font-size: 13px;
-                width: 100%;
-                margin-bottom: .5em;
-                color: #ccc;
-                position: relative;
-                padding-left: 43px;
-                b {
-                  text-transform: uppercase;
-                }
-                &:before {
-                    top: calc(50% - 13px);
-                    position: absolute !important;
-                    width: 26px;
-                    line-height: 26px;
-                    border-radius: 50%;
-                    background: #acacac;
-                    color: #fff;
-                    left: 0;
-                    font-size: 16px;
-                    position: static;
-                }
-                &.home {
-                    text-transform: uppercase;
-                    &:before {
-                        content: "";
-                    }
-                }
-                &.address:before {
-                    content: "";
-                }
-                &.phone:before {
-                    content: "";
-                }
-                &.email:before {
-                    content: "";
-                }
-                &.website:before {
-                    content: "";
-                }
-            }
-        }
-    }
-    }
-  .footer-widget-title {
-    font-size: 18px;
-    font-weight: bold;
-    color: #fff;
-    text-transform: uppercase;
-    margin-top: 0;
-    margin-bottom: 22px;
-    position: relative;
-    line-height: 30px;
-  }
-
-  .ngg-gallery-thumbnail {
-    background: none;
-    border: none;
-    margin: 0px;
-    a {
-      margin: 0px;
-      @media screen and (min-width: #{$breakpoint_desktop}) {
-        margin: 4px;
-      }
-    }
-  }
-}
-#copyright {
-  text-align: center;
-  font-size: 15px;
-  color: #fff7e2;
-  padding: 5px;
-  img {
-    display: inline-block;
-    vertical-align: middle;
-  }
-  padding: 5px;
-  img {
-    display: inline-block;
-    vertical-align: middle;
-  }
-
-}
-@media screen and (min-width: #{$breakpoint_tablet}) {
-  #copyright {
-    background: #0d4ba0;
-  }
-  #colophon {
-    position: relative;
-    .contact {
-      min-height: 300px;
-      ul {
-        li {
-          font-size: 13px;
-          margin-bottom: 12px;
-        }
-      }
-      .social-icon {
-        text-align: left;
-        padding-top: 0px;
-        margin-bottom: 17px;
-      }
-      .social-easy {
+        color :#fff;
+        font-size: 12px;
+        margin-bottom: 1em;
         display: inline-block;
       }
     }
-    .map {
-      position: absolute;
-      width: 50%;
-      top: 0;
-      font-size: 0;
-      right: 0;
+  }
+  h5 {
+    margin-top: 0;
+    text-transform: uppercase;
+    font-size: 12px;
+  }
+  .wpcf7-form {
+    p {
+      margin-bottom: 1em;
     }
+    span.email {
+      input {
+        width: 75%;
+        color: $color__text-main;
+        &::-webkit-input-placeholder {
+          color: $color__text-main;
+        }
+        &::-moz-placeholder {
+          color: $color__text-main;
+        }
+        &:-ms-placeholder {
+          color: $color__text-main;
+        }
+      }
+    }
+    .ajax-loader {
+      display: none;
+    }
+    .send_button {
+      box-shadow: none;
+      border: none;
+      background: black;
+      color: #fff;
+      padding: 8px 15px;
+      font-size: 12px;
+      border-radius: 5px;
+      outline: none;
+      vertical-align: top;
+    }
+  }
+  ul.cnss-social-icon li.cn-fa-icon a {
+    padding: 0 !important;
+    background: none !important;
+    width: auto !important;
+    height: auto !important;
   }
 }

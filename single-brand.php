@@ -38,7 +38,7 @@ $banner_bottom = get_post_meta(get_the_ID(), '_vnb_banner_bottom', true);
 						<?php
 						while ( have_posts() ) : the_post();
 
-							get_template_part( 'components/post/content', '' );
+							get_template_part( 'components/post/content', 'brand' );
 
 						endwhile; // End of the loop.
 						?>

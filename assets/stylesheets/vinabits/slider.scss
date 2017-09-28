@@ -1,1 +1,19 @@
-
+.slide-section {
+  position: absolute;
+  height: 100%;
+  @media screen and (max-height: 686px) {
+    min-height: 686px;
+  }
+  width: 100%;
+  top: 0;
+  z-index: 0;
+  [class^="amazingslider-text-wrapper-"] {
+    width: auto !important;
+    left: calc(50% - 1170px / 2) !important;
+    bottom: 20% !important;
+    border-left: 6px solid $color__main-1;
+    [class^="amazingslider-text-"] {
+      padding: 0px 12px !important;
+    }
+  }
+}

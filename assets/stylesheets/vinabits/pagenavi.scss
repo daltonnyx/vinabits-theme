@@ -1,0 +1,17 @@
+.wp-pagenavi {
+  text-align: center;
+  margin-bottom: 1.5em;
+  .pages {
+    display: none;
+  }
+  a, span {
+    border: 1px solid #ccc;
+    background: #f3f3f3;
+    width: 2.2em;
+    height: 2.2em;
+    text-align: center;
+    font-size: 14px;
+    color: $color__text-main;
+    display: inline-block;
+  }
+}

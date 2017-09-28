@@ -1,0 +1,75 @@
+.top-banner, .bottom-banner {
+  img {
+    width: 100%;
+  }
+}
+.top-banner {
+  margin-top: 38px;
+}
+body.page {
+  #main {
+    margin-bottom: 40px;
+  }
+}
+body.page article.page {
+  h2 {
+    font-size: 35px;
+    color: $color__text_main;
+    text-transform: uppercase;
+    margin-top: 50px;
+    margin-bottom: 60px;
+    position: relative;
+    &:before {
+      content: " ";
+      width: 94px;
+      height: 6px;
+      background: $color__main-1;
+      position: absolute;
+      left: 0px;
+      bottom: -20px;
+    }
+    &.article-title:before {
+      left: calc(50% - 47px);
+    }
+  }
+}
+
+.team-container {
+  .mui-row {
+    
+    margin-bottom: 1.5em;
+    .title {
+      h4 {
+        font-size: 17px;
+        color: $color__text_main;
+        text-transform: uppercase;
+        font-weight: bold;
+      }
+      p {
+        text-transform: uppercase;
+        color: $color__text_main;
+        font-size: 15px;
+      }
+    }
+    .socials {
+      ul {
+        margin: 0;
+        padding: 0;
+        display: flex;
+        list-style: none;
+        li {
+          width: 3em;
+          margin: 4px;
+          height: 3em;
+          text-align: center;
+          border: 1px solid $color__main-1;
+          border-radius: 50%;
+          a {
+            color: $color__text_main;
+            font-size: 24px;
+          }
+        }
+      }
+    }
+  }
+}

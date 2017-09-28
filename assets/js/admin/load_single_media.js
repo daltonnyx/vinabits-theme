@@ -1,6 +1,4 @@
 jQuery(document).ready(function ($) {
-
-
    var meta_gallery_frame;
    var load_once = false;
    if(!load_once) {
@@ -11,7 +9,7 @@ jQuery(document).ready(function ($) {
 
               var inputField = jQuery(this).prevAll(".value_holder");
 
-              var imgagesDiv = jQuery(this).prev(".images");
+              var imageDiv = jQuery(this).prev(".images");
 
               // If the frame already exists, re-open it.
               if ( meta_gallery_frame != undefined ) {
@@ -22,7 +20,7 @@ jQuery(document).ready(function ($) {
               // Sets up the media library frame
               meta_gallery_frame = wp.media.frames.meta_gallery_frame = wp.media({
                       library: { type: 'image' },
-                      multiple: true
+                      multiple: false
               });
 
               // Create Featured Gallery state. This is essentially the Gallery state, but selection behavior is altered.
@@ -55,23 +53,13 @@ jQuery(document).ready(function ($) {
               // When an image is selected, run a callback.
               //meta_gallery_frame.on('update', function() {
               meta_gallery_frame.on('select', function() {
-                  var imageIDArray = jQuery(inputField).val().split(',');
-                  var imageHTML = '';
-                  var metadataString = '';
-                  images = meta_gallery_frame.state().get('selection');
-
-                  images.each(function(attachment) {
-                          imageIDArray.push(attachment.attributes.id);
-                          imageHTML += '<div style="position:relative;margin-right:3px;" class="image"><img style="height: 80px;" id="'+attachment.attributes.id+'" src="'+attachment.attributes.url+'"><a style="color:red;position:absolute;top:5px;right:5px;z-index:9;" href="#">x</a></div>';
-                  });
-                  metadataString = imageIDArray.join(",");
-                  if (metadataString) {
-                          jQuery(inputField).val(metadataString);
-                          jQuery(imgagesDiv).append(imageHTML);
-                          setTimeout(function(){
-                                  ajaxUpdateTempMetaData();
-                          },0);
-                  }
+                      var imageID = jQuery(inputField).val();
+                      var imageHTML = '';
+                      var image = meta_gallery_frame.state().get('selection').first();
+                      imageID = image.attributes.id;
+                      imageHTML += '<div style="position:relative;margin-right:3px;" class="image"><img style="height: 80px;" id="'+image.attributes.id+'" src="'+image.attributes.url+'"></div>';
+                      jQuery(inputField).val(imageID);
+                      jQuery(imageDiv).html(imageHTML);
               });
 
               // Finally, open the modal
@@ -79,15 +67,4 @@ jQuery(document).ready(function ($) {
 
       });
     }
-    jQuery(".inside .images").on("click", ".image a", function(e) {
-        e.preventDefault();
-        var image = jQuery(this).parent(),
-            id = image[0].id,
-            field = image.parent().prev(),
-            imgArr = field.val().split(','),
-            idx = imgArr.indexOf(id);
-        imgArr.splice(idx, 1);
-        field.val( imgArr.join(',') );
-        image.remove();
-    } );
 });

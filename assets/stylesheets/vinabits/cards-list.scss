@@ -8,7 +8,7 @@
       @media screen and ( min-width: #{$breakpoint_tablet} ) {
         flex-basis: calc(100% / 3 - 12px);
       }
-      background: #fff;
+      background: #f3f3f3;
       margin-left: 6px;
       margin-right: 6px;
       box-shadow: 1px 1px 2px 1px #ddd;
@@ -16,23 +16,16 @@
       padding: 15px 0px;
         a {
           text-decoration: none;
-          img {
-              transition: .3s ease-in-out all;
-              filter: grayscale(40%);
-          }
-          &:hover {
-              img {
-                  filter: grayscale(0%);
-                }
-          }
+
           h3 {
-            font-size: 16px;
+            font-size: 13px;
+            text-align: center;
             font-weight: bold;
-            color: #00baf2;
+            color: $color__text-main;
             text-transform: uppercase;
             margin-top: 0px;
             margin-bottom: 10px;
-         }   
+         }
       }
       a {
         &:visited {
@@ -56,10 +49,10 @@
       }
       .entry-meta {
           font-size: 13px;
-          color: #999;
+          color: $color__text-main;
           margin-bottom: 10px;
           a {
-              color: #999;
+              color: $color__text-main;
           }
       }
       .thumb-container {
@@ -70,9 +63,7 @@
               transform: translate(-5px, -5px);
           }
       }
-      
+
   }
-  
+
 }
-
-

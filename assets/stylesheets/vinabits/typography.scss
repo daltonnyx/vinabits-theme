@@ -1,19 +1,21 @@
 @font-face  {
-    src: url('./assets/fonts/UTM ANDROGYNE.TTF');
-    font-family: Androgyne;
+    src: url('./assets/fonts/UTM AVO.TTF');
+    font-family: Avo;
 }
 @font-face  {
-    src: url('./assets/fonts/VNF-FUTURA REGULAR.TTF');
-    font-family: Futura;
+    src: url('./assets/fonts/UTM AVOBOLD.TTF');
+    font-family: Avo;
+    font-weight: bold;
 }
 
 @font-face {
-    src: url('./assets/fonts/UVNBAYBUOMHEP_N.TTF');
-    font-family: BayBuom;
+    src: url('./assets/fonts/UTM AVOITALIC.TTF');
+    font-family: Avo;
+    font-style: italic;
 }
 
-$vnb__font_main: 'Open Sans';
-$vnb__font_special: Androgyne;
+$vnb__font_main: 'Avo';
+$vnb__font_special: Avo;
 
 body, button, input, select, textarea {
     font-family: $vnb__font_main;
