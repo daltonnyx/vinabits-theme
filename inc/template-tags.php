@@ -145,7 +145,7 @@ function render_product() {
 	?>
 	 <article class="product-section">
 	 	<a href="<?php echo get_permalink(); ?>" class="product-link">
-		 	<?php echo get_the_post_thumbnail(get_the_ID(),'product_thumbnail',array(
+		 	<?php echo get_the_post_thumbnail(get_the_ID(),'product-thumb',array(
 		 		'class' => 'img-responsive product-thumbnail',
 		 		'alt' => get_the_title()
 		 	)); ?>
@@ -161,12 +161,13 @@ function render_product() {
                         <p class="regular-price"><?php echo wc_price($regular_price); ?></p>
         <?php endif; ?>
                         <p class="sale-price"><?php echo wc_price($sale_price); ?></p>
-        
+<?php else : ?>
+        <p class="no-price"><span><?php echo __('Giá: Liên hệ'); ?></span></p>        
 <?php endif; ?>
 		</div>
-		<div class="add-to-cart fluid-container">
-			<a href="<?php echo get_permalink(); ?>" class="mui-btn btn-add-to-cart"><?php echo __('Mua ngay','matthan'); ?></a>
-		</div>
+		<!--<div class="add-to-cart fluid-container">
+			<a href="<?php //echo get_permalink(); ?>" class="mui-btn btn-add-to-cart"><?php //echo __('Mua ngay','matthan'); ?></a>
+		</div>-->
 	 </article>
 	<?php
 }

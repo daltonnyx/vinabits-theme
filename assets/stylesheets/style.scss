@@ -152,6 +152,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 //Layout for content
 @import "vinabits/cards-list";
 @import "vinabits/mobile";
+@import "vinabits/breadcrumb";
 
 ///Custom Style down here
 html {
@@ -175,7 +176,11 @@ html {
   padding: 0px;
 }
 
-
+h1.entry-title, h1.page-title {
+    margin-top: 0px;
+    color: $color__text-main;
+    font-weight: bold;
+}
 
 body.single {
     .entry-meta {
@@ -189,60 +194,9 @@ body.single {
               color: #666;
           }
           i {
-              color: #00baf2;
+              color: $color__main;
           }
       }
 }
 
-body:not(.front-page) {
 
-  .title-bar {
-    position: relative;
-    margin-top: 0px;
-    z-index: 1;
-    color: #fff;
-    a {
-      color: #fff;
-    }
-    h1 {
-      text-transform: uppercase;
-      margin-bottom: 0;
-    }
-    .breadcrumb {
-      margin: 0;
-      padding: 0;
-      list-style: none;
-      display: flex;
-      margin-bottom: 18px;
-      li + li:before {
-        content: "\f105";
-        padding: 0px 5px;
-        font-family: FontAwesome;
-      }
-      li:last-child {
-        font-weight: bold;
-      }
-    }
-    > div:before {
-      content: " ";
-      left: 0;
-      right: 0;
-      bottom: 0;
-      top: 0;
-      position: absolute;
-      display: block;
-      z-index: -1;
-      background: #c33;
-    }
-    &:before {
-      content: " ";
-      position: absolute;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      top: 0;
-      z-index: -1;
-      background: url('./assets/images/header-line.png') no-repeat center center / cover transparent;
-    }
-}
-}

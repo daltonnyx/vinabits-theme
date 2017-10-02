@@ -29,7 +29,11 @@ if ( ! defined( 'ABSPATH' ) ) {
 $tabs = apply_filters( 'woocommerce_product_tabs', array() );
 
 if ( ! empty( $tabs ) ) : ?>
-
+    <?php 
+        unset($tabs['reviews']); 
+        $tabs['description']['title'] = 'Mô tả';
+        $tabs['additional_information']['title'] = 'Thông tin chi tiết';
+    ?>
 	<div class="woocommerce-tabs wc-tabs-wrapper">
 		<ul class="tabs wc-tabs" role="tablist">
 			<?php foreach ( $tabs as $key => $tab ) : ?>

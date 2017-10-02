@@ -1,11 +1,16 @@
+
 #secondary {
+  margin-top: 10px;
   .widget-title {
-    font-size: 14px;
-    color: #333;
+    font-size: 17px;
+    font-weight: bold;
+    padding: 0px 20px;
+    color: #fff;
+    background: $color__main;
+    line-height: 42px;
     text-transform: uppercase;
-    font-weight: 300;
-    margin-top: 25px;
-    margin-bottom: 20px;
+    margin-top: 0px;
+    margin-bottom: 0px;
     position: relative;
     
   }
@@ -19,21 +24,29 @@
 
   .widget_nav_menu {
     ul {
+      background: #f6f7f7;
+      padding: 30px 0px 15px;
       li {
-        font-weight: 0px;
+        padding-left: 26px;
+        position: relative;
+        margin-bottom: 16px;
+        &:before {
+            content: "\f0a9";
+            font-family: FontAwesome;
+            font-size: 14px;
+            color: $color__main;
+            position: absolute;
+            left: 13px;
+            top: .5em;
+        }
         a {
            color: #000;
-           background: #ddd;
-           border-left: 5px solid #999;
            width: 100%;
            text-decoration: none;
            font-size: 14px;
            line-height: 2.5em;
-           margin: 3px 0px;
            display: inline-block;
-           font-weight: bold;
            padding-left: 10px;
-           box-shadow: 1px 1px 1px 0px #999;
            transition: .3s linear all;
            &:hover {
              text-indent: 5%;
@@ -42,37 +55,47 @@
       }
     }
   }
-
-  .news-aside-list {
-    .news-aside-item {
-      background: #eee;
-      padding: 5px;
-      font-size: 0px;
-      border-bottom: 1px solid #999;
-      transition: .2s linear all;
-      &:hover {
-        background: #f9f9f9;
-      }
-      a {
-        font-size: 14px;
-        text-decoration: none;
-        display: flex;
-        .thumb-container {
-          flex-basis: 100px;
-          font-size: 0px;
-        }
-        .news-container {
-          flex-grow: 1;
-          padding-left: 10px;
-          h3 {
-            margin-top: 0px;
-            font-size: 14px;
-            font-weight: bold;
-            color: #333;
+  
+  .featured-products {
+      ul {
+          margin: 0;
+          padding: 0;
+          list-style: none;
+          li.featured-item {
+            display: flex;
+            flex-flow: row;
+            padding: 15px 0px;
+            & + li {
+                /*Horizontal*/
+                background-image: linear-gradient(to right, black 20%, rgba(255,255,255,0) 0%);
+                background-position: top;
+                background-size: 5px 1px;
+                background-repeat: repeat-x;
+            }
+            .thumb-container {
+                flex-basis: 83px;
+                border: 1px solid #999;
+                font-size: 0px;
+            }
+            .info-container {
+                padding-left: 10px;
+                font-size: 14px;
+                h5 {
+                    margin-top: 0px;
+                    color: $color__text-main;
+                }
+                .no-price {
+                    font-weight: bold;
+                    color: $color__main;
+                }
+            }
           }
-        }
       }
-    }
   }
+  
 }
-
+body.home {
+    #secondary {
+        margin-top: 50px;
+    }
+}

@@ -1,19 +1,21 @@
-@font-face  {
-    src: url('./assets/fonts/UTM ANDROGYNE.TTF');
-    font-family: Androgyne;
-}
-@font-face  {
-    src: url('./assets/fonts/VNF-FUTURA REGULAR.TTF');
-    font-family: Futura;
+@font-face {
+    src: url('./assets/fonts/SchadowBTRoman.ttf');
+    font-family: Schadow;
 }
 
 @font-face {
-    src: url('./assets/fonts/UVNBAYBUOMHEP_N.TTF');
-    font-family: BayBuom;
+    src: url('./assets/fonts/SchadowBoldBT.ttf');
+    font-family: Schadow;
+    font-weight: bold;
 }
 
-$vnb__font_main: 'Open Sans';
-$vnb__font_special: Androgyne;
+@font-face {
+    src: url('./assets/fonts/Myriad Pro Regular.ttf');
+    font-family: Myriad;
+}
+
+$vnb__font_main: 'Roboto';
+$vnb__font_special: Schadow;
 
 body, button, input, select, textarea {
     font-family: $vnb__font_main;

@@ -1,8 +1,13 @@
-#top-bar {
-    background: $color__main;
+.top-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    > div {
+        font-size: 0px;
+    }
     .textwidget {
-        line-height: 35px;
-        color: #fff;
+        font-size: 14px;
+        font-family: Schadow;
         p {
             margin-bottom: 0px;
         }
@@ -10,8 +15,6 @@
 }
 
 body #masthead {
-    padding-top: 5px;
-    padding-bottom: 9px;
     min-width: 100%;
 }
 

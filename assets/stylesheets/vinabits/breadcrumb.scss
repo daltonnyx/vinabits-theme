@@ -1,0 +1,34 @@
+.breadcrumb {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  margin-top: 10px;
+  li + li:before {
+    content: "\f105";
+    padding: 0px 5px;
+    font-family: FontAwesome;
+  }
+  li:last-child {
+    font-style: italic;
+  }
+  a {
+      color: $color__text-main;
+  }
+}
+
+.woocommerce-breadcrumb {
+    font-size: 1em !important;
+    margin-top: 10px !important;
+    margin-bottom: 0px !important;;
+    color: inherit !important;
+    font-style: italic;
+    a {
+        color: $color__text-main !important;
+        font-style: normal;
+    }
+    i {
+        font-style: normal;
+        margin: 0px 5px;
+    }
+}

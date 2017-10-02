@@ -16,7 +16,7 @@
  * @version     2.3.0
  * @see         woocommerce_breadcrumb()
  */
-
+$delimiter = '<i class="fa fa-angle-right"></i>';
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }

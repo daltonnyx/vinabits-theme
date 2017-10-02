@@ -13,24 +13,13 @@ get_header(); ?>
 		<main id="main" class="site-main" role="main">
 			<?php
 			if ( have_posts() ) : ?>
-			<div class="title-bar">
-				<div class="mui-container">
-					<div class="mui-row">
-						<div class="mui-col-md-12">
-							<?php the_archive_title( '<h1 class="page-title">', '</h1>' ); ?>
-						</div>
-						<div class="mui-col-md-12">
-							<?php the_breadcrumb(); ?>
-						</div>
-					</div>
-				</div>
-			</div>
 			<div class="mui-container">
 			<div class="mui-row">
-
-
-					<div class="news-list">
-
+                <?php get_sidebar(); ?>
+                <div class="mui-col-md-9 mui-col-xs-12">
+                    <?php the_breadcrumb(); ?>
+                    <?php the_archive_title( '<h1 class="page-title">', '</h1>' ); ?>
+					<div class="news-list">    
 						<?php
                         /* Start the Loop */
                         $delay_count = 0;
@@ -48,8 +37,9 @@ get_header(); ?>
 					</div>
 					<div class="navigation">
 						<?php wp_pagenavi(); ?>
-					</div>
-				</div>
+                    </div>
+                </div>    
+			</div>
 				<?php//	get_sidebar(); ?>
 			</div>
 		</div>

@@ -14,14 +14,16 @@ get_header(); ?>
     </div>
 
 	<div id="primary" class="content-area">
-		<main id="main" class="site-main" role="main">
-            <section class="section-1">
-                <div class="mui-container">
-                    <div class="mui-row">
+        <main id="main" class="site-main" role="main">
+            <div class="mui-container">
+                <div class="mui-row">
+                    <?php get_sidebar(); ?>
+                    <section class="section-1 mui-col-xs-12 mui-col-md-9">
                         <?php dynamic_sidebar('front-1'); ?>
-                    </div>
-                </div>
-            </section>
+                     </section>
+                 </div>
+            </div>
+
             <section class="section-2">
                 <div class="mui-container">
                     <div class="mui-row">
@@ -29,20 +31,20 @@ get_header(); ?>
                     </div>
                 </div>
             </section>
-            <section class="section-3">
+            <!--<section class="section-3">
                 <div class="mui-container">
                     <div class="mui-row">
-                        <?php dynamic_sidebar('front-3'); ?>
+                        <?php// dynamic_sidebar('front-3'); ?>
                     </div>
                 </div>
             </section>
             <section class="section-4">
                 <div class="mui-container">
                     <div class="mui-row">
-                        <?php dynamic_sidebar('front-4'); ?>
+                        <?php// dynamic_sidebar('front-4'); ?>
                     </div>
                 </div>
-            </section>
+            </section>-->
 		</main>
     </div>
 <?php get_footer(); ?>

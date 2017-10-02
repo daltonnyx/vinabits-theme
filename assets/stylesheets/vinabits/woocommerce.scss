@@ -1,76 +1,45 @@
 body.woocommerce {
     #content {
-        header {
-            position: relative;
-            &:before {
-                content: " ";
-                position: absolute;
-                width: 100%;
-                height: 2px;
-                background: #333;
-                top: calc(50% - 11px);
-                left: 0;
-            }
-        }
+        
         h1 {
-            position: relative;
-            font-size: 25px;
+            margin-top: 0px;
+            color: $color__text-main;
             font-weight: bold;
-            text-transform: capitalize;
-            color: #333;
-            margin-bottom: 25px;
-            margin-top: 0;
-            display: inline-block;
-            padding-right: 20px;
-            background: #f2f2f2;
+
         }
-        .products {
-            display: inline-block;
-            width: 100%;
-            > article {
-                display: flex; 
+        ul.products {
+            &:before {
+                content: none !important;
+            }
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: space-between;
+            li {
+                flex-basis: calc(100% / 3 - 29px * 2 / 3);
+                flex-grow: 0;
+                margin: 0px;
+                border: 1px solid #ccc;
+                margin-bottom: 34px;
+                text-align: center;
                 background: #fff;
-                border: 1px solid #acacac;
-                margin-bottom: 20px;
-                padding: 20px 0px;
-                .product-image-container,.product-price-container {
-                    flex-basis: 30%;
+                h2.woocommerce-loop-product__title {
+                  font-size: 15px;
+                  color: $color__text-main;
+                  text-align: center;
+                  margin-top: 15px;
+                  padding: 0px;
+                  margin-bottom: 15px;
+                }
+                .ajax_add_to_cart {
+                    margin-bottom: 1.5em;
+                    margin-top: 0px;
+                    font-size: 14px;
+                    font-family: Myriad;
                     text-align: center;
-                }
-
-                a {
-                    display: inline-block;
-                    h3 {
-                        margin: 0px;
-                        font-size: 15px;
-                        font-weight: bold;
-                        color: #333;
-                        line-height: 1.5em;
-                    }
-                }
-                p {
-                  margin-bottom: 5px;
-                  font-size: 14px;
-                  color: #000;
-                  &.regular-price {
-                      text-decoration: line-through;
-                      font-size: 16px;
-
-                  }
-                  &.sale-price {
-                      color: #f00;
-                      font-weight: bold;
-                      font-size: 18px;
-
-                  }
-                }
-                .btn-add-to-cart {
-                    background: $color__text-main;
-                    border-radius: 3px;
-                    color: #fff;
-                    font-size: 13px;
-                    font-weight: bold;
-                    padding: 0px 15px;
+                      background: $color__main;
+                      color: #fff;
+                      border-radius: 18px;
+                      padding: 6px 16px;
                 }
             }
         }
@@ -97,6 +66,7 @@ body.woocommerce {
 }
 .woocommerce #content div.product div.summary, .woocommerce div.product div.summary, .woocommerce-page #content div.product div.summary, .woocommerce-page div.product div.summary {
     width: 60% !important;
+    margin-top: 0px;
 }
 
 .woocommerce span.onsale {
@@ -121,7 +91,24 @@ body.woocommerce {
     background: #fff;
     border-color: #ccc;
     border-style: solid;
-    border-width: 0px 1px 1px 1px;
+    border-width: 1px 1px 1px 1px;
     padding-left: 20px;
     padding-right: 20px;
+    padding-top: 20px;
+}
+
+.woocommerce .related.products {
+    h3 {
+        color: $color__text-main;
+        font-size: 14px;
+        &:before {
+            content: " ";
+            position: absolute;
+            width: 84px;
+            height: 3px;
+            background: #066fab;
+            bottom: -5px;
+            left: 0;
+        }
+    }
 }

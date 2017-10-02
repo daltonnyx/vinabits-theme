@@ -10,10 +10,11 @@
         color: #fff;
         p {
             margin-bottom: 0px;
-            font-size: 13px;
+            font-size: 14px;
+            color: #999;
             line-height: 2em;
             a {
-                color :#ccc;
+                color :#999;
                 &:hover {
                     text-decoration: none;
                 }
@@ -25,24 +26,22 @@
     list-style: none;
     li {
       margin-bottom: 10px;
-      width: 49%;
-      display: inline-block;
       font-size: 0px;
       &:before {
-        content: "\f196";
-        color: #0d4ba0;
+        content: "\f101";
+        color: $color__main;
         font-family: FontAwesome;
-        font-size: 12px;
+        font-size: 14px;
         position: relative;
         display: inline-block;
         margin-right: 10px;
         text-align: center;
-        line-height: 30px;
+        line-height: 28px;
       }
       a {
-          font-size: 13px;
+          font-size: 14px;
           font-weight: 300;
-          color: #fff;
+          color: #999;
       }
 
     }
@@ -101,14 +100,23 @@
     }
     }
   .footer-widget-title {
-    font-size: 18px;
+    font-size: 16px;
     font-weight: bold;
     color: #fff;
     text-transform: uppercase;
     margin-top: 0;
-    margin-bottom: 22px;
+    margin-bottom: 36px;
     position: relative;
     line-height: 30px;
+    &:before {
+        content: " ";
+        position: absolute;
+        width: 84px;
+        height: 3px;
+        background: $color__main;
+        bottom: -5px;
+        left: 0;
+    }
   }
 
   .ngg-gallery-thumbnail {
@@ -125,8 +133,8 @@
 }
 #copyright {
   text-align: center;
-  font-size: 15px;
-  color: #fff7e2;
+  font-size: 13px;
+  color: #999;
   padding: 5px;
   img {
     display: inline-block;
@@ -141,7 +149,7 @@
 }
 @media screen and (min-width: #{$breakpoint_tablet}) {
   #copyright {
-    background: #0d4ba0;
+    background: #000;
   }
   #colophon {
     position: relative;
