@@ -1,74 +1,50 @@
 .section-2 {
-  position: absolute;
-  top:200%;
-  height:100%;
-  width:100%;
-  background: url('./assets/images/sec-bg-2-1.png') no-repeat top right #fff;
-
-  @media screen and (max-height: 686px) {
-    min-height: 686px;
-    top:calc(686px * 2);
-  }
-
-  > .mui-container {
-    width: 100%;
-    position: absolute;
-    left:50%;
-    top: 50%;
-    transform: translateX(-50%) translateY(-50%);
-  }
+  border-top: 6px solid $color__main-1;
+  padding: 27px 0px;
   .front-page-title {
-    margin-left: 50%;
-    width: 50%;
-    text-align: center;
+    font-weight: bold;
+    color: #2e2e42;
     font-size: 35px;
     text-transform: uppercase;
-    color: $color__text_main;
-    margin-bottom: 40px;
-  }
-  .big-show-item {
-    display: flex;
-    .thumb-container {
-      flex-shrink: 0;
-      flex-basis: 50%;
-    }
-    .news-container {
-      flex-basis: 50%;
-      text-align: center;
-    }
-    .news-title {
-      margin-top: 0px;
-      font-size: 14px;
-      margin-bottom: 40px;
+    margin-bottom: 50px;
+    position: relative;
+    &:before {
+      content: " ";
+      position: absolute;
+      width: 108px;
+      bottom: -15px;
+      left: 0px;
+      height: 7px;
       background: $color__main-1;
-      color: #fff;
-    }
-    .news-except {
-      line-height: 2em;
-      font-size: 13px;
-      margin-bottom: 50px;
-      color: $color__text_main;
-    }
-    .readmore {
-      font-size: 13px;
-      color: $color__text_main;
-      font-weight: bold;
-      text-transform: uppercase;
     }
   }
-  .owl-dots {
-    width: 50%;
-    margin-left: 50%;
-    text-align: center;
-    .owl-dot {
-      width: 31px;
-      height: 5px;
-      margin: 0px 1.5px;
-      background: #999;
-      display: inline-block;
-      &.active {
-        background: $color__main-1;
-      }
+  .textwidget {
+    text-align: justify;
+    color: #2e2e42;
+    line-height: 2em;
+    letter-spacing: 0.5px;
+  }
+  .video {
+    margin-top: 75px;
+  }
+  .btn-gioi-thieu {
+    background: $color__main-1;
+    font-size: 13px;
+    font-weight: bold;
+    text-transform: uppercase;;
+    color: #fff;
+    height: 34px;
+    border-radius: 0px;
+    position: relative;
+    padding: 0 15px;
+    overflow: visible;
+    &:after {
+      top: 0;
+      content: " ";
+      border-bottom: 34px solid $color__main-1;
+      right: -24px;
+      position: absolute;
+      border-right: 24px solid transparent;
     }
   }
 }

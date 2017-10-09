@@ -26,22 +26,23 @@
 
 	<header id="masthead" class="site-header" role="banner">
 		<div class="mui-container">
-            <div class="mui-row">
-                <div class="mui-col-xs-12  mui-col-md-3 logo-container">
-                    <div class="mui-row">
-                    <?php vinabits_the_custom_logo(); ?>
-                    </div>
-                </div>
-                <div class="mui-col-xs-12 mui-col-md-offset-2 mui-col-md-7 nav-container">
-                    <div class="mui-row mui--text-right">
-                      <div class="mui-col-xs-12">
-                        <?php dynamic_sidebar('top-1'); ?>
-                      </div>
-                      <?php get_template_part( 'components/navigation/navigation', 'top' ); ?>
-                    </div>
-                </div>
+      <div class="mui-row">
+          <div class="mui-col-xs-12  mui-col-md-3 logo-container">
+              <?php vinabits_the_custom_logo(); ?>
+          </div>
+          <div class="mui-col-xs-12 mui-col-md-offset-2 mui-col-md-7 top-bar-container">
+              <?php dynamic_sidebar('top-1'); ?>
+          </div>
 			</div>
-        </div>
-
+    </div>
 	</header>
+	<div class="nav">
+		<div class="mui-container">
+			<div class="mui-row">
+				<div class="mui-col-xs-12">
+					<?php get_template_part( 'components/navigation/navigation', 'top' ); ?>
+				</div>
+			</div>
+		</div>
+	</div>
     <div id="content" class="site-content">

@@ -51,7 +51,7 @@ class VinabitsExtraBox
     static function load_media_script() {
         wp_enqueue_media();
         wp_enqueue_script('media-upload');
-        wp_enqueue_script( 'vinabitsBox-media-js', get_template_directory_uri() . '/assets/js/admin/media.js' );
+        wp_enqueue_script( 'vinabitsBox-media-js', get_template_directory_uri() . '/assets/js/admin/load_mediaupload.js' );
     }
 
     static function RegisterMetabox($name, $caption, $post_type = 'post', $type = 'text', $description = '', callable $script_cb = null) {

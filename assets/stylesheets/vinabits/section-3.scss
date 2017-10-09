@@ -1,16 +1,59 @@
 .section-3 {
-  position: absolute;
-  top:300%;
-  height:100%;
-  width:100%;
-  @media screen and (max-height: 686px) {
-    min-height: 686px;
-    top:calc(686px * 3);
+  background: url('./assets/images/sec-bg-3.png') no-repeat top center / cover, -webkit-linear-gradient(bottom, rgba(227,124,3,.91), rgba(227,124,3,.91));
+  background: url('./assets/images/sec-bg-3.png') no-repeat top center / cover, -o-linear-gradient(bottom, rgba(227,124,3,.91), rgba(227,124,3,.91));
+  background: url('./assets/images/sec-bg-3.png') no-repeat top center / cover, linear-gradient(to top, rgba(227,124,3,.91), rgba(227,124,3,.91));
+  h2 {
+    text-transform: uppercase;
+    color: #fff;
+    font-weight: bold;
+    margin: 45px 0px;
+    font-size: 35px;
+    text-align: center;
   }
-  .intergeo_map_canvas {
-    position: absolute;
-    left: 0;
-    top: 0;
-    height: calc(100% - 166px) !important;
+  .project-tabs {
+    ul {
+      text-align: center;
+      margin-bottom: 45px;
+      li {
+        margin: 0px 24px;
+        a {
+          height: 25px;
+          line-height: 25px;
+          padding: 0px;
+          font-size: 15px;
+          color: #fff;
+        }
+        &.mui--is-active {
+          border-bottom-color: #fff;
+          a {
+            color: $color__main-2;
+          }
+        }
+      }
+    }
+    .pro-cat-carousel {
+      .item {
+        h5 {
+          font-size: 12px;
+          font-weight: bold;
+          color: #fff;
+          text-transform: uppercase;
+          text-align: center;
+          line-height: 1.5;
+        }
+      }
+      .owl-next, .owl-prev {
+        position: absolute;
+        top: calc(50% - .5em);
+        transform: translateY(-50%);
+        font-size: 50px;
+      }
+      .owl-next {
+        right: 0px;
+      }
+      .owl-prev {
+        left: 0px;
+      }
+    }
   }
 }

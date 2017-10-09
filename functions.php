@@ -52,6 +52,8 @@ function vinabits_setup() {
 
 	add_image_size( 'team-portait', 277, 299, array('center', 'center') );
 
+	add_image_size( 'post-carousel', 366, 243, array('center', 'center') );
+
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
 		'menu-1' => esc_html__( 'Top', 'vinabits' ),
@@ -153,16 +155,25 @@ function vinabits_widgets_init() {
         'before_title'  => '<h2 class="front-page-title">',
         'after_title'   => '</h2>',
     ) );
-    // register_sidebar( array(
-    //     'name'          => esc_html__( 'Front 4', 'vinabits' ),
-    //     'id'            => 'front-4',
-    //     'description'   => '',
-    //     'before_widget' => '<div id="%1$s" class="front-section %2$s">',
-    //     'after_widget'  => '</div>',
-    //     'before_title'  => '<h3 class="front-page-title">',
-    //     'after_title'   => '</h3>',
-    // ) );
-	register_sidebar( array(
+    register_sidebar( array(
+        'name'          => esc_html__( 'Front 4', 'vinabits' ),
+        'id'            => 'front-4',
+        'description'   => '',
+        'before_widget' => '<div id="%1$s" class="front-section %2$s">',
+        'after_widget'  => '</div>',
+        'before_title'  => '<h3 class="front-page-title">',
+        'after_title'   => '</h3>',
+    ) );
+		register_sidebar( array(
+        'name'          => esc_html__( 'Front 5', 'vinabits' ),
+        'id'            => 'front-5',
+        'description'   => '',
+        'before_widget' => '<div id="%1$s" class="front-section %2$s">',
+        'after_widget'  => '</div>',
+        'before_title'  => '<h3 class="front-page-title">',
+        'after_title'   => '</h3>',
+    ) );
+		register_sidebar( array(
 		'name'          => esc_html__( 'Footer', 'vinabits' ),
 		'id'            => 'footer',
 		'description'   => '',
@@ -241,9 +252,6 @@ while( ( $file = readdir( $inc_dir ) ) !== false ) {
         require_once get_template_directory() . '/inc/' . $file;
 }
 
-VinabitsExtraBox::RegisterMetabox('banner_top','Banner Top', ['post','page'], 'image', 'Banner image for post and page');
-VinabitsExtraBox::RegisterMetabox('banner_bottom','Banner bottom', ['post','page'], 'image', 'Banner image for post and page', 'load_media_upload');
-
 function load_media_upload() {
 	wp_enqueue_media();
 	wp_enqueue_script('media-upload');
@@ -252,21 +260,8 @@ function load_media_upload() {
 
 //Register Team type
 
-VinabitsExtraType::RegisterType('team', 'Member', 'Team', ['menu_icon' => 'dashicons-groups']);
+VinabitsExtraType::RegisterType('project', 'Dự án', 'Dự án', ['menu_icon' => 'dashicons-groups']);
 
-VinabitsExtraBox::RegisterMetabox('member_title','Title', 'team', 'text');
-VinabitsExtraBox::RegisterMetabox('facebook_link','Facebook', 'team', 'text');
-VinabitsExtraBox::RegisterMetabox('google_link','Google plus', 'team', 'text');
-VinabitsExtraBox::RegisterMetabox('skype_account','Skype', 'team', 'text');
+VinabitsExtraBox::RegisterMetabox('proj_gallery','Hình ảnh', 'project', 'images');
 
-//Register Product Brand
-
-VinabitsExtraType::RegisterType('brand', 'Product Brand', 'Brands', ['menu_icon' => 'dashicons-admin-site']);
-
-VinabitsExtraBox::RegisterMetabox('brand_group','Hãng sản xuất', 'brand', 'group-cards','', 'load_upload_image_script');
-
-function load_upload_image_script() {
-	wp_enqueue_media();
-	wp_enqueue_script('media-upload');
-	wp_enqueue_script( 'brand-media-js', get_template_directory_uri() . '/assets/js/admin/brand-media.js' );
-}
+VinabitsExtraTax::RegisterTaxonomy('proj_cat', 'project', 'Danh mục dự án', 'Danh mục dự án');

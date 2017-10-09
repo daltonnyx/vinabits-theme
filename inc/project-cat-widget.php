@@ -1,13 +1,13 @@
 <?php
 /**
- * Product Cat Widget Class
+ * Project Cat Widget Class
  */
-class product_cat_widget extends WP_Widget {
+class project_cat_widget extends WP_Widget {
 
 
     /** constructor -- name this the same as the class above */
-    function product_cat_widget() {
-        parent::WP_Widget(false, $name = 'Product Cat Text Widget');
+    function __construct() {
+        parent::__construct('project_cat_widget', 'Project Cat Text Widget');
     }
 
     /** @see WP_Widget::widget -- do not rename this */
@@ -21,10 +21,9 @@ class product_cat_widget extends WP_Widget {
 
         <?php
         $parent_terms = get_terms(array(
-            'parent' => 16,
             'hide_empty' => false,
-            'taxonomy' => 'category',
-            'order' => 'desc'
+            'taxonomy' => 'proj_cat',
+            'order' => 'asc'
         ));
         $ul_tabs = '<ul class="mui-tabs__bar">';
         $div_tabs = "";
@@ -32,8 +31,15 @@ class product_cat_widget extends WP_Widget {
         foreach($parent_terms as $parent) {
             $ul_tabs .= '<li class="'.$active.'"><a data-mui-toggle="tab" data-mui-controls="child-cat--'.$parent->slug.'">'.$parent->name.'</a></li>';
             $posts = get_posts(array(
-                'posts_per_page' => 4,
-                'category' => $parent->term_id,
+                'posts_per_page' => 9,
+                'post_type' => 'project',
+                'tax_query' => array(
+                  array(
+                    'taxonomy' => 'proj_cat',
+                    'field' => 'id',
+                    'terms' => $parent->term_id
+                  )
+                )
             ));
             $div_tabs .= '<div class="mui-tabs__pane '.$active.'" id="child-cat--'.$parent->slug.'">';
             $active = '';
@@ -53,7 +59,7 @@ class product_cat_widget extends WP_Widget {
         }
         $ul_tabs .= '</ul>';
         ?>
-        <div class="product-tabs">
+        <div class="project-tabs">
             <?php echo $ul_tabs; ?>
             <?php echo $div_tabs; ?>
         </div>
@@ -82,6 +88,6 @@ class product_cat_widget extends WP_Widget {
     }
 
 
-} // end class product_cat_widget
-add_action('widgets_init', create_function('', 'return register_widget("product_cat_widget");'));
+} // end class project_cat_widget
+add_action('widgets_init', create_function('', 'return register_widget("project_cat_widget");'));
 ?>

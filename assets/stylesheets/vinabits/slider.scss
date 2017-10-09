@@ -1,19 +1,36 @@
 .slide-section {
-  position: absolute;
-  height: 100%;
-  @media screen and (max-height: 686px) {
-    min-height: 686px;
+  [class^="amazingslider-swipe-box"]:after {
+    content: " ";
+    position: absolute;
+    background: rgba(0,0,0,.43);
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
   }
-  width: 100%;
-  top: 0;
-  z-index: 0;
-  [class^="amazingslider-text-wrapper-"] {
-    width: auto !important;
-    left: calc(50% - 1170px / 2) !important;
-    bottom: 20% !important;
-    border-left: 6px solid $color__main-1;
-    [class^="amazingslider-text-"] {
-      padding: 0px 12px !important;
+  .as-btn-blue-medium {
+    background: $color__main-1;
+    transition: .3s linear all;
+    &:hover {
+      background: lighten($color__main-1,25%);
+    }
+    border-radius: 15px;
+    font-size: 15px;
+    line-height: 1.5em;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-family: Arial;
+    box-shadow: none;
+  }
+  [class^="amazingslider-nav"] {
+    top: auto !important;
+    bottom: 5%;
+    [class^="amazingslider-bullet"] {
+      border-radius: 50%;
+      background: $color__text-highlight !important;
+    }
+    [style*="left bottom"] {
+      background: $color__main-1 !important;
     }
   }
 }

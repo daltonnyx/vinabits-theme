@@ -5,8 +5,6 @@
   min-width: 100%;
   position: relative;
   z-index: 1;
-  background: rgba(255,255,255,.73);
-  border-bottom: 5px solid $color__main-1;
   @media screen and (min-width: 1170px) {
     > .mui-container > .mui-row {
         display: flex;
@@ -19,9 +17,7 @@
   @media screen and (max-width:#{$breakpoint_tablet}) {
       padding-top:0px;
       .logo-container {
-
           text-align: center;
-
       }
       .mui--text-right {
               text-align: center !important;

@@ -4,6 +4,11 @@
 	height: 0;
 }
 
+
+.nav {
+  background: $color__main-2;
+}
+
 #nav-bars {
     display: inline-block;
     float: right;
@@ -143,14 +148,14 @@
 
 	a {
 		display: block;
-		color: $color__text-main;
+		color: $color__text-highlight;
 		text-decoration: none;
 		font-size: 13px;
     font-weight: bold;
 		line-height: 2em;
 		text-transform: uppercase;
 		&:visited {
-			color: #000;
+			color: $color__text-highlight;
 		}
 	}
 
@@ -221,18 +226,15 @@
 
 		li {
 			width: auto;
-			a {
-				line-height: 42px;
-			}
 		}
-        ul {
-            width: auto;
-            flex-flow: row wrap;
-            height: auto;
-            background-color: rgba(57,55,55,.83);
-            li {
-                margin-left: 0px;
-            }
+    ul {
+        width: auto;
+        flex-flow: row wrap;
+        height: auto;
+        background-color: rgba(57,55,55,.83);
+        li {
+            margin-left: 0px;
         }
+    }
 	}
 }

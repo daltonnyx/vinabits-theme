@@ -1,19 +1,27 @@
-body.home #colophon {
-  position: absolute;
-  top: calc(300% - 166px);
-  @media screen and (max-height: 686px) {
-    top:calc(686px * 3 - 166px);
-  }
-}
-
 #colophon {
   //height:100%;
-  padding: 25px 0px 44px;
+  padding: 25px 0px 25px;
   width:100%;
   color: #fff;
-  background: $color__main-1;
+  background: $color__main-2;
   .textwidget {
-    font-size: 12px;
+    font-size: 14px;
+  }
+  h4.footer-widget-title {
+    font-size: 20px;
+    font-weight: bold;
+    color: #fff;
+    margin-bottom: 40px;
+    position: relative;
+    text-transform: uppercase;
+    &:before {
+      content: " ";
+      width: 64px;
+      height: 2px;
+      background: #fff;
+      position: absolute;
+      bottom: -10px;
+    }
   }
   .menu {
     padding: 0px;
@@ -24,11 +32,12 @@ body.home #colophon {
         content: "\f105";
         font-family: FontAwesome;
         display: inline;
+        color: $color__main-1;
         margin-right: 0.5em;
       }
       a {
         color :#fff;
-        font-size: 12px;
+        font-size: 14px;
         margin-bottom: 1em;
         display: inline-block;
       }

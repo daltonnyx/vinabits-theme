@@ -1,1 +1,51 @@
-
+.section-5 {
+  background: #f3f3f3;
+  h3.front-page-title {
+    text-transform: uppercase;
+    font-size: 35px;
+    line-height: 1em;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    font-weight: bold;
+    color: #000;
+    text-align: center;
+  }
+  .news-default-list {
+    display: flex;
+    justify-content: space-between;
+    flex-flow: row wrap;
+    .news-default-item {
+      a:hover {
+        text-decoration: none;
+      }
+      @media screen and (min-width: $breakpoint_tablet) {
+        width: calc( 100% / 3 - 30px * 2 / 3);
+      }
+      .thumb-container {
+        font-size: 0px;
+      }
+      .news-container {
+        h3 {
+          font-size: 14px;
+          margin-top: 15px;
+          line-height: 1em;
+          font-weight: bold;
+          color: #000;
+        }
+        font-size: 13px;
+        color: #666;
+        a.btn-xem-them {
+          text-transform: none;
+          background: $color__main-1;
+          border-radius: 15px;
+          line-height: 26px;
+          height: 26px;
+          font-size: 14px;
+          &:visited {
+            color: #000;
+          }
+        }
+      }
+    }
+  }
+}
