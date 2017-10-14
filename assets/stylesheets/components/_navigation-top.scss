@@ -130,7 +130,7 @@
 		li.focus > ul {
       opacity: 1;
       visibility: visible;
-      top: calc(100% + 17px);
+      top: calc(100% + 8px);
 		}
 	}
 
@@ -141,7 +141,7 @@
 		text-align: center;
 		&:hover > a,
 		&.focus > a {
-      color: $color__text-main;
+      color: $color__main-1;
 		}
 
 	}
@@ -163,7 +163,7 @@
 	.current-menu-item > a,
 	.current_page_ancestor > a,
 	.current-menu-ancestor > a {
-        color: $color__main-2;
+        color: $color__main-1;
 	}
 }
 
@@ -231,7 +231,7 @@
         width: auto;
         flex-flow: row wrap;
         height: auto;
-        background-color: rgba(57,55,55,.83);
+        background-color: rgba(46,46,66,.83);
         li {
             margin-left: 0px;
         }

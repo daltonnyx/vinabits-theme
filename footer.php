@@ -16,6 +16,9 @@
 	<footer id="colophon" class="site-footer" role="contentinfo">
         <?php get_template_part( 'components/footer/site', 'info' ); ?>
 	</footer>
+	<div id="copyright" class="site-info">
+			COPYRIGHT <?php echo date('Y'); ?>  CÔNG TY TNHH MỘT THÀNH VIÊN MINH ĐĂNG <img alt="Websiteplaza" src="<?php echo get_template_directory_uri(); ?>/assets/images/plaza.png">
+	</div>
 </div>
 <?php wp_footer(); ?>
 
