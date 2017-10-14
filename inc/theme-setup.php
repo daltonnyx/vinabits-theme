@@ -1,11 +1,4 @@
 <?php
-
-$CUSTOM_IMAGE_SIZE = array(
-    'news-list-thumbnail' => array( 300, 200 ),
-
-);
-
-
 if ( ! function_exists( 'vinabits_setup' ) ) :
 /**
  * Sets up theme defaults and registers support for various WordPress features.
@@ -15,6 +8,11 @@ if ( ! function_exists( 'vinabits_setup' ) ) :
  * as indicating support for post thumbnails.
  */
 function vinabits_setup() {
+    
+    $CUSTOM_IMAGE_SIZE = array(
+        'news-list-thumbnail' => array( 300, 200 ),
+    );
+    $LOGO_SIZE = array(277,84);
 	/*
 	 * Make theme available for translation.
 	 * Translations can be filed in the /languages/ directory.
@@ -45,6 +43,10 @@ function vinabits_setup() {
 
       add_image_size( 'vinabits-thumbnail', 960, 9999 );
 
+    /*
+     * Register custom image size for theme
+     *
+     */
       foreach( $CUSTOM_IMAGE_SIZE as $name => $size ) {
         add_image_size($name, $size[0], $size[1], array('center','center'));
       } 
@@ -58,8 +60,8 @@ function vinabits_setup() {
 	 * Add support for core custom logo.
 	 */
 	add_theme_support( 'custom-logo', array(
-		'width'      => 235,
-		'height'       => 84,
+		'width'      => $LOGO_SIZE[0],
+		'height'       => $LOGO_SIZE[1],
 		'flex-width'  => true,
 		'flex-height' => true,
 	) );
