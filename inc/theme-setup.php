@@ -12,7 +12,8 @@ function vinabits_setup() {
     $CUSTOM_IMAGE_SIZE = array(
         'news-list-thumbnail' => array( 300, 200 ),
         'news-carousel' => array(355,178),
-        'news-testimonial' => array(120, 120)
+        'news-testimonial' => array(120, 120),
+        'news-default' => array(370, 219)
     );
     $LOGO_SIZE = array(222,76);
 	/*

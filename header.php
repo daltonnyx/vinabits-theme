@@ -30,7 +30,7 @@
           <div class="mui-col-xs-12  mui-col-md-3 logo-container">
               <?php vinabits_the_custom_logo(); ?>
           </div>
-          <div class="mui-col-xs-12 mui-col-md-offset-2 mui-col-md-7 nav-container">
+          <div class="mui-col-xs-12 mui-col-md-9 nav-container">
               <?php get_template_part( 'components/navigation/navigation', 'top' ); ?>
           </div>
 		</div>

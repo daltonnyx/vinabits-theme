@@ -4,7 +4,7 @@
     <div class="thumb-container">
       <?php if($has_thumbnail) { ?>
         <a href="<?php echo get_permalink(); ?>">
-          <?php the_post_thumbnail('vinabits-news-default', array(
+          <?php the_post_thumbnail('news-default', array(
             'alt' => get_the_title(),
             'class' => 'img-responsive horizonal-thumb'
           )); ?>
@@ -16,7 +16,7 @@
       <?php if($has_excerpt) { ?>
         <p><?php echo get_my_excerpt(37); ?></p>
       <?php } ?>
-      <p style="text-align:center;">
+      <p>
         <a href="<?php echo get_permalink(); ?>" class="mui-btn btn-xem-them">Xem thêm</a>
       </p>
     </div>

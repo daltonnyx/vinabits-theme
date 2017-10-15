@@ -2,7 +2,7 @@
   //height:100%;
   padding: 25px 0px 25px;
   width:100%;
-  color: #fff;
+  color: #ccc;
   background: $color__main-2;
   .textwidget {
     font-size: 14px;
@@ -36,7 +36,7 @@
         margin-right: 0.5em;
       }
       a {
-        color :#fff;
+        color :#ccc;
         font-size: 14px;
         margin-bottom: 1em;
         display: inline-block;
@@ -48,50 +48,22 @@
     text-transform: uppercase;
     font-size: 12px;
   }
-  .wpcf7-form {
-    p {
-      margin-bottom: 1em;
-    }
-    span.email {
-      input {
-        width: 75%;
-        color: $color__text-main;
-        &::-webkit-input-placeholder {
-          color: $color__text-main;
-        }
-        &::-moz-placeholder {
-          color: $color__text-main;
-        }
-        &:-ms-placeholder {
-          color: $color__text-main;
-        }
+
+  .textwidget {
+      p {
+          margin-bottom: 1em;
       }
-    }
-    .ajax-loader {
-      display: none;
-    }
-    .send_button {
-      box-shadow: none;
-      border: none;
-      background: black;
-      color: #fff;
-      padding: 8px 15px;
-      font-size: 12px;
-      border-radius: 5px;
-      outline: none;
-      vertical-align: top;
-    }
   }
+  
   ul.cnss-social-icon li.cn-fa-icon a {
-    padding: 0 !important;
-    background: none !important;
-    width: auto !important;
-    height: auto !important;
+      width: 36px !important;
+      height: 36px !important;
+      padding: 9px !important;
   }
 }
 
 #copyright {
-  background: $color__main-1;
+  background: #1a4784;
   text-align: center;
   font-size: 13px;
   color: #fff;

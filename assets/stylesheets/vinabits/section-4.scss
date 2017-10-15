@@ -1,4 +1,5 @@
 .section-4 {
+    padding: 10px 0px;
     @media screen and (min-width: $breakpoint_desktop) {
         padding: 45px 0px 65px;
     }
@@ -14,6 +15,9 @@
               background: #fff;
           }
           
+      }
+      .ngg-gallery-thumbnail-box {
+          max-width: calc(100% / 3) !important;
       }
         .ngg-gallery-thumbnail-box:nth-child(3n+1) {
             a {

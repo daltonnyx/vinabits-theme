@@ -1,9 +1,14 @@
 .section-2 {
-  padding: 27px 0px 40px;
+  @media screen and (min-width: $breakpoint_desktop) {
+    padding: 27px 0px 40px;
+  }
   .front-page-title {
     font-weight: bold;
     color: #333;
-    font-size: 30px;
+    font-size: 26px;
+    @media screen and (min-width: $breakpoint_desktop) {
+        font-size: 30px;
+    }
     text-transform: uppercase;
     margin-bottom: 10px;
     text-align: center;
@@ -13,7 +18,10 @@
       text-align: center;
       color: #333;
       margin-bottom: 30px;
-      font-size: 15px;
+      font-size: 13px;
+      @media screen and (min-width: $breakpoint_desktop) {
+          font-size: 15px;
+      }
   }
   .news-default-item {
       color: #333;

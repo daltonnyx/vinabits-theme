@@ -9,8 +9,12 @@
   h2 {
     color: #fff;
     font-weight: bold;
-    margin: 16px 0px 85px;
-    font-size: 30px;
+    
+    font-size: 20px;
+    @media screen and (min-width: $breakpoint_desktop) {
+        font-size: 30px;
+        margin: 16px 0px 85px;
+    } 
     text-align: center;
     position: relative;
     z-index: 1;
@@ -27,7 +31,9 @@
     }
   }
   .card-layout {
-      flex-basis: 199px;
+      @media screen and (min-width: $breakpoint_desktop) {
+        flex-basis: 199px;
+      }
       text-align: center;
       background: #dbebf4;
       padding: 24px;

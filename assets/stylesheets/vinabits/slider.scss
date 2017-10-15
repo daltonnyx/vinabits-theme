@@ -9,7 +9,7 @@
     right: 0;
   }
   .as-btn-blue-medium {
-    background: $color__main-1;
+    background: #000;
     transition: .3s linear all;
     &:hover {
       background: lighten($color__main-1,25%);

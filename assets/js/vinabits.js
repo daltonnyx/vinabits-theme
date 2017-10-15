@@ -2,12 +2,26 @@ jQuery(document).ready(function($){
     setTimeout(runAnimation,0);
 
     $('.news-carousel').owlCarousel({
-      items: 3,
-      loop: true,
-      center: true,
-      margin: 25,
-      dotsEach: 3,
-      dots: true,
+        loop: true,
+        center: true,
+        margin: 25,
+        dots: true,
+        responsive: {
+            0: {
+                items: 1,
+                dotsEach: 1,
+            },
+            640: {
+                items: 2,
+                dotsEach: 2,
+                slideBy: 2,
+            },
+            1024: {
+                items: 3,
+                dotsEach: 3,
+                slideBy: 3,
+            }
+        }
     });
 
     $('.testimonials').owlCarousel({
