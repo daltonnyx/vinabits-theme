@@ -24,8 +24,7 @@ function load_media_upload() {
 
 //Register Team type
 
-VinabitsExtraType::RegisterType('project', 'Dự án', 'Dự án', ['menu_icon' => 'dashicons-groups']);
+VinabitsExtraType::RegisterType('testimonial', 'Cảm nhận', 'Cảm nhận khách hàng', ['menu_icon' => 'dashicons-groups']);
 
-VinabitsExtraBox::RegisterMetabox('proj_gallery','Hình ảnh', 'project', 'images');
+VinabitsExtraBox::RegisterMetabox('testimoninal_title','Tiêu đề', 'testimonial', 'text');
 
-VinabitsExtraTax::RegisterTaxonomy('proj_cat', 'project', 'Danh mục dự án', 'Danh mục dự án');

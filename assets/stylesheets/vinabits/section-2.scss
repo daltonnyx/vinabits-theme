@@ -1,50 +1,59 @@
 .section-2 {
-  border-top: 6px solid $color__main-1;
-  padding: 27px 0px;
+  padding: 27px 0px 40px;
   .front-page-title {
     font-weight: bold;
-    color: #2e2e42;
-    font-size: 35px;
+    color: #333;
+    font-size: 30px;
     text-transform: uppercase;
-    margin-bottom: 50px;
+    margin-bottom: 10px;
+    text-align: center;
     position: relative;
-    &:before {
-      content: " ";
-      position: absolute;
-      width: 108px;
-      bottom: -15px;
-      left: 0px;
-      height: 7px;
-      background: $color__main-1;
-    }
   }
-  .textwidget {
-    text-align: justify;
-    color: #2e2e42;
-    line-height: 2em;
-    letter-spacing: 0.5px;
+  .widget-description {
+      text-align: center;
+      color: #333;
+      margin-bottom: 30px;
+      font-size: 15px;
   }
-  .video {
-    margin-top: 75px;
+  .news-default-item {
+      color: #333;
+      border: 1px solid #ccc;
+      box-shadow: 0px 2px 1px 0px #ccc;
+      margin-bottom: 5px;
+      padding: 7px;
+      text-align: center;
+      p {
+          text-align: left;
+      }
+      a {
+          font-size: 15px;
+          color: #1a4784;
+          font-weight: bold;
+          text-decoration: underline;
+          margin-bottom: 23px;
+          display: inline-block;
+      }
   }
-  .btn-gioi-thieu {
-    background: $color__main-1;
-    font-size: 13px;
-    font-weight: bold;
-    text-transform: uppercase;;
-    color: #fff;
-    height: 34px;
-    border-radius: 0px;
-    position: relative;
-    padding: 0 15px;
-    overflow: visible;
-    &:after {
-      top: 0;
-      content: " ";
-      border-bottom: 34px solid $color__main-1;
-      right: -24px;
-      position: absolute;
-      border-right: 24px solid transparent;
-    }
+  h3.news-title {
+      color: #333;
+      text-align: left;
+      font-size: 18px;
+      text-transform: uppercase;
+      font-weight: bold;
+  }
+  .owl-dots {
+      text-align: center;
+      margin-top: 25px;
+      .owl-dot {
+          width: 13px;
+          height: 13px;
+          display: inline-block;
+          margin: 3.5px;
+          border-radius: 50%;
+          background: #666;
+          &.active {
+            background: $color__main-1;
+          }
+      }
   }
 }

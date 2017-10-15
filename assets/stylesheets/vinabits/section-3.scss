@@ -1,59 +1,46 @@
 .section-3 {
-  background: url('./assets/images/sec-bg-3.png') no-repeat top center / cover, -webkit-linear-gradient(bottom, rgba(227,124,3,.91), rgba(227,124,3,.91));
-  background: url('./assets/images/sec-bg-3.png') no-repeat top center / cover, -o-linear-gradient(bottom, rgba(227,124,3,.91), rgba(227,124,3,.91));
-  background: url('./assets/images/sec-bg-3.png') no-repeat top center / cover, linear-gradient(to top, rgba(227,124,3,.91), rgba(227,124,3,.91));
+  overflow: hidden;
+  padding-bottom: 64px;
+  > .mui-container > .mui-row {
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: space-between;
+  }
   h2 {
-    text-transform: uppercase;
     color: #fff;
     font-weight: bold;
-    margin: 45px 0px;
-    font-size: 35px;
+    margin: 16px 0px 85px;
+    font-size: 30px;
     text-align: center;
-  }
-  .project-tabs {
-    ul {
-      text-align: center;
-      margin-bottom: 45px;
-      li {
-        margin: 0px 24px;
-        a {
-          height: 25px;
-          line-height: 25px;
-          padding: 0px;
-          font-size: 15px;
-          color: #fff;
-        }
-        &.mui--is-active {
-          border-bottom-color: #fff;
-          a {
-            color: $color__main-2;
-          }
-        }
-      }
-    }
-    .pro-cat-carousel {
-      .item {
-        h5 {
-          font-size: 12px;
-          font-weight: bold;
-          color: #fff;
-          text-transform: uppercase;
-          text-align: center;
-          line-height: 1.5;
-        }
-      }
-      .owl-next, .owl-prev {
+    position: relative;
+    z-index: 1;
+    &:before {
+        content: " ";
         position: absolute;
-        top: calc(50% - .5em);
-        transform: translateY(-50%);
-        font-size: 50px;
-      }
-      .owl-next {
-        right: 0px;
-      }
-      .owl-prev {
-        left: 0px;
-      }
+        width: 100vw;
+        z-index: -1;
+        height: 2.1em;
+        top: 50%;
+        left: 50%;
+        transform: translateX(-50%) translateY(-50%);
+        background: $color__main-1;
     }
   }
+  .card-layout {
+      flex-basis: 199px;
+      text-align: center;
+      background: #dbebf4;
+      padding: 24px;
+      min-height: 174px;
+      .card-image {
+          min-height: 70px;
+      }
+      h3.card-title {
+          font-size: 18px;
+          color: $color__main-1;
+          margin: 0;
+          padding: 0px 21px;
+      }
+  }
+  
 }

@@ -5,7 +5,7 @@
 
     <div class="thumb-container">
       <?php if($has_thumbnail) { ?>
-        <?php the_post_thumbnail('post-carousel', array(
+        <?php the_post_thumbnail('news-carousel', array(
           'alt' => get_the_title(),
           'class' => 'img-responsive horizonal-thumb'
         )); ?>
@@ -13,13 +13,12 @@
     </div>
     <div class="news-container">
       <h3 class="news-title"><?php echo get_the_title(); ?></h3>
-      <a class="vnb-btn" href="<?php echo get_permalink(); ?>">
-        <i class="fa fa-angle-down" aria-hidden="true"></i>
-      </a>
+      <p><?php echo get_my_excerpt(20); ?></p>
+      <a href="<?php echo get_permalink() ?>" title="<?php echo get_the_title(); ?>">Xem chi tiết</a>
     </div>
     
   </div>
-<?php $i += 100; ?>
+<?php $i = ($i > 3) ?  0 : $i + 100; ?>
 <?php endwhile;endif; ?>
 </div>
 

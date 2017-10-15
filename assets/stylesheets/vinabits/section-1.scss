@@ -1,10 +1,9 @@
 .section-1 {
-  padding: 60px 0px 55px;
+  padding: 60px 0px 15px;
   background: url('./assets/images/sec-bg-1.png') top center / cover transparent;
   .card-layout {
     text-align: center;
     position: relative;
-    padding: 0px 40px;
     h3 {
       font-size: 23px;
       font-weight: bold;
@@ -17,14 +16,9 @@
       color: #333;
     }
     @media screen and (min-width: $breakpoint_desktop) {
-      & + .card-layout:before {
-        content: " ";
-        background: #999;
-        position: absolute;
-        width: 3px;
-        height: 167px;
-        left: 0px;
-        top: calc(50% - 167px / 2);
+      .card-container {
+       border-bottom: 6px solid $color__main-1; 
+       min-height: 328px;
       }
     }
   }
