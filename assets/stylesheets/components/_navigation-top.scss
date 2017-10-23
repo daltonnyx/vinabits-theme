@@ -4,9 +4,10 @@
 	height: 0;
 }
 
-
 .nav {
-  background: $color__main-2;
+  background: $color__main-1;
+	position: relative;
+	min-height: 34px;
 }
 
 #nav-bars {
@@ -16,7 +17,7 @@
     .stripe {
         width: 18px;
         height: 3px;
-        background: #cc0000;
+        background: #fff;
         margin-bottom: 3px;
         transform-origin: left;
         transition: .3s linear all;
@@ -30,7 +31,6 @@
 	z-index: 999;
 	display: block;
 
-	min-height: 34px;
 	label {
 		display: block;
 	}
@@ -54,8 +54,9 @@
 		width: 100%;
 		height: auto;
 		z-index: 999;
-		background: #fff;
+		background: $color__main-1;
 		top: 100%;
+		left: 0;
 		ul {
 			box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
 			float: left;
@@ -141,7 +142,7 @@
 		text-align: center;
 		&:hover > a,
 		&.focus > a {
-      color: $color__main-1;
+      color: $color__main-2;
 		}
 
 	}
@@ -152,7 +153,7 @@
 		text-decoration: none;
 		font-size: 13px;
     font-weight: bold;
-		line-height: 2em;
+		line-height: 2.8em;
 		text-transform: uppercase;
 		&:visited {
 			color: $color__text-highlight;
@@ -163,7 +164,7 @@
 	.current-menu-item > a,
 	.current_page_ancestor > a,
 	.current-menu-ancestor > a {
-        color: $color__main-1;
+        color: $color__main-2;
 	}
 }
 
@@ -176,9 +177,9 @@
 #navi-anchor:checked ~ #nav-bars {
     position: absolute;
     z-index: 99999;
-    right: 0px;
+    right: 15px;
     .stripe {
-        background-color: #cc0000;
+        background-color: #fff;
     }
     .stripe:nth-child(1) {
         transform: rotate(45deg);
@@ -201,7 +202,6 @@
 	.main-navigation {
 		position: relative;
 		z-index: 99;
-        margin-top: 3px;
 		#nav-bars {
 			display: none;
 		}
@@ -222,10 +222,11 @@
 		background: transparent;
 		display: flex;
 		flex-flow: row nowrap;
-		justify-content: space-around;
+		justify-content: center;
 
 		li {
 			width: auto;
+			padding: 0px 33px;
 		}
     ul {
         width: auto;

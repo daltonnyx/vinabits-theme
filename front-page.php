@@ -37,7 +37,7 @@ get_header(); ?>
                 </div>
             </section>
             <section class="section-4">
-                <div class="mui-container-fluid">
+                <div class="mui-container">
                     <div class="mui-row">
                         <?php dynamic_sidebar('front-4'); ?>
                     </div>

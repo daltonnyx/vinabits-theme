@@ -8,11 +8,12 @@ if ( ! function_exists( 'vinabits_setup' ) ) :
  * as indicating support for post thumbnails.
  */
 function vinabits_setup() {
-    
+
     $CUSTOM_IMAGE_SIZE = array(
-        'news-list-thumbnail' => array( 300, 200 ),
+        'news-list-thumbnail' => array( 374, 206 ),
+        'news-testimonial'    => array(120, 120)
     );
-    $LOGO_SIZE = array(277,84);
+    $LOGO_SIZE = array(341,75);
 	/*
 	 * Make theme available for translation.
 	 * Translations can be filed in the /languages/ directory.
@@ -49,7 +50,7 @@ function vinabits_setup() {
      */
       foreach( $CUSTOM_IMAGE_SIZE as $name => $size ) {
         add_image_size($name, $size[0], $size[1], array('center','center'));
-      } 
+      }
 
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
