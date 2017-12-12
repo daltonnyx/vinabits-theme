@@ -11,9 +11,10 @@ function vinabits_setup() {
 
     $CUSTOM_IMAGE_SIZE = array(
         'news-list-thumbnail' => array( 374, 206 ),
-        'news-testimonial'    => array(120, 120)
+        'news-testimonial'    => array(120, 120),
+        'news-carousel'       => array(368, 209)
     );
-    $LOGO_SIZE = array(341,75);
+    $LOGO_SIZE = array(224, 116);
 	/*
 	 * Make theme available for translation.
 	 * Translations can be filed in the /languages/ directory.

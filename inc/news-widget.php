@@ -11,9 +11,9 @@ class News_Template_Widget extends WP_Widget {
      *
      * @return void
      **/
-  function News_Template_Widget() {
+  function __construct() {
     $widget_ops = array( 'classname' => 'news-template', 'description' => 'Various ways to display post' );
-    $this->WP_Widget( '', 'News', $widget_ops );
+    parent::__construct( 'news_template_widget', 'News', $widget_ops );
   }
 
     /**
@@ -121,12 +121,12 @@ class News_Template_Widget extends WP_Widget {
     <p>
 		<label for="<?php echo esc_attr( $this->get_field_id( 'category' ) ); ?>"><?php esc_attr_e( 'Category:', 'text_domain' ); ?></label>
 		<input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'category' ) ); ?>" type="text" name="<?php echo esc_attr( $this->get_field_name( 'category' ) ); ?>" value="<?php echo esc_attr( $category ); ?>"/>
-       
+
 		</p>
     <p>
 		<label for="<?php echo esc_attr( $this->get_field_id( 'taxonomy' ) ); ?>"><?php esc_attr_e( 'Taxonomy:', 'text_domain' ); ?></label>
 		<input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'taxonomy' ) ); ?>" type="text" name="<?php echo esc_attr( $this->get_field_name( 'taxonomy' ) ); ?>" value="<?php echo esc_attr( $taxonomy ); ?>"/>
-       
+
 	</p>
 
 

@@ -112,9 +112,9 @@
 				text-align: left;
 				font-weight: normal;
 				text-transform: none;
-				color: #fff;
+				color: $color__main-2;
 				&:visited {
-					color :#fff;
+					color: $color__main-2;
 				}
 			}
 
@@ -142,21 +142,21 @@
 		text-align: center;
 		&:hover > a,
 		&.focus > a {
-      color: $color__main-2;
+      color: $color__main-1;
 		}
 
 	}
 
 	a {
 		display: block;
-		color: $color__text-highlight;
+		color: $color__main-2;
 		text-decoration: none;
-		font-size: 13px;
-    font-weight: bold;
+		font-size: 14px;
+    font-weight: 500;
 		line-height: 2.8em;
 		text-transform: uppercase;
 		&:visited {
-			color: $color__text-highlight;
+			color: $color__main-2;
 		}
 	}
 
@@ -164,7 +164,7 @@
 	.current-menu-item > a,
 	.current_page_ancestor > a,
 	.current-menu-ancestor > a {
-        color: $color__main-2;
+        color: $color__main-1;
 	}
 }
 
@@ -226,7 +226,7 @@
 
 		li {
 			width: auto;
-			padding: 0px 33px;
+			padding: 0px 15px;
 		}
     ul {
         width: auto;

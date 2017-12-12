@@ -26,11 +26,11 @@
 
 	<header id="masthead" class="site-header" role="banner">
 		<div class="container">
-      <div class="row">
-          <div class="col-xs-12  col-lg-3 logo-container">
+      <div class="row align-items-center">
+          <div class="col-xs-12 col-lg-3 logo-container">
               <?php vinabits_the_custom_logo(); ?>
           </div>
-          <div class="col-xs-12 col-lg-offset-1 col-lg-8 top-bar-container">
+          <div class="col-xs-12 col-lg-8 offset-lg-1 top-bar-container">
 						<div class="row">
               <?php dynamic_sidebar('top-1'); ?>
 							<div class="col-12">

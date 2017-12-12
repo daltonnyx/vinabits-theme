@@ -3,3 +3,5 @@
 *.swo
 style.css
 style.css.map
+node_modules
+assets/js/app.bundle.js

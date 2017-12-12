@@ -1,30 +1,69 @@
 .section-1 {
-  padding: 60px 0px 55px;
-  background: url('./assets/images/sec-bg-1.png') top center / cover transparent;
+  padding: 45px 0px 35px;
+
   .card-layout {
     text-align: center;
     position: relative;
     padding: 0px 40px;
+    position: relative;
+    .card-image {
+      position: relative;
+      height: 260px;
+      overflow: hidden;
+      img {
+        position: absolute;
+        max-width: none;
+        left: 50%;
+        top: 50%;
+        transform: translateX(-50%) translateY(-50%);
+      }
+    }
+
     h3 {
-      font-size: 23px;
-      font-weight: bold;
+      font-size: 20px;
+      position: absolute;
+      padding: 1rem 1.5rem;
+      background: rgba(0, 0, 0, 0.71);
+      bottom: 1.5rem;
       margin-bottom: 20px;
-      color: #333;
+      color: #fff;
       text-transform: uppercase;
     }
     p {
+      position: absolute;
       margin-bottom: 0px;
-      color: #333;
+      color: #fff;
+      display: none;
     }
-    @media screen and (min-width: $breakpoint_desktop) {
-      & + .card-layout:before {
-        content: " ";
-        background: #999;
-        position: absolute;
-        width: 3px;
-        height: 167px;
-        left: 0px;
-        top: calc(50% - 167px / 2);
+    @media screen and (min-width: 992px) {
+      &.featured {
+        &:before {
+          content: " ";
+          position: absolute;
+          width: calc(100% - 1rem);
+          height: calc(100% - 1rem);
+          margin: .5rem;
+          z-index: 1;
+          background: rgba(0,0,0,.43);
+          left: 0;
+          top: 0;
+        }
+        h3 {
+          font-size: 30px;
+          bottom: auto;
+          top: 1rem;
+          background: none;
+          z-index: 1;
+        }
+        p {
+          display: block;
+          top: 4rem;
+          color: #fff;
+          font-size: 14px;
+          z-index: 1;
+          text-align: left;
+          padding: 1rem 1.5rem;
+        }
       }
     }
   }
