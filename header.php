@@ -25,24 +25,20 @@
 <div id="page" class="site">
 
 	<header id="masthead" class="site-header" role="banner">
-		<div class="mui-container">
-      <div class="mui-row">
-          <div class="mui-col-xs-12  mui-col-md-3 logo-container">
+		<div class="container">
+      <div class="row">
+          <div class="col-xs-12  col-lg-3 logo-container">
               <?php vinabits_the_custom_logo(); ?>
           </div>
-          <div class="mui-col-xs-12 mui-col-md-offset-2 mui-col-md-7 top-bar-container">
+          <div class="col-xs-12 col-lg-offset-1 col-lg-8 top-bar-container">
+						<div class="row">
               <?php dynamic_sidebar('top-1'); ?>
+							<div class="col-12">
+								<?php get_template_part( 'components/navigation/navigation', 'top' ); ?>
+							</div>
+						</div>
           </div>
 			</div>
     </div>
 	</header>
-	<div class="nav">
-		<div class="mui-container">
-			<div class="mui-row">
-				<div class="mui-col-xs-12">
-					<?php get_template_part( 'components/navigation/navigation', 'top' ); ?>
-				</div>
-			</div>
-		</div>
-	</div>
     <div id="content" class="site-content">

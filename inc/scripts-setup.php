@@ -5,27 +5,21 @@
  */
 function vinabits_scripts() {
 
-    //wp_enqueue_style('Open-sans', 'https://fonts.googleapis.com/css?family=Open+Sans&amp;subset=latin-ext,vietnamese');
+    wp_enqueue_style('Saira', 'https://fonts.googleapis.com/css?family=Saira:400,500,700&amp;subset=vietnamese');
 
     wp_enqueue_style('font-awesome', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css');
 
     wp_enqueue_style( 'animate-css', 'https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css' );
 
-	  wp_enqueue_style('mui-css', 'https://cdnjs.cloudflare.com/ajax/libs/muicss/0.9.14/css/mui.min.css');
+	  wp_enqueue_style( 'bootstrap-4', 'https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta/css/bootstrap.min.css' );
 
-	  wp_enqueue_style('mui-color', 'https://cdnjs.cloudflare.com/ajax/libs/muicss/0.9.14/extra/mui-colors.min.css');
+    wp_enqueue_script( 'bootstrap-4-js', 'https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta/js/bootstrap.min.js', array('jquery'), '4.0.0b', true );
 
-	  wp_enqueue_script('mui-js', 'https://cdnjs.cloudflare.com/ajax/libs/muicss/0.9.14/js/mui.min.js', array(), '0.9.14', true);
+    wp_enqueue_script( 'slick-carousel', 'https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.js', array('jquery'), '1.6.0', true );
 
-	  wp_enqueue_style('owl-carousel-css','https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.1/assets/owl.carousel.min.css');
+    wp_enqueue_style( 'slick-carousel', 'https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css' );
 
-    wp_enqueue_script('owl-carousel-js', 'https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.1/owl.carousel.min.js', array('jquery'), '2.2.1', true);
-
-    //wp_enqueue_script( 'slick-carousel', 'https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.js', array('jquery'), '1.6.0', true );
-
-    //wp_enqueue_style( 'slick-carousel', 'https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css' );
-
-    //wp_enqueue_style( 'slick-carousel-theme', 'https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css' );
+    wp_enqueue_style( 'slick-carousel-theme', 'https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css' );
 
 	  wp_enqueue_style( 'vinabits-style', get_stylesheet_uri() );
 

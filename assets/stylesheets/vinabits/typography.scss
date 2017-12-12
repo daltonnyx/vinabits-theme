@@ -1,21 +1,7 @@
-@font-face  {
-    src: url('./assets/fonts/UTM AVO.TTF');
-    font-family: Avo;
-}
-@font-face  {
-    src: url('./assets/fonts/UTM AVOBOLD.TTF');
-    font-family: Avo;
-    font-weight: bold;
-}
 
-@font-face {
-    src: url('./assets/fonts/UTM AVOITALIC.TTF');
-    font-family: Avo;
-    font-style: italic;
-}
 
-$vnb__font_main: Arial;
-$vnb__font_special: Arial;
+$vnb__font_main: Saira;
+$vnb__font_special: Saira;
 
 body, button, input, select, textarea {
     font-family: $vnb__font_main;
