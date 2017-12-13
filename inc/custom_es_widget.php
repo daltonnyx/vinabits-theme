@@ -42,7 +42,7 @@ class vnb_es_widget_register extends WP_Widget {
 					<input type="text" id="es_txt_email" placeholder="Email (*)" class="es_textbox_class" name="es_txt_email" onkeypress="if(event.keyCode==13) es_submit_page(event,'<?php echo $url; ?>')" value="" maxlength="225">
 				</div>
 				<div class="es_button">
-					<input type="button" id="es_txt_button" class="mui-btn btn-submit" name="es_txt_button" onClick="return es_submit_page(event,'<?php echo $url; ?>')" value="<?php echo __( 'Đăng ký', 'vinabits' ); ?>">
+					<input type="button" id="es_txt_button" class="btn btn-submit" name="es_txt_button" onClick="return es_submit_page(event,'<?php echo $url; ?>')" value="<?php echo __( 'Đăng ký', 'vinabits' ); ?>">
 				</div>
 				<div class="es_msg" id="es_widget_msg">
 					<span id="es_msg"></span>

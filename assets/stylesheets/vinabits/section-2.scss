@@ -18,33 +18,15 @@
       border-bottom: 1px dashed #999;
     }
   }
-  .textwidget {
-    text-align: justify;
-    color: #2e2e42;
-    line-height: 2em;
-    letter-spacing: 0.5px;
-  }
-  .video {
-    margin-top: 75px;
-  }
-  .btn-gioi-thieu {
-    background: $color__main-1;
-    font-size: 13px;
-    font-weight: bold;
-    text-transform: uppercase;;
-    color: #fff;
-    height: 34px;
-    border-radius: 0px;
-    position: relative;
-    padding: 0 15px;
-    overflow: visible;
-    &:after {
-      top: 0;
-      content: " ";
-      border-bottom: 34px solid $color__main-1;
-      right: -24px;
-      position: absolute;
-      border-right: 24px solid transparent;
+  .news-default-item {
+    .news-title {
+      color: #333;
+      font-size: 14px;
+      font-weight: 500;
+      text-transform: uppercase;
+      text-align: center;
+      line-height: 1.5;
+      margin-top: .5rem;
     }
   }
 }

@@ -8,47 +8,37 @@
     font-size: 14px;
   }
   h4.footer-widget-title {
-    font-size: 20px;
-    font-weight: bold;
+    font-size: 25px;
+    font-weight: 500;
     color: #fff;
-    margin-bottom: 40px;
+    margin-bottom: 15px;
     position: relative;
     text-transform: uppercase;
-    &:before {
-      content: " ";
-      width: 64px;
-      height: 2px;
-      background: #fff;
-      position: absolute;
-      bottom: -10px;
-    }
   }
-  .menu {
-    padding: 0px;
+
+  .es_textbox_class {
+    width: 75%;
+    background: #ccc;
+    border-radius: 0 !important;
+  }
+
+  p {
+    margin-bottom: .5rem;
+  }
+
+  ul {
     margin: 0px;
-    li {
-      list-style: none;
-      &:before {
-        content: "\f105";
-        font-family: FontAwesome;
-        display: inline;
-        color: $color__main-1;
-        margin-right: 0.5em;
-      }
-      a {
-        color :#fff;
-        font-size: 14px;
-        margin-bottom: 1em;
-        display: inline-block;
-      }
-    }
-  }
+    padding: 0px;
+    list-style: none; }
+
+
   h5 {
     margin-top: 0;
     text-transform: uppercase;
     font-size: 12px;
+
   }
-  .wpcf7-form {
+  .es_widget_form {
     p {
       margin-bottom: 1em;
     }
@@ -70,16 +60,12 @@
     .ajax-loader {
       display: none;
     }
-    .send_button {
-      box-shadow: none;
-      border: none;
-      background: black;
+    .btn-submit {
+      background: $color__main-1;
       color: #fff;
-      padding: 8px 15px;
-      font-size: 12px;
-      border-radius: 5px;
-      outline: none;
-      vertical-align: top;
+      font-weight: bold;
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
     }
   }
   ul.cnss-social-icon li.cn-fa-icon a {
@@ -89,11 +75,42 @@
     height: auto !important;
   }
 }
-
+#colophon ul li:before {
+    color: #990000;
+    font-family: FontAwesome;
+    font-size: 9px;
+    position: relative;
+    top: -3px;
+    display: inline-block;
+    margin-right: 10px;
+    text-align: center;
+    line-height: 30px;
+}
+#colophon .footer-bar .contact-list ul li {
+  font-size: 14px;
+  color: #fff7e2; }
+  #colophon .footer-bar .contact-list ul li:before {
+    width: 1.2em;
+    color: #fff;
+    font-size: 17px;
+    position: static; }
+  #colophon .footer-bar .contact-list ul li.home {
+    text-transform: uppercase; }
+    #colophon .footer-bar .contact-list ul li.home:before {
+      content: ""; }
+  #colophon .footer-bar .contact-list ul li.address:before {
+    content: ""; }
+  #colophon .footer-bar .contact-list ul li.phone:before {
+    content: ""; }
+  #colophon .footer-bar .contact-list ul li.email:before {
+    content: ""; }
+  #colophon .footer-bar .contact-list ul li.website:before {
+    content: ""; }
 #copyright {
-  background: $color__main-1;
+  background: #000;
   text-align: center;
-  font-size: 13px;
+  font-size: 11px;
+  font-weight: 500;
   color: #fff;
   padding: 5px;
   img {

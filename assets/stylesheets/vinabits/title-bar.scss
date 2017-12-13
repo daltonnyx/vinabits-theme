@@ -18,6 +18,7 @@ body:not(.front-page) {
       display: flex;
       margin-top: 25px;
       margin-bottom: 10px;
+      background: transparent;
       li + li:before {
         content: "\f105";
         padding: 0px 5px;

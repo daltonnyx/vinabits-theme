@@ -1,14 +1,11 @@
 jQuery(document).ready(function($){
     setTimeout(runAnimation,0);
 
-    $('.pro-cat-carousel').owlCarousel({
+    $('.news-carousel').owlCarousel({
       items: 3,
+      margin: 30,
       loop: true,
-      center: true,
-      margin: 25,
-      nav: true,
-      navText: ['<i class="fa fa-angle-left"></i>','<i class="fa fa-angle-right"></i>'],
-      dots: false,
+      
     });
     $(window).scroll(runAnimation);
 

@@ -17,7 +17,7 @@
         <?php get_template_part( 'components/footer/site', 'info' ); ?>
 	</footer>
 	<div id="copyright" class="site-info">
-			COPYRIGHT <?php echo date('Y'); ?>  CÔNG TY TNHH MỘT THÀNH VIÊN MINH ĐĂNG <img alt="Websiteplaza" src="<?php echo get_template_directory_uri(); ?>/assets/images/plaza.png">
+			COPYRIGHT <?php echo date('Y'); ?> - CÔNG TY TNHH THƯƠNG MẠI DỊCH VỤ XUẤT NHẬP KHẨU VIETBIZ <img alt="Websiteplaza" src="<?php echo get_template_directory_uri(); ?>/assets/images/plaza.png">
 	</div>
 </div>
 <?php wp_footer(); ?>

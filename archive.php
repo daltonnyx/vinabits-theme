@@ -14,20 +14,20 @@ get_header(); ?>
 			<?php
 			if ( have_posts() ) : ?>
 			<div class="title-bar">
-				<div class="mui-container">
-					<div class="mui-row">
-						<div class="mui-col-md-12">
+				<div class="container">
+					<div class="row">
+						<div class="col-12">
 							<?php the_breadcrumb(); ?>
 						</div>
-						<div class="mui-col-md-12">
+						<div class="col-12">
 							<?php the_archive_title( '<h1 class="page-title">', '</h1>' ); ?>
 						</div>
 
 					</div>
 				</div>
 			</div>
-			<div class="mui-container">
-			<div class="mui-row">
+			<div class="container">
+			<div class="row">
 
 
 					<div class="news-list">
@@ -58,22 +58,22 @@ get_header(); ?>
 
 		else : ?>
 			<div class="title-bar">
-				<div class="mui-container">
-					<div class="mui-row">
-						<div class="mui-col-md-12 mui--text-right">
+				<div class="container">
+					<div class="row">
+						<div class="col-12 text-right">
 							<?php the_breadcrumb(); ?>
 						</div>
-						<div class="mui-col-md-12">
+						<div class="col-12">
 							<?php the_archive_title( '<h1 class="page-title">', '</h1>' ); ?>
 						</div>
 
 					</div>
 				</div>
 			</div>
-			<div class="mui-container">
-				<div class="mui-row">
+			<div class="container">
+				<div class="row">
 					<?php//	get_sidebar(); ?>
-					<div class="mui-col-md-12 mui-xs-12 main-content">
+					<div class="col-12 main-content">
 						<?php	get_template_part( 'components/post/content', 'none' ); ?>
 
 		<?php endif; ?>
