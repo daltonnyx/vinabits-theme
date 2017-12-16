@@ -16,11 +16,14 @@ input[type="color"],
 textarea {
 	color: $color__text-input;
 	border: 1px solid $color__border-input;
-	border-radius: 3px;
+	width: calc(100% - 1em - 20px);
 
 	&:focus {
 		color: $color__text-input-focus;
 	}
+}
+label {
+	font-weight: 500;
 }
 
 select {
@@ -48,4 +51,25 @@ input[type="color"] {
 textarea {
 	padding-left: 3px;
 	width: 100%;
+}
+
+
+.wpcf7-form-control-wrap:before {
+	display: inline-block;
+  background: #ccc;
+	color: #666;
+  font-family: FontAwesome;
+  line-height: 2.1em;
+  padding: 0px 10px;
+}
+.wpcf7-form-control-wrap.fullname:before {
+  content: "\f007";
+}
+
+.wpcf7-form-control-wrap.email:before {
+  content: "\f0e0";
+}
+
+.wpcf7-form-control-wrap.subject:before {
+  content: "\f075";
 }

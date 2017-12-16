@@ -4,8 +4,11 @@ jQuery(document).ready(function($){
     $('.news-carousel').owlCarousel({
       items: 3,
       margin: 30,
+      dots: false,
       loop: true,
-      
+      autoplay: true,
+      nav: true,
+      navText: ['<i class="fa fa-angle-left"></i>', '<i class="fa fa-angle-right"></i>']
     });
     $(window).scroll(runAnimation);
 

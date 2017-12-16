@@ -29,4 +29,21 @@
       margin-top: .5rem;
     }
   }
+  .owl-carousel .owl-nav {
+
+    .owl-next, .owl-prev {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 34px;
+      z-index: 1111;
+      text-shadow: 1px 1px 0px #ddd;
+    }
+    .owl-prev {
+      left: 10px;
+    }
+    .owl-next {
+      right: 10px;
+    }
+  }
 }

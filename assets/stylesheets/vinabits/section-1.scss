@@ -16,9 +16,14 @@
         left: 50%;
         top: 50%;
         transform: translateX(-50%) translateY(-50%);
+        transition: .3s ease-in-out all;
       }
     }
 
+    &:hover img {
+        transform: translateY(-50%) translateX(-50%) scale(1.2);
+        filter: blur(3px);
+    }
     h3 {
       font-size: 20px;
       position: absolute;

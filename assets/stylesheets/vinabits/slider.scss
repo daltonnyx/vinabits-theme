@@ -25,12 +25,14 @@
   [class^="amazingslider-nav"] {
     top: auto !important;
     bottom: 5%;
-    [class^="amazingslider-bullet"] {
+
+    [class^="amazingslider-bullet-wrapper"] [class^="amazingslider-bullet"] {
       border-radius: 50%;
-      background: $color__text-highlight !important;
+      border: 2px solid #fff;
+      background: transparent !important;
     }
-    [style*="left bottom"] {
-      background: $color__main-1 !important;
+    [class^="amazingslider-bullet-wrapper"]  [style*="left bottom"] {
+      background: #fff !important;
     }
   }
 }
