@@ -6,9 +6,9 @@
  */
 class VinabitsExtraTax
 {
-    
+
     function __construct() {
-    
+
     }
 
     public $tax_args;
@@ -19,14 +19,6 @@ class VinabitsExtraTax
         register_taxonomy($this->tax_name, $this->tax_for, $this->tax_args);
     }
 
-	const DEFAULT_TAX_ARGS = array(
-		'hierarchical'      => true,
-		'labels'            => [],
-		'show_ui'           => true,
-		'show_admin_column' => true,
-		'query_var'         => true,
-		'rewrite'           => array( 'slug' => 'genre' ),
-	);
     static function RegisterTaxonomy($name, $for, $singular, $labels, $args = [], $hierarchical = true) {
         $label = [
             'name'              =>  "$labels",
@@ -39,17 +31,25 @@ class VinabitsExtraTax
             'update_item'       =>  "Update $singular",
             'add_new_item'      =>  "Add New $singular",
             'new_item_name'     =>  "New $singular",
-            'menu_name'         =>  "$labels", 
+            'menu_name'         =>  "$labels",
         ];
+        $DEFAULT_TAX_ARGS = array(
+      		'hierarchical'      => true,
+      		'labels'            => [],
+      		'show_ui'           => true,
+      		'show_admin_column' => true,
+      		'query_var'         => true,
+      		'rewrite'           => array( 'slug' => 'genre' ),
+      	);
         $args['labels'] = $label;
         $args['hierarchical'] = $hierarchical;
         $args['rewrite'] = array('slug' => $name);
-        $args = array_merge(VinabitsExtraTax::DEFAULT_TAX_ARGS, $args);
+        $args = array_merge($DEFAULT_TAX_ARGS, $args);
         $vinaExtra = new VinabitsExtraTax();
         $vinaExtra->tax_args = $args;
         $vinaExtra->tax_name = $name;
         $vinaExtra->tax_for = $for;
-        add_action('init', array($vinaExtra, 'vinabits_register_tax'));        
+        add_action('init', array($vinaExtra, 'vinabits_register_tax'));
     }
-    
+
 }
