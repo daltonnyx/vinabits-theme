@@ -8,10 +8,17 @@ html {
 	box-sizing: inherit;
 }
 
+
+@media (min-width: 1200px) {
+
+	.container {
+	    max-width: 1170px;
+	}
+}
+
 body {
 	background: $color__background-body; /* Fallback for when there is no custom background color defined. */
   background: #fff;
-	background: url('../images/top-bg.png') repeat;
 }
 
 // @import "sidebar-content-sidebar";

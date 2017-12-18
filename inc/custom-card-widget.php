@@ -42,6 +42,13 @@ class Custom_Card_Widget extends WP_Widget {
                 </div>
                 <div class="card-content">
                 <header>
+								<?php
+									if( !empty( $instance['logo'] ) ) { ?>
+										<div class="card-logo">
+		                    <img src="<?php echo $logo; ?>" class="img-responsive" alt="<?php echo $title; ?>" />
+		                </div>
+								<?php }
+								?>
                 <?php
                 if ( ! empty( $instance['title'] ) ) {
                     echo '<h3 class="card-title">' . apply_filters( 'widget_title', $title ) . '</h3>';
@@ -71,6 +78,7 @@ class Custom_Card_Widget extends WP_Widget {
 	public function form( $instance ) {
         $title = ! empty( $instance['title'] ) ? $instance['title'] : esc_html__( 'New title', 'vinabits' );
         $image = ! empty( $instance['image'] ) ? $instance['image'] : '';
+				$logo  = ! empty( $instance['logo'] )  ? $instance['logo']  : '';
         $desc  = ! empty( $instance['desc'] )  ? $instance['desc']  : '';
         $link  = ! empty( $instance['link'] )  ? $instance['link']  : '';
         $link_text  = ! empty( $instance['link_text'] )  ? $instance['link_text']  : '';
@@ -79,13 +87,19 @@ class Custom_Card_Widget extends WP_Widget {
 		<label for="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>"><?php esc_attr_e( 'Title:', 'vinabits' ); ?></label>
 		<input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'title' ) ); ?>" type="text" value="<?php echo esc_attr( $title ); ?>">
 		</p>
-        <p>
-          <label for="<?php echo $this->get_field_id( 'image' ); ?>"><?php _e( 'Image:' ); ?></label>
-          <input class="widefat" id="<?php echo $this->get_field_id( 'image' ); ?>" name="<?php echo $this->get_field_name( 'image' ); ?>" type="text" value="<?php echo esc_url( $image ); ?>" />
-          <button class="upload_image_button button button-primary">Upload Image</button>
-       </p>
+    <p>
+      <label for="<?php echo $this->get_field_id( 'image' ); ?>"><?php _e( 'Image:' ); ?></label>
+      <input class="widefat" id="<?php echo $this->get_field_id( 'image' ); ?>" name="<?php echo $this->get_field_name( 'image' ); ?>" type="text" value="<?php echo esc_url( $image ); ?>" />
+      <button class="upload_image_button button button-primary">Upload Image</button>
+   	</p>
 
-        <p>
+		<p>
+      <label for="<?php echo $this->get_field_id( 'logo' ); ?>"><?php _e( 'Logo:' ); ?></label>
+      <input class="widefat" id="<?php echo $this->get_field_id( 'logo' ); ?>" name="<?php echo $this->get_field_name( 'logo' ); ?>" type="text" value="<?php echo esc_url( $logo ); ?>" />
+      <button class="upload_image_button button button-primary">Upload Logo</button>
+   	</p>
+
+    <p>
 		<label for="<?php echo esc_attr( $this->get_field_id( 'desc' ) ); ?>"><?php esc_attr_e( 'Description:', 'vinabits' ); ?></label>
         <textarea class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'desc' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'desc' ) ); ?>"><?php echo esc_attr( $desc ); ?></textarea>
 		</p>
@@ -113,10 +127,11 @@ class Custom_Card_Widget extends WP_Widget {
 	public function update( $new_instance, $old_instance ) {
 		$instance = array();
 		$instance['title'] = ( ! empty( $new_instance['title'] ) ) ? strip_tags( $new_instance['title'] ) : '';
-        $instance['image'] = ( ! empty( $new_instance['image'] ) ) ? $new_instance['image'] : '';
-        $instance['desc'] = ( ! empty( $new_instance['desc'] ) ) ? strip_tags($new_instance['desc']) : '';
-        $instance['link'] = ( ! empty( $new_instance['link'] ) ) ? strip_tags($new_instance['link']) : '';
-        $instance['link_text'] = ( ! empty( $new_instance['link_text'] ) ) ? $new_instance['link_text'] : '';
+    $instance['image'] = ( ! empty( $new_instance['image'] ) ) ? $new_instance['image'] : '';
+		$instance['logo']  = ( ! empty( $new_instance['logo']  ) ) ? $new_instance['logo']  : '';
+    $instance['desc'] = ( ! empty( $new_instance['desc'] ) ) ? strip_tags($new_instance['desc']) : '';
+    $instance['link'] = ( ! empty( $new_instance['link'] ) ) ? strip_tags($new_instance['link']) : '';
+    $instance['link_text'] = ( ! empty( $new_instance['link_text'] ) ) ? $new_instance['link_text'] : '';
 
 
 		return $instance;
