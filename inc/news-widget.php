@@ -35,6 +35,9 @@ class News_Template_Widget extends WP_Widget {
       echo $title; // Can set this with a widget option, or omit altogether
       echo $after_title;
       ?>
+      <p class="widget-desc">
+        <?php echo $description; ?>
+      </p>
       </header>
     <?php
     }
@@ -104,6 +107,7 @@ class News_Template_Widget extends WP_Widget {
     // $this->get_field_name('option_name') - the HTML name
     // $instance['option_name'] - the option value
     $title = $instance['title'];
+    $description = $instance['description'];
     $category = $instance['category'] ? $instance['category'] : 'all';
     $taxonomy = $instance['taxonomy'];
     $templ = $instance['templ'];
@@ -116,6 +120,11 @@ class News_Template_Widget extends WP_Widget {
     <p>
 		<label for="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>"><?php esc_attr_e( 'Title:', 'text_domain' ); ?></label>
 		<input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'title' ) ); ?>" type="text" value="<?php echo esc_attr( $title ); ?>">
+		</p>
+
+    <p>
+		<label for="<?php echo esc_attr( $this->get_field_id( 'description' ) ); ?>"><?php esc_attr_e( 'Description:', 'text_domain' ); ?></label>
+		<textarea class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'description' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'description' ) ); ?>"><?php echo $description; ?></textarea>
 		</p>
 
     <p>
