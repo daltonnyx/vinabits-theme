@@ -35,9 +35,11 @@ class News_Template_Widget extends WP_Widget {
       echo $title; // Can set this with a widget option, or omit altogether
       echo $after_title;
       ?>
+      <?php if(!empty($description)) : ?>
       <p class="widget-desc">
         <?php echo $description; ?>
       </p>
+    <?php endif; ?>
       </header>
     <?php
     }
