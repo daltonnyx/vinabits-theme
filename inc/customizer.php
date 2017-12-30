@@ -14,6 +14,24 @@ function vinabits_customize_register( $wp_customize ) {
 	$wp_customize->get_setting( 'blogname' )->transport         = 'postMessage';
 	$wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
 	$wp_customize->get_setting( 'header_textcolor' )->transport = 'postMessage';
+	for ($i=1; $i <= 5; $i++) {
+		$wp_customize->add_setting('section-bg-'.$i, array(
+			'type'       => 'theme_mod', //Is this an 'option' or a 'theme_mod'?
+		 	'capability' => 'edit_theme_options', //Optional. Special permissions for accessing this setting.
+		  'transport'  => 'refresh', //What triggers a refresh of the setting? 'refresh' or 'postMessage' (instant)?
+		));
+		$wp_customize->add_control( new WP_Customize_Image_Control( //Instantiate the color control class
+					$wp_customize, //Pass the $wp_customize object (required)
+					'section-bg-'.$i, //Set a unique ID for the control
+					array(
+						 'label'      => __( 'Section '.$i.' Background', 'vinabits' ), //Admin-visible name of the control
+						 'settings'   => 'section-bg-'.$i, //Which setting to load and manipulate (serialized is okay)
+						 'priority'   => 10, //Determines the order this control appears in for the specified section
+						 'section'    => 'background_image', //ID of the section this control should render in (can be one of yours, or a WordPress default section)
+					)
+			 ) );
+	}
+
 }
 add_action( 'customize_register', 'vinabits_customize_register' );
 

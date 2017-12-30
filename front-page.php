@@ -17,35 +17,35 @@ get_header(); ?>
 
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
-            <section class="section-1">
+            <section class="section-1" style="background-image: url('<?php echo get_theme_mod('section-bg-1') ?>');">
                 <div class="container">
                     <div class="row">
                         <?php dynamic_sidebar('front-1'); ?>
                     </div>
                 </div>
             </section>
-            <section class="section-2">
+            <section class="section-2" style="background-image: url('<?php echo get_theme_mod('section-bg-2') ?>');">
                 <div class="container">
                     <div class="row">
                         <?php dynamic_sidebar('front-2'); ?>
                     </div>
                 </div>
             </section>
-            <section class="section-3">
+            <section class="section-3" style="background-image: url('<?php echo get_theme_mod('section-bg-3') ?>');">
                 <div class="container">
                     <div class="row">
                         <?php dynamic_sidebar('front-3'); ?>
                     </div>
                 </div>
             </section>
-            <section class="section-4">
+            <section class="section-4" style="background-image: url('<?php echo get_theme_mod('section-bg-4') ?>');">
                 <div class="container">
                     <div class="row">
                         <?php dynamic_sidebar('front-4'); ?>
                     </div>
                 </div>
             </section>
-            <section class="section-5">
+            <section class="section-5" style="background-image: url('<?php echo get_theme_mod('section-bg-5') ?>');">
                 <div class="container">
                     <div class="row">
                         <?php dynamic_sidebar('front-5'); ?>
