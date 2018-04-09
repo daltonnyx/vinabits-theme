@@ -20,7 +20,7 @@ $banner_bottom = get_post_meta(get_the_ID(), '_vnb_banner_bottom', true);
 						<div class="col-12">
 							<?php the_breadcrumb(); ?>
 						</div>
-						<div class="col-12">
+						<div class="col-12 d-none">
 							<h1><?php echo get_the_title(); ?></h1>
 						</div>
 					</div>
@@ -34,7 +34,8 @@ $banner_bottom = get_post_meta(get_the_ID(), '_vnb_banner_bottom', true);
 			<?php endif; ?>
 			<div class="container">
 				<div class="row">
-					<div class="col-12 main-content">
+					<?php echo get_sidebar(); ?>
+					<div class="col-lg-9 col-xs-12 main-content">
 						<?php
 						while ( have_posts() ) : the_post();
 

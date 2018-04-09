@@ -19,7 +19,7 @@ get_header(); ?>
 						<div class="col-12">
 							<?php the_breadcrumb(); ?>
 						</div>
-						<div class="col-12">
+						<div class="col-12 d-none">
 							<?php the_archive_title( '<h1 class="page-title">', '</h1>' ); ?>
 						</div>
 
@@ -28,30 +28,31 @@ get_header(); ?>
 			</div>
 			<div class="container">
 			<div class="row">
+					<?php get_sidebar(); ?>
+					<div class="col-xs-12 col-lg-9">
+						<div class="news-list">
 
+							<?php
+	                        /* Start the Loop */
+	                        $delay_count = 0;
+							while ( have_posts() ) : the_post();
 
-					<div class="news-list">
-
-						<?php
-                        /* Start the Loop */
-                        $delay_count = 0;
-						while ( have_posts() ) : the_post();
-
-							/*
-							 * Include the Post-Format-specific template for the content.
-							 * If you want to override this in a child theme, then include a file
-							 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
-                             */
-							get_template_part( 'components/post/content', 'card-list' );
-                            $delay_count = $delay_count == 2 ? 0 : ++$delay_count;
-						endwhile;
-						?>
-					</div>
-					<div class="navigation">
-						<?php wp_pagenavi(); ?>
+								/*
+								 * Include the Post-Format-specific template for the content.
+								 * If you want to override this in a child theme, then include a file
+								 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
+	                             */
+								get_template_part( 'components/post/content', 'card-list' );
+	                            $delay_count = $delay_count == 2 ? 0 : ++$delay_count;
+							endwhile;
+							?>
+						</div>
+						<div class="navigation">
+							<?php wp_pagenavi(); ?>
+						</div>
 					</div>
 				</div>
-				<?php//	get_sidebar(); ?>
+				
 			</div>
 		</div>
 			<?php
@@ -60,10 +61,10 @@ get_header(); ?>
 			<div class="title-bar">
 				<div class="container">
 					<div class="row">
-						<div class="col-12 text-right">
+						<div class="col-12">
 							<?php the_breadcrumb(); ?>
 						</div>
-						<div class="col-12">
+						<div class="col-12 d-none">
 							<?php the_archive_title( '<h1 class="page-title">', '</h1>' ); ?>
 						</div>
 

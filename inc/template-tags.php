@@ -167,7 +167,7 @@ function the_breadcrumb() {
 		echo '<li><a href="';
 		echo get_option('home');
 		echo '">';
-		echo 'Home';
+		echo 'Trang chủ';
         echo "</a></li>";
         $link = array();
         if(is_category()) {

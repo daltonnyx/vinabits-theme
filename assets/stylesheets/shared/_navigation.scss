@@ -1,4 +1,10 @@
 @import "../components/navigation-top";
+.nav_container {
+	background: $color__main-1;
+	label {
+		margin-bottom: 0px;
+	}
+}
 
 .comment-navigation,
 .posts-navigation,
