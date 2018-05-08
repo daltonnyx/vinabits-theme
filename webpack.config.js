@@ -27,7 +27,15 @@ module.exports = {
             {
               test: /\.(png|jpeg|ttf|...)$/,
               use: [
-               { loader: 'url-loader' }
+               { 
+                loader: 'file-loader',
+                options: {
+                  emitFile: false,
+                  useRelativePath: true,
+                  name: '[name].[ext]',
+                  outputPath: 'assets/',
+                }
+              }
                // limit => file.size =< 8192 bytes ? DataURI : File
               ]
             },
