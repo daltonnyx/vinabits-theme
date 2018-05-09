@@ -48,13 +48,34 @@ class VinabitsExtraBox
         }
     }
 
+    private function get_value($post_id) {
+        return get_post_meta( $post_id, $this->name, true );
+    }
+
+    function add_posts_column($columns) {
+        $columns[$this->name] = $this->caption;
+        return $columns;
+    }
+
+    function render_custom_column($column, $post_id) {
+        switch ($column) {
+            case $this->name:
+                include get_template_directory() . '/inc/metaboxes/'.$this->type.'-column.php';
+                break;
+            
+            default:
+                echo '';
+                break;
+        }
+    }
+
     static function load_media_script() {
         wp_enqueue_media();
         wp_enqueue_script('media-upload');
         wp_enqueue_script( 'vinabitsBox-media-js', get_template_directory_uri() . '/assets/js/admin/load_mediaupload.js' );
     }
 
-    static function RegisterMetabox($name, $caption, $post_type = 'post', $type = 'text', $description = '', callable $script_cb = null) {
+    static function RegisterMetabox($name, $caption, $post_type = 'post', $type = 'text',  $has_column = false, $description = '', callable $script_cb = null) {
         $vnb_box = new VinabitsExtraBox([
             'name' => $name,
             'post_type' => $post_type,
@@ -70,6 +91,11 @@ class VinabitsExtraBox
         }
         else if($script_cb != null) {
              add_action( 'admin_enqueue_scripts', $script_cb );
+        }
+
+        if($has_column) {
+            add_filter("manage_".$post_type."_posts_columns",array($vnb_box, 'add_posts_column'));
+            add_action("manage_".$post_type."_posts_custom_column", array($vnb_box, 'render_custom_column'), 10, 2);
         }
     }
 }

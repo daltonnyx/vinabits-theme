@@ -1,0 +1,1 @@
+<?php echo get_post_meta( $post_id, '_vnb_' . $this->name, true ); ?>
