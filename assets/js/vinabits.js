@@ -2,15 +2,51 @@ jQuery(document).ready(function($){
     setTimeout(runAnimation,0);
 
     $('.news-carousel').owlCarousel({
-      items: 3,
-      margin: 30,
+      margin: 0,
       dots: false,
       loop: true,
-      autoplay: true,
+      autoplay: false,
       nav: true,
-      navText: ['<i class="fa fa-angle-left"></i>', '<i class="fa fa-angle-right"></i>']
+      navText: ['<i class="fa fa-angle-left"></i>', '<i class="fa fa-angle-right"></i>'],
+      responsive: {
+          0: {
+              items: 1,
+          },
+          640: {
+              items: 2,
+          },
+          1170: {
+              items: 4,
+          }
+      }
     });
+
+    setTimeout(function() {
+        if($(window).width() > 992) {
+            var height = $('.section-2 .background-slide .su-slider-slides').height();
+            $('.section-2').height(height);
+        }
+    },700);
     $(window).scroll(runAnimation);
+    var $tooltips = $("#tooltips");
+    $(".section-1 .news-default-item, .product-card").on('mouseover', function(e) {
+        $tooltips.html($(this).find('.tooltips').html());
+    });
+    $(".section-1 .news-default-item, .product-card").on('mousemove', function(e) {
+        var x =  e.pageX + 15, y = e.pageY + 15;
+        $tooltips.css({
+            top: y + 'px',
+            left: x + 'px',
+        });
+    });
+
+    $(".section-1 .news-default-item, .product-card").on('mouseleave', function(e) {
+        //$tooltips.html('');
+        $tooltips.css({
+            top: '-9999px',
+            left: '-9999px',
+        });
+    });
 
     function runAnimation(){
         $(".has-animation").each(function(idx, elm){
@@ -39,8 +75,42 @@ jQuery(document).ready(function($){
         $("#content").addClass('off');
     });
 
+    function add_sub_menu() {
+        if($(window).width() < 768) {
+            $('.main-navigation .menu-item-has-children').append('<span class="expand"><i class="fa fa-caret-down"></i></span>');
+        }
+        else {
+            $('.main-navigation .menu-item-has-children .expand').remove();
+        }
+    }
 
+    add_sub_menu();
 
+    $('.main-navigation ul').on("click", ".expand", function(e) {
+        e.preventDefault();
+        var $li = $(e.currentTarget).closest('li');
+        $li.find('.sub-menu').animate({
+            "max-height": "400px"
+        },400,function (){
+            $(e.currentTarget).addClass("expanded");
+            $li.find('.sub-menu').css({
+                "max-height": "400px"
+            });
+        });
+    });
+    $('.main-navigation ul').on("click", ".expanded", function(e) {
+        var $li = $(e.currentTarget).closest('li');
+        $li.find('.sub-menu').animate({
+            "max-height": "0px"
+        },400,function (){
+            $(e.currentTarget).removeClass("expanded");
+            $li.find('.sub-menu').css({
+                "max-height": "0px"
+            });
+        });
+    });
+
+    $(window).resize(add_sub_menu);
 
     // var $section1 = document.querySelector(".section-1"),
     //     secLeft = $section1 ?  $section1.offsetLeft : 0,

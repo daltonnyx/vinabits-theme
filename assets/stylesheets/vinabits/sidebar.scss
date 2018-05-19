@@ -1,12 +1,10 @@
 #secondary {
-	margin-top: 70px;
 	ul {
 		margin: 0;
 		padding: 0;
 		list-style: none;
 	}
 	h2.widget-title {
-		font-family:  'Roboto';
 		font-size: 22px;
 		text-transform: uppercase;
 		color: #fff;
@@ -15,6 +13,23 @@
 		padding: 14px 0px 10px;
 		color: #f3f3f3;
 		margin-bottom: 0px;
+	}
+	.news-aside-list {
+		background: #f3f3f3;
+		padding: 10px;
+		li {
+			margin-bottom: 15px;
+			border-bottom: 1px solid #ccc;
+		}
+		a {
+			color: #333;
+		}
+		h3 {
+			margin-top: 10px;
+			font-size: 15px;
+			font-weight: bold;
+			
+		}
 	}
 	.menu {
 		background: #f3f3f3;
