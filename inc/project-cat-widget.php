@@ -22,28 +22,45 @@ class project_cat_widget extends WP_Widget {
         <?php
         $parent_terms = get_terms(array(
             'hide_empty' => false,
-            'taxonomy' => 'proj_cat',
+            'taxonomy' => 'car_cat',
             'order' => 'asc'
         ));
-        $ul_tabs = '<ul class="mui-tabs__bar">';
+        $ul_tabs = '<div class="nav nav-tabs" id="nav-tab" role="tablist">';
         $div_tabs = "";
-        $active = 'mui--is-active';
+        $active = 'active';
+        $ul_tabs .= '<a class="nav-item nav-link '.$active.'" data-toggle="tab" href="#child-cat--all">Tất cả</a>';
+        $div_tabs .= '<div class="tab-pane fade show '.$active.'" id="child-cat--'.$parent->slug.'" role="tabpanel">';
+        $div_tabs .= '<div class="cars">';
+        $posts = get_posts(array(
+            'posts_per_page' => 10,
+            'post_type' => 'car',
+        ));
+        foreach($posts as $post) {
+            $div_tabs .= '<div class="item">';
+            $div_tabs .= '<a href="'.get_permalink($post->ID).'">';
+            $div_tabs .= get_the_post_thumbnail($post, 'post-carousel');
+            $div_tabs .= '<h5>'.$post->post_title.'</h5>';
+            $div_tabs .='</a>';
+            $div_tabs .= '</div>';
+        }
+        $div_tabs .= '</div>';
+        $div_tabs .= '</div>';
+        $active = '';
         foreach($parent_terms as $parent) {
-            $ul_tabs .= '<li class="'.$active.'"><a data-mui-toggle="tab" data-mui-controls="child-cat--'.$parent->slug.'">'.$parent->name.'</a></li>';
+            $ul_tabs .= '<a class="nav-item nav-link" data-toggle="tab" href="#child-cat--'.$parent->slug.'">'.$parent->name.'</a>';
             $posts = get_posts(array(
                 'posts_per_page' => 9,
-                'post_type' => 'project',
+                'post_type' => 'car',
                 'tax_query' => array(
                   array(
-                    'taxonomy' => 'proj_cat',
+                    'taxonomy' => 'car_cat',
                     'field' => 'id',
                     'terms' => $parent->term_id
                   )
                 )
             ));
-            $div_tabs .= '<div class="mui-tabs__pane '.$active.'" id="child-cat--'.$parent->slug.'">';
-            $active = '';
-            $div_tabs .= '<div class="owl-carousel pro-cat-carousel">';
+            $div_tabs .= '<div class="tab-pane fade '.$active.'" id="child-cat--'.$parent->slug.'"  role="tabpanel">';
+            $div_tabs .= '<div class="cars">';
             foreach($posts as $post) {
                 $div_tabs .= '<div class="item">';
                 $div_tabs .= '<a href="'.get_permalink($post->ID).'">';
@@ -57,11 +74,15 @@ class project_cat_widget extends WP_Widget {
             wp_reset_postdata();
             wp_reset_query();
         }
-        $ul_tabs .= '</ul>';
+        $ul_tabs .= '</div>';
         ?>
         <div class="project-tabs">
-            <?php echo $ul_tabs; ?>
-            <?php echo $div_tabs; ?>
+            <nav>
+                <?php echo $ul_tabs; ?>
+            </nav>
+            <div class="tab-content" id="nav-tabContent">
+                <?php echo $div_tabs; ?>
+            </div>
         </div>
         <?php echo $after_widget; ?>
         <?php
