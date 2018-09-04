@@ -1,5 +1,5 @@
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
-
+const resolve = require('path').resolve;
 module.exports = {
     entry: [
       './node_modules/babel-polyfill/dist/polyfill.min.js',
@@ -8,6 +8,7 @@ module.exports = {
       ],
     watch: true,
     output: {
+	path: resolve('./'),
         filename: './assets/js/app.bundle.js'
     },
     module: {
@@ -45,7 +46,7 @@ module.exports = {
               use: {
                 loader: 'babel-loader',
                 options: {
-                  presets: ['es2015']
+                  presets: ['@babel/env']
                 }
               }
             }
