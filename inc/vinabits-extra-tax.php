@@ -19,6 +19,26 @@ class VinabitsExtraTax
         register_taxonomy($this->tax_name, $this->tax_for, $this->tax_args);
     }
 
+    function filter_by_taxonomy($post_type, $which) {
+        if($post_type !== $this->tax_for)
+            return;
+        $terms = get_terms($this->tax_name);
+        
+        echo "<select name='$this->tax_name' id='$this->tax_name' class='postform'>";
+        echo '<option value="">' . sprintf( esc_html__( 'Show All %s', 'text_domain' ), $this->tax_args['labels']['name'] ) . '</option>';
+        foreach ( $terms as $term ) {
+			printf(
+				'<option value="%1$s" %2$s>%3$s (%4$s)</option>',
+				$term->slug,
+				( ( isset( $_GET[$this->tax_name] ) && ( $_GET[$this->tax_name] == $term->slug ) ) ? ' selected="selected"' : '' ),
+				$term->name,
+				$term->count
+			);
+		}
+		echo '</select>';
+
+    }
+
     static function RegisterTaxonomy($name, $for, $singular, $labels, $args = [], $hierarchical = true) {
         $label = [
             'name'              =>  "$labels",
@@ -50,6 +70,7 @@ class VinabitsExtraTax
         $vinaExtra->tax_name = $name;
         $vinaExtra->tax_for = $for;
         add_action('init', array($vinaExtra, 'vinabits_register_tax'));
+        add_action( 'restrict_manage_posts', array($vinaExtra, 'filter_by_taxonomy') , 10, 2);
     }
 
 }
