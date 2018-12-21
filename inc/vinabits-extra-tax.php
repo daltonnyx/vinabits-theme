@@ -25,7 +25,7 @@ class VinabitsExtraTax
         $terms = get_terms($this->tax_name);
         
         echo "<select name='$this->tax_name' id='$this->tax_name' class='postform'>";
-        echo '<option value="">' . sprintf( esc_html__( 'Show All %s', 'text_domain' ), $this->tax_args['labels']['name'] ) . '</option>';
+        echo '<option value="">' . sprintf( esc_html__( 'Tất cả %s', 'vinabits' ), $this->tax_args['labels']['name'] ) . '</option>';
         foreach ( $terms as $term ) {
 			printf(
 				'<option value="%1$s" %2$s>%3$s (%4$s)</option>',
